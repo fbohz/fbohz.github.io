@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Do we choose what we do? or is it the other way around?*"
-date:       2019-05-15 03:31:02 +0000
+date:       2019-05-14 23:31:03 -0400
 permalink:  do_we_choose_what_we_do_or_is_it_the_other_way_around
 ---
 
