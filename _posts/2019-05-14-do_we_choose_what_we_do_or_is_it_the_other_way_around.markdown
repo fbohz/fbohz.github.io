@@ -1,11 +1,12 @@
 ---
 layout: post
-title:      "Do we choose what we do? or is it the other way around?*"
+title:      "Who chose what?"
 date:       2019-05-14 23:31:03 -0400
 permalink:  do_we_choose_what_we_do_or_is_it_the_other_way_around
 ---
 
 
+> Do we choose what we do? or is it the other way around?
 
 
 My interest in computer programming started when I was fresh out of college. Back then, a process improvement opportunity came up and it volunteer myself in a project involving implementing a Moodle Platform as part of a curriculum development for a leadership program. I winged this project by looking at forums for help regarding every single aspect of its implementation, from configuration of site to hosting, and to SMPT configuration. I even got the opportunity to break the site once, while doing an update, and then probably a couple of times more while trying to make changes, upgrades or modifications to it. 
