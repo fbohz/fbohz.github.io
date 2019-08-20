@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Begin building your own CMS in just minutes! (code-along)"
-date:       2019-08-20 21:58:19 +0000
+date:       2019-08-20 17:58:20 -0400
 permalink:  begin_building_your_own_cms_in_just_minutes_code-along
 ---
 
