@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Active Storage integration with Google Cloud Storage — Fast-Track"
-date:       2019-10-22 22:45:03 +0000
+date:       2019-10-22 18:45:04 -0400
 permalink:  active_storage_integration_with_google_cloud_storage_fast-track
 ---
 
