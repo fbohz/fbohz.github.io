@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "JavaScript ‘this’ in Regular, Arrow functions and Methods "
-date:       2020-01-08 23:23:23 +0000
+title:      "JavaScript ‘this’ in Regular, Arrow functions and Methods"
+date:       2020-01-08 18:23:24 -0500
 permalink:  javascript_this_in_regular_arrow_functions_and_methods
 ---
 
