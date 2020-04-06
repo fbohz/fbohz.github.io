@@ -7,7 +7,7 @@ permalink:  looking_ahead
 
 > Closing-in a year of coding.
 
-I have a calendar reminder for April 7. That day I signed up on Learn.co to prep for their software engineering coding bootcamp. I signed up a month before starting the actual bootcamp, this as a way to get as much preparation as possible.
+I have a calendar reminder this April 7. That was the day I signed up on Learn.co to prep for their software engineering coding bootcamp. I actually signed up a month before starting the bootcamp, this as a way to get as much preparation as possible.
 
 That was, like *a year ago*? **Time flies indeed**.
 
@@ -18,7 +18,7 @@ Let us then take a deep breath and reflect on what's next, or the next chapter o
 ## So, what's next?
 
 1. **Continue Learning Algorithms and Data Structures**
-   - Already begun last month after finishing the bootcamp. **Data Structures and Basic Algorithms** is a priority (unfortunately my coding bootcamp did not cover this as part of their 2019-2020 curriculum). 
+   - I began this last month after finishing the bootcamp. **Data Structures and Basic Algorithms** is a priority (*unfortunately* my coding bootcamp did not cover this as part of their 2019-2020 curriculum). 
    - Terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in in coding interview questions all the time. 
    - This will also prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
 2. **Advanced JavaScript**
@@ -28,11 +28,11 @@ Let us then take a deep breath and reflect on what's next, or the next chapter o
 3. **Advanced React**
     - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
-    - Gain knowledge and implement react hooks as well as testing.
+    - Gain knowledge and implement React Hooks as well as testing.
     - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [Yijing Ball Z](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z can live on Github at the same time. 
 4. **Other**
    - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
 
 ### What *could be* next?
 
-I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
+I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises ;)
