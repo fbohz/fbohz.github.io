@@ -7,13 +7,13 @@ permalink:  looking_ahead
 
 > Closing-in a year of coding.
 
-So I have a calendar reminder for April 7, the day I signed up on Learn.co to prep for their software engineering coding bootcamp. I signed up a month before starting the actual bootcamp, this as a way to get as much preparation as possible.
+I have a calendar reminder for April 7. That day I signed up on Learn.co to prep for their software engineering coding bootcamp. I signed up a month before starting the actual bootcamp, this as a way to get as much preparation as possible.
 
-That was, like *a year ago*? Time flies indeed.
+That was, like *a year ago*? **Time flies indeed**.
 
 If I was going to guess back then, how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b), probably I would've never guessed that.
 
-Let's us then take a breath and reflect on what's next, or the next chapter on this coding journey.
+Let us then take a deep breath and reflect on what's next, or the next chapter on this coding journey.
 
 ## So, what's next?
 
@@ -33,8 +33,6 @@ Let's us then take a breath and reflect on what's next, or the next chapter on t
 4. **Other**
    - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
 
-## What *could be* next?
+### What *could be* next?
 
-I'm curious to see whether (or not) I will follow this path a year from now. 
-
-If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
+I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
