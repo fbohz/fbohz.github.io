@@ -7,18 +7,18 @@ permalink:  looking_ahead
 
 > Closing-in a year of coding.
 
-I have a calendar reminder this April 7. That was the day I signed up on Learn.co to prep for their software engineering coding bootcamp. I actually signed up a month before starting the bootcamp, this as a way to get as much preparation as possible.
+I have a calendar reminder in April 7. That was the day I signed up on Learn.co to prep for their software engineering coding bootcamp. I actually signed up a month before starting the bootcamp, this as a way to get as much preparation as possible.
 
 That was, like *a year ago*? **Time flies indeed**.
 
-If I was going to guess back then, how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b), probably I would've never guessed that.
+If I was going to guess back then, how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b), probably I never would've guessed that.
 
-Let us then take a deep breath and reflect on what's next, or the next chapter on this coding journey.
+Let's take a deep breath and reflect on what's next (or the next chapter) of this coding journey.
 
 ## So, what's next?
 
 1. **Continue Learning Algorithms and Data Structures**
-   - I began this last month after finishing the bootcamp. **Data Structures and Basic Algorithms** is a priority (*unfortunately* my coding bootcamp did not cover this as part of their 2019-2020 curriculum). 
+   - I began learning this last month after finishing the bootcamp. **Data Structures and Basic Algorithms** is a priority since *unfortunately* my coding bootcamp did not cover this as part of their 2019-2020 curriculum. 
    - Terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in in coding interview questions all the time. 
    - This will also prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
 2. **Advanced JavaScript**
@@ -35,4 +35,4 @@ Let us then take a deep breath and reflect on what's next, or the next chapter o
 
 ### What *could be* next?
 
-I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises ;)
+I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better. After all, I'm a big fan of surprises ;)
