@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Looking Ahead"
-date:       2020-04-05 23:31:03 -0400
+date:       2020-04-05 19:31:03 -0400
 permalink:  looking_ahead
 ---
 
