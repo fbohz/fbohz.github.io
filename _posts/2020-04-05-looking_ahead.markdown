@@ -23,7 +23,8 @@ Let's us then take a breath and reflect on what's next, or the next chapter on t
    - This will also prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
 2. **Advanced JavaScript**
     - I'll want to expand on advanced concepts to lay on top of my JS fundation
-    - Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. Learning about the inner workings of JavaScript also seems appealing.
+    - Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. 
+    - Learning about the inner workings of JavaScript also seems appealing.
 3. **Advanced React**
     - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
@@ -32,4 +33,8 @@ Let's us then take a breath and reflect on what's next, or the next chapter on t
 4. **Other**
    - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
 
-I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
+## What *could be* next?
+
+I'm curious to see whether (or not) I will follow this path a year from now. 
+
+If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
