@@ -13,7 +13,7 @@ That was, like *a year ago*? **Time flies indeed**.
 
 If I was going to guess back then, how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b), probably I never would've guessed that.
 
-Let's take a deep breath and reflect on what's next (or the next chapter) of this coding journey.
+Let's take a deep breath and reflect on what's next, like the next chapter, of this coding journey.
 
 ## So, what's next?
 
@@ -29,7 +29,7 @@ Let's take a deep breath and reflect on what's next (or the next chapter) of thi
     - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
     - Gain knowledge and implement React Hooks as well as testing.
-    - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [Yijing Ball Z](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z can live on Github at the same time. 
+    - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [Yijing Ball Z](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z's can live on Github at the same time. 
 4. **Other**
    - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
 
