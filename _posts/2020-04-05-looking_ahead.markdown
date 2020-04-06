@@ -17,10 +17,11 @@ So let's take a breath and reflect on what's next for me, or the next chapter on
 
 ## So what's next?
 
-1. **Algorithms and Data Structures**
-   - It is worth saying that even though the coding bootcamp was a great experience it indeed *missed some important foundations* to build a software engineering career upon. This has to to do with learning about Data Structures and Basic Algorithms. Taking a look about coding interview questions, terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in. This will not only lay a foundation, but prepare one to learn about software issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
+1. **Continue Learning Algorithms and Data Structures**
+   - Already begun last month after finishing the bootcamp, **Data Structures and Basic Algorithms** is a priority (unfortunately my coding bootcamp unfortunately did not cover this as part of their 2019-2020 curriculum). 
+   - Taking a look about coding interview questions, terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in. This will prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
 2. **Advanced JavaScript**
-    - I'll want to build on advanced concepts to lay upon my JS fundation. Here I'm thinking digging deep into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. Digging into the inner workings of JavaScript also seems appealing.
+    - I'll want to build on advanced concepts to lay on top my JS fundation. Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. Learning about the inner workings of JavaScript also seems appealing.
 3. **Advanced React**
     - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
