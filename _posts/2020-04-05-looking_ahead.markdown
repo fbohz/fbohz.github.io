@@ -24,9 +24,9 @@ So let's take a breath and reflect on what's next for me, or the next chapter on
 3. **Review and Advanced React**
     - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
-    - Gain knowledge and implement react hooks as well as testing
+    - Gain knowledge and implement react hooks as well as testing.
     - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [Yijing Ball Z](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z can live on Github at the same time. 
 4. **Other**
    - React Native, Node.js. Smart Contracts and Blockchain development. No order in particular.
 
-I'm curious to see whether (or not) how I will follow this path a year from now. Or if there are unexpected coding experiences in the road ahead, well that could be even better, after all I'm a fan of surprises :)
+I'm curious to see whether (or not) I will follow this path a year from now. If there are unexpected coding experiences in the road ahead, well that could be even better; after all I'm a fan of surprises :)
