@@ -26,10 +26,10 @@ Let's take a deep breath and reflect on what's next, like the next chapter, of t
     - Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. 
     - Learning about the inner workings of JavaScript also seems appealing.
 3. **Advanced React**
-    - Building [Catoro](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
+    - Building [**Catoro**](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
     - Gain knowledge and implement React Hooks as well as testing.
-    - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [Yijing Ball Z](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z's can live on Github at the same time. 
+    - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [**Yijing Ball Z**](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z's can live on Github at the same time. 
 4. **Other**
    - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
 
