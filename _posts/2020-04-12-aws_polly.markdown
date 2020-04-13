@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "AWS Polly Reads the Yijing Ball Z"
+title:      "Polly Reads the Yijing Ball Z"
 date:       2020-04-12 19:31:03 -0400
 permalink:  aws_polly
 ---
