@@ -9,28 +9,30 @@ permalink:  aws_polly
 
 As I was preparring this week for the **Associate Solutions Architect / Tech U Program**, I began playing with AWS Services.
 
-A really cool service is [**Amazon Polly**](https://docs.aws.amazon.com/polly/index.html), a cloud services Text-to-Speech (TTS) that converts text to lifelike speech. It supports multiple languages and can add engagement and acessibility to your app. 
+A really cool service is [**Amazon Polly**](https://docs.aws.amazon.com/polly/index.html) a cloud services Text-to-Speech (TTS) that converts text to lifelike speech. It supports multiple languages and can add engagement and acessibility to your app. 
 
 ## Talk to me Shenron!
 
-I implemented Polly TTS in **Yijing Ball Z (YBZ)**, our favorite iChing oracle. Since YBZ is Vanilla JS app, I used the [**AWS SDK for JavaScript**](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/welcome.html) to implement this service and have Polly read the YBZ for us!
+I implemented Polly TTS in **Yijing Ball Z (YBZ)**, our favorite iChing oracle. 
+
+Since YBZ is Vanilla JS app, I used the [**AWS SDK for JavaScript**](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/welcome.html) to implement this service and have Polly read the YBZ for us!
 
 Here is the **implementation**:
 
-1. Setup:
+1) Setup:
    -  Make sure to `npm install aws-sdk` and then `npm add aws-sdk` so we can use it in YBZ.
-2. Add **read-out-loud button** on navbar:
+2) Add **read-out-loud button** on navbar:
    -  The first thing we'll do is modify our UI to add a button that we will then attach our AWS.Polly read listener.
 
 ```js
-          <div class="navbar-end"> 
-              <a class="navbar-item button is-small is-warning readpolly">
-                Talk to me Shenron!
-              </a>
-            </div> 
+<div class="navbar-end"> 
+    <a class="navbar-item button is-small is-warning readpolly">
+    Talk to me Shenron!
+    </a>
+</div> 
 ```
 
-3. Let's include AWS and config so you can communicate with AWS, then instantiate our Polly service.
+3) Let's include AWS and config so you can communicate with AWS, then instantiate our Polly service.
    - *Note*: Amazon Translate does not work with Amazon Cognito Identity, so we need to add our own credentials. Read up on [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) to learn more.
 
 ```js
@@ -44,7 +46,7 @@ var polly = new AWS.Polly();
 
 ```
 
-4. Create a function `doSynthesize()` that will execute the Polly script and read out loud the text when button is pressed.
+4) Create a function `doSynthesize()` that will execute the Polly script and read out loud the text when button is pressed.
    -  `synthesizeSpeech()` from AWS.Polly takes a **params** argument that takes the `text` argument we passed on `doSynthesize()`.
    -  Read [here](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Polly.html) and [here](https://github.com/awsdocs/amazon-polly-developer-guide/tree/master/doc_source) to learn more.
 
@@ -76,7 +78,7 @@ function doSynthesize(text) {
 }
 ```
 
-5. **Click the Button and let Polly read the YBZ for you!**
+5) **Click the button and let Polly read the YBZ for you!**
 
 
 That wasn't that bad right? :)
