@@ -7,7 +7,7 @@ permalink:  aws_polly
 
 > Playing with AWS Services - Would You Read For Me Polly?
 
-As I was preparring this week for the **Associate Solutions Architect / Tech U Program**, I began playing with AWS Services.
+As I was preparring this week for the **Associate Solutions Architect / Tech U Program** interview, I began playing with AWS Services.
 
 A really cool service is [**Amazon Polly**](https://docs.aws.amazon.com/polly/index.html) a cloud services Text-to-Speech (TTS) that converts text to lifelike speech. It supports multiple languages and can add engagement and acessibility to your app. 
 
