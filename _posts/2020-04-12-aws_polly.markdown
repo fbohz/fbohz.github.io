@@ -75,7 +75,7 @@ function doSynthesize(text) {
     });
 }
 ```
-1) Add our event listener and call `doSynthesize()` if triggered
+5) Add our event listener and call `doSynthesize()` if triggered
 
 ```js
 const pollyBtn = document.querySelector(".readpolly")
