@@ -22,7 +22,7 @@ Here is the **implementation**:
 1) Setup:
    -  Make sure to `npm install aws-sdk` and then `npm add aws-sdk` so we can use it in YBZ.
 2) Add **read-out-loud button** on navbar:
-   -  The first thing we'll do is modify our UI to add a button that we will then attach our AWS.Polly read listener.
+   -  The first thing we'll do is modify our UI to add a button that we will then attach our `AWS.Polly` read listener.
 
 ```js
 <div class="navbar-end"> 
@@ -45,7 +45,7 @@ var polly = new AWS.Polly();
 ```
 
 4) Create a function `doSynthesize()` that will execute the Polly script and read out loud the text when button is pressed.
-   -  `synthesizeSpeech()` from AWS.Polly takes a **params** argument that takes the `text` argument we passed on `doSynthesize()`.
+   -  `synthesizeSpeech()` from `AWS.Polly` takes a **params** argument that takes the `text` argument we passed on `doSynthesize()`.
    -  Read [here](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Polly.html) and [here](https://github.com/awsdocs/amazon-polly-developer-guide/tree/master/doc_source) to learn more.
 
 ```js
