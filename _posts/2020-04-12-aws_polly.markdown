@@ -75,6 +75,7 @@ function doSynthesize(text) {
     });
 }
 ```
+
 5) Add our event listener and call `doSynthesize()` if triggered
 
 ```js
