@@ -26,9 +26,7 @@ Here is the **implementation**:
 
 ```js
 <div class="navbar-end"> 
-    <a class="navbar-item button is-small is-warning readpolly">
-    Talk to me Shenron!
-    </a>
+    <a class="navbar-item button is-small is-warning readpolly">Talk to me Shenron!</a>
 </div> 
 ```
 
