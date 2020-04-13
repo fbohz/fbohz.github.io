@@ -75,8 +75,20 @@ function doSynthesize(text) {
     });
 }
 ```
+1) Add our event listener and call `doSynthesize()` if triggered
 
-5) **Click the button and let Polly read the YBZ for you!**
+```js
+const pollyBtn = document.querySelector(".readpolly")
+
+pollyBtn.addEventListener("click", function(){
+    // all our text is inside of main.content, so we grab it all
+    const pollyText = document.querySelector("main.content").innerText
+    doSynthesize(pollyText)
+ })
+
+```
+
+6) **Click the button and let Polly read the YBZ for you!**
 
 
 That wasn't that bad right? :)
