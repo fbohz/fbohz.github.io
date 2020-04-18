@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Playing with AWS Services Part II - Hola Shenron!"
-date:       2020-04-12 19:31:03 -0400
+date:       2020-04-17 19:31:03 -0400
 permalink:  aws_pt2
 ---
 
