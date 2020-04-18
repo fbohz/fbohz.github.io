@@ -64,7 +64,7 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 
    - Here's how our modal is showing and closing at this point.
 
-![img](./imgs/aws2.1.gif)
+![aws2 2 10 50 11 PM](https://user-images.githubusercontent.com/15071636/79627471-2213e880-80fe-11ea-85fb-1033f1cc3787.gif)
 
 4) Now that the basic navigation is setup. Let's implement our text translation, basically I will implement it on the main YBZ content area, so whatever is there will be translated.
 
@@ -227,4 +227,4 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 
 If all goes smooth we'll have our YBZ translate text and read out loud such translation!
 
-![img](./imgs/aws2.2.gif)
+![aws2 1 10 50 11 PM](https://user-images.githubusercontent.com/15071636/79627473-250ed900-80fe-11ea-82ec-eec50ff1b493.gif)
