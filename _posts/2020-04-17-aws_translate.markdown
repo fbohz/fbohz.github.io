@@ -68,7 +68,7 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 
 4) Now that the basic navigation is setup. Let's implement our text translation, basically I will implement it on the main YBZ content area, so whatever is there will be translated.
 
-   - We'll be using `translateText` from AWS.Translate, so read up on [documentation](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html) to learn more.
+   - We'll be using `translateText` from AWS.Translate, so read up on [**documentation**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html) to learn more.
    - This implementation traverses the DOM under my `main.content` and calls `translateText` on each node that has text. 
    - I added the following code under our modal eventListiner.
 
