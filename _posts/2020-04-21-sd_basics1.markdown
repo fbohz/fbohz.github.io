@@ -47,8 +47,8 @@ Since hour total storage is 120M we should expect roughly 120GB of storage just 
 
 Regardig bandwidth of *incoming* data we should expect roughly 1KB per second as our QPS is 1/s. Read requests about 50KB with our 1:50 ratio.
 
-## Road Ahead for Catoro SD
+## Road Ahead for SD Explorations
 
-In the next blog post we'll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache for Catoro.
+In the next blog post we'll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache.
 
 *Stay tuned*!
