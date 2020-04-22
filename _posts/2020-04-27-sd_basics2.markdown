@@ -47,9 +47,9 @@ So in what part would you focus your design? Consistency, availability, portioni
 Lets now drill down into our **component design**:
   1) Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
   2) Database schema:
-    - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
+  - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
     - Think object / file system storate for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
-  3) Expand your SD and include Algorithms / Services:
+  1) Expand your SD and include Algorithms / Services:
     - *Horizontal vs. Vertical Scaling*: Horizontal scaling means that you scale by adding more servers into your pool of resources whereas vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server. Vertical scaling might imply downtime and comes with limit.
       - Good examples of horizontal scaling are Cassandra and MongoDB. Vertical is MySQL.
     - Talk about how the application layer (logic) communicates storage layer (store / retrieve data).
