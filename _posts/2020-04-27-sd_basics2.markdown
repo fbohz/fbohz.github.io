@@ -7,10 +7,10 @@ permalink:  sd_basics2
 
 > Digging Depper into SD 
 
-**Note**: This article is somewhat of continuation of the [**last blog**](http://fbohz.com/sd_basics1) the basics of Systems Design (SD). On this blog I'll use **examples of other SDs** to explain the concepts better.
+**Note**: This article is somewhat of a continuation of the [**last blog**](http://fbohz.com/sd_basics1) the basics of Systems Design (SD). The main difference is that on this article I'll use **examples of other SDs** to explain the concepts better.
 
 
-## High Level System Design and REST API
+## Digging Depper: High Level System Design and REST API
 
 After we got some capacity estimates, now it is worth coming up with a basic high level design of the system and a Entity Relationship Diagram (ERD).
 
@@ -30,7 +30,7 @@ Sample API Parameters:
 
 Sample API Returns: (string)
 
-Here think about any **ppropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if `api_dev_key` is invalid?
+Here think about any **appropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if `api_dev_key` is invalid?
 
 ## Component Design
 
