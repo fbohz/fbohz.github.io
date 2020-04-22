@@ -14,8 +14,9 @@ permalink:  sd_basics2
 
 After we got some capacity estimates, now it is worth coming up with a basic high level design of the system and a Entity Relationship Diagram (ERD).
 
-While I won't go into detail here you can find an ![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) and 
-![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) examples.
+While I won't go into detail here you can find an ERD and high level SD design examples: 
+![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) 
+![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) 
 
 After this is done you can come up with your systems API endpoints. It is recommended using a REST API. Here's an example of a twitter API:
 
@@ -29,7 +30,7 @@ Sample API Parameters:
 
 Sample API Returns: (string)
 
-Here think about any **ppropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if api_dev_key is invalid?
+Here think about any **ppropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if `api_dev_key` is invalid?
 
 ## Component Design
 
@@ -37,9 +38,9 @@ The component design part can be the most complex part and is the one that talks
 
 There's a concept called **CAP Theorem** that states that you cannnot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. Example shortening URL: Long URL hard to remeber and short URL chances of collission.
 
-So we could as: would you focus in your design consistency, availability, portioning, and performance? What parts are important, why? 
+So in what part would you focus in your design? consistency, availability, portioning, and/or performance? What parts are important, why? 
 
-Let us now assess our **component design**:
+Lets drill down now in our **component design**:
   - Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient
   - Database schema:
     - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS)
@@ -51,15 +52,15 @@ Let us now assess our **component design**:
     - data size per db table
     - *Data Partitioning/Distribution* (e.g data sharding) and replication. Think about horizontal vs vertical partitioning
       - Horizontal: put different rows in different tables. E.g. zip codes less than 10000 stored in x.
-      - Vertical: store features/resources with each other. Can be good if resource (e.g. photos) heavy
-    - Think about Reliability vs Redundancy
-    - Answer this: **How your system handles success and failure cases?**.
+      - Vertical: store features/resources with each other. Can be good if resource (e.g. photos) heavy.
+    - Think about Reliability vs Redundancy.
+    - Answer this: **How your system handles success and failure cases?**
       - E.g. have standby DB as replica avoid single point of failure. So have secondary backup servers. On read traffic? write, both?
      - Divide read and write storage in different servers?
 
 ### Load Balancers (LB), Cache and Telemetry
 
-#### LB
+**LB**
 
 With Load balancers you can effectively distribute incoming network traffic across a group of  servers. When a new server is added to the group, the load balancer automatically starts to send requests to it.
 
@@ -72,7 +73,7 @@ Some LB strategies:
   - *More intelligent LB*: can query servers about their load and adjust traffic based upon how they are doing.
   - You can also have **passive and active** LBs to prevent single point of failure in LB as well. 
 
-#### Cache
+**Cache**
 
 Cache is short term for memory. Takes advantage that recently requested data might be asked again so stored locally. Cache is good for quick access to data. CDNs use cache since as they serve content if locally available.
 
@@ -83,10 +84,11 @@ Some cache strategies:
 
  *Note:* If the data is modified in the database, then it should be **invalidated** in the cache as this could cause inconsistent app behavior.
 
-#### Telemetry
+**Telemetry**
+
 How will you monitor for *peaks*, *Daily Active Users (DAU)* and *average latency*. Thinking about this will further prepare your app to scale even further and reduce failure chances.
 
-## Conclussion
+## Conclusion
 
 Designing distributed systems it indeed includes a lot of factors and there are many tradeoffs to consider. However it could also be a fun and creative exercise to do.
 
