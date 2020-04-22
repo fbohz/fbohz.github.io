@@ -49,6 +49,6 @@ Regardig bandwidth of *incoming* data we should expect roughly 1KB per second as
 
 ## Road Ahead for Catoro SD
 
-In the next blog post we'll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache for Catoro
+In the next blog post we'll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache for Catoro.
 
 *Stay tuned*!
