@@ -79,6 +79,7 @@ Cache is short term for memory. Takes advantage that recently requested data mig
 Some cache strategies: 
   - *80/20 rule*: E.g try caching 20% of daily read volume of photos and metadata.
   - *Least recently used method LRU*: Or latest data. So it discards the least viewed first. This is a cache eviction policy.
+  - Read up on *Memcaching* and *Redis* as strategies for managing your caching system.
 
  *Note:* If the data is modified in the database, then it should be **invalidated** in the cache as this could cause inconsistent app behavior.
 
