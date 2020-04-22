@@ -1,2 +1,2 @@
 # RoastedRobots - A Blog by Felipe Bohorquez
-Copyright © Felipe Bohorquez 2020
+Copyright© Felipe Bohorquez
