@@ -45,11 +45,11 @@ Example: Shortening URL. Long URL hard to remeber and short URL chances of colli
 So in what part would you focus your design? Consistency, availability, portioning, and/or performance? What part(s) are important, why? 
 
 Lets now drill down into our **component design**:
-  1) Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
-  2) Database schema:
-  - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
+  - Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
+  - Database schema:
+    - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
     - Think object / file system storate for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
-  1) Expand your SD and include Algorithms / Services:
+  - Expand your SD and include Algorithms / Services:
     - *Horizontal vs. Vertical Scaling*: Horizontal scaling means that you scale by adding more servers into your pool of resources whereas vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server. Vertical scaling might imply downtime and comes with limit.
       - Good examples of horizontal scaling are Cassandra and MongoDB. Vertical is MySQL.
     - Talk about how the application layer (logic) communicates storage layer (store / retrieve data).
@@ -58,10 +58,9 @@ Lets now drill down into our **component design**:
       - Horizontal: put different rows in different tables. E.g. zip codes less than 10000 stored in x.
       - Vertical: store features/resources with each other. Can be good if resource (e.g. photos) heavy.
     - Think about Reliability vs Redundancy.
-    - Answer this question: **How does your system handles success and failure cases?**
+    - Answer this: **How your system handles success and failure cases?**
       - E.g. have standby DB as replica avoid single point of failure. So have secondary backup servers. On read traffic? write, both?
      - Divide read and write storage in different servers?
-     - Master / slave configuration?
 
 ### Load Balancers (LB), Cache and Telemetry
 
