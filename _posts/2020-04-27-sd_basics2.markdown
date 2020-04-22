@@ -60,7 +60,7 @@ Lets drill down now in our **component design**:
 
 ### Load Balancers (LB), Cache and Telemetry
 
-**LB**
+**Load Balancers**
 
 With Load balancers you can effectively distribute incoming network traffic across a group of  servers. When a new server is added to the group, the load balancer automatically starts to send requests to it.
 
