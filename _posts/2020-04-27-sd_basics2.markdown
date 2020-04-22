@@ -14,7 +14,8 @@ permalink:  sd_basics2
 
 After we got some capacity estimates, now it is worth coming up with a basic high level design of the system and a Entity Relationship Diagram (ERD).
 
-While I won't go into detail here you can find an ERD and high level SD design examples: 
+While I won't go into detail, here you can find an ERD and high level SD design examples: 
+
 ![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) 
 ![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) 
 
