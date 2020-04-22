@@ -19,17 +19,17 @@ While I won't go into detail, here you can find an ERD and high level SD design 
 ![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) 
 ![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) 
 
-After this is done you can come up with your systems API endpoints. It is recommended using a REST API. Here's an example of a twitter API:
+After this is done you can come up with your systems **API endpoints**. It is recommended using a REST API. Here's an example of a twitter API:
 
 `tweet(api_dev_key, tweet_data, tweet_location, user_location)`
 
-Sample API Parameters:
+*Sample API Parameters*:
 - api_dev_key (string)
 - tweet_data (string)
 - tweet_location (string)
 - user_location (string)
 
-Sample API Returns: (string)
+*Sample API Returns*: (string)
 
 Here think about any **appropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if `api_dev_key` is invalid?
 
@@ -37,27 +37,30 @@ Here think about any **appropriate HTTP error(s)** returned when accessing the A
 
 The component design part can be the most complex part and is the one that talks about the scalability of our system.
 
-There's a concept called **CAP Theorem** that states that you cannnot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. Example shortening URL: Long URL hard to remeber and short URL chances of collission.
+There's a concept called **CAP Theorem** that states that you cannnot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. 
 
-So in what part would you focus in your design? consistency, availability, portioning, and/or performance? What parts are important, why? 
+Example: Shortening URL. Long URL hard to remeber and short URL chances of collission.
 
-Lets drill down now in our **component design**:
-  - Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient
-  - Database schema:
-    - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS)
-    - Think object / file system storate for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info
-  - Expand your SD and include Algorithms / Services:
+So in what part would you focus your design? Consistency, availability, portioning, and/or performance? What part(s) are important, why? 
+
+Lets now drill down into our **component design**:
+  A) Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
+  B) Database schema:
+    - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
+    - Think object / file system storate for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
+  C) Expand your SD and include Algorithms / Services:
     - *Horizontal vs. Vertical Scaling*: Horizontal scaling means that you scale by adding more servers into your pool of resources whereas vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server. Vertical scaling might imply downtime and comes with limit.
       - Good examples of horizontal scaling are Cassandra and MongoDB. Vertical is MySQL.
-    - Talk about how the application layer (logic) communicates storage layer (store / retrieve data)
-    - data size per db table
+    - Talk about how the application layer (logic) communicates storage layer (store / retrieve data).
+    - Assess data size per DB table.
     - *Data Partitioning/Distribution* (e.g data sharding) and replication. Think about horizontal vs vertical partitioning
       - Horizontal: put different rows in different tables. E.g. zip codes less than 10000 stored in x.
       - Vertical: store features/resources with each other. Can be good if resource (e.g. photos) heavy.
     - Think about Reliability vs Redundancy.
-    - Answer this: **How your system handles success and failure cases?**
+    - Answer this question: **How does your system handles success and failure cases?**
       - E.g. have standby DB as replica avoid single point of failure. So have secondary backup servers. On read traffic? write, both?
      - Divide read and write storage in different servers?
+     - Master / slave configuration?
 
 ### Load Balancers (LB), Cache and Telemetry
 
