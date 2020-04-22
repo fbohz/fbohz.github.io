@@ -1,0 +1,54 @@
+---
+layout: post
+title:      "Some Thoughs on Systems Design"
+date:       2020-04-21 19:31:03 -0400
+permalink:  sd_basics1
+---
+
+> The Big Picture: Systems Design Basics - Part 1
+
+While taking an online course on [**systems design**](https://www.educative.io/courses/grokking-the-system-design-interview), I learned some cool ideas worth sharing.
+
+
+## Systems Design is About Thinking in Scale
+
+When developing [Catoro](https://catoro.now.sh/), I focused a lot on the actual functionality of the application. However, it actually never came to my head thinking questions such as *what if I had 100 million total users and 2 million daily users?*. How will the design of my backend and deployment be affected by growth?
+
+Systems design focus on **distributed systems** meaning a a system whose components are located on different networked computers. Some characteristic of such systems include Scalability, Reliability, Availability, Efficiency, and Serviceability/Manageability. There are also strategies of how to assess and design your system for scale.
+
+## Capacity Estimation
+
+Lets take our example of **Catoro, a coffee cupping app**. Coffee cupping must be read heavy, we can assume a 1:50 ratio between read and write.
+
+**Traffic, Storage, Bandwidth Estimates**
+If we assume there are 2M new cuppings per month this actually means about 50M readings same month:
+
+`2 * 50 => 50M`
+
+What about *queries per second (QPS)*? Roughly ~0.77. So about one new cupping **per second**!
+
+`2M / (3600(secs in hour)* 24hours * 30days) =~ 1`
+
+What about reading? Well with our 1:50 ratio it means 50 readings per second.
+
+How about *storage*? 
+
+Let's assume we'll store everything for five years. Since we have 2M every month we should expect to store roughly 120M!
+
+`2M * 12months * 5years = 120M`
+
+What about each particular cupping? Each cupping lets assume is 1KB of information since there are a lot of parameters to track per cupping as well as total score.
+
+Since hour total storage is 120M we should expect roughly 120GB of storage just of cuppings.
+
+`120M * 1KB =~ 120GB`
+
+*Tip*: Try [**this**](https://whatsabyte.com/P1/byteconverter.htm) resource for a good byte/kb/gb etc. conversion tool.
+
+Regardig bandwidth of *incoming* data we should expect roughly 1KB per second as our QPS is 1/s. Read requests about 50KB with our 1:50 ratio.
+
+## Road Ahead for Catoro SD
+
+In the next blog post we'll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache for Catoro
+
+*Stay tuned*!
