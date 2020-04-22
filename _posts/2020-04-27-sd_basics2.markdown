@@ -18,6 +18,7 @@ While I won't go into detail, here you can find an ERD and high level SD design 
 
 ![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) 
 
+
 ![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) 
 
 After this is done you can come up with your systems **API endpoints**. It is recommended using a REST API. Here's an example of a twitter API:
