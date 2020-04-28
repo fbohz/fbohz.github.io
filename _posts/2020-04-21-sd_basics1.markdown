@@ -29,7 +29,7 @@ What about *queries per second (QPS)*? Roughly ~0.77. So about one new cupping *
 
 `2M / (3600(secs in hour)* 24hours * 30days) =~ 1`
 
-What about reading? Well with our 1:50 ratio it means 50 readings per second.
+What about reading? Well with our *1:50 ratio it means 50 readings per second*.
 
 How about *storage*? 
 
