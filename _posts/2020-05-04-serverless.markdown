@@ -53,7 +53,7 @@ In the example below with MongoDB Stitch you pass `MongoDB Stitch ID` on where i
 
 ![demo1](https://user-images.githubusercontent.com/15071636/80838027-a5810f80-8bbd-11ea-8064-5743d907638a.png)
 
-Then you can use MongoDB Queries (MQL), get data and update state from it. 
+Then you can use MongoDB Queries (MQL) to get data and update state from it. 
 
 ![demo2](https://user-images.githubusercontent.com/15071636/80838438-a5cdda80-8bbe-11ea-8268-9a57ba4fccb5.png)
 
