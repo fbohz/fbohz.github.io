@@ -7,11 +7,9 @@ permalink:  serverless_intro
 
 > Serverless allows you to run and deploy apps without having to worry about managing server infraestructure
 
-# Serverless Overview
-
 Probably most of us have heard about serverless computer, and probably you've asked yourself (like me) wheteher if its a good technology to learn. Here I'm sharing some high level points I learned after seeing a [presentation](https://www.youtube.com/watch?v=MEeZLM1XVLI&feature=youtu.be) about it at Byteconf React. 
 
-**What is serverless?**
+# So, What is Serverless?
 
 **Serverless allows you to run and deploy apps without having to worry about managing server infraestructure**. Examples include AWS Lambda, MongoDB Stitch and Microsoft Azure. Developers then worry about building the business logic only.
 
@@ -61,9 +59,6 @@ Then you can use MongoDB Queries (MQL) to get data and update state from it.
 
 ## Future of serverless
 
-- Infraestructure will continued to be abstracted by cloud providers.
+- Infraestructure will continue to be abstracted by cloud providers.
 - More serverless options will pop up, so many more to chose form.
 - Serverless will get cheaper and faster in the future.
-
-## Resources
-- https://www.joekarlsson.com/2020/04/a-gentle-introduction-to-building-serverless-apps/
