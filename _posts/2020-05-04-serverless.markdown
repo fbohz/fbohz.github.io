@@ -7,7 +7,7 @@ permalink:  serverless_intro
 
 > Serverless allows you to run and deploy apps without having to worry about managing server infraestructure
 
-Probably most of us have heard about serverless computing, and probably you've asked yourself (like me) wheteher if its a good technology to learn. Here I'm sharing some high level points I learned after seeing a [presentation](https://www.youtube.com/watch?v=MEeZLM1XVLI&feature=youtu.be) about it at Byteconf React. 
+Probably most of us have heard about serverless computing, and probably you've asked yourself (like me) if its a good technology to learn. Here I'm sharing some high level points I learned after seeing a [presentation](https://www.youtube.com/watch?v=MEeZLM1XVLI&feature=youtu.be) about it at Byteconf React. 
 
 # So, What is Serverless?
 
