@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "A React Pattern to Avoid 'Apropcalypse'"
+title:      "A React Pattern to Avoid Apropcalypse"
 date:       2020-05-11 19:31:03 -0400
 permalink:  react_pattern_apropcalypse
 ---
