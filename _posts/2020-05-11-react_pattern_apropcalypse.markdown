@@ -21,13 +21,13 @@ Now, another developer wants you to have the text on the side rather than at the
 
 ![accordion2](https://user-images.githubusercontent.com/15071636/80917657-25c28480-8d26-11ea-804f-993e9ecc2401.png)
 
-Then things can start making hard when needs want you to have it on the left, then use cases start to pop up. Your accordion then starts having a lot of props to take control and deal with.
+Then things can start becoming complicated when now another use case tell you  to implement text on the left. So use cases start to pop up one after the other. Your accordion component starts having a lot of props, that can become hard to control and deal with.
 
 ![accordion3](https://user-images.githubusercontent.com/15071636/80917860-34f60200-8d27-11ea-9d11-89786a2ee2cd.png)
 
-Easily you can jump into having a component with props to record levels!
+Easily you can jump into having a component with record level props (**apropcalypse**)!
 
-Some problems with a component with lots of props (**apropcalypse**) and use cases to deal with:
+Some problems with a component with lots of props and many use cases to deal with:
 - Hard to maintain
 - Re-renders and JSX that doesn't even apply to your use case
 - Implementation complexity - breeding ground for bugs
