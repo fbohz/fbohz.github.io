@@ -47,7 +47,7 @@ So with this, we can build our own accordion component that might look like this
 
 ![patt2](https://user-images.githubusercontent.com/15071636/80918255-9fa83d00-8d29-11ea-8dd4-4e4c12394d71.png)
 
-And then we can pass items to render the accordion in the default way like `<Accordion items={items}>`
+And then we can pass items to render the accordion in the default way like `<Accordion items={accordionItems}>`
 
 ![accordion1](https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png)
 
