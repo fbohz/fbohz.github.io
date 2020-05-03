@@ -1,13 +1,13 @@
 ---
 layout: post
-title:      "A React Pattern to Avoid `Apropcalypse`"
+title:      "A React Pattern to Avoid 'Apropcalypse'"
 date:       2020-05-11 19:31:03 -0400
 permalink:  react_pattern_apropcalypse
 ---
 
 > React patterns are useful to promote code reuse while maintaining component simplicity and flexibility.
 
-Today we'll go over some React patterns I learned while participating at [Byteconf React](https://www.bytesized.xyz/react-2020). React patterns are useful to promote code reuse while maintaining component simplicity and flexibility. Note this is a bit on the **advanced React** side.
+Today we'll go over some React patterns I learned while participating at [Byteconf React](https://www.bytesized.xyz/react-2020). React patterns are useful to promote code reuse while maintaining component simplicity and flexibility. This article is a bit on the **advanced React** side.
 
 ## Typical Component Development
 
@@ -33,8 +33,7 @@ Some problems with a component with lots of props (**apropcalypse**) and use cas
 - Implementation complexity - breeding ground for bugs
 - API complexity. Harder for other people to use your project. Your documentation can become complex.
 
-*So how can we support these use cases? Without avoiding adding and adding props?*
-
+*So how can we support these use cases without keep adding new props?*
 
 ## Making it Simpler / Flexible
 
@@ -48,7 +47,7 @@ So with this, we can build our own accordion component that might look like this
 
 ![patt2](https://user-images.githubusercontent.com/15071636/80918255-9fa83d00-8d29-11ea-8dd4-4e4c12394d71.png)
 
-And then we can pass items to render the accordion in the default way like `<Accordion items={items}>
+And then we can pass items to render the accordion in the default way like `<Accordion items={items}>`
 
 ![accordion1](https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png)
 
@@ -57,14 +56,14 @@ Because component is built on top of a hook then you can modify to make things y
 
 ![patt3](https://user-images.githubusercontent.com/15071636/80918517-0d089d80-8d2b-11ea-9f19-bf77ce144750.png)
 
-What is important here, is that it doesn't add any complexity to the logic behind the component. You can add features to it and have total control of render and no longer responsible of use cases you don't want to support.
+**What is important** is that this pattern doesn't add any complexity to the logic behind the component. You can add features to it and have total control of render and no you're no longer responsible of use cases you don't want to support.
 
-As all the logic is stored in `useAccordion` custome hook it gives flexibility and control as to how a particular user of the compoenent wants the UI to be rendered.
+As all the logic is stored in `useAccordion` custom hook, it gives flexibility and control as to how a particular user of the compoenent wants the UI to be rendered.
 
-Remember we are **inverting control**, as it can receive its own custom reducer, props so it can adapt to it. This is a benefit of hooks.
+Remember we are **inverting control**, as it can receive its own custom reducer, props so it can adapt to it. This is a **benefit of React Hooks**.
 
 Here we are using the systems design principle of **composability** so that users can use this component and assemble as depending on their needs.
 
-Feel free to [**watch**](https://youtu.be/MEeZLM1XVLI?t=1884) Byteconf React Presentation Video. Presenter has different examples with reducers to take care of other use cases. Also check the repo [here](https://github.com/kentcdodds/simply-react).
+Feel free to [**watch**](https://youtu.be/MEeZLM1XVLI?t=1884) Byteconf React Presentation Video. The presenter has different examples with reducers to take care of other use cases. Also check the code repo [here](https://github.com/kentcdodds/simply-react) to play with it yourself!
 
-
+👋🏼👋🏼🚀
