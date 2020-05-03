@@ -64,6 +64,6 @@ Remember we are **inverting control**, as it can receive its own custom reducer,
 
 Here we are using the systems design principle of **composability** so that users can use this component and assemble as depending on their needs.
 
-Feel free to [watch](https://youtu.be/MEeZLM1XVLI?t=1884) Byteconf React Presentation Video. The presenter has different examples with reducers to take care of other use cases. Also check the code repo [here](https://github.com/kentcdodds/simply-react) to play with it yourself!
+Feel free to [watch](https://youtu.be/MEeZLM1XVLI?t=1884) the Byteconf React presentation Video. The presenter has different examples with reducers to take care of other use cases. Also check the code repo [here](https://github.com/kentcdodds/simply-react) to play with it yourself!
 
 👋🏼👋🏼🚀
