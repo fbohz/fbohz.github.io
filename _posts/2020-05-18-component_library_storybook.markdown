@@ -11,7 +11,7 @@ permalink:  component_library_storybook
 
 **React component libraries** ensure that your application is well designed, accessible and easy to use. 
 
-As application grew and evolve they could face these challenges:
+As applications grow and evolve they could face these challenges:
 - **Lack of consistency**: like different colors, fonts, so UI styles changes. UI elements could be different depending of component.
 - **UX challenges**: E.g. if confirm button is blue on one page but then the cancel is blue on the next it can cause confusion.
 
@@ -19,13 +19,13 @@ Here's where component libraries can really help! 🙌🏼
 
 ## Storybook to the Rescue! 
 
-First things first. The truth is that it **takes time** to build component libraries 😑. So often no one wants to build these. However, its worth investing the time.
+First things first. The truth is that it **takes time** to build component libraries 😑. So often no one wants to build these. **However, it is worth investing the upfront time**.
 
 **React Storybook**
 
 Storybook is a React tool for developing UI components. An example of using Storybook tool to build component libraries can be found [here](https://myelin.herrmannsolutions.net/).
 
-By using Storybook you can have a centralized a place for quick reference and create faster prototyping.  It offers example of common components along with specific styling.
+By using Storybook you can have a centralized a place for quick reference and create faster prototyping.  It offers example of common components along with specific styling and documentation.
 
 Some examples:
 
@@ -40,7 +40,7 @@ Some examples:
 
 ## How to Build Your Own Library
 
-Building the componenets is the easiest part of building the library. Storybook has many addons you can use. You can start with vanilla Storybook and expand.
+Building the componenets is the easiest part of building the library. Storybook has many add-ons you can use. You can start with vanilla Storybook and expand.
 
 For animated components you can use **GreenSock** or **Animate.CSS**. For icons you can use FontAwesome. You can also try Rollup.js as an alternative to Webpack. 
 
@@ -52,7 +52,7 @@ Go through your app screen by screen and create an **interface inventory** in a 
 
 Then choose the *most used* components (8 max at the beginning). At the beginning you'll copy the code of it into Storybook.
 
-As you have your **library small** of 5-8 components, you can have users start getting use to the library without having a lot of *unused components*.
+As you have your **library small** of 5-8 components, you can have users start getting used to the library without having a lot of *unused components*.
 
 Think about different situations in which each component will be used and build library on it. E.g. buttons:
 
@@ -70,25 +70,26 @@ Check out this component [checklist](https://twitter.com/EmmaBostian/status/1177
 
 As you have users testing your library you might have to do edits. You can prevent this by being thorough and trying to go on all use cases of components.
 
-Ask users for specific feedback. E.g. what parts are useful/not useful? do they hit snags in implementation?
+Ask users for specific feedback. E.g. What parts are useful/not useful? Do they hit snags in implementation?
 
 *Expanding and Maintaining Your Library*
 
 Keep **backlog of components** that you want to build in the future. This is important as you start to include other team members to contribute in your library. 
 
-You might also see that some components are not being used. Try to reduce this clutter in library. Check with other developers and designers why is it not being used. **Tag components** to denote status. E.g. retiring, active component etc. This labeling will keep users up to date on whats going on with your library.
+You might also see that some components are not being used. Try to reduce this clutter in library. Check with other developers and designers why a component is not being used. **Tag components** to denote status. E.g. retiring, active component etc. This labeling will keep users up-to-date on whats going on with your library.
 
-You can also have an external version of library (such as the link shared). The internal version can have other tags etc.
+You can also have an external version of library (such as the link shared above). The internal version can have internal tags as well, IP information, etc.
 
 *Maintenance* is also key. Think where you can tie component library creation. Sprint planning can be useful to tie it with the component backlog. Make sure you're active in maintaining your library so it doesn't become outdated.
 
 
 *Final tips*
 
-- **Keep it simple**. Sometimes being limiting/restricting on props, might mean you have to add a lot of conditionals to keep up with all the use cases. So being open at the beggining can save you a lot of upfront time. Start with less opinionated component and build from there if really need it. Make your components more flexible. See my [last blog](http://fbohz.com/react_pattern_apropcalypse) for more info on flexible components.
+- **Keep it simple**. Sometimes being limiting/restricting on props, might mean you have to add a lot of conditionals to keep up with all the use cases. So being open at the beggining can save you a lot of upfront time. Start with less opinionated component and build from there if really need it. Make your components more flexible. See my [**last blog**](http://fbohz.com/react_pattern_apropcalypse) for more info on flexible components.
 - Unfinished components are ok. Build from the feedback of your users.
 - Have accesibility in mind.
-- [Read Atomic Design Book](https://atomicdesign.bradfrost.com/table-of-contents/) to increase your knowledge and build a solid library with advanced components families. 
-- Check out the presentation video [here](https://youtu.be/MEeZLM1XVLI?t=10258).
+- [**Read Atomic Design Book**](https://atomicdesign.bradfrost.com/table-of-contents/) to increase your knowledge and build a solid library with advanced components families. 
+- Don't forget the [**component checklist**](https://twitter.com/EmmaBostian/status/1177248937763311617) you can use as you build your library.
+- Check out the presentation video [**here**](https://youtu.be/MEeZLM1XVLI?t=10258).
 
-Happy component library building! 📗
+That's all folks. Happy component library building! 📗
