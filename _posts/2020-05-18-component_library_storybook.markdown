@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "React Component Libraries"
+title:      "React Component Library"
 date:       2020-05-18 19:31:03 -0400
 permalink:  component_library_storybook
 ---
