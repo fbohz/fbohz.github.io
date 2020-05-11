@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "React Component Library"
-date:       2020-05-18 19:31:03 -0400
+date:       2020-06-01 19:31:03 -0400
 permalink:  js_back_to_basics2
 ---
 
@@ -11,6 +11,8 @@ permalink:  js_back_to_basics2
 
 
 ## JS Back-to-basics Part II
+
+This week, we'll expand on last week's concepts and talk about other exiting JS foundational concepts!
 
 *Quick Reminder*
 In JS we basically
