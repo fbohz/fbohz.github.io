@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "React Component Library"
+title:      "JS Back-to-Basics: Part I"
 date:       2020-05-25 19:31:03 -0400
 permalink:  js_back_to_basics1
 ---
