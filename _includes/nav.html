@@ -27,18 +27,18 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{ site.baseurl }}/">Blog</a>
+                    <a href="{{ site.baseurl }}/">Latest Entries</a>
                 </li>
                 {% for page in site.pages %}{% if page.title %}
 				{% if page.url != '/404.html' %}
                 <li>
                     <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                 </li>
+				{% endif %}
+                {% endif %}{% endfor %}
                 <li>
                     <a href="https://learn.co/{{ site.github_username }}/resume">Resume</a>
                 </li>
-				{% endif %}
-                {% endif %}{% endfor %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->

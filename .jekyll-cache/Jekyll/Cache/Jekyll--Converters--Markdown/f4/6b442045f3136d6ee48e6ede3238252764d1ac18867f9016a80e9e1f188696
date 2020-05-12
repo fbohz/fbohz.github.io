@@ -1,0 +1,75 @@
+I"<blockquote>
+  <p>Serverless allows you to run and deploy apps without having to worry about managing server infraestructure</p>
+</blockquote>
+
+<p>Probably most of us have heard about serverless computing, and probably you’ve asked yourself (like me) if its a good technology to learn. Here I’m sharing some high level points I learned after seeing a <a href="https://www.youtube.com/watch?v=MEeZLM1XVLI&amp;feature=youtu.be">presentation</a> about it at Byteconf React.</p>
+
+<h1 id="so-what-is-serverless">So, What is Serverless?</h1>
+
+<p><strong>Serverless allows you to run and deploy apps without having to worry about managing server infraestructure</strong>. Examples include AWS Lambda, MongoDB Stitch and Microsoft Azure. Developers then worry about building the business logic only.</p>
+
+<p>So the name <em>serverless can be misleading</em> because there are actually servers, its just serverless for us, the developers.</p>
+
+<p>Why serverless is popular right now:</p>
+<ul>
+  <li>No managing infraestructure, nor provisioning.</li>
+  <li>No capacity planning.</li>
+  <li>No patching.</li>
+  <li>Not worrying about scaling.</li>
+  <li><em>Can be cheaper</em>. Not running 24/7 only when running serverless functions.</li>
+</ul>
+
+<p>But what’s the <em>catch</em> with serverless?</p>
+<ul>
+  <li>Servers need to warm up
+    <ul>
+      <li>If you scale up pretty quickly you need to configure this with cloud provider to mitigate this.</li>
+    </ul>
+  </li>
+  <li>Deployment pipeline (DevOps) still needs to happen.</li>
+  <li>Serverless functions means state is managed externally.</li>
+</ul>
+
+<h2 id="when-to-use-serverless">When to use serverless</h2>
+
+<ul>
+  <li>If you had a static site that needs ocassionaly server updates. No need for 24/7 servers.</li>
+  <li>Variable traffic level, and augment existing systems to handle additional load.</li>
+</ul>
+
+<h2 id="when-to-avoid-serverless">When to avoid serverless</h2>
+
+<ul>
+  <li>If you don’t want to rely on third party vendor.</li>
+  <li>As app grows it might get more complicated your serverless management, so there’s an additional learning curve.</li>
+</ul>
+
+<h2 id="some-considerations-when-using-serverless">Some considerations when using serverless</h2>
+
+<ul>
+  <li>Avoid lock-in with a single vendor.</li>
+  <li>Ensure that it remains easy to build.</li>
+</ul>
+
+<h2 id="quick-example-connecting-react-app-to-serverless-provider">Quick Example Connecting React App to Serverless Provider</h2>
+
+<p>Depending on the provider, you might have access to an SDK that you can easily include on your React app.</p>
+
+<p>In the example below with MongoDB Stitch you pass <code class="highlighter-rouge">MongoDB Stitch ID</code> on where is in the cloud and kind of works like Redux where you pass as props to get data from server components.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80838027-a5810f80-8bbd-11ea-8064-5743d907638a.png" alt="demo1" /></p>
+
+<p>Then you can use MongoDB Queries (MQL) to get data and update state from it.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80838438-a5cdda80-8bbe-11ea-8268-9a57ba4fccb5.png" alt="demo2" /></p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80838542-e594c200-8bbe-11ea-9e23-b4e50e7f76ba.png" alt="demo3" /></p>
+
+<h2 id="future-of-serverless">Future of serverless</h2>
+
+<ul>
+  <li>Infraestructure will continue to be abstracted by cloud providers.</li>
+  <li>More serverless options will pop up, so many more to chose form.</li>
+  <li>Serverless will get cheaper and faster in the future.</li>
+</ul>
+:ET

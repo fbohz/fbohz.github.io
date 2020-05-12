@@ -1,0 +1,228 @@
+I"|�<blockquote>
+  <p>Playing with AWS Services Part II - Hola Shenron!</p>
+</blockquote>
+
+<p><strong>Note:</strong> This is a continuation to my last blog on <a href="http://fbohz.com/aws_polly"><strong>TTS with AWS</strong></a> implemented on the Yijing Ball Z (YBZ).</p>
+
+<p>Now that with AWS we can read text out loud, How about we implement <code class="highlighter-rouge">AWS.Translate</code> so we can improve our Duolingo listening skills and the let Polly read our translated Yijing text!</p>
+
+<p>Again, if you don’t know how to setup AWS with Vanilla JS, read the <a href="http://fbohz.com/aws_polly">previous</a> blog to get your AWS SDK setup.</p>
+
+<p>1) To start, let’s instatiate our <code class="highlighter-rouge">AWS.Translate</code> variable so we can use it.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">translate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Translate</span><span class="p">({</span><span class="na">region</span><span class="p">:</span> <span class="dl">'</span><span class="s1">us-east-1</span><span class="dl">'</span><span class="p">});</span>
+</code></pre></div></div>
+<ul>
+  <li>Your config region is important, so use the one appropiate to your own region configuration.</li>
+</ul>
+
+<p>2)  Let’s implement a <a href="https://bulma.io/documentation/components/modal/"><strong>Bulma modal</strong></a> on our navbar that when clicked will give us the option to translate the text.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-background"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
+                      <span class="c">&lt;!-- Read on Bulma documentation to learn how to implement --&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">"display: none;"</span><span class="na">class=</span><span class="s">"navbar-item button is-small is-warninig readTr"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;/a&gt;</span> <span class="ni">&amp;nbsp;</span>                     
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"es navbar-item button is-small is-success translate"</span><span class="nt">&gt;</span>
+                        Español
+                      <span class="nt">&lt;/a&gt;</span>
+                      <span class="ni">&amp;nbsp;</span>
+                      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pt navbar-item button is-small is-primary translate"</span><span class="nt">&gt;</span>
+                        Portugues
+                      <span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/br&gt;&lt;p</span> <span class="na">id=</span><span class="s">"tr-content"</span> <span class="na">style=</span><span class="s">"color: white"</span><span class="nt">&gt;&lt;/p&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"modal-close"</span><span class="nt">&gt;&lt;/button&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p>3) Add eventListeners to our modal so it can be displayed shown. From Bulma documentation we need to add the <code class="highlighter-rouge">is-active</code> class to show the modal and remove it once its closed. We also need to make our buttons inside the modal visible.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">showModal</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">ptBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.pt</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">ptBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
+        <span class="kd">const</span> <span class="nx">esBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.es</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">esBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">is-active</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.modal-close</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr-content</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">""</span>
+       <span class="nx">readTr</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">is-active</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">})</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Here’s how our modal is showing and closing at this point.
+<img src="https://user-images.githubusercontent.com/15071636/79627473-250ed900-80fe-11ea-82ec-eec50ff1b493.gif" alt="aws2 1 10 50 11 PM" /></li>
+</ul>
+
+<p>4) Now that the basic navigation is setup. Let’s implement our text translation, basically I will implement it on the main YBZ content area, so whatever is there will be translated.</p>
+
+<ul>
+  <li>We’ll be using <code class="highlighter-rouge">translateText</code> from AWS.Translate, so read up on <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html"><strong>documentation</strong></a> to learn more.</li>
+  <li>This implementation traverses the DOM under my <code class="highlighter-rouge">main.content</code> and calls <code class="highlighter-rouge">translateText</code> on each node that has text.</li>
+  <li>I added the following code under our modal eventListiner.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+        <span class="kd">const</span> <span class="nx">lang</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.translate</span><span class="dl">"</span><span class="p">)</span>
+        
+        <span class="nx">lang</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">btn</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+                <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="dl">""</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">es</span><span class="dl">"</span>
+                    <span class="nx">ptBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">pt</span><span class="dl">"</span>
+                    <span class="nx">esBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+                <span class="p">}</span>
+
+                <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">main.content</span><span class="dl">"</span><span class="p">).</span><span class="nx">childNodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">node</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="na">Text</span><span class="p">:</span> <span class="nx">node</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span>
+                            <span class="na">SourceLanguageCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auto</span><span class="dl">'</span><span class="p">,</span>
+                            <span class="na">TargetLanguageCode</span><span class="p">:</span> <span class="nx">target</span>
+                        <span class="p">};</span>
+                        
+                         
+                        <span class="nx">translate</span><span class="p">.</span><span class="nx">translateText</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">);</span>
+                                <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error calling Amazon Translate. </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+                                <span class="k">return</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr-content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">TranslatedText</span>
+                            <span class="p">}</span> 
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+            <span class="p">})</span>    
+        
+        <span class="p">})</span>
+
+</code></pre></div></div>
+
+<p>5) Phew! Lets now let Polly read our added translation. Should be same implementation as the previous blog.</p>
+
+<ul>
+  <li>We will be displaying a new button that informs the user they can have the text be read our loud to in the language specified.</li>
+  <li>We will be adding an eventListener on this new button that when clicked depending on the language will set the Polly voice according to the target language and call our <code class="highlighter-rouge">doSynthesize</code> function (from last blog entry) with the appropiate language voice.</li>
+  <li>Below you’ll find the whole implementation with Polly implemented.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">let</span> <span class="nx">translate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Translate</span><span class="p">({</span><span class="na">region</span><span class="p">:</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">region</span><span class="p">});</span>
+    <span class="kd">var</span> <span class="nx">polly</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Polly</span><span class="p">();</span>
+
+    <span class="kd">const</span> <span class="nx">pollyBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.readpolly</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">modal</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.modal</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">readTr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.readTr</span><span class="dl">"</span><span class="p">)</span>
+    
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">showModal</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">ptBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.pt</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">ptBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
+        <span class="kd">const</span> <span class="nx">esBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.es</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">esBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
+
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">is-active</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">lang</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.translate</span><span class="dl">"</span><span class="p">)</span>
+        
+        <span class="nx">lang</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">btn</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+                <span class="nx">readTr</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
+                <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="dl">""</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">es</span><span class="dl">"</span>
+                    <span class="nx">ptBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+                    <span class="nx">readTr</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Quiero escuchar a Shenron!</span><span class="dl">"</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">pt</span><span class="dl">"</span>
+                    <span class="nx">esBtn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+                    <span class="nx">readTr</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Quero ouvir a Shenron!</span><span class="dl">"</span>
+                <span class="p">}</span>
+
+                <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">main.content</span><span class="dl">"</span><span class="p">).</span><span class="nx">childNodes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">node</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">node</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="na">Text</span><span class="p">:</span> <span class="nx">node</span><span class="p">.</span><span class="nx">innerText</span><span class="p">,</span>
+                            <span class="na">SourceLanguageCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">auto</span><span class="dl">'</span><span class="p">,</span>
+                            <span class="na">TargetLanguageCode</span><span class="p">:</span> <span class="nx">target</span>
+                        <span class="p">};</span>
+                        
+                         
+                        <span class="nx">translate</span><span class="p">.</span><span class="nx">translateText</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">);</span>
+                                <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error calling Amazon Translate. </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+                                <span class="k">return</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr-content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">TranslatedText</span>
+                            <span class="p">}</span> 
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+            <span class="p">})</span>    
+        
+        <span class="p">})</span>
+   <span class="p">})</span>
+
+   <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.modal-close</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr-content</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">""</span>
+       <span class="nx">readTr</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">is-active</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">})</span>
+
+  <span class="nx">readTr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">pollyText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr-content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span>
+    <span class="kd">let</span> <span class="nx">thisVoice</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Vitoria</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">lang</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.translate</span><span class="dl">"</span><span class="p">)</span>
+
+    <span class="nx">lang</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">btn</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">btn</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">block</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">btn</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">thisVoice</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Penelope</span><span class="dl">"</span>
+        <span class="p">}</span> 
+    <span class="p">})</span>
+    <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">pollyText</span><span class="p">,</span> <span class="nx">thisVoice</span><span class="p">)</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+
+  <span class="p">})</span>
+    <span class="c1">// doSynthesize AWS.Polly function from last blog</span>
+      <span class="kd">function</span> <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">voice</span><span class="o">=</span><span class="dl">"</span><span class="s2">Joanna</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">pollyParams</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">OutputFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mp3</span><span class="dl">"</span><span class="p">,</span> 
+            <span class="na">SampleRate</span><span class="p">:</span> <span class="dl">"</span><span class="s2">8000</span><span class="dl">"</span><span class="p">,</span> 
+            <span class="na">Text</span><span class="p">:</span> <span class="nx">text</span><span class="p">,</span> 
+            <span class="na">TextType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span> 
+            <span class="na">VoiceId</span><span class="p">:</span> <span class="nx">voice</span>
+        <span class="p">};</span>
+        <span class="nx">polly</span><span class="p">.</span><span class="nx">synthesizeSpeech</span><span class="p">(</span><span class="nx">pollyParams</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">);</span> <span class="c1">// an error occurred</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error calling Amazon Polly. </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">uInt8Array</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">AudioStream</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">arrayBuffer</span> <span class="o">=</span> <span class="nx">uInt8Array</span><span class="p">.</span><span class="nx">buffer</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">arrayBuffer</span><span class="p">]);</span>
+                <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span>
+        
+                <span class="nx">audioElement</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">([</span><span class="nx">url</span><span class="p">]);</span>
+                <span class="nx">audioElement</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>If all goes smooth we’ll have our YBZ translate text and read out loud such translation!</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/79627471-2213e880-80fe-11ea-85fb-1033f1cc3787.gif" alt="aws2 2 10 50 11 PM" /></p>
+:ET
