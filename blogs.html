@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: no-description
 title: All Entries
 ---
-
+<div class="w3-animate-opacity">
 {% for post in site.posts  %}
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
@@ -58,4 +58,4 @@ title: All Entries
     {% endif %}
 {% endfor %}
 </br>
-<h4><center><b><a href="#top">Back To Top</a></b></center></h4>
+<h4><center><b><a href="#top">Back To Top</a></b></center></h4></div>
