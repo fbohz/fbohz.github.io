@@ -136,6 +136,6 @@ Here are some examples:
 
 **Resources**
 
-- Here's my implementation of snake, [Retro Snake](http://fbohz.com/html5_games/retro_snake.html).
-- [W3 Schools HTML Canvas Drawing](https://www.w3schools.com/graphics/canvas_drawing.asp).
-- [MDN Drawing Shapes with Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes).
+- Here's my implementation of snake, [<b>Retro Snake</b>](http://fbohz.com/html5_games/retro_snake.html).
+- Read [<b>W3 Schools HTML Canvas Drawing</b>](https://www.w3schools.com/graphics/canvas_drawing.asp).
+- Checkout [<b>MDN Drawing Shapes with Canvas</b>](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes).
