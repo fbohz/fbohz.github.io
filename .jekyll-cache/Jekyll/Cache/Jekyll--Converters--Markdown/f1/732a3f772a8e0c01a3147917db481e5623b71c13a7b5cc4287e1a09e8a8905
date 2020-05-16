@@ -1,0 +1,14 @@
+I"C<blockquote>
+  <p>HTML Games are fun way to practice your HTML <code class="highlighter-rouge">canvas</code> tag skills as well as Javascript concepts.</p>
+</blockquote>
+
+<h2 id="draft-instructions">Draft Instructions</h2>
+<p>Feel free to create files here. To preview draft files run <code class="highlighter-rouge">jekyll serve --drafts</code></p>
+
+<p>:</p>
+
+<ol>
+  <li><strong>Move File</strong> to _post folder.</li>
+  <li><strong>Rename File</strong>. Include complete date. Example <code class="highlighter-rouge">2020-06-09-html_js_games_intro.markdown</code>.</li>
+</ol>
+:ET

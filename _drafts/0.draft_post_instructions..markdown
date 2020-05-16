@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Draft Posts Instructions"
+---
+
+> Follow these instructions for your draft posts!
+
+## Draft Posts Instructions
+Feel free to create files here. To **preview** draft files run `jekyll serve --drafts`
+
+## Moving Posts from Drafts to Published
+
+1. **Move File** to _post folder.
+2. **Rename File**. Include complete date. Example `2020-06-09-html_js_games_intro.markdown`.
