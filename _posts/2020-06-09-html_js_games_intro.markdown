@@ -133,6 +133,17 @@ document.onkeydown = function(e) {
 }
 ```
 
+**To Recap**
+
+When building HTML5 + JS games make sure you:
+1. Declare the `canvas` element.
+2. Build objects of the game. For example: Snake and Ball (for Snake game). Ball and base for (for breakout game).
+3. Draw objects in the canvas.
+4. Move objects as required.
+5. Use functions to meet game requirements. Make sure you have the game requirements clear.
+6. Add common features such as scores, game over, initial screen etc.
+7. Add other features. E.g difficulty.
+
 **Resources**
 
 - Here's my implementation of snake, [<b>Retro Snake</b>](http://fbohz.com/html5_games/retro_snake.html).
