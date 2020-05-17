@@ -1,0 +1,13 @@
+---
+layout: post
+title:      "TEMPLATE OF DRAFTS"
+# date:       2020-06-15 19:31:03 -0400
+permalink:  copy_from_file_name
+filename: 2020-06-15-three_tier_architecture
+---
+
+> Quote Text Here
+
+# Title Here?
+
+Text
