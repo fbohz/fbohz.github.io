@@ -20,10 +20,10 @@ HTML Games are fun way to practice your HTML `canvas` tag skills as well as Java
 - Canvas is defined inside the body.
 
 ```html
-    <body>
-        <canvas height="500" width="500" style="border: 2px solid #000;" id="ctx">
-        </canvas>
-    </body>
+<body>
+    <canvas height="500" width="500" style="border: 2px solid #000;" id="ctx">
+    </canvas>
+</body>
 ```
 
 **Adding Text with JS to Canvas**
@@ -33,8 +33,8 @@ HTML Games are fun way to practice your HTML `canvas` tag skills as well as Java
 With `fillText()` you can add text, in specific x and y coordinates, and get something like this:
 
 ```js
-            var ctx = document.getElementById("ctx").getContext('2d');
-            ctx.fillText("HI", 150, 250);
+var ctx = document.getElementById("ctx").getContext('2d');
+ctx.fillText("HI", 150, 250);
 ```
 
 ![1](https://user-images.githubusercontent.com/15071636/81889102-61502080-9568-11ea-952c-96daee4d9c55.png)
@@ -49,9 +49,9 @@ To make font larger you can do like `ctx.font = "30px Calibri"`.
 `moveTo()`: takes two params. First cursor will move to specific position. You use it to draw lines with `lineTo()`. You can then create line with `stroke()`. 
 
 ```js
-            ctx.moveTo(100,300)
-            ctx.lineTo(200,300)
-            ctx.stroke();
+ctx.moveTo(100,300)
+ctx.lineTo(200,300)
+ctx.stroke();
 ```
 
 So first two methods define line, third draws the line.
@@ -77,21 +77,21 @@ So when we do modification on canvas and then save the checkpoint and then resto
 Lets try to draw this object:
 
 ```js
-        const square = {
-            width: 300,
-            height: 200,
-            x: 100,
-            y: 200,
-            color: 'red'
-        }
+const square = {
+    width: 300,
+    height: 200,
+    x: 100,
+    y: 200,
+    color: 'red'
+}
 
 ```
 
 We can easily draw our square by accessing the square attributes:
 
 ```js
-        ctx.fillStyle = square.color
-        ctx.fillRect(square.x, square.y, square.width, square.height)
+ctx.fillStyle = square.color
+ctx.fillRect(square.x, square.y, square.width, square.height)
 ```
 
 **Using JS Functions**
@@ -111,27 +111,26 @@ Here are some examples:
 
 ```js
 
+document.getElementById("ctx").onmousedown = function() {
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(100,100,50,50);
 
-            document.getElementById("ctx").onmousedown = function() {
-                ctx.fillStyle = 'blue';
-                ctx.fillRect(100,100,50,50);
-
-            }
+}
 
 
-            document.getElementById("ctx").onmouseup = function() {
-                ctx.fillStyle = 'red';
-                ctx.fillRect(100,100,50,50);
+document.getElementById("ctx").onmouseup = function() {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(100,100,50,50);
 
-            }
+}
 
-            document.onkeydown = function(e) {
-                //a = 65 code
-                if (e.keyCode == 65) {
-                    ctx.fillText('A has been pressed', 100,100);
-                }
+document.onkeydown = function(e) {
+    //a = 65 code
+    if (e.keyCode == 65) {
+        ctx.fillText('A has been pressed', 100,100);
+    }
 
-            }
+}
 ```
 
 **Resources**
