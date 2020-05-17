@@ -53,11 +53,6 @@ In the creation phase (when set globalOject and this) before execution of code w
   - function expressions (defined with var) are partially and `undefined`.
 - Compiler is not moving lines but in the first pass is just **allocating memory**
 
-Hoisting exercises:
-- [Here](https://repl.it/@aneagoie/hoisting)
-- [Second](https://repl.it/@aneagoie/hoisting-2)
-- and [last](https://repl.it/@aneagoie/hoisting-exe)
-
 
 **Function Invocation**
 
@@ -113,15 +108,11 @@ Other coding languages have *block scope*. Any time you do code in curly bracket
 
 So let and const **create block scope** just like in {}
 
-**Scope Exercies**:
-- https://repl.it/@fbohz/JS-is-Weird
-- block scope: https://repl.it/@fbohz/Block-Scope-vs-Function-Scope 
+**Caution with Global Variables**
 
-**Note on global variables**
+You can pollute global namespace. Remember **we have limited space and our memory heap is limited**. You can pollute global scope by keeping adding global variables.
 
-You can pollute global namespace. Remember **we have limited space and our memory heap is limited**. You can pollute global scope by keep adding global variables.
-
-You can also **overwrite** global variables.
+You can also **overwrite** global variables. So avoid them.
 
 ## Concluding Toughts
 
