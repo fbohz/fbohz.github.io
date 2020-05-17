@@ -57,8 +57,8 @@ Thinks like inline caching and hidden classes will also learn. For hidden class 
 Some of these optimizations help the compiler.
 
 Some Resources:
-- [here](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#3-managing-arguments)
-- [and here ](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html)
+- Read article [**here**](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#3-managing-arguments)
+- Check [**this other article**](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html)
 
 *So why don't write machine code from the beginning?*
 
@@ -156,12 +156,10 @@ No matter how fast setTimeout is, it still gets sent to the Web API.
 
 This makes it possible to not rely on just one call stack and memory heap and achieve asynchronous code, with **multiple threads**.
 
-## Final thoughts
+## Final Thoughts
 
 There are many Runtimes, so what is *Node.js*? 
 
 **Node.js** is a *runtime*. So it runs outside the browser. It is a C++ program, like a Node.exe. Node you can access file systems and other things. There are differences such as in Node there's not window but it is replaced with `global`. It creates a runtime outside of the browser. It also uses the asynchronous runtime.
-
-[Exercise prevent stack overflow](https://repl.it/@aneagoie/Prevent-Stack-Overflow)
 
 **Stay tuned for next week's article**, as we'll talk about more basic JavaScript concepts. Till then!
