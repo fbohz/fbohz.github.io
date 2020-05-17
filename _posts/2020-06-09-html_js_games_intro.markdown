@@ -34,7 +34,7 @@ With `fillText()` you can add text, in specific x and y coordinates, and get som
 
 ```js
 var ctx = document.getElementById("ctx").getContext('2d');
-ctx.fillText("HOLA BRAVE NEW WORLD", 150, 250);
+ctx.fillText("HOLA BRAVE NEW WORLD!", 150, 250);
 ```
 
 ![1](https://user-images.githubusercontent.com/15071636/81889102-61502080-9568-11ea-952c-96daee4d9c55.png)
