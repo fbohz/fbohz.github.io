@@ -133,7 +133,7 @@ document.onkeydown = function(e) {
 }
 ```
 
-**To Recap**
+**Recap**
 
 When building HTML5 + JS games make sure you:
 1. Declare the `canvas` element.
