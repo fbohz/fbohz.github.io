@@ -15,20 +15,20 @@ filename: 2020-06-22-getting_started_react_native
 - Highest performance
 - Full access to device capabilities
 
-However you'll need *two separate code bases*. So can we do mobile app and use a single code base? One option
+However you'll need *two separate code bases*. So can we do mobile app and use a single code base? 
 
-*Mobile Web Apps*
+*Option 1: Mobile Web Apps*
 - Fully hosted in the mobile broswer
 - Slowest
 - No access to device capabilities. However it is improving but still lots of limitations
 
-*Hybrid with WebView*
+*Option 2: Hybrid with WebView*
 - Embedded web view based with partial implementation in native code 
 - Slow, but comparable to native apps based on functionality. Still some limitations.
 - Some access to device capabilities
 - Example: Ionic framework.
 
-*Compiled/Interpreted/VM Hybrid*
+*Option 3: Compiled/Interpreted/VM Hybrid*
 - Makes use of Native UIs with the native platform’s rendering engine, not WebViews 
 – Near-native performance 
 – Access to most device capabilities 
