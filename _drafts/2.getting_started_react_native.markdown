@@ -35,7 +35,7 @@ However you'll need *two separate code bases*. So can we do mobile app and use a
 - Built in JS engine that both Android/iOS use
 - Example: React Native
 
-## Hybrid App Development Approaches
+## Digging Deeper
 
 *WebView App*
 - The HTML, CSS and JavaScript code base runs in an internal browser (called WebView) that is wrapped in a native app. Some native APIs are exposed to JavaScript through this wrapper
@@ -55,7 +55,9 @@ via JS byte code)
 - Commercial Frameworks aiming to produce real native code like Xamarin
 (using C#) or Embarcadero
 
-*Advantages of Hybrid Approach*
+## Advantages/Disadvantages of Hybrid Development
+
+**Advantages of Hybrid Approach**
 - Developer can use existing skills
 - One code base for multiple platforms
 - Reduced development time and cost
@@ -64,7 +66,7 @@ via JS byte code)
 - Advanced offline capabilities. You get access to the native storage capabilities on the mobile devices. 
 - Increased visibility because the app can be distributed natively (via app stores) and to mobile browsers (via search engines)
 
-*Drawbacks of Hybrid Approach*
+**Drawbacks of Hybrid Approach**
 - Performance issues for certain types of apps (ones relying
 on complex native functionality or heavy transitions, such
 as 3D games)
@@ -74,7 +76,7 @@ feel
 - Risk of being rejected by Apple if app does not feel native
 enough (for example, a simple website)
 
-*Where Hybrid Apps Work Best*
+**Where Hybrid Apps Work Best**
 - Hybrid approach does not suit all kinds of apps
 - Need to carefully evaluate your target users, their
 platforms of choice and the app’s requirements.
