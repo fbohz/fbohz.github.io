@@ -33,7 +33,9 @@ Android has (V8 JS) and iOS (JS core), RN has the bridge that then implements it
 
 **Getting Started: Using Expo (preferred)**
 
-To get everything running you should install Expo at [expo.io](https://expo.io/learn). Expo will ensure you can test app on mobile straight.
+First [read React Native docs](https://reactnative.dev/docs/getting-started).
+
+Then, to get everything running you should install Expo at [expo.io](https://expo.io/learn). Expo will ensure you can test app on mobile straight.
 
 After installation. To start directly with an expo app use `expo init projectName` then do `expo start`. You can also clone the [**source code repository**](https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo). Then just do `npm install` and `expo start`.
 
