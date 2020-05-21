@@ -89,7 +89,7 @@ platforms of choice and the app’s requirements.
 
 You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native). Take Facebook app as an example, it is completely done using React Native!
 
-So now that you know the options available which road will you take?
+So now that you know the options available *which road will you take?*
 
 ## References
 - [**Multiplatform Mobile App Development with React Native**](https://www.coursera.org/learn/react-native)
