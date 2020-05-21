@@ -1,0 +1,133 @@
+I"�+<blockquote>
+  <p>This article on React Native assumes previous knowledge on React so there will be concepts that come from React.</p>
+</blockquote>
+
+<h1 id="getting-started-with-react-native">Getting Started with React Native</h1>
+
+<p><strong>Note:</strong> This article on React Native assumes previous knowledge on React so there will be concepts that come from React. While reading please refer to the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo"><strong>source code repository</strong></a>.</p>
+
+<p>React Native (RN) is:</p>
+
+<ul>
+  <li>Cross-platform, native iOS and Android apps without web views</li>
+  <li>Mainly focused on the front-end. Uses React JavaScript</li>
+  <li>100% access to native APIs via JavaScript and reuse of packages from NPM</li>
+  <li>Backed by Facebook</li>
+</ul>
+
+<p><strong>React Native Approach</strong></p>
+
+<p>There are React native specific components such as <code class="highlighter-rouge">&lt;View&gt;</code> and <code class="highlighter-rouge">&lt;Text&gt;</code>. RN is a real mobile app. It also uses hot reloading.</p>
+
+<p>It also gives you the options to go native and inject out Swift/Java should you need. Although most of the time you won’t.</p>
+
+<p><strong>How RN works</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/82259138-b43b2680-9920-11ea-86be-545e6896e3fd.png" alt="rn1" /></p>
+
+<p>Android has (V8 JS) and iOS (JS core), RN has the bridge that then implements its framework with JS. RN then spits out native code when we are ready to build with the <code class="highlighter-rouge">export SDK</code>.</p>
+
+<p><strong>Getting Started: Using Expo (preferred)</strong></p>
+
+<p>To get everything running you should install Expo at <a href="https://expo.io/learn">expo.io</a>. Expo will ensure you can test app on mobile straight.</p>
+
+<p>To start directly with an expo app use <code class="highlighter-rouge">expo init projectName</code> then do <code class="highlighter-rouge">expoStart</code>. You can also clone the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo"><strong>source code repository</strong></a>.</p>
+
+<p>You’ll need to install the mobile app version (either in AppStore or GooglePlay) of Expo for your particular device and create an account. Once there just scan from your app the generated QR code.</p>
+
+<p>If all goes well you should should see text saying to open <code class="highlighter-rouge">App.js</code> and so you’re ready to code on!</p>
+
+<p><strong>RN Project Structure</strong></p>
+
+<p>Similar convention with React but no <code class="highlighter-rouge">index.js</code>. <code class="highlighter-rouge">App.js</code> also is your entry point.</p>
+
+<p>Also note the inline based styling different from react. <code class="highlighter-rouge">StyleSheet</code> is imported from RN like JS to apply styles that you can reuse. RN uses <em>flexbox</em> CSS.</p>
+
+<h2 id="react-native-components">React Native Components</h2>
+
+<p>These are just like React components!</p>
+
+<ul>
+  <li>All the features of React components: state, props, JSX, etc.</li>
+  <li>It uses native components instead of web components in building the view</li>
+  <li>We also use an all-in-one <em>UI kit</em> for creating apps in react native!</li>
+  <li>It provides several useful UI components</li>
+  <li>Useful in designing the UI for your app</li>
+</ul>
+
+<p>There are some <em>primitive RN elements</em> such as the following:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/82503725-73c5df00-9abf-11ea-93dc-2a5ae3287c92.png" alt="Screen Shot 2020-05-20 at 5 29 00 PM" /></p>
+
+<p>As you follow along you can download and checkout the following repo <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">here</a>. If you navigate to <code class="highlighter-rouge">App.js</code>, you’ll notice <code class="highlighter-rouge">StyleSheet.create</code>, this is optional and you can also pass styles <strong>inline</strong> just like in React.</p>
+
+<p>You might also notice how when you need to return more than one element you need to wrap it in a single element in this case we can do it in a <code class="highlighter-rouge">View</code>.</p>
+
+<p><strong>Implementing React Native Elements</strong></p>
+
+<p>The following example uses <code class="highlighter-rouge">FlatList</code> from ‘react-native’ and <code class="highlighter-rouge">ListItem</code> from ‘react-native-elements’.</p>
+
+<p>If you check on the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">repo</a>, you’ll see the <code class="highlighter-rouge">&lt;ListScreen&gt;</code> component. There you’ll identify the React Native’s <em>FlatList Element</em>:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/82512733-8bf52880-9ad6-11ea-9a40-03fd346f35d6.png" alt="Screen Shot 2020-05-20 at 8 14 30 PM" /></p>
+
+<p>So FlatList does optimizations for you for the mobile world when lists become big. Here the FlatList reminds us just like React that <code class="highlighter-rouge">key</code> is important. ‘Keys’ are important when this list is changed, RN will have to rebuild the entire list if we don’t specify the key. Keys optimize and RN will re-render only what it needs.</p>
+
+<p>Flatlist properties:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">horizontal</code> will make list horizontal. Only need to add keyword <code class="highlighter-rouge">horizontal</code> as Flatlist element prop.</li>
+  <li>To hide horizontal bar below just have <code class="highlighter-rouge">showsHorizontalScrollIndicator={false}</code></li>
+</ul>
+
+<h2 id="rn-navigation">RN Navigation</h2>
+
+<p>Extensible and easy-to-use navigation solution. Built-in navigators like Stack, Drawer, Tab.</p>
+
+<p>React Native Navigation supports navigational features. We can have common views of a navigational menu, with <em>stack based</em> pages we commonly see on mobile apps.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/82474695-0a2edc00-9a91-11ea-9dcb-ebd4ccb89357.png" alt="Screen Shot 11 56 01 AM" /></p>
+
+<p>To install better read documentation <a href="https://reactnavigation.org/docs/getting-started/">here</a>.</p>
+
+<p><em>Note:</em> You might notice the newer version of RN Navigation has different implementation.</p>
+
+<p>Features:</p>
+
+<ul>
+  <li>It automatically adds back botton.</li>
+  <li>Provides support for transition between screens</li>
+  <li>Manages navigation history
+    <ul>
+      <li>Similar to web browser</li>
+    </ul>
+  </li>
+  <li>Provides the gestures and animations when navigating between routes in the stack
+    <ul>
+      <li>Enables you to go back, tied to Android back button</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Two Types of Buttons for Navigation</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/82516115-99fb7700-9adf-11ea-80b6-00c9ef98ec47.png" alt="Screen Shot 2020-05-20 at 9 19 19 PM" /></p>
+
+<p>We add the text as string and use the <code class="highlighter-rouge">onPress</code> attribute. Remember Button is self-closed. Out of both for navigation we recommend TouchableOpacity element if you need more customization.</p>
+
+<p><strong>Implementing Navigation</strong></p>
+
+<p>We implement navigation on RN with React Navigator. In <code class="highlighter-rouge">App.js</code> we see how it uses the <code class="highlighter-rouge">createStackNavigator()</code> method. Depending on the version of React Navigator the way you implement it might change.</p>
+
+<p>With props passsed by the stackNavigator we can tell what to show or not on the screen. To access the navigation object you access it by <code class="highlighter-rouge">props.navigation</code>. On the included <code class="highlighter-rouge">props.navigation.navigate()</code> method we can pass in the screen we defined on App.js and it will render the component we want! As easy as:</p>
+
+<p><code class="highlighter-rouge">onPress={() =&gt; props.navigation.navigate('ComponentName')}</code></p>
+
+<p>Then this takes us to the basic navigation and UI display with React Native. If you</p>
+
+<h2 id="react-native-readings">React Native Readings</h2>
+
+<ul><li><a href="https://www.logicroom.co/react-native-architecture-explained/" target="_blank" rel="noopener nofollow">React Native Architecture : Explained!</a></li><li><a href="https://medium.com/kuralabs-engineering/reactive-core-architecture-for-react-native-and-react-applications-d590daf4ef8a" target="_blank" rel="noopener nofollow">Reactive Core architecture for React Native and React applications</a></li><li><a href="http://www.discoversdk.com/blog/how-react-native-works" target="_blank" rel="noopener nofollow">How Does React Native Work?</a></li><li><a href="https://www.youtube.com/watch?v=7rDsRXj9-cU" target="_blank" rel="noopener nofollow">React.js Conf 2015 Keynote 2 - A Deep Dive into React Native</a></li>
+<li><a href="http://www.smashingmagazine.com/2014/10/providing-a-native-experience-with-web-technologies/" target="_blank" rel="noopener nofollow">Hybrid Mobile Apps: Providing A Native Experience With Web Technologies</a></li><li><a href="https://developer.salesforce.com/page/Native,_HTML5,_or_Hybrid:_Understanding_Your_Mobile_Application_Development_Options" target="_blank" rel="noopener nofollow">Native, HTML5, or Hybrid: Understanding Your Mobile Application Development Options</a></li><li><a href="http://mobile-frameworks-comparison-chart.com/" target="_blank" rel="noopener nofollow">Mobile Frameworks Comparison Chart</a></li><li><a href="http://www.riaxe.com/blog/top-cross-platform-mobile-development-tools/" target="_blank" rel="noopener nofollow">40+ CROSS PLATFORM DEVELOPMENT TOOLS FOR MOBILE APP AND GAMES</a></li>
+<li><a href="https://facebook.github.io/react-native/docs/components-and-apis.html" target="_blank" rel="noopener nofollow">Components and APIs</a></li><li><a href="https://facebook.github.io/react-native/docs/view.html" target="_blank" rel="noopener nofollow">View</a></li><li><a href="https://facebook.github.io/react-native/docs/text.html" target="_blank" rel="noopener nofollow">Text</a></li><li><a href="https://facebook.github.io/react-native/docs/flatlist.html" target="_blank" rel="noopener nofollow">Flatlist</a></li><li><a href="https://facebook.github.io/react-native/docs/stylesheet.html" target="_blank" rel="noopener nofollow">Stylesheet</a></li><li><a href="https://react-native-training.github.io/react-native-elements/docs/getting_started.html" target="_blank" rel="noopener nofollow">React Native Elements</a></li><li><a href="https://react-native-training.github.io/react-native-elements/docs/overview.html" target="_blank" rel="noopener nofollow">React Native Elements 1.0.0-beta5 Documentation</a></li><li><a href="https://react-native-training.github.io/react-native-elements/docs/listitem.html" target="_blank" rel="noopener nofollow">RNE List Item</a></li><li><a href="https://react-native-training.github.io/react-native-elements/docs/card.html" target="_blank" rel="noopener nofollow">RNE Card</a></li></ul>
+:ET
