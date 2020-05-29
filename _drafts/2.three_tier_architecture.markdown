@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "What is a Three-Tier Architecture?"
-# date:       2020-06-15 19:31:03 -0400
+# date:       2020-06-22 19:31:03 -0400
 permalink:  three_tier_architecture
-filename: 2020-06-15-three_tier_architecture
+filename: 2020-06-22-three_tier_architecture
 ---
 
 > We often hear people talking about the three tier architecture for web development...while these tiers often have different languages, there are systems that implement a single language for all tiers
