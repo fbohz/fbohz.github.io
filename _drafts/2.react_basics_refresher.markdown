@@ -8,7 +8,7 @@ filename: 2020-06-22-react_basics_refresher
 
 > This is a quick React refresher on the basics...If you're new to React this should get you started on a conceptual realm. 
 
-# React Basics Concepts
+# React 5 Minute Refresher
 
 This is a quick React refresher on the basics, recommended to those with experience in React. If you're new to React this should get you started on a conceptual realm. 
 
