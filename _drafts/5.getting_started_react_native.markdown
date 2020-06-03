@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Getting Started with React Native"
-# date:       2020-07-06 19:31:03 -0400
+# date:       2020-07-13 19:31:03 -0400
 permalink:  getting_started_react_native
-filename: 2020-07-06-getting_started_react_native
+filename: 2020-07-13-getting_started_react_native
 ---
 
 > This article on React Native assumes previous knowledge on React so there will be concepts that come from React.

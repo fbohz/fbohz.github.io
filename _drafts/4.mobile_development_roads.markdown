@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Mobile Development - Which Road To Take?"
-# date:       2020-06-29 19:31:03 -0400
+# date:       2020-07-06 19:31:03 -0400
 permalink:  mobile_development_roads
-filename: 2020-06-29-mobile_development_roads
+filename: 2020-07-06-mobile_development_roads
 ---
 
 > You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native)...
