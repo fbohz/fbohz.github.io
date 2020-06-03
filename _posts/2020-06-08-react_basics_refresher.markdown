@@ -13,7 +13,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 ## React Brief History
 
-- Back in the day websites had sincronous tasks from the backend, and refreshed the page for everythinit needed.
+- Back in the day, websites had sincronous tasks from the backend, and refreshed the page every time new data was needed.
 - jQuery took care of complexities and also worked in all browsers
 - Backbone.js allowed to organize these js files.
 - SPA was born out of working more and more with the DOM.
