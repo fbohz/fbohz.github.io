@@ -25,7 +25,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 ## React Core Principles
 
 -  React virtual DOM (don't touch the DOM). React will do it. 
-   - *Imperative Programming*: Changing directly the DOM through JS (e.g. getElementById). This approach has that it becomes difficult to point and identify relationships between events.
+   - *Imperative Programming*: Changing directly the DOM through JS (e.g. `getElementById`). This approach has that it becomes difficult to point and identify relationships between events.
    - *Declarative Programming*: Declares to React what the state or data should look like. React will make the decision of how to implement it. This `state` is one big JS object. Resulting in less complexity, faster developer times. 
 - *Components* 
   - Put toguether they form bigger components and form the whole app. You can copy these components and reuse them. Components are built with JSX.
@@ -64,7 +64,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 JSX has different keywords such as `className` instead of regular HTML 'class'. Also anything in between `{}` is JavaScript injected through JSX.
 
-React always intercepts all events and then we use setState to trigger a *re-render*, b/c state just got updated. 
+React always intercepts all events and then we use setState to trigger a *re-render*, because state just got updated. 
 
 JSX creates that virtual DOM and then re-renders as state changes.
 
@@ -78,7 +78,7 @@ Our React components act like custome elements that we can mix with common HTML 
 
 To be able to do special things we get to use the special attribute `props` that carry data, functions and eveything to make our application work effectively.
 
-Last thing. You might notice on Class Components could have methods and arrow function declarations inside. A good rule of thumb is this: Use arrow functions on any class methods you define and aren't part of React (i.e. render(), componentDidMount()).
+Last thing. You might notice on Class Components could have methods and arrow function declarations inside. A good rule of thumb is this: *Use arrow functions on any class methods you define and aren't part of React (i.e. render(), componentDidMount())*.
 
 **React Lifecycle Methods (Class Components)**
 
@@ -87,12 +87,12 @@ They are methods that get called automatically by React in particular instances 
 1. `constructor()`: Called first. Allows the class to have access to lifecycle components. Here is where you declare your state.
 2. `render()`: Render is called next to display HTML.
 3. `componentDidMount()`: This lifecycle component when component is mounted good when calling fetch requests. This will cause a re-render so `render()` gets called again.
-4. `componentDidUpdate`: Any updates brings your component to updating phase. React here selectively changes parts of the DOM and it *doesn't remount the component*. `componentDidUpdate` is called after update. Here you can do additional fetch calls as you compare prev and new props. [Read more](https://reactjs.org/docs/react-component.html#componentdidupdate).
+4. `componentDidUpdate`: Any updates brings your component to updating phase. React here selectively changes parts of the DOM and it *doesn't remount the component*. `componentDidUpdate` is called after update. Here you can do additional fetch calls as you compare prev and new props. [**Read more**](https://reactjs.org/docs/react-component.html#componentdidupdate).
 
 Other lifecycle methods:
 
-- `shouldComponentUpdate()`: It checks the props and can decide whether or not update. This is done for optimization read [here](https://reactjs.org/docs/react-component.html#shouldcomponentupdate) to learn more. You can also consider using React Pure Components, read [here](https://reactjs.org/docs/react-api.html#reactpurecomponent).
-- `componentWillUnmount()`: Called when a component is being removed from the DOM. This is where cleanup can be done, such as memory leaks that JS garbage collection has not picked up. Read [docs](https://reactjs.org/docs/react-component.html#componentwillunmount) to learn more.
+- `shouldComponentUpdate()`: It checks the props and can decide whether or not update. This is done for optimization read [**here**](https://reactjs.org/docs/react-component.html#shouldcomponentupdate) to learn more. You can also consider using React Pure Components, read [**here**](https://reactjs.org/docs/react-api.html#reactpurecomponent).
+- `componentWillUnmount()`: Called when a component is being removed from the DOM. This is where cleanup can be done, such as memory leaks that JS garbage collection has not picked up. Read [**docs**](https://reactjs.org/docs/react-component.html#componentwillunmount) to learn more.
 
 Check out this useful [diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) on React lifecycle methods.
 
@@ -121,7 +121,7 @@ Remember this distinction. Synchronous happens literrally immediately. Async tak
 
 **Virtual DOM**
 
-Remember we don't directly (impreatively) change the DOM. React takes care of through the virtual DOM. React has what is called `synthetic Event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own parameters that is why React feels so fast. 
+Remember we don't directly (impreatively) change the DOM. React takes care of through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own parameters that is why React feels so fast. 
 
 So React takes all the hard work on showing and hiding elements from the DOM for us but we have to learn its mechanism for re-render and how we manage state. 
 
