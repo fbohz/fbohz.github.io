@@ -13,7 +13,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 ## React Brief History
 
-- Back in the day, websites had sincronous tasks from the backend, and refreshed the page every time new data was needed.
+- Back in the day, websites had synchronous tasks from the backend, and refreshed the page every time new data was needed.
 - jQuery took care of complexities and also worked in all browsers
 - Backbone.js allowed to organize these js files.
 - SPA was born out of working more and more with the DOM.
@@ -28,7 +28,7 @@ This is a React refresher on the basics, **recommended to those with experience 
    - *Imperative Programming*: Changing directly the DOM through JS (e.g. `getElementById`). This approach has that it becomes difficult to point and identify relationships between events.
    - *Declarative Programming*: Declares to React what the state or data should look like. React will make the decision of how to implement it. This `state` is one big JS object. Resulting in less complexity, faster developer times. 
 - *Components* 
-  - Put toguether they form bigger components and form the whole app. You can copy these components and reuse them. Components are built with JSX.
+  - Put together they form bigger components and form the whole app. You can copy these components and reuse them. Components are built with JSX.
   - Reusable components e.g. React.bootstrap, Blueprint etc.
 - *Unidirectional* Data Flow.
   - Anytime we want something to change 'state' has to change.
@@ -45,7 +45,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 ## Create React App
 
 - Run as as `npx create-react-app myAppName`
-- Creact React App is CLI created so we can build fast React apps.
+- Create React App is CLI created so we can build fast React apps.
 - `npx` allows you to build using Create React App without globally installing it first.
 - `react-scripts` does things for us so we don't worry about webpack nor Babel. 
 - When we do `build` on React project, it will take all code inside src and bring it to public folder.
@@ -74,9 +74,9 @@ You can have react components as classes just as functions. React class componen
 
 We can also have components that *do not* extend from `React.Component`, we can also get access to state via *hooks*. We build this with ES6 arrow function syntax. In the past these functional components only received props and returned HTML form JSX.
 
-Our React components act like custome elements that we can mix with common HTML elements but with special powers! 
+Our React components act like custom elements that we can mix with common HTML elements but with special powers! 
 
-To be able to do special things we get to use the special attribute `props` that carry data, functions and eveything to make our application work effectively.
+To be able to do special things we get to use the special attribute `props` that carry data, functions and everything to make our application work effectively.
 
 Last thing. You might notice on Class Components could have methods and arrow function declarations inside. A good rule of thumb is this: *Use arrow functions on any class methods you define and aren't part of React (i.e. render(), componentDidMount())*.
 
@@ -117,11 +117,11 @@ When you work on your tree of state you might want to *lift state* to parent com
 
 **Synchronous vs Asynchronous**
 
-Remember this distinction. Synchronous happens literrally immediately. Async takes time that JavaScript nor React does not know. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. In order to see change after when using setState you must use the second argument on its syntax.
+Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React does not know. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. In order to see change after when using setState you must use the second argument on its syntax.
 
 **Virtual DOM**
 
-Remember we don't directly (impreatively) change the DOM. React takes care of through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own parameters that is why React feels so fast. 
+Remember we don't directly (imperatively) change the DOM. React takes care of through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own parameters that is why React feels so fast. 
 
 So React takes all the hard work on showing and hiding elements from the DOM for us but we have to learn its mechanism for re-render and how we manage state. 
 
