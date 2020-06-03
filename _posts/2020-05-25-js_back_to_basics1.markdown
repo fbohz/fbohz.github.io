@@ -146,7 +146,11 @@ setTimeout(() => {console.log('2')}, 0)
 
 console.log('3')
 
-//runs 1, 3, 2 because it has timeout of 1 second, moved away from call stack gives to web API, and keeps running next line
+/*
+Runs 1, 3, 2 because it has timeout. No matter the length.
+Then moved away from call stack gives back to web API.
+So after it keeps running the next line
+*/
 ```
 This event loop runs all the time, won't start putting anything to the call stack is empty and already runs.
 
