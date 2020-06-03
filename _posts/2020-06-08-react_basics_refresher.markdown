@@ -39,8 +39,8 @@ This is a React refresher on the basics, **recommended to those with experience 
   - Angular is a framework and gives you everything. 
   - *React is a library* and lets you use any tools you want from outside.
 - React Everywhere
-  - React native
-  - React desktop, React 360 (VR)
+  - React Native
+  - React Desktop and React 360 (VR)
 
 ## Create React App
 
