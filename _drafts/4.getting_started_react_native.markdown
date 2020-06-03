@@ -92,7 +92,7 @@ To install read documentation [here](https://reactnavigation.org/docs/getting-st
 
 Features:
 
-- It automatically adds back botton.
+- It automatically adds back bottom.
 - Provides support for transition between screens
 - Manages navigation history 
   - Similar to web browser 
@@ -109,7 +109,7 @@ We add the text as string and use the `onPress` attribute. Remember Button eleme
 
 We implement navigation on RN with React Navigator. In `App.js` we see how it uses the `createStackNavigator()` method. Depending on the version of React Navigator the way you implement it might change.
 
-With props passsed by the stackNavigator() we can tell what to show or not on the screen. To access the navigation object you access it by `props.navigation`. On the included `props.navigation.navigate()` method we can pass in the screen we defined on App.js and it will render the component we want! It is easy as:
+With props passed by the stackNavigator() we can tell what to show or not on the screen. To access the navigation object you access it by `props.navigation`. On the included `props.navigation.navigate()` method we can pass in the screen we defined on App.js and it will render the component we want! It is easy as:
 
 `onPress={() => props.navigation.navigate('ComponentName')}`
 

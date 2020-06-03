@@ -10,7 +10,7 @@ filename: 2020-06-29-mobile_development_roads
 
 # Mobile Development - Which Road To Take?
 
-There are few options available when it comes to mobile devlopment.
+There are few options available when it comes to mobile development.
 
 *Native Apps* (using Swift for iOS or Java for Android):
 - Platform specific skills
@@ -20,7 +20,7 @@ There are few options available when it comes to mobile devlopment.
 However you'll need *two separate code bases*. So can we do mobile app and use a single code base? 
 
 *Option 1: Mobile Web Apps*
-- Fully hosted in the mobile broswer
+- Fully hosted in the mobile browser
 - Slowest
 - No access to device capabilities. However it is improving but still lots of limitations
 
@@ -50,7 +50,7 @@ compiled/interpreted to native code or run on VM for each supported platform. Th
 - Examples: React Native, NativeScript, Appcelerator Titanium, Xamarin, Embarcadero, FireMonkey
 
 *Different types of frameworks aimed to build hybrid apps*
-- Frameworks targetting HTML5 content like Ionic + Cordova/Phonegap (both
+- Frameworks targeting HTML5 content like Ionic + Cordova/Phonegap (both
 via JS byte code)
 - Frameworks like React Native, NativeScript and Appcelerator Titanium that render the UI using the platform’s native controls but still work via JS
 - Free (or partially free) Frameworks aiming to produce real native code like Unity (C# or JS based, Games oriented), Kivy (Python Based) or libgdx (Java based, Game Oriented)

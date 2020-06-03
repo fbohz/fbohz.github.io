@@ -1,16 +1,16 @@
 ---
 layout: post
-title:      "Systems Design Part 2: Digging Depper"
+title:      "Systems Design Part 2: Digging Deeper"
 date:       2020-04-27 19:31:03 -0400
 permalink:  sd_basics2
 ---
 
-> Digging Depper into SD 
+> Digging Deeper into SD 
 
 **Note**: This article is somewhat of a continuation of the [**last blog**](http://fbohz.com/sd_basics1) the basics of Systems Design (SD). The main difference is that on this article I'll use **examples of other SDs** to explain the concepts better.
 
 
-## Digging Depper: High Level System Design and REST API
+## Digging Deeper: High Level System Design and REST API
 
 After we got some capacity estimates, now it is worth coming up with a basic high level design of the system and a Entity Relationship Diagram (ERD).
 
@@ -39,9 +39,9 @@ Here think about any **appropriate HTTP error(s)** returned when accessing the A
 
 The component design part can be the most complex part and is the one that talks about the scalability of our system.
 
-There's a concept called **CAP Theorem** that states that you cannnot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. 
+There's a concept called **CAP Theorem** that states that you cannot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. 
 
-Example: Shortening URL. Long URL hard to remeber and short URL chances of collission.
+Example: Shortening URL. Long URL hard to remember and short URL chances of collision.
 
 So in what part would you focus your design? Consistency, availability, portioning, and/or performance? What part(s) are important, why? 
 
@@ -49,7 +49,7 @@ Lets now drill down into our **component design**:
   - Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
   - Database schema:
     - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
-    - Think object / file system storate for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
+    - Think object / file system storage for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
   - Expand your SD and include Algorithms / Services:
     - *Horizontal vs. Vertical Scaling*: Horizontal scaling means that you scale by adding more servers into your pool of resources whereas vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server. Vertical scaling might imply downtime and comes with limit.
       - Good examples of horizontal scaling are Cassandra and MongoDB. Vertical is MySQL.

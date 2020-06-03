@@ -9,7 +9,7 @@ permalink:  aws_polly
 
 In order to improve my deployment skills, I began playing with AWS Services.
 
-A really cool service is [**Amazon Polly**](https://docs.aws.amazon.com/polly/index.html) a cloud Text-to-Speech (TTS) service that converts text to lifelike speech. It supports multiple languages and can add engagement and acessibility to your app. 
+A really cool service is [**Amazon Polly**](https://docs.aws.amazon.com/polly/index.html) a cloud Text-to-Speech (TTS) service that converts text to lifelike speech. It supports multiple languages and can add engagement and accessibility to your app. 
 
 ## Talk to me Shenron!
 

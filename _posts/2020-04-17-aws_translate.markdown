@@ -27,7 +27,7 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 <div class="modal-background"></div>
 <div class="modal-content">
   <!-- Read on Bulma documentation to learn how to implement -->
-  <a style="display: none;"class="navbar-item button is-small is-warninig readTr">
+  <a style="display: none;"class="navbar-item button is-small is-warning readTr">
   </a> &nbsp;                     
   <a class="es navbar-item button is-small is-success translate">
     Español
@@ -69,7 +69,7 @@ document.querySelector(".modal-close").addEventListener('click', function(e){
 
    - We'll be using `translateText` from AWS.Translate, so read up on [**documentation**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html) to learn more.
    - This implementation traverses the DOM under my `main.content` and calls `translateText` on each node that has text. 
-   - I added the following code under our modal eventListiner.
+   - I added the following code under our modal eventListener.
 
 ```js
 
@@ -116,7 +116,7 @@ lang.forEach(function(btn) {
 5) Phew! Lets now let Polly read our added translation. Should be same implementation as the previous blog. 
 
    - We will be displaying a new button that informs the user they can have the text be read our loud to in the language specified.
-   - We will be adding an eventListener on this new button that when clicked depending on the language will set the Polly voice according to the target language and call our `doSynthesize` function (from last blog entry) with the appropiate language voice. 
+   - We will be adding an eventListener on this new button that when clicked depending on the language will set the Polly voice according to the target language and call our `doSynthesize` function (from last blog entry) with the appropriate language voice. 
 
 Below you'll find the complete implementation with Polly implemented.
 

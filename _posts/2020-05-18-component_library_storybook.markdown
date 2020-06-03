@@ -40,7 +40,7 @@ Some examples:
 
 ## How to Build Your Own Library
 
-Building the componenets is the easiest part of building the library. Storybook has many add-ons you can use. You can start with vanilla Storybook and expand.
+Building the components is the easiest part of building the library. Storybook has many add-ons you can use. You can start with vanilla Storybook and expand.
 
 For animated components you can use **GreenSock** or **Animate.CSS**. For icons you can use FontAwesome. You can also try Rollup.js as an alternative to Webpack. 
 
@@ -85,7 +85,7 @@ You can also have an external version of library (such as the link shared above)
 
 *Final tips*
 
-- **Keep it simple**. Sometimes being limiting/restricting on props, might mean you have to add a lot of conditionals to keep up with all the use cases. So being open at the beggining can save you a lot of upfront time. Start with less opinionated component and build from there if really need it. Make your components more flexible. See my [**last blog**](http://fbohz.com/react_pattern_apropcalypse) for more info on flexible components.
+- **Keep it simple**. Sometimes being limiting/restricting on props, might mean you have to add a lot of conditionals to keep up with all the use cases. So being open at the beginning can save you a lot of upfront time. Start with less opinionated component and build from there if really need it. Make your components more flexible. See my [**last blog**](http://fbohz.com/react_pattern_apropcalypse) for more info on flexible components.
 - Unfinished components are ok. Build from the feedback of your users.
 - Have accesibility in mind.
 - [**Read Atomic Design Book**](https://atomicdesign.bradfrost.com/table-of-contents/) to increase your knowledge and build a solid library with advanced components families. 

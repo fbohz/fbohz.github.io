@@ -45,7 +45,7 @@ Since hour total storage is 120M we should expect roughly 120GB of storage just 
 
 *Tip*: Try [**this**](https://whatsabyte.com/P1/byteconverter.htm) resource for a good byte/kb/gb etc. conversion tool.
 
-Regardig bandwidth of *incoming* data we should expect roughly 1KB per second as our QPS is 1/s. Read requests about 50KB with our 1:50 ratio.
+Regarding bandwidth of *incoming* data we should expect roughly 1KB per second as our QPS is 1/s. Read requests about 50KB with our 1:50 ratio.
 
 ## Road Ahead for SD Explorations
 

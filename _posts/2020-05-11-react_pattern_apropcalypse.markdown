@@ -58,7 +58,7 @@ Because component is built on top of a hook then you can modify to make things y
 
 **What is important** is that this pattern doesn't add any complexity to the logic behind the component. You can add features to it and have total control of render and no you're no longer responsible of use cases you don't want to support.
 
-As all the logic is stored in `useAccordion` custom hook, it gives flexibility and control as to how a particular user of the compoenent wants the UI to be rendered.
+As all the logic is stored in `useAccordion` custom hook, it gives flexibility and control as to how a particular user of the component wants the UI to be rendered.
 
 Remember we are **inverting control**, as it can receive its own custom reducer, props so it can adapt to it. This is a **benefit of React Hooks**.
 

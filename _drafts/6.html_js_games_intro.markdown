@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "HTML5 + JS Games - An Intro to the Canvas"
-# date:       2020-06-15 19:31:03 -0400
+# date:       2020-07-20 19:31:03 -0400
 permalink:  html_js_games_intro
-filename:   2020-06-15-html_js_games_intro
+filename:   2020-07-20-html_js_games_intro
 ---
 
 > HTML Games are fun way to practice your HTML `canvas` tag skills as well as Javascript concepts.
@@ -68,6 +68,7 @@ So first two methods define line, third draws the line.
 The canvas object we identified as `ctx` has many properties like we've been describing. Sometimes if we `fillStyle()` ctx then everything after could be red as well! 
 
 To manage this we have *canvas state*. 
+
 - `save()`: whatever was the state we want to save at that point like a *checkpoint*
 - we can then call `restore()` to restore to previous state.
 
@@ -104,6 +105,7 @@ We use the `setInterval()` to accomplish this. This will call the function every
 **User Inputs & Event Handling**
 
 You can control events with keyboard and mouse such as:
+
 - `onmousedown`
 - `onmouseup`
 - `onkeydown`
@@ -137,6 +139,7 @@ document.onkeydown = function(e) {
 **Recap**
 
 When building HTML5 + JS games make sure you:
+
 1. Declare the `canvas` element.
 2. Build objects of the game. For example: Snake and Food (for Snake game). 
 3. Draw objects in the canvas.

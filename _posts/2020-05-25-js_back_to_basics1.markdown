@@ -14,7 +14,7 @@ On this article, we'll go back to the basics in JavaScript and discuss about the
 
 JS Engine allows to have the machine to understand code. So it acts as a *translator*. There are a ton of JS Engines written by programmers. They can be written in other languages such as C++. An example of this is V8. These engine allows JS to run faster and faster.
 
-Engines looks for lexical anaylisis formed into a **tree like structure call AST**:
+Engines looks for lexical analysis formed into a **tree like structure call AST**:
 
 ![1](https://user-images.githubusercontent.com/15071636/81210695-db483e80-8f97-11ea-820d-3006718796e1.png)
 
@@ -72,7 +72,7 @@ JS engine needs to store and keep track of everything. Memory heap uses, allocat
 
 Memory heap is like a free store, with no order. Allows to store variables.
 
-Call stack is like a region in memory acts like a FIFO method. You add things like functions to the call stack starting with the global execution context (sometimes as anyonymous)
+Call stack is like a region in memory acts like a FIFO method. You add things like functions to the call stack starting with the global execution context (sometimes as anonymous)
 
 You can check the call stack in google chrome:
 

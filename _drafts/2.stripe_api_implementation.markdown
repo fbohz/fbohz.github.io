@@ -1,0 +1,19 @@
+---
+layout: post
+title:      "DRAFTS_TEMPLATE"
+# date:       2020-06-22 19:31:03 -0400
+permalink:  stripe_api_implementation
+filename: 2020-06-22-stripe_api_implementation
+---
+
+> Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy
+
+# Implementing Stripe API in React
+
+In my latest React project, [Studio Ghibli's Fan Hub](https://github.com/fbohz/studio-ghibli-fan-app-demo) I implemented Stripe API to test and handle payments on the Shop component of the app. 
+
+Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy.
+
+## Intro to Stripe
+
+Stripe is well known in the payments sphere. You can read the [docs](https://stripe.com/docs) to learn more how easy it can be implemented. 
