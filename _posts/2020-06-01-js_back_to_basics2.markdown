@@ -33,9 +33,9 @@ As soon as JS engine sees `()` it creates an **Execution Context (EC)**:
 **Lexical Environment / Scope**
 - It means **where** you write something.
 - They are like little universes each time there's a new execution context.
-- functions within fuctions are in the lexical environment of another functions
+- functions within functions are in the lexical environment of another functions
 - Knowing where it was written, the compiler can make decisions what to do.
-- Remember everytime we add a new function we create a new planet.
+- Remember every time we add a new function we create a new planet.
 
 Execution context tells which lexical environment (planet) is currently running.
 
@@ -44,7 +44,7 @@ Execution context tells which lexical environment (planet) is currently running.
 *The very first lexical environment is the global environment*.
 
 **Hoisting**
-In the creation phase (when set globalOject and this) before execution of code we have hosting:
+In the creation phase (when set globalObject and this) before execution of code we have hosting:
 - Hoisting is the behavior of moving variables and fn declarations to their context.
 - During creation phase (first go through) it allocates memory. As soon as they see variables or function it allocates them, the first run they will be as `undefined`.
   - variables with `var` are then **partially hoisted**. Var is as undefined.
@@ -56,7 +56,7 @@ In the creation phase (when set globalOject and this) before execution of code w
 
 **Function Invocation**
 
-Remember JS **programs assing in memory variables and then write functions to do something with those variables**.
+Remember JS **programs assign in memory variables and then write functions to do something with those variables**.
 
 So what are functions?
 - function *declaration* start with `function` keyword. They get hoisted. Define at run-time.
@@ -73,7 +73,7 @@ So what are functions?
 
 What about variables created inside of execution contexts of functions? They are called Variable Environment.
 
-Some functions have access to certain variables, while others not. Remember functions have their own execution content in which variabs reside and the first execution context is the global() one. 
+Some functions have access to certain variables, while others not. Remember functions have their own execution content in which variables reside and the first execution context is the global() one. 
 
 Variables default to their outermost execution context. Execution context have their own variable environment.
 
@@ -114,6 +114,6 @@ You can pollute global namespace. Remember **we have limited space and our memor
 
 You can also **overwrite** global variables. So avoid them.
 
-## Concluding Toughts
+## Concluding Thoughts
 
 This seems to be a robust discussion on JS foundational concepts. There are still other concepts worth exploring including IIFE, this keyword and more. Please be sure to read on them. An article I previously wrote about this can be found [here](https://medium.com/swlh/javascript-this-a-quick-example-regular-arrow-functions-and-methods-95fdfae01c98).
