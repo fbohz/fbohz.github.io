@@ -27,7 +27,8 @@ Here is the **implementation**:
 
 ```js
 <div class="navbar-end"> 
-    <a class="navbar-item button is-small is-warning readpolly">Talk to me Shenron!</a>
+ <a class="navbar-item button is-small is-warning readpolly">
+ Talk to me Shenron!</a>
 </div> 
 ```
 
@@ -59,7 +60,7 @@ function doSynthesize(text) {
      TextType: "text", 
      VoiceId: "Joanna"
  };
- 
+
 polly.synthesizeSpeech(pollyParams, function(err, data) {
   if (err) {
       console.log(err, err.stack); // an error occurred
