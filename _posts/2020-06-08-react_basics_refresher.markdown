@@ -44,7 +44,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 ## Create React App
 
-- If using VS Code remember to install code in path to open files and folders
+- Run as as `npx create-react-app myAppName`
 - Creact React App is CLI created so we can build fast React apps.
 - `npx` allows you to build using Create React App without globally installing it first.
 - `react-scripts` does things for us so we don't worry about webpack nor Babel. 
