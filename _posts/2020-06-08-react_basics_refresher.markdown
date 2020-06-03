@@ -138,6 +138,6 @@ So React takes all the hard work on showing and hiding elements from the DOM for
 - Styling with[ **Styled Components**](https://www.youtube.com/watch?v=feYJ5D7VknE&feature=emb_title).
 - [**React lifecycle methods**](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).
 - [**React course**](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/).
-- [**React Router**](https://reacttraining.com/react-router/web/guides/quick-start). For Navigation in React. How is navigation possible in SPAs? They take advantage of the history API brought by modern browsers to mimic routing.
+- [**React Router**](https://reacttraining.com/react-router/web/guides/quick-start). For Navigation in React. How is navigation possible in SPAs? React Router takes advantage of the history API brought by modern browsers to mimic routing.
 
 😅 Well this wasn't exactly a 5 minute refresher. But hopefully it was useful. Happy React studying 🙌🏼
