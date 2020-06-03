@@ -13,21 +13,21 @@ This is a quick React refresher on the basics, **recommended to those with exper
 
 ## React Brief History
 
-- Back in the day website had sincronous ask from backend what it needed.
+- Back in the day websites had sincronous tasks from the backend, and refreshed the page for everythinit needed.
 - jQuery took care of complexities and also worked in all browsers
 - Backbone.js allowed to organize these js files.
 - SPA was born out of working more and more with the DOM.
-    -   AJAX downloading all files at once. JS updating as needed.
+  - AJAX downloading all files at once. JS updating as needed.
 - Angular was born out of this. It had containers that wrap a project. It also had an MVC pattern.
-    -    now there was more complexity. Data flowing everywhere and app maintenance was harder.
+    -  With Angular, back then, there was more complexity. Data flowing everywhere and app maintenance was harder.
 - 2013 React was released by Facebook. 2014 Angular was also rewritten as response.
 
 ## React Core Principles
 
--  React virtual DOM - Don't touch the DOM. React will do it. 
+-  React virtual DOM (don't touch the DOM). React will do it. 
    - *Imperative Programming*: Changing directly the DOM through JS (e.g. getElementById). This approach has that it becomes difficult to point and identify relationships between events.
    - *Declarative Programming*: Declares to React what the state or data should look like. React will make the decision of how to implement it. This `state` is one big JS object. Resulting in less complexity, faster developer times. 
-- Components. 
+- *Components* 
   - Put toguether they form bigger components and form the whole app. You can copy these components and reuse them. Components are built with JSX.
   - Reusable components e.g. React.bootstrap, Blueprint etc.
 - *Unidirectional* Data Flow.
@@ -44,11 +44,11 @@ This is a quick React refresher on the basics, **recommended to those with exper
 
 ## Create React App
 
-- CLI created so we can build fast React apps.
-- npx allows you to build using Create React App without globally installing it first.
-- VS code remember to install code in path to open files and folders
+- If using VS Code remember to install code in path to open files and folders
+- Creact React App is CLI created so we can build fast React apps.
+- `npx` allows you to build using Create React App without globally installing it first.
 - `react-scripts` does things for us so we don't worry about webpack nor Babel. 
-- when we do build on React project, it will take all code inside src and bring it to public folder.
+- When we do `build` on React project, it will take all code inside src and bring it to public folder.
 - Babel will make sure that the JS files will work on all browser.
 - Webpack is a module bundler. Let us write modular code. It takes all our javascript and optimize it for us.
 - React library allows us to write JSX. ReactDOM like the virtual DOM which interacts with the actual DOM.
@@ -131,6 +131,8 @@ So React takes all the hard work on showing and hiding elements from the DOM for
 - **Decide on Components**: What is a component and how you will divide the app.
 - Decide on **state and where it lives**.
 - Know **what changes when state changes**.
+
+😅 Well this wasn't exactly a 5 minute refresher. But hopefully it was useful. Happy React studying 🙌🏼
 
 ## Resources
 

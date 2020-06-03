@@ -89,9 +89,9 @@ Happens when we keep calling functions nested over and over. This happens a lot 
 
 ```js
 
-    function inception() {
-        inception()
-    }
+function inception() {
+    inception()
+}
 
 ```
 
