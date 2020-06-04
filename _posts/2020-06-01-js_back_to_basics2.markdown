@@ -5,14 +5,14 @@ date:       2020-06-01 19:31:03 -0400
 permalink:  js_back_to_basics2
 ---
 
-> We'll expand on last week's concepts and talk about other exiting JS foundational concepts!
+> We'll expand on last week's concepts and talk about other exciting JS foundational concepts!
 
 *Note:* This is a follow up is a continuation to [last week's article](http://fbohz.com/js_back_to_basics1).
 
 
 ## JS Back-to-basics Part II
 
-This week, we'll expand on last week's concepts and talk about other exiting JS foundational concepts!
+This week, we'll expand on last week's concepts and talk about other exciting JS foundational concepts!
 
 *Quick Reminder*
 In JS we basically
