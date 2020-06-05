@@ -86,7 +86,7 @@ They are methods that get called automatically by React in particular instances 
 
 1. `constructor()`: Called first. Allows the class to have access to lifecycle components. Here is where you declare your state.
 2. `render()`: Render is called next to display HTML.
-3. `componentDidMount()`: This lifecycle component when component is mounted good when calling fetch requests. This will cause a re-render so `render()` gets called again.
+3. `componentDidMount()`: This lifecycle component when component is mounted good when calling fetch requests. This will cause a re-render so `render()` gets called again. This runs every time you refresh the page.
 4. `componentDidUpdate`: Any updates brings your component to updating phase. React here selectively changes parts of the DOM and it *doesn't remount the component*. `componentDidUpdate` is called after update. Here you can do additional fetch calls as you compare prev and new props. [**Read more**](https://reactjs.org/docs/react-component.html#componentdidupdate).
 
 Other lifecycle methods:

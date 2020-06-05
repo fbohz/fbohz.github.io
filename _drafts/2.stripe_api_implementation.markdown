@@ -10,7 +10,7 @@ filename: 2020-06-22-stripe_api_implementation
 
 # Implementing Stripe API in React
 
-In my latest React project, [Studio Ghibli's Fan Hub](https://github.com/fbohz/studio-ghibli-fan-app-demo) I implemented Stripe API to test and handle payments on the Shop component of the app. 
+In my latest React project, [Studio Ghibli's Fan Hub](https://studio-ghibli-fan-hub.herokuapp.com/) I implemented Stripe API to test and handle payments on the Shop component of the app. 
 
 Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy.
 
