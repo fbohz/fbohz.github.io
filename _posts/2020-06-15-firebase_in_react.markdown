@@ -6,11 +6,11 @@ permalink:  firebase_in_react
 filename: 2020-06-15-firebase_in_react
 ---
 
-> In Building [Studio Ghibli's Fan Hub](https://studio-ghibli-fan-hub.herokuapp.com/), a project made with React, I decided to implement Firebase for its backend.
+> In Building [Studio Ghibli's Fan Hub](https://studio-ghibli-fanhub.herokuapp.com/), a project made with React, I decided to implement Firebase for its backend.
 
 # Implementing Firebase in a React Project ✨
 
-In Building [Studio Ghibli's Fan Hub](https://studio-ghibli-fan-hub.herokuapp.com/), a project made with React, I decided to implement Firebase for its backend.
+In Building [Studio Ghibli's Fan Hub](https://studio-ghibli-fanhub.herokuapp.com/), a project made with React, I decided to implement Firebase for its backend.
 
 Note: Firebase library is always expanding and evolving. You can read about what we went over [here](https://firebase.google.com/docs/auth/web/google-signin).
 
