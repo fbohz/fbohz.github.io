@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Implementing Firebase in a React Project"
-# date:       2020-06-15 19:31:03 -0400
+date:       2020-06-15 19:31:03 -0400
 permalink:  firebase_in_react
 filename: 2020-06-15-firebase_in_react
 ---
