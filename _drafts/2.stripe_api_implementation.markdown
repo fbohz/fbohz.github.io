@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "DRAFTS_TEMPLATE"
-# date:       2020-06-22 19:31:03 -0400
+# date:       2020-06-29 19:31:03 -0400
 permalink:  stripe_api_implementation
-filename: 2020-06-22-stripe_api_implementation
+filename: 2020-06-29-stripe_api_implementation
 ---
 
 > Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy
