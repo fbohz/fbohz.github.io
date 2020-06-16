@@ -23,15 +23,23 @@ Now GraphQL tries to solve this differently from REST APIs. So first we need to 
 
 ![Screen Shot 2020-06-12 at 10 32 21 AM](https://user-images.githubusercontent.com/15071636/84519685-0fe69e80-ac98-11ea-9a30-6c084793c264.png)
 
-So you can see first that there's only one endpoint exposed instead of multiple endpoints. Then from here we make all requests to either a *query* (ask for data) or *mutation* (modify data). These requests look pretty much like JSON objects. So we don't need multiple endpoints to just access data.
+So you can see first that there's only one endpoint exposed instead of multiple endpoints. Then from here we make all requests to either a *query* (ask/read data) or *mutation* (create/update/delete data). These requests look pretty much like JSON objects. So we don't need multiple endpoints to just access data.
 
 **Playing with GraphQL**
 
 Take a look at the [GraphQL Playground](https://crwn-clothing.com/). Here we can start playing with GraphQL queries. Please refer to GraphQL [documentation](https://graphql.org/graphql-js/basic-types/) for queries help. Here's an example of a query you can do on the playground:
 
-Inside our query we can only make certain requests as defined on the db as things we can take. If you look at the schema you can see what is available.
-
 ![Screen Shot 2020-06-12 at 10 48 35 AM](https://user-images.githubusercontent.com/15071636/84521206-4a513b00-ac9a-11ea-9b49-a1a2f0fb0b02.png)
+
+Inside our query we can only make certain requests as defined on the db as things we can take. If you look at the schema you can see what is available. We can define our schema in many ways for example a Person schema:
+
+```js
+type Person {
+  id: ID!
+  name: String!
+  age: Int!
+}
+```
 
 The exclamation mark means mandatory. Items is an array, then inside items there's an item. Then if you click on docs you can see the type of queries you can make. 
 
@@ -77,9 +85,28 @@ query {
 
 ```
 
+For mutations we'll start with the `mutation` keyword. Back to our Person example consider this:
+
+```js
+mutation {
+  createPerson(name: "Bob", age: 36) {
+    name
+    age
+  }
+}
+```
+
+Now in your schema you might define it as such:
+
+```js
+type Mutation {
+  createPerson(name: String!, age: Int!): Person!
+}
+```
+
 Pretty easy right?
 
-Note as React developers, we will usually only concern ourselves with the frontend implementation of GraphQL. If you're curious as to how to  build a GraphQL server, find some resources, as well as the list of some popular options out there for building such a server:
+*Note*: as React developers, we will usually only concern ourselves with the frontend implementation of GraphQL. If you're curious as to how to  build a GraphQL server, find some resources, as well as the list of some popular options out there for building such a server:
 
 - Backend Implementation [Example](https://github.com/ZhangMYihua/crwn-clothing-prisma). Uses [Prisma](https://www.prisma.io/)
 - [Hasura](https://hasura.io/)
