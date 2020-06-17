@@ -178,8 +178,8 @@ Mutations can be a complex topic, so read on the resources and make your own tes
 
 **What's Next**
 
-- Build your own *GraphQL server* from scratch [here](https://www.howtographql.com/choose/). 
-- Checkout my GraphQL implementation using Vanilla JS + Rails API ([frontend](https://github.com/fbohz/yijing-ball-z_frontend)/[backend](https://github.com/fbohz/yijing-ball-z_backend)).
+- Build your own *GraphQL server* from scratch [**here**](https://www.howtographql.com/choose/). 
+- Checkout my GraphQL implementation using Vanilla JS + Rails API ([**frontend**](https://github.com/fbohz/yijing-ball-z_frontend)/[**backend**](https://github.com/fbohz/yijing-ball-z_backend)).
 
 **Conclusion: Should You Use GraphQL?**
 
