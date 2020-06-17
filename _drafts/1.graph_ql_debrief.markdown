@@ -27,7 +27,9 @@ So you can see first that there's only one endpoint exposed instead of multiple 
 
 **Playing with GraphQL**
 
-Take a look at the [GraphQL Playground](https://crwn-clothing.com/). Here we can start playing with GraphQL queries. Please refer to GraphQL [documentation](https://graphql.org/graphql-js/basic-types/) for queries help. Here's an example of a query you can do on the playground:
+Take a look at the [GraphQL Playground](https://crwn-clothing.com/). Here we can start playing with GraphQL queries for a sample project. Please refer to GraphQL [documentation](https://graphql.org/graphql-js/basic-types/) for queries help. You can implement this playground when you build your own GraphQL server. 
+
+Here's an example of a query you can do on this playground:
 
 ![Screen Shot 2020-06-12 at 10 48 35 AM](https://user-images.githubusercontent.com/15071636/84521206-4a513b00-ac9a-11ea-9b49-a1a2f0fb0b02.png)
 
@@ -173,6 +175,10 @@ Notice also how we import and pass to our client in index.js the resolvers and t
 You might also notice in resolvers.js the `@client` this tells Apollo to look on the local cache not the server. Finally on the cart-icon container you might see that it uses `compose` and `graphql` functions, that look kind of like Redux, you can access the [documentation](https://www.apollographql.com/docs/react/api/react-apollo/#graphqlquery-configcomponent) to see how to implement in detail.
 
 Mutations can be a complex topic, so read on the resources and make your own tests. Complete Apollo documentation in the link [here](https://www.apollographql.com/docs/react/essentials/mutations/). However do have in mind that if you would like to implement it consider having a container that deals with the graphql logic then the actual presentational component so the latter can be reused as it is not solely related to graphql.
+
+**What's Next**
+
+Build your own *GraphQL server* from scratch [here](https://www.howtographql.com/choose/).
 
 **Conclusion: Should You Use GraphQL?**
 
