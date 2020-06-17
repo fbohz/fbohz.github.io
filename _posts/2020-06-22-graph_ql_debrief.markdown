@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "GraphQL + Apollo - Flash Debrief"
-# date:       2020-06-22 19:31:03 -0400
+date:       2020-06-22 19:31:03 -0400
 permalink:  graph_ql_debrief
 filename: 2020-06-22-graph_ql_debrief
 ---
