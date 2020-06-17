@@ -183,7 +183,7 @@ Mutations can be a complex topic, so read on the resources and make your own tes
 
 **Conclusion: Should You Use GraphQL?**
 
-GraphQL can be very challenging since there's so much to learn at the beginning. Hopefully this first exposure to it laid out some interesting concepts to keep digging and motivate you to start implementing it in your own project or a test project.
+GraphQL can be very challenging since there's so much to learn at the beginning. I tried to touch on some interesting concepts, with demo projects both in React and Vanilla JS. The rest is for you to keep digging and motivate yourself to start implementing it in your own project.
 
-Fixing issues of REST with GraphQL is valuable. Problem with Apollo is that it needs both backend and frontend adoption. Setting up backend with Apollo can be harder so taking this risk might be difficult. Also this tech is new is not like Redux which there are so many resources out there. Apollo client is relatively new and paradigm might change. So for now learning GraphQL is great but keep your strong skills on Redux, since on scaling it performs really well, and has been industry tested. 
+Note that the issues with REST that GraphQL tries to solve, is a valuable proposition. The problem with implementations such as Apollo is that it needs both backend and frontend adoption. Setting up backend with can be hard so taking this risk might be difficult. Also this tech is new, not like Redux which there are so many resources out there. Apollo client and GraphQL are relatively new and the paradigm might change. So for now learning GraphQL is great, but do keep your strong skills on Redux, since on scaling it performs really well, and has been industry tested. 
 
