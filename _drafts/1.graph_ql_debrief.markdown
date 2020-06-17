@@ -6,7 +6,7 @@ permalink:  graph_ql_debrief
 filename: 2020-06-22-graph_ql_debrief
 ---
 
-> GraphQL can be very challenging since there's so much to learn at the beginning. 
+> What is GraphQL? It is a server language that wraps around an existing database to make requests differently...GraphQL can be very challenging since there's so much to learn at the beginning. 
 
 
 # GraphQL + Apollo - Flash Debrief
