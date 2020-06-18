@@ -1,0 +1,122 @@
+---
+layout: post
+title:      "Beating The Technical Interview"
+# date:       2020-06-15 19:31:03 -0400
+permalink:  copy_from_file_name222
+filename: 2020-06-15-three_tier_architecture
+---
+
+> You've got this! 👊🏼
+
+# Beating The Technical Interview
+
+Last week (**link**) I shared my answer to a classical interview question from Facebook and my take on it using JavaScript. Today I'll talk about some interviewing tips when tackling with such technical questions!
+
+## What To Expect
+
+When called for an interview, you can expect one (or a combination) of the following formats:
+
+- Coding challenges
+  - Week long coding (or data) project
+  - Timed technical assessment
+  - HackerRank or Codility challenge
+  - Data science case study 
+- Technical phone screens
+  - Trivia
+  - Pair-programming
+- In-person technical interviews
+  - Trivia
+  - White-boarding
+  - Pair-programming
+
+Be also prepared for common questions such as:
+
+- What is your understanding of *X_ROLE*?
+- Describe your ideal day at work?
+- Tell me about yourself.
+- Why do you think you are great fit for *X_ROLE*?
+- Share your experience with *X_TECHNOLOGY_POSTED_ON_YOUR_RESUME*.
+
+Then, make sure you *are prepared*
+
+- Know the structure / time-length of the interview. 
+  - Know if your interview is divided in x parts and how long is each part.
+- Know the position you're interviewing for.
+- Research about the company
+- Prepare a list of study materials. Include videos, articles, courses etc.
+
+Practice, practice, practice! Use HackerRank, LeetCode etc.
+
+## The Flow: Follow It and You Will Cruise the Interview.
+
+As you follow the flow below, sometimes we'll refer to my previous blog and the example coding challenge. So refer to it you need a refresher.
+
+**Ask Questions**
+
+- Any restrictions? Any additional info I need?
+- What data structure, is it an array, object?
+- Is data in sorted? Are there duplicates?
+- Are you getting one data structure or two?
+- **Repeat Questions**
+
+**Talk the Solution**
+
+- You can diagram an example data with as much info as possible.
+  - Depict example in a more visual way. Here e.g line with years.
+- Come up with brute force *DON'T CODE YET*. 
+  - Go through all years, find alive and get highest population
+  - Get min birth year and max death year. What's Big-O? O(N).
+  - Have extra counter for number of peopleAlive ..etc
+
+**Brute force**
+
+- State brute force out-loud then code.
+  - Ask clarifying questions what if X, what do I return?
+  - Think about *unnecessary work*. E.g. do you need to check death year?
+    - Death decrements population. Birth adds population.
+    - Ask interviewer if they die that year does the death count that same year or following?
+- Think about your data structure:
+    - A table with years: 
+    - E.g. 1750:1..etc.
+    - Need your min and max birth year since birth is what increments.
+
+**Refine solution with style**
+
+- *Modularize code*
+  - Each code one function.
+  - It helps you focus on the *most interesting things to write* 
+  - If you modularize you don't have to write all code.
+  - As you code:
+    - *Talk out loud* what each function is doing.
+    - Test code.
+    - Check for any math.
+- Yes, *test* your code. Start with small test cases, then throw larger cases.
+
+**Repeat after me**: *A solution (even brute force solution) is better than no solution*.
+
+## K.O. Reminders
+
+1. Listen, ask questions. **Look for clues**.
+2. Draw and example. Big and with no special cases.
+3. Create (*don't code*) a descriptive solution. Walk through example before coding. State **Brute force algorithm**, if you feel you can do better than brute-force do the latter if not do brute-force. Again, a solution, is better than no solution.
+4. **State Run-Time, Big-O**
+5. **Solidify your understanding of algorithm**
+6. Code and optimize as needed.
+7. Modularize as much as possible.
+8. Test your code. Simple test cases, then bigger test cases.
+
+
+## One Last Thing...
+
+- Practice solving problems **without a text editor** and with a **time limit**.
+- Mock interview with a friend.
+- Brush up on things you don't know.
+- Ask for clarifying questions
+- **Focus on getting a working solution**. Done is better than perfect.
+- You **won't know all the answers**
+  - Don't be afraid of say 'I don't know'.
+  - **Make an educated guess**.
+- If you can, prepare your own questions ahead of time.
+
+
+You've got this! 👊🏼
