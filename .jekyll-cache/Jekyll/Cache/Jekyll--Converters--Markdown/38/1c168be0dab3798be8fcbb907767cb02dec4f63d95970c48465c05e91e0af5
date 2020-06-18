@@ -1,0 +1,49 @@
+I"�<blockquote>
+  <p>The Big Picture: Systems Design Basics - Part 1</p>
+</blockquote>
+
+<p>While taking an online course on <a href="https://www.educative.io/courses/grokking-the-system-design-interview"><strong>systems design</strong></a>, I learned some cool ideas worth sharing.</p>
+
+<h2 id="systems-design-is-about-thinking-in-scale">Systems Design is About Thinking in Scale</h2>
+
+<p>When developing <a href="https://catoro.now.sh/">Catoro</a>, I focused a lot on the actual functionality of the application. However, it actually never came to my head thinking questions such as <em>what if I had 100 million total users and 2 million daily users?</em>. How will the design of my backend and deployment be affected by growth?</p>
+
+<p>Systems design focus on <strong>distributed systems</strong> meaning a a system whose components are located on different networked computers. Some characteristic of such systems include Scalability, Reliability, Availability, Efficiency, and Serviceability/Manageability. There are also strategies of how to assess and design your system for scale.</p>
+
+<h2 id="capacity-estimation">Capacity Estimation</h2>
+
+<p>Lets take our example of <strong>Catoro, a coffee cupping app</strong>. Coffee cupping must be read heavy, we can assume a 1:50 ratio between read and write.</p>
+
+<p><strong>Traffic, Storage, Bandwidth Estimates</strong>
+If we assume there are 2M new cuppings per month this actually means about 50M readings same month:</p>
+
+<p><code class="highlighter-rouge">2 * 50 =&gt; 50M</code></p>
+
+<p>What about <em>queries per second (QPS)</em>? Roughly ~0.77. So about one new cupping <strong>per second</strong>!</p>
+
+<p><code class="highlighter-rouge">2M / (3600(secs in hour)* 24hours * 30days) =~ 1</code></p>
+
+<p>What about reading? Well with our <em>1:50 ratio it means 50 readings per second</em>.</p>
+
+<p>How about <em>storage</em>?</p>
+
+<p>Let’s assume we’ll store everything for five years. Since we have 2M every month we should expect to store roughly 120M!</p>
+
+<p><code class="highlighter-rouge">2M * 12months * 5years = 120M</code></p>
+
+<p>What about each particular cupping? Each cupping lets assume is 1KB of information since there are a lot of parameters to track per cupping as well as total score.</p>
+
+<p>Since hour total storage is 120M we should expect roughly 120GB of storage just of cuppings.</p>
+
+<p><code class="highlighter-rouge">120M * 1KB =~ 120GB</code></p>
+
+<p><em>Tip</em>: Try <a href="https://whatsabyte.com/P1/byteconverter.htm"><strong>this</strong></a> resource for a good byte/kb/gb etc. conversion tool.</p>
+
+<p>Regarding bandwidth of <em>incoming</em> data we should expect roughly 1KB per second as our QPS is 1/s. Read requests about 50KB with our 1:50 ratio.</p>
+
+<h2 id="road-ahead-for-sd-explorations">Road Ahead for SD Explorations</h2>
+
+<p>In the next blog post we’ll talk about the Database / Component Design. Tips for DB schema, REST API, Data Partitioning, Load Balancers, Telemetry and Cache.</p>
+
+<p><em>Stay tuned</em>!</p>
+:ET

@@ -1,0 +1,373 @@
+I"V�<blockquote>
+  <p>In Building <a href="https://studio-ghibli-fanhub.herokuapp.com/">Studio Ghibli’s Fan Hub</a>, a project made with React, I decided to implement Firebase for its backend.</p>
+</blockquote>
+
+<h1 id="implementing-firebase-in-a-react-project-">Implementing Firebase in a React Project ✨</h1>
+
+<p>In Building <a href="https://studio-ghibli-fanhub.herokuapp.com/">Studio Ghibli’s Fan Hub</a>, a project made with React, I decided to implement Firebase for its backend.</p>
+
+<p>Note: Firebase library is always expanding and evolving. You can read about what we went over <a href="https://firebase.google.com/docs/auth/web/google-signin">here</a>.</p>
+
+<p><strong>What is Firebase?</strong></p>
+
+<p>Firebase as being a backend deals with everything related to:</p>
+
+<ul>
+  <li><em>Database</em>: any data important to application. The frontend will pull the data that it needs.</li>
+  <li><em>Server</em>: Server determines the most efficient way to get the data out of the database.</li>
+  <li><em>Authentication</em>: It is the way in which we confirm the users and authenticate them so they can access their data. So they confirm whether or not the user is who they say they are (through passwords, SSO login).</li>
+</ul>
+
+<p>Firebase is pretty efficient and is maintained by Google. It gives a lot of features to developers without having to do a lot of backend development.</p>
+
+<h2 id="getting-started-with-firebase">Getting Started with Firebase</h2>
+
+<p>Once you access the Firebase website make sure you login with your Google account then click on ‘Create/Add Project’. Add the project name usually as <code class="highlighter-rouge">projectName-db</code> or <code class="highlighter-rouge">projectName-backend</code> . Then leave all the defaults and let your project finish up spinning up and completing setting up.</p>
+
+<p>Now make sure you are in the <em>Spark - Free Plan</em>. You’ll wanna upgrade as you feel more comfortable with Firebase. At the beginning is very rare you exceed the limits.</p>
+
+<p>As you look at your project focus on the Develop tab and get acquinted with it specially the three first sections:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83354289-38c47680-a31d-11ea-91fe-71f7f59142c3.png" alt="1" /></p>
+
+<p>Here it is worth mentioning that Storage is more for assets like images and videos and database is more your other types of data.</p>
+
+<p>Other sections such as Hosting involve Firebase hosting your website, ML Kit is for machine learning and Functions you’ll learn when you’re more advanced.</p>
+
+<h2 id="setting-up-our-firebase-backend-for-react-app">Setting up our Firebase Backend for React App</h2>
+
+<ol>
+  <li>Click on ‘Project Overview’ on top.</li>
+  <li>Click on Web Icon (the last)</li>
+  <li>Register firebase by adding a name (internal name) like the convention above. I named mine also as <code class="highlighter-rouge">studio-ghibli-fan-hub-db</code>.</li>
+  <li>You’ll get a code snippet. Make sure you <em>copy</em> the <code class="highlighter-rouge">var firebaseConfig</code> contents which includes your API configuration.</li>
+  <li>Go back to terminal and do <code class="highlighter-rouge">yarn add firebase</code> or <code class="highlighter-rouge">npm i firebase</code>.</li>
+</ol>
+
+<p>Now we’re ready for the next step ✨</p>
+
+<h2 id="adding-firebase-to-our-react-app">Adding Firebase to our React App</h2>
+
+<ul>
+  <li>Create a folder named ‘Firebase’ inside your ‘src’ folder. Then make a new file called <code class="highlighter-rouge">firebase.utils.js</code>. Make sure you have that config object info ready.</li>
+  <li>Then do the following to import your firebase utilities.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">firebase</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">firebase/app</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">firebase/firestore</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">firebase/auth</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// your config info here</span>
+<span class="p">}</span>
+
+<span class="nx">firebase</span><span class="p">.</span><span class="nx">initializeApp</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">auth</span><span class="p">();</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">firestore</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">firestore</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">GoogleAuthProvider</span><span class="p">();</span>
+<span class="nx">provider</span><span class="p">.</span><span class="nx">setCustomParameters</span><span class="p">({</span> <span class="na">prompt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">select_account</span><span class="dl">'</span> <span class="p">});</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">signInWithGoogle</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">signInWithPopup</span><span class="p">(</span><span class="nx">provider</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">firebase</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Here we are only importing what we need then the second imports are attached to the firebase keyword. After we initialize our app there’s some setup code that is in the documentation. We export auth() and firestore().</p>
+
+<p>Then the rest of the code is to setup Google Login. The <code class="highlighter-rouge">prompt: 'select_account'</code> is the popup that will show up and then we can Login users.</p>
+
+<p>Note: You might be worried to expose your key publicly. But it is generally save to expose Firebase apiKey. Read more <a href="https://twitter.com/search?q=firebase%20api%20key%20gitguardian&amp;src=typd">here</a>.</p>
+
+<p><strong>Allow Google Sign in on Firebase</strong></p>
+
+<ol>
+  <li>Click on Authentication then on ‘Set up sign in method’ and select Google.</li>
+  <li>Click on edit icon, enable it, add project support email.</li>
+  <li>Click Save.</li>
+</ol>
+
+<p><strong>Adding Google Sign in to your Login Component</strong></p>
+
+<ul>
+  <li>Import as <code class="highlighter-rouge">import { signInWithGoogle } from '../../firebase/firebase.utils'</code> in your Login/Sign in Component.</li>
+  <li>Add another button and do the onClick to take the imported function. My button looks like this.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">signInWithGoogle</span><span class="p">}</span> <span class="nx">isGoogleSignIn</span><span class="o">&gt;</span><span class="nx">Login</span> <span class="kd">with</span> <span class="nx">Google</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<ul>
+  <li>Go ahead and test your app and make sure the pop up works and don’t get weird errors on console.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83354981-079a7500-a322-11ea-982f-eb6db4d2dadb.png" alt="Screen Shot 2020-05-31 at 9 34 59 AM" /></p>
+
+<ul>
+  <li>Go back to Firebase and click on Authentication there you’ll see the user that just signed in!</li>
+</ul>
+
+<h2 id="using-firebase-auth-data-on-your-react-app">Using Firebase Auth Data on Your React App</h2>
+
+<p>In order to add Firebase data into our application we do the following.</p>
+
+<ul>
+  <li>Import into our <code class="highlighter-rouge">App.js</code> our firebase utils file. As <code class="highlighter-rouge">import { auth } from './firebase/firebase.utils'</code>.</li>
+  <li>First lets add <code class="highlighter-rouge">currentUser</code> to state and add a componentDidMount() function that will call our imported auth as this.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">currentUser</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">currentUser</span><span class="p">:</span> <span class="nx">user</span> <span class="p">})</span>
+<span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Note that the <code class="highlighter-rouge">onAuthStateChanged()</code> connection is always open as long as App.js is mounted so you don’t have to re-call it again.</li>
+  <li>One of the key things of Firebase is that it has user auth persistance. So if you do a console.log on ‘user’ you’ll see that your previous user persisted on your React app. So we don’t need to have the user re-sign when the page refreshes. Even on Dev mode.</li>
+  <li>Because <code class="highlighter-rouge">onAuthStateChanged</code> we need to unsuscribe so we modify our code as:</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="kc">null</span>
+
+<span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">currentUser</span><span class="p">:</span> <span class="nx">user</span> <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">componentWillMount</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Now we’ll pass out the state of our users to the components that need it.</li>
+</ul>
+
+<p><strong>Logout Users</strong></p>
+
+<p>This depends on your component implementation but usually implemented on a Header or Nav component pass out the user state.</p>
+
+<p>First you import the auth library as you did in App.js. Then pass the ‘user’ props to your Nav/Header component. Then you might want to render another header item that will conditionally render either Login or Logout and if clicked you’ll pass the <code class="highlighter-rouge">signOut()</code> function from our auth that we imported to firebase. This is how I did it on Studio Ghibli’s app:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// props.currentUser was passed from App.js. Link is a react-router-dom element.</span>
+
+<span class="p">{</span>
+ <span class="nx">props</span><span class="p">.</span><span class="nx">currentUser</span> <span class="p">?</span> 
+ <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">signOut</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">LOGOUT</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err"> 
+</span> <span class="p">:</span> 
+ <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> <span class="nx">to</span><span class="o">=</span><span class="dl">"</span><span class="s2">/signin</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">LOGIN</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="implementing-firebase-firestore-to-save-and-get-user-data">Implementing Firebase Firestore to Save and Get User Data</h2>
+
+<p>Firestore is a <em>noSQL</em> database, kind of pretty much a database made up of a big JSON object. With that in mind let’s create our database</p>
+
+<p>On Firebase console, click on Database then create database. You’ll have two options to start in production (locked) or test mode. Select <code class="highlighter-rouge">test-mode</code>, you’ll wanna write some access rules as you go. Now you can follow up the prompts and click Done.</p>
+
+<p><strong>Types of Firestore Data</strong></p>
+
+<p>In your new db you can have two types of data. One of them is called ‘collection’ and you can add a collection if you access your new db, lets name our collection ‘users’.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83357924-38d07080-a335-11ea-82b4-1a84bfbb893b.png" alt="Screen Shot 2020-05-31 at 11 52 25 AM" /></p>
+
+<p>You saw a new path was created named ‘/users’. Here we can add a new ‘document’ or new user with its own ID. You can play with it to see how to add items.</p>
+
+<p>You can also nest collections so a collection can have its own collection as objects such as. Here we have an example of a cart-items collection on an user having two documents (or items):</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83357976-99f84400-a335-11ea-81e2-0cfc116632ec.png" alt="Screen Shot 2020-05-31 at 11 55 08 AM" /></p>
+
+<p>So in firebase we can have either <em>documents</em> or <em>collections</em> types of data. Now in a nutshell you can access such documents in React like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83358048-49351b00-a336-11ea-8f85-5aa0620c1c48.png" alt="Screen Shot 2020-05-31 at 11 59 41 AM" /></p>
+
+<p><strong>Storing to our database - First Steps</strong></p>
+
+<p>The following function will take that user we get from Authentication and then store the information we need in our database. To do so we’ll head to the <code class="highlighter-rouge">firebase.utils.js</code> and <code class="highlighter-rouge">App.js</code>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// firebase.utils.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">createUserProfileDocument</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">userAuth</span><span class="p">,</span> <span class="nx">additionalData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">userAuth</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">userRef</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="s2">`users/</span><span class="p">${</span><span class="nx">userAuth</span><span class="p">.</span><span class="nx">uid</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">snapShot</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">userRef</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">snapShot</span><span class="p">.</span><span class="nx">exists</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">displayName</span><span class="p">,</span> <span class="nx">email</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">userAuth</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">createdAt</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">await</span> <span class="nx">userRef</span><span class="p">.</span><span class="kd">set</span><span class="p">({</span>
+        <span class="nx">displayName</span><span class="p">,</span>
+        <span class="nx">email</span><span class="p">,</span>
+        <span class="nx">createdAt</span><span class="p">,</span>
+        <span class="p">...</span><span class="nx">additionalData</span>
+      <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error creating user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">userRef</span><span class="p">;</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+
+<span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="k">async</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">createUserProfileDocument</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>In this function which is an async request, we query first if it exists. Continue reading to learn more about what this functions does. Do not test the app, just yet.</p>
+
+<p><em>QueryReference vs QuerySnapshot</em>
+Query is a request to Firestore to get something from the db. Firestore returns either references or snapshots. Of these objects it can be either a Document or Collection. Firestore will always give us the object. Using the object we can determine or not if there’s any data.</p>
+
+<p><em>QueryReference</em> is that object that represents the current place in the db we are querying. This one doesn’t have the actual data. Just properties that tell us details about it and the method to get the <em>QuerySnapshot</em> with the actual data. We could call them as:</p>
+
+<p><code class="highlighter-rouge">frestore.doc('/users/userId')</code>
+<code class="highlighter-rouge">frestore.collections('/users')</code></p>
+
+<p>Regarding QueryReference, there are <em>DocumentReference</em> vs <em>CollectionReference</em>. There are some differences as follows:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83358405-dd07e680-a338-11ea-95a7-3dc6e399594d.png" alt="Screen Shot 2020-05-31 at 12 18 31 PM" /></p>
+
+<p>If you console.log the snapShot you get something like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83358454-50a9f380-a339-11ea-9070-29740f351a90.png" alt="Screen Shot 2020-05-31 at 12 21 45 PM" /></p>
+
+<p>Here the ‘exists’ property tells if there’s any data. Here in our code we are checking if the user already exists. If snapShot doesn’t exists then we use CRUD on documentRef (not snapShot ). We get the data we need (in this case displayName and email) and make the request to the firebase to create with the Firebase method of <code class="highlighter-rouge">.set()</code></p>
+
+<p>The function above will always return the userRef if we need to use that userRef object. So now head to your Firebase console and login and check on your Database to see if the user is created. Refresh the user persisted and still one user. Great right!</p>
+
+<p><strong>Storing User Data in our App</strong></p>
+
+<p>Did you notice your app Login button is not being changed to Logout. This is because we are not setting state. We need to modify our App.js to use that userRef object.  We need use the <code class="highlighter-rouge">onSnapshot()</code> method we get from this object to get a <em>DocumentSnapshot</em>.</p>
+
+<p>A documentSnapshot allows us to check if a document exists using the <code class="highlighter-rouge">.exists</code> property which returns a boolean and we can actually get the actual data using the <code class="highlighter-rouge">data()</code> method which returns a JSON of the document. If you do on the code a console.log of snapShot.data() inside onSnapshot() call you can see the same data you saw on the Firebase console. The id we just get by snapShot.id</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="k">async</span> <span class="nx">userAuth</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">userAuth</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">userRef</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createUserProfileDocument</span><span class="p">(</span><span class="nx">userAuth</span><span class="p">);</span>
+
+        <span class="nx">userRef</span><span class="p">.</span><span class="nx">onSnapshot</span><span class="p">(</span><span class="nx">snapShot</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+            <span class="na">currentUser</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">id</span><span class="p">:</span> <span class="nx">snapShot</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+              <span class="p">...</span><span class="nx">snapShot</span><span class="p">.</span><span class="nx">data</span><span class="p">()</span>
+            <span class="p">}</span>
+          <span class="p">});</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="c1">// if userAuth is null do this:</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">currentUser</span><span class="p">:</span> <span class="nx">userAuth</span> <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Now try again and see if all is back to normal!</p>
+
+<p><strong>Moving other data into Firebase Firestore</strong></p>
+
+<p>Studio Ghibli’s fan app has shop data related to the films and products it offers. In the beginning this data was stored as a separate js and in an object data type. Now what if this data grows? What if we have 10 million shop items? Here is where an object might not be the right choice.</p>
+
+<p>So how do we move this shop collection data into Firebase? Remember when we make query requests we either get both of these two objects (even if nothing exists in the response):</p>
+
+<ul>
+  <li><em>QueryReference</em>: It represents the current place in the database we are querying. It doesn’t have the actual data.</li>
+  <li><em>Snapshot Object</em>: Also either as document type or collection type. Note a collection snapshot object is called specifically a “QuerySnapshot”.
+    <ul>
+      <li>DocumentReference we can use CRUD methods.  Remember we can check if the snapshot document object exists in db with the <code class="highlighter-rouge">.exists</code> property. If you need the data you call <code class="highlighter-rouge">.data()</code> on object.</li>
+      <li>QuerySnapshot. With the collectionRef we can add documents to collections. The important methods here are <code class="highlighter-rouge">docs()</code>, <code class="highlighter-rouge">empty()</code> and <code class="highlighter-rouge">size</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Populating Our Firebase With Additional Data</strong></p>
+
+<p>We need to get back to our Firestore console and add another collection. Before we do that lets take a look at a small part of our current JS data object:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// shop.data.js</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">SHOP_DATA</span> <span class="o">=</span>  <span class="p">{</span>
+  <span class="na">memorabilia</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Memorabilia</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">memorabilia</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Calcifer Toy (Handsewn)</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://i.ibb.co/BydFmjr/shop.jpg</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">price</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="p">},</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+    
+    <span class="na">films</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Selected Films (Inc. Digital + BluRay/DVD + Movie Poster)</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">films</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="na">id</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Nausicaä of the Valley of the Wind</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://www.studioghibli.com.au/wp-content/uploads/2017/07/1475-title-treatment-portrait-key-art-normal-medium-683x1024.jpg</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">price</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+            <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Warrior and pacifist Princess Nausicaä desperately struggles to prevent two warring nations from destroying themselves and their dying planet.</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">director</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">producer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">release_date</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1984</span><span class="dl">"</span><span class="p">,</span>
+          <span class="p">},</span>  
+        <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you check your Firebase is almost the same, it has keys that point to names that hold values. This is because Firebase is NoSQL so it can have as many properties as possible (properties can be different among documents of same collections) as it is not stored as tables like SQL.</p>
+
+<p>Firestore supports many types of data. So we need to think about what data we will store as. With that in mind, lets export our <code class="highlighter-rouge">shop.data.js</code> by adding this on our Firebase <code class="highlighter-rouge">firebase.utils.js</code> file.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// firebase.utils.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">addCollectionAndDocuments</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">collectionKey</span><span class="p">,</span> <span class="nx">objectsToAdd</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">collectionRef</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collectionKey</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">batch</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">batch</span><span class="p">()</span>
+  <span class="nx">objectsToAdd</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">obj</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">newDocRef</span> <span class="o">=</span> <span class="nx">collectionRef</span><span class="p">.</span><span class="nx">doc</span><span class="p">()</span>
+    <span class="nx">batch</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">newDocRef</span><span class="p">,</span> <span class="nx">obj</span><span class="p">)</span>
+  <span class="p">})</span>
+
+  <span class="k">return</span> <span class="k">await</span> <span class="nx">batch</span><span class="p">.</span><span class="nx">commit</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we can see it implements a batch write that if any document fails then everything fails so ensure all collection is saved. Now that this is setup, then we can modify our <code class="highlighter-rouge">App.js</code>, please refer to <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/commit/f16ab99ffb42448ed44352c0424c9c7c7988914e">source code</a> to see what we added.</p>
+
+<p>Now that we have dynamically populated our db. We need to <em>remove the code we wrote on the App.js</em> because this only runs once so we did it to avoid the manual write of it! We’ll keep the firebase.utils <code class="highlighter-rouge">addCollectionAndDocuments</code> code for future reference if we need it.</p>
+
+<p>Now in order to access our Firebase shop data in the frontend, there are a couple roads we could take. We need to access the most up level component and create and subscribe to listen to firebase changes then unsubscribe when component unmount. While I won’t go into a lot of detail, feel free to take a look at the <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo">repo</a> to see how I implemented on the app.</p>
+
+<p>Now that we moved this data out of the frontend it can be shared along other implementations such as React Native and there’s a single source of truth with Firebase.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Firebase is a pretty robust platform that can take a while to learn. But the more you practice the better you become. The concepts covered are the core of Firebase so once you have them settled you’ll know how to use it. Learning Firebase is important because at the end is easier than spinning up our own backend, database and authentication.</p>
+
+<p>Also you saw there are some Firebase commands, as a React Developer, you do not need to memorize these things and most of the time you can always refer to the <a href="https://firebase.google.com/docs/firestore/quickstart">documentation</a>.</p>
+:ET

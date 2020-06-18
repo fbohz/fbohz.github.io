@@ -1,0 +1,97 @@
+I"O'<blockquote>
+  <p>Playing with AWS Services - Would You Read For Me Polly?</p>
+</blockquote>
+
+<p>In order to improve my deployment skills, I began playing with AWS Services.</p>
+
+<p>A really cool service is <a href="https://docs.aws.amazon.com/polly/index.html"><strong>Amazon Polly</strong></a> a cloud Text-to-Speech (TTS) service that converts text to lifelike speech. It supports multiple languages and can add engagement and accessibility to your app.</p>
+
+<h2 id="talk-to-me-shenron">Talk to me Shenron!</h2>
+
+<p>I implemented Polly TTS in <strong>Yijing Ball Z (YBZ)</strong>, our favorite iChing oracle.</p>
+
+<p>Since YBZ is Vanilla JS app, I used the <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/welcome.html"><strong>AWS SDK for JavaScript</strong></a> to implement this service and have Polly read the YBZ for us!</p>
+
+<p>Here is the <strong>implementation</strong>:</p>
+
+<p>1) Setup:</p>
+<ul>
+  <li>Make sure to <code class="highlighter-rouge">npm install aws-sdk</code> and then <code class="highlighter-rouge">npm add aws-sdk</code> so we can use it in YBZ.</li>
+</ul>
+
+<p>2) Add <strong>read-out-loud button</strong> on navbar:</p>
+<ul>
+  <li>The first thing we’ll do is modify our UI to add a button that we will then attach our <code class="highlighter-rouge">AWS.Polly</code> read listener.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-end</span><span class="dl">"</span><span class="o">&gt;</span> 
+ <span class="o">&lt;</span><span class="nx">a</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-item button is-small is-warning readpolly</span><span class="dl">"</span><span class="o">&gt;</span>
+ <span class="nx">Talk</span> <span class="nx">to</span> <span class="nx">me</span> <span class="nx">Shenron</span><span class="o">!&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err"> 
+</span></code></pre></div></div>
+
+<p>3) Let’s include AWS and config so you can communicate with AWS, then instantiate our Polly service.</p>
+<ul>
+  <li><em>Note</em>: Amazon Translate does not work with Amazon Cognito Identity, so we need to add our own credentials. Read up on <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"><strong>IAM</strong></a> to learn more.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">aws-sdk</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">region</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">us-east-1</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">credentials</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Credentials</span><span class="p">(</span><span class="dl">"</span><span class="s2">INSERT_ACCESS_ID__HERE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">INSERT_SECRET_ACCESS_KEY_HERE</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">polly</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Polly</span><span class="p">();</span>
+
+</code></pre></div></div>
+
+<p>4) Create a function <code class="highlighter-rouge">doSynthesize()</code> that will execute the Polly script and read out loud the text when button is pressed.</p>
+<ul>
+  <li><code class="highlighter-rouge">synthesizeSpeech()</code> from <code class="highlighter-rouge">AWS.Polly</code> takes a <strong>params</strong> argument that takes the <code class="highlighter-rouge">text</code> argument we passed on <code class="highlighter-rouge">doSynthesize()</code>.</li>
+  <li>Read <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Polly.html"><strong>here</strong></a> and <a href="https://github.com/awsdocs/amazon-polly-developer-guide/tree/master/doc_source"><strong>here</strong></a> to learn more.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">pollyParams</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">OutputFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mp3</span><span class="dl">"</span><span class="p">,</span> 
+     <span class="na">SampleRate</span><span class="p">:</span> <span class="dl">"</span><span class="s2">8000</span><span class="dl">"</span><span class="p">,</span> 
+     <span class="na">Text</span><span class="p">:</span> <span class="nx">text</span><span class="p">,</span> 
+     <span class="na">TextType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span> 
+     <span class="na">VoiceId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Joanna</span><span class="dl">"</span>
+ <span class="p">};</span>
+
+<span class="nx">polly</span><span class="p">.</span><span class="nx">synthesizeSpeech</span><span class="p">(</span><span class="nx">pollyParams</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">);</span> <span class="c1">// an error occurred</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error calling Amazon Polly. </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">uInt8Array</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">AudioStream</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">arrayBuffer</span> <span class="o">=</span> <span class="nx">uInt8Array</span><span class="p">.</span><span class="nx">buffer</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">arrayBuffer</span><span class="p">]);</span>
+      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span>
+
+      <span class="nx">audioElement</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Audio</span><span class="p">([</span><span class="nx">url</span><span class="p">]);</span>
+      <span class="nx">audioElement</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>5) Add our event listener and call <code class="highlighter-rouge">doSynthesize()</code> if triggered</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pollyBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.readpolly</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">pollyBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// all our text is inside of main.content, so we grab it all</span>
+    <span class="kd">const</span> <span class="nx">pollyText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">main.content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span>
+    <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">pollyText</span><span class="p">)</span>
+ <span class="p">})</span>
+
+</code></pre></div></div>
+
+<p>6) <strong>Click the button and let Polly read the YBZ for you!</strong></p>
+
+<p>That wasn’t that bad right? :)</p>
+:ET

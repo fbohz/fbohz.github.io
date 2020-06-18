@@ -1,0 +1,173 @@
+I"	)<blockquote>
+  <p>We’ll go back to the basics in JavaScript and discuss about the JS Engine and JS Runtime</p>
+</blockquote>
+
+<p>On this article, we’ll go back to the basics in JavaScript and discuss about the JS Engine and JS Runtime.</p>
+
+<h2 id="javascript-engine">JavaScript Engine</h2>
+
+<p>JS Engine allows to have the machine to understand code. So it acts as a <em>translator</em>. There are a ton of JS Engines written by programmers. They can be written in other languages such as C++. An example of this is V8. These engine allows JS to run faster and faster.</p>
+
+<p>Engines looks for lexical analysis formed into a <strong>tree like structure call AST</strong>:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/81210695-db483e80-8f97-11ea-820d-3006718796e1.png" alt="1" /></p>
+
+<p>It then goes to the interpreter and moves forward so it can be understood by computer.</p>
+
+<p>ECMAScript was created as governing body of JS. It tells engine creators parameters of creating engines. There are many engines b/c they can be implemented in many ways.</p>
+
+<p><strong>Interpreters and Compilers</strong></p>
+
+<p>Interpreter translates and reads file line-by-line. Compiler doesn’t translate on the fly. Compiler does one run and then writes a new program in a program that the computer can understand like machine code. You can still run JS using one or the other.</p>
+
+<p><strong>Babel and Typescript</strong>: They are heavily used in the Javascript ecosystem and you should now have a good idea of what they are:</p>
+
+<p>Babel is a Javascript compiler that takes your modern JS code and returns  browser compatible JS (older JS code). Typescript is a superset of Javascript that compiles down to Javascript.</p>
+
+<p>Both of these do exactly what compilers do: Take one language and convert into a different one!</p>
+
+<p><strong>V8 Engine</strong></p>
+
+<p>Interpreter is good for JS. Interpreters can get very slow with things like loops and often doesn’t do optimization. Compiler can be a bit better in some instances.</p>
+
+<p><em>JIT Compiler:</em> Just In Time Compilers. V8 engine does this to get best of both worlds. Here the profiler and compiler work as the code is running.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/81311026-7c8fcd00-904a-11ea-88c4-3ec3d28c19f0.png" alt="2" /></p>
+
+<p><strong>Compared with other languages</strong></p>
+
+<p>.exe is usually a C++ file that is compiled to a executable machine code file.Java uses the JVM to compile code.</p>
+
+<p>Javascript initially was an interpreted language with time evolving JS has compilers as part of V8 engine, so depends. Python can also be run through a compiler or interpreted.</p>
+
+<p><strong>Writing Efficient / Optimized Code</strong></p>
+
+<p>Be mindful with some keywords and JS patterns that can make code not optimized.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/81311646-4868dc00-904b-11ea-9d81-4430dc05d9da.png" alt="3" /></p>
+
+<p>Thinks like inline caching and hidden classes will also learn. For hidden class you want to assign properties of the object in the constructor or add things in the same order.</p>
+
+<p>Some of these optimizations help the compiler.</p>
+
+<p>Some Resources:</p>
+<ul>
+  <li>Read article <a href="https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#3-managing-arguments"><strong>here</strong></a></li>
+  <li>Check <a href="https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html"><strong>this other article</strong></a></li>
+</ul>
+
+<p><em>So why don’t write machine code from the beginning?</em></p>
+
+<p>WebAssembly - could make things better and avoid some JIT Compiler and make things more standarized.</p>
+
+<h2 id="js-engine-key-concepts">JS Engine Key Concepts</h2>
+
+<h3 id="call-stack-and-memory-heap">Call Stack and Memory Heap</h3>
+
+<p>JS engine needs to store and keep track of everything. Memory heap uses, allocates memory. Call stack keeps track of where we are in the code in the execution.</p>
+
+<p>Memory heap is like a free store, with no order. Allows to store variables.</p>
+
+<p>Call stack is like a region in memory acts like a FIFO method. You add things like functions to the call stack starting with the global execution context (sometimes as anonymous)</p>
+
+<p>You can check the call stack in google chrome:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/81314979-59b3e780-904f-11ea-97ff-0b65c0ad2022.png" alt="4" /></p>
+
+<p>So call stack stores functions in memory. And <strong>the first one in is the last one getting popped out the call stack</strong>.</p>
+
+<p>Where variables are allocated it depends, sometimes they are stored in the stack and more complex are in memory heaps. More on this soon.</p>
+
+<p><strong>Stack Overflow</strong></p>
+
+<p>Happens when we keep calling functions nested over and over. This happens a lot with recursion functions (functions that call themselves). Example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">inception</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">inception</span><span class="p">()</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><strong>Gargage Collection</strong></p>
+
+<p>When JS allocates memory automatically with JS when we finish calling the function it is going to clean it. So it automatically frees up the memory we no longer use.</p>
+
+<p>In that case it makes sure we don’t use all memory. It gives a false sense of security. <em>JS developers sometimes have false impression that they don’t need to care about memory</em>.</p>
+
+<p>In JS garbage collection uses a <em>mark and sweep</em> algorithm. So it basically ‘marks’ what it needs and ‘seeps’ what it doesn’t.</p>
+
+<p><strong>Memory Leaks</strong></p>
+
+<p>Memory can happen on <em>infinite loops</em> when we fill our memory heap and app crashes.</p>
+
+<p>Common memory leaks:</p>
+<ul>
+  <li>Global Variables.</li>
+  <li>Event listeners
+    <ul>
+      <li>So add event listeners and you never remove them when you don’t need them.</li>
+    </ul>
+  </li>
+  <li>Using <code class="highlighter-rouge">setInterval</code>
+    <ul>
+      <li>unless we clear it and stop it it will run and run.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>An example happened with SoundCloud plug-in the background <a href="https://developers.soundcloud.com/blog/garbage-collection-in-redux-applications">here</a></p>
+
+<p><em>JS Single Threaded</em></p>
+
+<p>JS is a single threaded programming language so only one set of instructions at the time. It only has <strong>one call stack</strong>.</p>
+
+<p>Because of this JS is synchronous, doing one thing at a time.</p>
+<ul>
+  <li>This could make difficult with long running tasks. An example is <code class="highlighter-rouge">alert</code> that when it is executed only alert runs.</li>
+</ul>
+
+<p>However most of the time we <strong>don’t use JS Engine</strong> but use the <strong>JS Runtime</strong> to make things asynchronous.</p>
+
+<h2 id="javascript-runtime">JavaScript Runtime</h2>
+
+<p>So how do we make asynchronous calls with the JS Runtime.</p>
+
+<p><em>Web API</em></p>
+
+<p>The Web API communicates with JS engine and comes with browser. These web API can do variety of things. The web API is usually the <code class="highlighter-rouge">window</code> and you can check what it has available such as <code class="highlighter-rouge">fetch</code>, <code class="highlighter-rouge">setTimeout</code>.</p>
+
+<p>Browser provides help so that users don’t keep waiting for things to finish. So browser uses low level languages such as C++ to do other stuff.</p>
+
+<p><em>Event Loop</em>
+Items come to call stack, lets say <code class="highlighter-rouge">fetch</code> comes, the call stack identifies it and gives it to the Web API and it doesn’t it in the background. Web API returns data received to the appropiate part.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">)},</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="cm">/*
+Runs 1, 3, 2 because it has timeout. No matter the length.
+Then moved away from call stack gives back to web API.
+So after it keeps running the next line
+*/</span>
+</code></pre></div></div>
+<p>This event loop runs all the time, won’t start putting anything to the call stack is empty and already runs.</p>
+
+<p>No matter how fast setTimeout is, it still gets sent to the Web API.</p>
+
+<p><a href="http://latentflip.com/loupe/?code=ZnVuY3Rpb24gcHJpbnRIZWxsbygpIHsNCiAgICBjb25zb2xlLmxvZygnSGVsbG8gZnJvbSBiYXonKTsNCn0NCg0KZnVuY3Rpb24gYmF6KCkgew0KICAgIHNldFRpbWVvdXQocHJpbnRIZWxsbywgMzAwMCk7DQp9DQoNCmZ1bmN0aW9uIGJhcigpIHsNCiAgICBiYXooKTsNCn0NCg0KZnVuY3Rpb24gZm9vKCkgew0KICAgIGJhcigpOw0KfQ0KDQpmb28oKTs%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D"><strong>Great tool to visualize Call Stack and Web APIs</strong></a></p>
+
+<p>This makes it possible to not rely on just one call stack and memory heap and achieve asynchronous code, with <strong>multiple threads</strong>.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>There are many Runtimes, so what is <em>Node.js</em>?</p>
+
+<p><strong>Node.js</strong> is a <em>runtime</em>. So it runs outside the browser. It is a C++ program, like a Node.exe. Node you can access file systems and other things. There are differences such as in Node there’s not window but it is replaced with <code class="highlighter-rouge">global</code>. It creates a runtime outside of the browser. It also uses the asynchronous runtime.</p>
+
+<p><strong>Stay tuned for next week’s article</strong>, as we’ll talk about more basic JavaScript concepts. Till then!</p>
+:ET

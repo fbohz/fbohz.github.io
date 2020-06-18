@@ -1,0 +1,66 @@
+I"<blockquote>
+  <p>React patterns are useful to promote code reuse while maintaining component simplicity and flexibility.</p>
+</blockquote>
+
+<p>Today we’ll go over some React patterns I learned while participating at <a href="https://www.bytesized.xyz/react-2020">Byteconf React</a>. React patterns are useful to promote code reuse while maintaining component simplicity and flexibility. This article is a bit on the <strong>advanced React</strong> side.</p>
+
+<h2 id="typical-component-development">Typical Component Development</h2>
+
+<p>Lets imagine a custom component that has an accordion UI. So we’ll build this <code class="highlighter-rouge">Accordion</code> component.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png" alt="accordion1" /></p>
+
+<p>Imagine another developer wants you to allow more flexibility to your accordion so that the order of the accordion items can be customized. Here you might think passing out a <code class="highlighter-rouge">props</code> like <code class="highlighter-rouge">top</code> so if true then the accordion item becomes the first.</p>
+
+<p>Now, another developer wants you to have the text on the side rather than at the bottom. Then after working on it you change the CSS so it can have it on the side with <code class="highlighter-rouge">props</code> as <code class="highlighter-rouge">right</code>, then if true it moves to the right.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80917657-25c28480-8d26-11ea-804f-993e9ecc2401.png" alt="accordion2" /></p>
+
+<p>Then things can start becoming complicated when now another use case tell you  to implement text on the left. So use cases start to pop up one after the other. Your accordion component starts having a lot of props, that can become hard to control and deal with.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80917860-34f60200-8d27-11ea-9d11-89786a2ee2cd.png" alt="accordion3" /></p>
+
+<p>Easily you can jump into having a component with record level props (<strong>apropcalypse</strong>)!</p>
+
+<p>Some problems with a component with lots of props and many use cases to deal with:</p>
+<ul>
+  <li>Hard to maintain</li>
+  <li>Re-renders and JSX that doesn’t even apply to your use case</li>
+  <li>Implementation complexity - breeding ground for bugs</li>
+  <li>API complexity. Harder for other people to use your project. Your documentation can become complex.</li>
+</ul>
+
+<p><em>So how can we support these use cases without keep adding new props?</em></p>
+
+<h2 id="making-it-simpler--flexible">Making it Simpler / Flexible</h2>
+
+<p>The following implementation might look a bit confusing at the beginning. Note it uses <strong>React Hooks</strong>, so you might wanna brush up on it before digging into it (you can read my <a href="https://medium.com/swlh/learning-about-react-hooks-a-coffee-lover-perspective-c699f699fb3d">article</a> on Hooks).</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80918025-61f6e480-8d28-11ea-9816-3efd1896dd19.png" alt="patt1" /></p>
+
+<p>This implementation uses the <strong>inversion of control</strong> pattern. It has a default reducer, although anyone can use their own version of the reducer.</p>
+
+<p>So with this, we can build our own accordion component that might look like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80918255-9fa83d00-8d29-11ea-8dd4-4e4c12394d71.png" alt="patt2" /></p>
+
+<p>And then we can pass items to render the accordion in the default way like <code class="highlighter-rouge">&lt;Accordion items={accordionItems}&gt;</code></p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png" alt="accordion1" /></p>
+
+<p>Because component is built on top of a hook then you can modify to make things your way. E.g. lets say we want the accordion to point up now. Then with just a few lines of code differences, the change now becomes the responsibility of who is implementing the code:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/80918517-0d089d80-8d2b-11ea-9f19-bf77ce144750.png" alt="patt3" /></p>
+
+<p><strong>What is important</strong> is that this pattern doesn’t add any complexity to the logic behind the component. You can add features to it and have total control of render and no you’re no longer responsible of use cases you don’t want to support.</p>
+
+<p>As all the logic is stored in <code class="highlighter-rouge">useAccordion</code> custom hook, it gives flexibility and control as to how a particular user of the component wants the UI to be rendered.</p>
+
+<p>Remember we are <strong>inverting control</strong>, as it can receive its own custom reducer, props so it can adapt to it. This is a <strong>benefit of React Hooks</strong>.</p>
+
+<p>Here we are using the systems design principle of <strong>composability</strong> so that users can use this component and assemble as depending on their needs.</p>
+
+<p>Feel free to <a href="https://youtu.be/MEeZLM1XVLI?t=1884">watch</a> the Byteconf React presentation Video. The presenter has different examples with reducers to take care of other use cases. Also check the code repo <a href="https://github.com/kentcdodds/simply-react">here</a> to play with it yourself!</p>
+
+<p>👋🏼👋🏼🚀</p>
+:ET
