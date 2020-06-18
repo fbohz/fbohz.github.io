@@ -6,12 +6,12 @@ permalink:  graph_ql_debrief
 filename: 2020-06-22-graph_ql_debrief
 ---
 
-> What is GraphQL? It is a querying language that wraps around an existing database to make requests differently. I implemented GraphQL on the latest iteration of the [Yijing-Ball-Z](https://yijingballz.herokuapp.com/) app. 
+> What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the [Yijing-Ball-Z](https://yijingballz.herokuapp.com/) app. 
 
 
 # GraphQL + Apollo - Flash Debrief
 
-What is GraphQL? It is a querying language that wraps around an existing database to make requests differently. I implemented GraphQL on the latest iteration of the [Yijing-Ball-Z](https://yijingballz.herokuapp.com/) app. 
+What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the [Yijing-Ball-Z](https://yijingballz.herokuapp.com/) app. 
 
 Look at the traditional backend diagram:
 
