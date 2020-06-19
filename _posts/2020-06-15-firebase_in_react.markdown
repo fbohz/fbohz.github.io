@@ -128,7 +128,8 @@ auth.onAuthStateChanged(user => {
 unsubscribeFromAuth = null
 
 componentDidMount() {
-  this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+  this.unsubscribeFromAuth = auth.onAuthStateChanged
+  (user => {
     this.setState({ currentUser: user })
   })
 }
@@ -151,9 +152,11 @@ First you import the auth library as you did in App.js. Then pass the 'user' pro
 
 {
  props.currentUser ? 
- <div className="option" onClick={() => auth.signOut()}>LOGOUT</div> 
+ <div className="option" onClick={() => 
+ auth.signOut()}>LOGOUT</div> 
  : 
- <Link className="option" to="/signin">LOGIN</Link>
+ <Link className="option" 
+  to="/signin">LOGIN</Link>
 }
 ```
 
@@ -186,7 +189,7 @@ The following function will take that user we get from Authentication and then s
 ```js
 
 // firebase.utils.js
-export const createUserProfileDocument = async (userAuth, additionalData) => {
+export const createUser = async (userAuth, addData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -201,10 +204,11 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
-        ...additionalData
+        ...addData
       });
     } catch (error) {
-      console.log('error creating user', error.message);
+      console.log('error creating user', 
+      error.message);
     }
   }
 
@@ -217,8 +221,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 //App.js
 
 componentDidMount() {
-this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
-  createUserProfileDocument(user)
+this.unsubscribeFromAuth = auth.onAuthStateChanged(
+  async user => {
+  createUser(user)
 })
 }
 
@@ -256,7 +261,7 @@ A documentSnapshot allows us to check if a document exists using the `.exists` p
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
+        const userRef = await createUser(userAuth);
 
         userRef.onSnapshot(snapShot => {
           this.setState({
@@ -289,44 +294,44 @@ So how do we move this shop collection data into Firebase? Remember when we make
 
 **Populating Our Firebase With Additional Data**
 
-We need to get back to our Firestore console and add another collection. Before we do that lets take a look at a small part of our current JS data object:
+We need to get back to our Firestore console and add another collection. Before we do that lets take at how our shop.data basic structure looks:
 
 ```js
 // shop.data.js
 
 export const SHOP_DATA =  {
-  memorabilia: {
-      id: 1,
-      title: 'Memorabilia',
-      routeName: 'memorabilia',
-      items: [
-        {
-          id: 1,
-          name: 'Calcifer Toy (Handsewn)',
-          imageUrl: 'https://i.ibb.co/BydFmjr/shop.jpg',
-          price: 10
-        },
-        ]
-      },
-    
-    films: {
-        id: 2,
-        title: 'Selected Films (Inc. Digital + BluRay/DVD + Movie Poster)',
-        routeName: 'films',
-        items: [
-          {
-            id: 10,
-            name: 'Nausicaä of the Valley of the Wind',
-            imageUrl: 'https://www.studioghibli.com.au/wp-content/uploads/2017/07/1475-title-treatment-portrait-key-art-normal-medium-683x1024.jpg',
-            price: 25,
-            description: "Warrior and pacifist Princess Nausicaä desperately struggles to prevent two warring nations from destroying themselves and their dying planet.",
-            director: "Hayao Miyazaki",
-            producer: "Hayao Miyazaki",
-            release_date: "1984",
-          },  
-        ]
-      }
-  }
+memorabilia: {
+id: 1,
+title: 'Memorabilia',
+routeName: 'memorabilia',
+items: [
+  {
+    id: 1,
+    name: 'Calcifer Toy (Handsewn)',
+    imageUrl: 'imageUrlHere',
+    price: 10
+  },
+  ]
+},
+
+films: {
+  id: 2,
+  title: 'Selected Films',
+  routeName: 'films',
+  items: [
+    {
+    id: 10,
+    name: 'Nausicaä of the Valley of the Wind',
+    imageUrl: 'imageUrlHere',
+    price: 25,
+    description: "Warrior and pacifist Princess Nausicaä",
+    director: "Hayao Miyazaki",
+    producer: "Hayao Miyazaki",
+    release_date: "1984",
+    },  
+  ]
+}
+}
 ```
 
 As you check your Firebase is almost the same, it has keys that point to names that hold values. This is because Firebase is NoSQL so it can have as many properties as possible (properties can be different among documents of same collections) as it is not stored as tables like SQL.
@@ -335,7 +340,8 @@ Firestore supports many types of data. So we need to think about what data we wi
 
 ```js
 // firebase.utils.js
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = 
+  async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey)
 
   const batch = firestore.batch()

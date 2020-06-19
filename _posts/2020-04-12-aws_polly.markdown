@@ -27,7 +27,7 @@ Here is the **implementation**:
 
 ```js
 <div class="navbar-end"> 
- <a class="navbar-item button is-small is-warning readpolly">
+ <a class="navbar-item button readpolly">
  Talk to me Shenron!</a>
 </div> 
 ```
@@ -40,7 +40,8 @@ Here is the **implementation**:
 var AWS = require('aws-sdk');
 AWS.config.region = 'us-east-1';
 
-AWS.config.credentials = new AWS.Credentials("INSERT_ACCESS_ID__HERE", "INSERT_SECRET_ACCESS_KEY_HERE");
+AWS.config.credentials = new AWS.Credentials("ACCESS_ID__HERE", 
+"INSERT_SECRET_ACCESS_KEY_HERE");
 
 var polly = new AWS.Polly();
 
@@ -85,9 +86,9 @@ polly.synthesizeSpeech(pollyParams, function(err, data) {
 const pollyBtn = document.querySelector(".readpolly")
 
 pollyBtn.addEventListener("click", function(){
-    // all our text is inside of main.content, so we grab it all
-    const pollyText = document.querySelector("main.content").innerText
-    doSynthesize(pollyText)
+ // all our text is inside of main.content, so we grab it all
+ const pollyText = document.querySelector("main.content").innerText
+ doSynthesize(pollyText)
  })
 
 ```

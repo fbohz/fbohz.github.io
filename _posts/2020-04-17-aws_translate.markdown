@@ -26,14 +26,14 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 <div class="modal">
 <div class="modal-background"></div>
 <div class="modal-content">
-  <!-- Read on Bulma documentation to learn how to implement -->
-  <a style="display: none;"class="navbar-item button is-small is-warning readTr">
+<!-- Read about Bulma CSS to learn how to implement -->
+  <a style="display: none;"class="readTr">
   </a> &nbsp;                     
-  <a class="es navbar-item button is-small is-success translate">
+  <a class="es navbar-item button translate">
     Español
   </a>
   &nbsp;
-  <a class="pt navbar-item button is-small is-primary translate">
+  <a class="pt navbar-item button translate">
     Portugues
   </a>
 </br><p id="tr-content" style="color: white"></p>
@@ -46,7 +46,8 @@ var translate = new AWS.Translate({region: 'us-east-1'});
 3) Add eventListeners to our modal so it can be displayed shown. From Bulma documentation we need to add the `is-active` class to show the modal and remove it once its closed. We also need to make our buttons inside the modal visible.
 
 ```js
-document.getElementById("showModal").addEventListener('click', function(e){
+document.getElementById("showModal")
+.addEventListener('click', function(e){
   const ptBtn = document.querySelector(".pt")
   ptBtn.style.display = "block"
   const esBtn = document.querySelector(".es")
@@ -54,7 +55,8 @@ document.getElementById("showModal").addEventListener('click', function(e){
   modal.classList.add("is-active")
 })
 
-document.querySelector(".modal-close").addEventListener('click', function(e){
+document.querySelector(".modal-close")
+.addEventListener('click', function(e){
  document.getElementById("tr-content").textContent = ""
  readTr.style.display = "none"
   modal.classList.remove("is-active")
@@ -76,40 +78,37 @@ document.querySelector(".modal-close").addEventListener('click', function(e){
 const lang = document.querySelectorAll(".translate")
 
 lang.forEach(function(btn) {
-   btn.addEventListener("click", function(e){
-       let target = ""
-       if (btn.classList.contains("es")) {
-           target = "es"
-           ptBtn.style.display = "none"
-       } else {
-           target = "pt"
-           esBtn.style.display = "none"
-       }
+btn.addEventListener("click", function(e){
+  let target = ""
+  if (btn.classList.contains("es")) {
+      target = "es"
+      ptBtn.style.display = "none"
+  } else {
+      target = "pt"
+      esBtn.style.display = "none"
+  }
 
- document.querySelector("main.content").childNodes.forEach(node => {
-     if (typeof node.textContent.trim() === 'string' && node.textContent.trim().length > 0) {
-         let params = {
-             Text: node.innerText,
-             SourceLanguageCode: 'auto',
-             TargetLanguageCode: target
-         };
-         
-          
-         translate.translateText(params, function (err, data) {
-             if (err) {
-                 console.log(err, err.stack);
-                 alert("Error calling Amazon Translate. " + err.message);
-                 return;
-             }
-             if (data) {
-                 document.getElementById("tr-content").innerText = data.TranslatedText
-             } 
-         })
-     }
- })
-   })    
-
-})
+document.querySelector("main.content").childNodes.forEach(node => {
+if (typeof node.textContent.trim() === 'string' 
+  && node.textContent.trim().length > 0) {
+  let params = {
+      Text: node.innerText,
+      SourceLanguageCode: 'auto',
+      TargetLanguageCode: target
+  };
+  
+  translate.translateText(params, function (err, data) {
+      if (err) {
+      console.log(err, err.stack);
+      alert("Error calling Amazon Translate. " + err.message);
+      return;
+      }
+      if (data) {
+      document.getElementById("tr-content").innerText = data.TranslatedText
+      } 
+  })
+}
+})})})
 
 ```
 
@@ -128,56 +127,56 @@ const pollyBtn = document.querySelector(".readpolly")
 const modal = document.querySelector(".modal")
 const readTr = document.querySelector(".readTr")
 
-document.getElementById("showModal").addEventListener('click', function(e){
-const ptBtn = document.querySelector(".pt")
-ptBtn.style.display = "block"
-const esBtn = document.querySelector(".es")
-esBtn.style.display = "block"
+document.getElementById("showModal")
+.addEventListener('click', function(e){
+ const ptBtn = document.querySelector(".pt")
+ ptBtn.style.display = "block"
+ const esBtn = document.querySelector(".es")
+ esBtn.style.display = "block"
 
 modal.classList.add("is-active")
 const lang = document.querySelectorAll(".translate")
 
 lang.forEach(function(btn) {
-  btn.addEventListener("click", function(e){
-      readTr.style.display = "block"
-      let target = ""
-      if (btn.classList.contains("es")) {
-          target = "es"
-          ptBtn.style.display = "none"
-          readTr.innerText = "Quiero escuchar a Shenron!"
-      } else {
-          target = "pt"
-          esBtn.style.display = "none"
-          readTr.innerText = "Quero ouvir a Shenron!"
-      }
+btn.addEventListener("click", function(e){
+   readTr.style.display = "block"
+   let target = ""
+   if (btn.classList.contains("es")) {
+       target = "es"
+       ptBtn.style.display = "none"
+       readTr.innerText = "Quiero escuchar a Shenron!"
+   } else {
+       target = "pt"
+       esBtn.style.display = "none"
+       readTr.innerText = "Quero ouvir a Shenron!"
+   }
 
-  document.querySelector("main.content").childNodes.forEach(node => {
-      if (typeof node.textContent.trim() === 'string' && node.textContent.trim().length > 0) {
-          let params = {
-              Text: node.innerText,
-              SourceLanguageCode: 'auto',
-              TargetLanguageCode: target
-          };
-          
-           
-          translate.translateText(params, function (err, data) {
-              if (err) {
-                  console.log(err, err.stack);
-                  alert("Error calling Amazon Translate. " + err.message);
-                  return;
-              }
-              if (data) {
-                  document.getElementById("tr-content").innerText = data.TranslatedText
-              } 
-          })
-      }
-  })
-})    
-   
+document.querySelector("main.content").childNodes.forEach(node => {
+if (typeof node.textContent.trim() === 'string' 
+ && node.textContent.trim().length > 0) {
+    let params = {
+        Text: node.innerText,
+        SourceLanguageCode: 'auto',
+        TargetLanguageCode: target
+    };
+    
+     
+    translate.translateText(params, function (err, data) {
+        if (err) {
+        console.log(err, err.stack);
+        alert("Error calling Amazon Translate. " + err.message);
+        return;
+        }
+        if (data) {
+        document.getElementById("tr-content").innerText = data.TranslatedText
+        } 
+    })
+}
 })
-})
+})})})
 
-document.querySelector(".modal-close").addEventListener('click', function(e){
+document.querySelector(".modal-close")
+ .addEventListener('click', function(e){
   document.getElementById("tr-content").textContent = ""
   readTr.style.display = "none"
    modal.classList.remove("is-active")
@@ -206,20 +205,20 @@ e.stopPropagation();
        TextType: "text", 
        VoiceId: voice
    };
-   polly.synthesizeSpeech(pollyParams, function(err, data) {
-       if (err) {
-           console.log(err, err.stack); // an error occurred
-           alert("Error calling Amazon Polly. " + err.message);
-       }
-       else {
-           var uInt8Array = new Uint8Array(data.AudioStream);
-           var arrayBuffer = uInt8Array.buffer;
-           var blob = new Blob([arrayBuffer]);
-           var url = URL.createObjectURL(blob);
-   
-           audioElement = new Audio([url]);
-           audioElement.play();
-       }
+ polly.synthesizeSpeech(pollyParams, function(err, data) {
+     if (err) {
+         console.log(err, err.stack); // an error occurred
+         alert("Error calling Amazon Polly. " + err.message);
+     }
+     else {
+         var uInt8Array = new Uint8Array(data.AudioStream);
+         var arrayBuffer = uInt8Array.buffer;
+         var blob = new Blob([arrayBuffer]);
+         var url = URL.createObjectURL(blob);
+ 
+         audioElement = new Audio([url]);
+         audioElement.play();
+     }
    });
 }
 
@@ -228,3 +227,5 @@ e.stopPropagation();
 If all goes smooth we'll have our YBZ translate text and read out loud such translation!
 
 ![aws2 2 10 50 11 PM](https://user-images.githubusercontent.com/15071636/79627471-2213e880-80fe-11ea-85fb-1033f1cc3787.gif)
+
+Go lost? Checkout the [Repo](https://github.com/fbohz/ybz-aws).

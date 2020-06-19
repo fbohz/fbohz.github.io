@@ -108,13 +108,14 @@ type Mutation {
 
 Pretty easy right?
 
-*Note*: as React developers, we will usually only concern ourselves with the frontend implementation of GraphQL. If you're curious as to how to  build a GraphQL server, find some resources, as well as the list of some popular options out there for building such a server:
+*Note*: as React developers, we will usually only concern ourselves with the frontend implementation of GraphQL. If you're curious as to how to  build a GraphQL server, below are some resources, as well as a list of some popular options out there for building such a server:
 
 - Backend Implementation [Example](https://github.com/ZhangMYihua/crwn-clothing-prisma). Uses [Prisma](https://www.prisma.io/)
 - [Hasura](https://hasura.io/)
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 - Quick way to build a GraphQL server: [graphql-yoga](https://github.com/prisma/graphql-yoga)
 - A quick [step by step guide](https://blog.apollographql.com/tutorial-building-a-graphql-server-cddaa023c035) on how to set up your own GraphQL server
+- Here's my backend [**Rails API + GraphQL Implementation**](https://github.com/fbohz/yijing-ball-z_backend).
 
 **Introduction to Apollo**
 
