@@ -12,6 +12,11 @@ filename: 2020-06-15-three_tier_architecture
 
 Last week (**link**) I shared my answer to a classical interview question from Facebook and my take on it using JavaScript. Today I'll talk about some interviewing tips when tackling with such technical questions!
 
+**How to Solve Coding Problems**
+- This is what will set you apart from others.
+- Thought process is important in a coding interview.
+- Understand tradeoffs.
+
 ## What To Expect
 
 When called for an interview, you can expect one (or a combination) of the following formats:
@@ -44,8 +49,15 @@ Then, make sure you *are prepared*
 - Know the position you're interviewing for.
 - Research about the company
 - Prepare a list of study materials. Include videos, articles, courses etc.
+- Practice, practice, practice! Use HackerRank, LeetCode etc.
 
-Practice, practice, practice! Use HackerRank, LeetCode etc.
+**What are companies looking for**
+- Analytic skills: hear your thought process
+- Coding Skills: code clean, readable
+- Technical skills: do you know the fundamentals
+- Communication skills: personality matches company's personality?
+
+They want smart people that solve problems themselves without having other people to walk them by the hand all the time.
 
 ## The Flow: Follow It and You Will Cruise the Interview.
 
@@ -94,7 +106,7 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
 
 **Repeat after me**: *A solution (even brute force solution) is better than no solution*.
 
-## K.O. Reminders
+## Some Reminders
 
 1. Listen, ask questions. **Look for clues**.
 2. Draw and example. Big and with no special cases.
@@ -105,6 +117,25 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
 7. Modularize as much as possible.
 8. Test your code. Simple test cases, then bigger test cases.
 
+## K.O. Reminders
+
+- In order to solve problems we need to learn Data Structures and Algorithms. 90% of the time you'll use these:
+  - Data Structures: E.g. arrays, stacks, queues, linked lists, trees, tries graphs, hash tables
+  - Algorithms: E.g. sorting, dynamic programming, BFS + DFS (searching), recursion
+- **Don't jump straight into coding!** ask questions about parameters, how large are the parameters received, anything as needed. If not very large then you don't have to worry about time vs space complexity and Big-O.
+- Stop and question as much as you can, but don't be annoying.
+-  Start with brute force approach:
+   -  Tell interviewer about it. Don't necessarily have to code this part.
+- Avoid nested loops / O(n^2) /O(a*b)
+- Interviewer wants to see:
+  - You understand problem
+  - Can solve it naively and brute by thinking it out loud.
+  - Make logical steps towards the solution.
+    - Modularize code (pieces of code that do one thing). 
+    - Make it readable.
+  - When you have a solution. Talk with interviewer as ways in which it can be broken down.
+  - **AFTER YOU SOLVE IT** you can talk about your thinking and research you might do to make it better. Like ES6+ functions, other data structures that could make it more readable or work better.
+- Interviewer if satisfied, or out of time, will end the interview accordingly.
 
 ## One Last Thing...
 
@@ -117,6 +148,5 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
   - Don't be afraid of say 'I don't know'.
   - **Make an educated guess**.
 - If you can, prepare your own questions ahead of time.
-
 
 You've got this! 👊🏼
