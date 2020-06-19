@@ -149,4 +149,18 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
   - **Make an educated guess**.
 - If you can, prepare your own questions ahead of time.
 
+## BONUS: SAMPLE QUESTION
+
+I decided to take a chance at the classic Facebook question delineated on [this video](https://www.youtube.com/watch?v=4UWDyJq8jZg&t=7s).
+
+**The Question**
+
+Given a list of people with their birth and death YEARS, find the year with the highest population.
+
+**The Solution**
+
+I implemented a class-based approach. If you can't see the code below just access it [here](https://repl.it/@fbohz/CodingInterviewQsPractice#index.js).
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/CodingInterviewQsPractice?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 You've got this! 👊🏼
