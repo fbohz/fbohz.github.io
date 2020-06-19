@@ -1,0 +1,359 @@
+---
+layout: post
+title:      "On CS Algorithms: Chapter II"
+# date:       2020-08-15 19:31:03 -0400
+permalink:  algorithms_ch2
+filename: 2020-08-15-algorithms_ch2
+---
+
+> We must remember that programs can be defined pretty much as `data structures + algorithms`. As we conclude this exploration we'll be discussing Searching algorithms and Dynamic Programming. 
+
+# On CS Algorithms: Chapter II
+
+We must remember that programs can be defined pretty much as `data structures + algorithms`. As we conclude this exploration we'll be discussing Searching algorithms and Dynamic Programming. 
+
+# Searching + Traversal, BFS, DFS
+We'll talk about:
+- Searching + Traversal
+- Breadth-first search (BFS), Depth-first search (DFS)
+
+Searching is super useful:
+- We search Google, YouTube, search in file.
+- How computers/software can search so fast? Some strategies
+  - Linear Search
+  - Binary Search 
+  - BFS
+  - DFS
+
+## Linear / Sequential Search
+
+- Find target value within a list.
+- Like loop through arrays to find items.
+  - Check one-by-one.
+- Best case `O(1)` and worst case check every single item `O(n)`
+- Some JS strategies using linear:
+
+```javascript
+
+var beasts = ['Centaur', 'Godzilla'];
+
+// ALL are linear
+
+beasts.indexOf('Godzilla');
+
+beasts.findIndex(function(item){
+return item === 'Godzilla';
+});
+
+// return item instead of index
+beasts.find(function(item){
+return item === 'Godzilla';
+})
+
+// true / false
+beasts.includes('Godzilla')
+```
+
+We can't use this on Google or Facebook, since it will cost time.
+
+## Binary Search
+**Good on sorted lists**. E.g. you're looking for 34 and list is sorted: 1, 4, 5, 9, 34, 45
+
+Instead of checking everything you can do binary search:
+- You can start in middle of list:
+  - Is 9 higher than 34? NO. **Then discard to left**.
+  - Go to middle of group again and do comparison.
+- If it's sorted we can do better than O(n), creating a **binary search tree**. Data complexity since its a tree then it gives great storage too.
+- Divide and conquer too.
+- Binary search has lookup method by **implementing trees as we saw on tree DS**.
+- This has `O(log n)`.
+- But sometimes we need to traverse all nodes, there are other strategies for that.
+
+## Traversal - Graph + Tree Traversals 
+
+Sometimes we want to add color property to all nodes. **Traversals is like visiting every node**.
+- How can we traverse a Tree / Graph?
+  - With Breadth-first search (BFS), Depth-first search (DFS).
+  - Both have `O(n)`.
+- Main benefit we don't put them on Arrays or Hash Tables is order and good O(log n) instead of O(n).
+- Trees / Graphs are used a lot in traversal.
+
+## Breadth-first search (BFS) & Depth-first search (DFS)
+
+### BFS & DFS Intro
+
+- BFS:
+  - Start with root node and move left to right across second, third level, and so on.
+    - Until you find node you're looking OR tree ends.
+  - **BFS uses more memory b/c it tracks child nodes**. So there are implications
+- DFS:
+  - Follows one branch until is on last leave then moves forward checking unexplored children and branches.
+  - **Lower memory requirement. Don't need to store all child pointers**.
+  - So until it hits dead end then moves.
+- BFS / DFS:
+
+```javascript
+//OUR TREE
+//     9
+//  4     20
+//1  6  15  170
+
+/*
+    BFS: Visits all levels and outputs a list as it finds what it needs
+    [9,4,20,1,6,15,17]
+
+    DFS: List is different
+    [9,4,1,6,20, 15,17]
+
+*/
+```
+
+### BFS vs DFS
+BFS is like water from top to down. DFS is like lines.
+
+When to use BFS or DFS? Time complexity is **same for both** `O(n)`
+
+- BFS:
+  - Good for **finding shortest path**. As it checks closer nodes.
+  - Bad: More memory
+  - If you have additional info and know where the node is, use BFS.
+- DFS:
+  - When you know node is in lower level then use DFS.
+  - Ask the question **does the path exist**
+  - Good: Less memory
+  - Bad:** it can get slow if tree is very deep not very good finding shortest path**
+- Resource: https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+
+## Common Interview Questions BFS vs DFS
+
+Study to see how you explain to interviewer
+
+1. If you know a solution is NOT far from the root of the tree:
+   - BFS - starts searching closest nodes first. 
+
+2. If the tree is VERY deep and solutions are rare, 
+   - BFS (DFS will take long time. )
+
+3. If the tree is very wide:
+   - DFS (BFS will need too much memory as it has to keeps track of all the nodes)
+
+4. If solutions are frequent but located DEEP in the tree
+   - DFS
+
+5. determining whether a path exists between two nodes
+   - DFS
+
+6. Finding the shortest path
+   - BFS
+
+## Coding BFS & DFS
+
+### Breadth-first Search - Exercises
+- Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs
+- Uses a queue array
+- Usually is done with iteration.
+
+### Breadth-first search (Recursive) - Exercises 
+- Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs-recursive
+- Just for fun.
+
+### Depth-first search - Exercises
+- Code here: https://repl.it/@fbohz/DFS-InOrder-PostOrder-PreOrder-Trees-Traversals
+- **stack** DS used here as it is Recursion. Height of tree will tell how much memory, memory consumption will depend on that.
+- preOrder: from parent
+- inOrder: order of nodes
+- postOrder: order from trees at the bottom
+- Play with code and console log to see how it inputs
+- **main difference is the order you get output**
+- **depending on your needs you might implement one or the other**
+- You just learned how to traverse through tree try to implement in a graph!
+
+### Validate a BST - Interview Qs
+-  A very common question you will get asked in an interview is **how to validate a binary search tree**! Hint, you want to use **BFS** for this.
+-  Try it here: https://leetcode.com/problems/validate-binary-search-tree/
+
+### Graph Traversals
+ - Tree traversal will be the same as Graph traversal. **Trees are a type of graphs**.
+ - Graphs model real life, like recommendation engine (items related) using like BFS. Facebook what type of friend request or LinkedIn connection with DFS. 
+ - See it in action: https://visualgo.net/en/dfsbfs?slide=1 
+ 
+ **Remember** 
+ - DFS is for shortest path. Closest to our node. Related items on Amazon, closest connections.
+ - DFS check if it exists. We can go very deep very fast.
+ - BFS in Graphs:
+   - What's the closest node to 0? BFS is very good as it looks closest nodes first.
+ - DFS in Graphs:
+   - Great for solving a maze. Because it goes deep then backtracks to solve the puzzle until finds exit.
+   - Idea of backtracking after dead end is just recursion.
+   - It answers does the path exist? 
+   - If very deep branch can get very slow. Needs to keep track of all the functions on the stack.
+
+## Dijkstra + Bellman-Ford Algorithms
+
+Resource: https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e
+
+- **In interview you'll probably don't implement them**
+- BFS **doesn't care about weight**. So doesn't take to account weighted graphs.
+- Dijkstra / Bellman-Ford Algorithms:
+  - **Find the shortest path between two nodes on a weighted graph**.
+  - Bellman can accommodate negative weights and Dijkstra doesn't.
+  - Dijkstra is faster than Bellman's (worst case is O(n^2)).
+
+In an Interview:
+- These algorithms are very **complex**
+- Know that they exist and how to use them.
+- If you see a weighted graph and asked to find best algorithm:
+  - BFS can't be used because is weighted
+  - Negative weights? If YES, Bellman. If NO, Dijkstra.
+
+## Searching + Traversal Review
+- Searching and Traversal are one of the most popular algorithms.
+- Learned about how to traverse tree/graph.
+- Now we're better to equipped to answer questions.
+- Review the **Technical Interview Mind Map**
+  - https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link
+
+## Dynamic Programming (DP)
+
+- DP is just optimization technique using cache. If you can cache then you can do DP. So its just a buzz word a lot of times.
+- DP solves problems by breaking it down into sub problems, storing solutions in case those sub problems arise.
+- DP
+    - Divide and Conquer + Memoization (cache)
+
+## Memoization
+
+- Caching is a way to store values that you can use later. Like a backpack that holds items you need.
+- Memoization is a specific caching we use in our programs.
+  
+**Memoization example**
+
+```javascript
+
+function add80(n) {
+    return n + 80
+}
+
+add80(5)
+
+```
+
+What if this operation took a long time? Can we optimize it with memoization?
+
+```javascript
+
+function add80(n) {
+    return n + 80
+}
+
+let c = {}
+
+function memoAdd80(n) {
+    if (n in cache) {
+        //O(1)
+        return cache[n]
+    } else {
+        cache[n] = n + 80
+        return cache[n]
+    }
+}
+
+```
+
+What is then memoization?
+
+- Caches return value based on parameters. **If param of function doesn't change then its memoized then it will return cache version**. If parameter changes then calculates as usual.
+- **So its a way to remember a solution to a problem so you don't have to calculate again**.
+
+### Closures in Memoization
+
+Patterns in DP:
+
+        ```javascript
+
+function memoAdd80() {
+    let cache = {}
+    //closure returns a function
+    return function(n) {
+      if (n in cache) {
+          //O(1)
+          return cache[n]
+      } else {
+          cache[n] = n + 80
+          return cache[n]
+      }
+    }
+}
+
+const memoized = memoAdd80()
+console.log(1, memoized(6))
+// console.log(cache)
+// console.log('-----------')
+console.log(2, memoized(6))
+
+```
+- Closures **return a fn inside a fn**
+- Because of closure we can **avoid global scope** and access cache.
+
+### Fibonacci and DP (caching)
+
+Remember recursion example.
+
+```javascript   
+
+let calculations = 0
+function fib(n) {
+    calculations++
+    if (n < 1) {
+        return n
+    }
+
+    return fib(n-1) + fib(n-2)
+}
+
+fib(6)
+//will take a long time
+// fib(30)
+```
+
+- Remember this is pretty bad! O(2^n). **We'll never want to implement this in real life**.
+  - This because we repeat a lot of calculations.
+- **Can we fix this with caching (DP)**? Reduce it to O(n)
+  - Yes we can because the solution is optimal and we do the same.
+  - We can actually return a memoized version with O(1) and use the cached version.
+
+Solving fibonacci. See below or [here](https://repl.it/@fbohz/BlogDPSolvingFibonacci#index.js).
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogDPSolvingFibonacci?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+Note: we increased the space complexity with memoization.
+
+## Assess when to use DP (caching / memoization)
+
+Think about your problem like this to implement DP:
+
+1. Can it be divided into subproblem. Problem broken down into smaller problems.
+2. Recursive solution
+3. Are there repetitive sub-problems?
+   - Same calculation over and over? **we can memoize the problem!** 
+4. Memoize sub-problems 
+5. Implement caching! and save a lot of calculations!
+
+
+## Interview Questions: Dynamic Programming
+
+Here are some popular Dynamic Programming Questions (see if you can notice the pattern):
+
+1. House Robber: https://leetcode.com/problems/house-robber    
+2. Best Time to Buy and Sell Stock: https://leetcode.com/problems/best-time-to-buy-and-sell-stock   
+3. Climbing Stairs: https://leetcode.com/problems/climbing-stairs      
+
+## Review of DP
+
+- **All you need is to remember the pattern of saving a cache variable and use closures to return a function within a function**.
+- If there's repeated calculation then get the memoized result.
+- Memoized version has more space complexity, so this tradeoff is necessary.
+- **Other way to incorporate DP is bottom up approach**.
+- This one avoids recursion. Starts from simple to higher solutions.
+- This one is **harder to know how/when to use**
+- Interview is unlikely that they will ask you to implement both methods.
+- **In short memoization help us to avoid having to do repeated tasks**. If you can implement this you're on your way to become a great engineer. 
