@@ -1,0 +1,187 @@
+---
+layout: post
+title:      "Learning About Flexbox"
+# date:       2020-07-25 19:31:03 -0400
+permalink:  learning_about_flexbox_css
+filename: 2020-07-25-learning_about_flexbox_css
+---
+
+> It might be common to think that software engineers don't have to deal or worry about UI. Being that delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
+
+# Learning About Flexbox
+
+It might be common to think that software engineers don't have to deal or worry about UI. Being that delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
+
+**What Is Flexbox**
+
+You can apply Flexbox to setup the initial layout of a website, app, and mobile application (with React Native). The first thing we need to do to start using Flexbox is to apply the following to the parent container:
+
+`display: flex`
+
+## Flex Parent (Container) Properties
+
+Now lets imagine you have a container with 3 boxes:
+
+```html
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+```
+
+In the container we could apply one of the following and each will have a different effect on the child:
+
+- flex-direction
+- flex-wrap
+- flex-flow
+- justify-content
+- align-items
+- align-content
+
+**Flex Direction**
+
+Lets say we'll apply `flex-direction: column` what do we get?
+
+![Screen Shot 2020-06-19 at 9 17 54 PM](https://user-images.githubusercontent.com/15071636/85189215-6775a300-b272-11ea-8de6-02d230574e0a.png)
+
+So pretty much we decide if we want them left-right or right-left, top-bottom etc. These are your options:
+
+```css
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+```
+
+**Flex Wrap**
+
+By default flex will try to fit all items into a single line if you don't want this you can change it:
+
+```css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
+
+- nowrap (default): all flex items will be on one line
+- wrap: flex items will wrap onto multiple lines, from top to bottom.
+- wrap-reverse: flex items will wrap onto multiple lines from bottom to top.
+
+**Flex Flow**
+
+With flex flow we combine flex-wrap and flex-direction into one property for example `flex-flow: column wrap;`.
+
+**Justify Content**
+
+With justify-content we can align our items along the main axis. You can distribute extra space. Here are our options:
+
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+}
+```
+
+For example we can display our items in the center with `justify-content: center;`:
+
+![Screen Shot 2020-06-19 at 9 26 40 PM](https://user-images.githubusercontent.com/15071636/85189316-97717600-b273-11ea-8cd9-150395753be7.png)
+
+**Align Items**
+
+We use it with justify-content to align items. This more specifically with align-items on a cross axis of the current line, so perpendicular to main-axis. We could apply this:
+
+```css
+.container {
+  align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+}
+```
+
+**Align Content**
+
+With align-content you can align items along multiple lines:
+
+```css
+align-content: flex-start | flex-end | center | space-between | space-around | stretch
+```
+
+If there's only one line, this property will have no effect.
+
+## Flex Children (Items/Elements) Properties
+
+You can apply the following to child elements of the container:
+
+```css
+order: <integer>;
+flex-grow: <number>; /* default 0 */
+flex-shrink: <number>; /* default 1 */
+flex-basis: <length> | auto; /* default auto */
+flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+align-self: auto | flex-start | flex-end | center | baseline | stretch;
+```
+
+**Order**
+
+With order you specify the order of the children elements. The default is 0.
+
+**Flex Grow / Flex Shrink**
+
+With flex-grow you can specify how many a specify item will grow compared to others. Default is 0. Consider this:
+
+```html
+<div class="flex-container">
+  <div style="flex-grow: 1">1</div>
+  <div style="flex-grow: 1">2</div>
+  <div style="flex-grow: 8">3</div>
+</div>
+```
+
+What we get:
+
+![Screen Shot 2020-06-19 at 9 36 26 PM](https://user-images.githubusercontent.com/15071636/85189460-f5528d80-b274-11ea-8cff-9be118384ba1.png)
+
+Flex-shrink is kind of the opposite thus how it will shrink related to its sibling items. Default is 1.
+
+**Flex Basis**
+
+You can specify the initial length of an item. Default is auto.
+
+**Flex**
+
+With flex you can apply `flex-grow, flex-shrink, and flex-basis` at the same time. The second and third parameters are optional. It is *recommended* to use `flex` instead of the individual properties.
+
+**Align Self**
+
+Align self sets how the selected item will be aligned. It also overrides the align-items parent property. 
+
+```css
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+Here we can align the third item in the middle of its parent container:
+
+```html
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="align-self: center">3</div>
+  <div>4</div>
+</div>
+```
+
+We then get:
+
+![Screen Shot 2020-06-19 at 9 55 21 PM](https://user-images.githubusercontent.com/15071636/85189784-99d5cf00-b277-11ea-8720-b1e4c18ff770.png)
+
+**Flex Tips**
+
+- For centering try `justify-content: center; align-items: center;`.
+- `float, clear, vertical-align` have no effect on a flex item.
+
+## Resources
+
+- [**Complete Guide to Flexbox**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [**Flex Cheatsheet**](https://yoksel.github.io/flex-cheatsheet/)
+- [**W3 Schools Flexbox**](https://www.w3schools.com/css/css3_flexbox.asp)
+- [**CSS Flexbox Tips and Tricks**](https://www.freecodecamp.org/news/css-flexbox-tips-and-tricks/)
+- [**Flexbox Froggy: Learn Flexbox by Playing**](https://flexboxfroggy.com/)
