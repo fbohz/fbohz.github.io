@@ -9,16 +9,16 @@ permalink:  aws_pt2
 
 **Note:** This is a continuation to my last blog on [**TTS with AWS**](http://fbohz.com/aws_polly) implemented on the Yijing Ball Z (YBZ). 
 
-Now that with AWS we can read text out loud, How about we implement `AWS.Translate` so we can improve our Duolingo listening skills and the let Polly read our translated Yijing text! 
+Now that with AWS we can read text out-loud, How about we implement `AWS.Translate` so we can improve our Duolingo listening skills and the let Polly read our translated Yijing text! 
 
 Again, if you don't know how to setup AWS with Vanilla JS, read the [previous](http://fbohz.com/aws_polly) blog to get your AWS SDK setup. 
 
-1) To start, let's instatiate our `AWS.Translate` variable so we can use it.
+1) To start, let's instantiate our `AWS.Translate` variable so we can use it.
 
 ```js
 var translate = new AWS.Translate({region: 'us-east-1'});
 ```
-   - Your config region is important, so use the one appropiate to your own region configuration.
+   - Your config region is important, so use the one appropriate to your own region configuration.
   
 2)  Let's implement a [**Bulma modal**](https://bulma.io/documentation/components/modal/) on our navbar that when clicked will give us the option to translate the text.
 
@@ -34,7 +34,7 @@ var translate = new AWS.Translate({region: 'us-east-1'});
   </a>
   &nbsp;
   <a class="pt navbar-item button translate">
-    Portugues
+    Português
   </a>
 </br><p id="tr-content" style="color: white"></p>
 </div>
