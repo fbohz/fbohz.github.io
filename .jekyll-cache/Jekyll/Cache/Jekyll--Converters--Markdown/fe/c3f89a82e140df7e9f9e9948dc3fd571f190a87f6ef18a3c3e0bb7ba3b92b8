@@ -1,4 +1,4 @@
-I"O'<blockquote>
+I",'<blockquote>
   <p>Playing with AWS Services - Would You Read For Me Polly?</p>
 </blockquote>
 
@@ -25,7 +25,7 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-end</span><span class="dl">"</span><span class="o">&gt;</span> 
- <span class="o">&lt;</span><span class="nx">a</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-item button is-small is-warning readpolly</span><span class="dl">"</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="nx">a</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-item button readpolly</span><span class="dl">"</span><span class="o">&gt;</span>
  <span class="nx">Talk</span> <span class="nx">to</span> <span class="nx">me</span> <span class="nx">Shenron</span><span class="o">!&lt;</span><span class="sr">/a</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err"> 
 </span></code></pre></div></div>
@@ -39,7 +39,8 @@
 <span class="kd">var</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">aws-sdk</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">region</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">us-east-1</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">credentials</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Credentials</span><span class="p">(</span><span class="dl">"</span><span class="s2">INSERT_ACCESS_ID__HERE</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">INSERT_SECRET_ACCESS_KEY_HERE</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">AWS</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">credentials</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Credentials</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCESS_ID__HERE</span><span class="dl">"</span><span class="p">,</span> 
+<span class="dl">"</span><span class="s2">INSERT_SECRET_ACCESS_KEY_HERE</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">polly</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Polly</span><span class="p">();</span>
 
@@ -84,9 +85,9 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pollyBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.readpolly</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="nx">pollyBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="c1">// all our text is inside of main.content, so we grab it all</span>
-    <span class="kd">const</span> <span class="nx">pollyText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">main.content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span>
-    <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">pollyText</span><span class="p">)</span>
+ <span class="c1">// all our text is inside of main.content, so we grab it all</span>
+ <span class="kd">const</span> <span class="nx">pollyText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">main.content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span>
+ <span class="nx">doSynthesize</span><span class="p">(</span><span class="nx">pollyText</span><span class="p">)</span>
  <span class="p">})</span>
 
 </code></pre></div></div>

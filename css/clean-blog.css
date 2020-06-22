@@ -184,6 +184,9 @@ hr.small {
   .intro-header .page-heading h1 {
     font-size: 80px;
   }
+  .me-card {
+    margin: 10px;
+  }
 }
 .intro-header .post-heading h1 {
   font-size: 35px;

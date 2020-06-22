@@ -1,10 +1,17 @@
-I"�<blockquote>
+I"u#<blockquote>
   <p>You’ve got this! 👊🏼</p>
 </blockquote>
 
 <h1 id="beating-the-technical-interview">Beating The Technical Interview</h1>
 
 <p>Last week (<strong>link</strong>) I shared my answer to a classical interview question from Facebook and my take on it using JavaScript. Today I’ll talk about some interviewing tips when tackling with such technical questions!</p>
+
+<p><strong>How to Solve Coding Problems</strong></p>
+<ul>
+  <li>This is what will set you apart from others.</li>
+  <li>Thought process is important in a coding interview.</li>
+  <li>Understand tradeoffs.</li>
+</ul>
 
 <h2 id="what-to-expect">What To Expect</h2>
 
@@ -55,9 +62,18 @@
   <li>Know the position you’re interviewing for.</li>
   <li>Research about the company</li>
   <li>Prepare a list of study materials. Include videos, articles, courses etc.</li>
+  <li>Practice, practice, practice! Use HackerRank, LeetCode etc.</li>
 </ul>
 
-<p>Practice, practice, practice! Use HackerRank, LeetCode etc.</p>
+<p><strong>What are companies looking for</strong></p>
+<ul>
+  <li>Analytic skills: hear your thought process</li>
+  <li>Coding Skills: code clean, readable</li>
+  <li>Technical skills: do you know the fundamentals</li>
+  <li>Communication skills: personality matches company’s personality?</li>
+</ul>
+
+<p>They want smart people that solve problems themselves without having other people to walk them by the hand all the time.</p>
 
 <h2 id="the-flow-follow-it-and-you-will-cruise-the-interview">The Flow: Follow It and You Will Cruise the Interview.</h2>
 
@@ -135,7 +151,7 @@
 
 <p><strong>Repeat after me</strong>: <em>A solution (even brute force solution) is better than no solution</em>.</p>
 
-<h2 id="ko-reminders">K.O. Reminders</h2>
+<h2 id="some-reminders">Some Reminders</h2>
 
 <ol>
   <li>Listen, ask questions. <strong>Look for clues</strong>.</li>
@@ -147,6 +163,40 @@
   <li>Modularize as much as possible.</li>
   <li>Test your code. Simple test cases, then bigger test cases.</li>
 </ol>
+
+<h2 id="ko-reminders">K.O. Reminders</h2>
+
+<ul>
+  <li>In order to solve problems we need to learn Data Structures and Algorithms. 90% of the time you’ll use these:
+    <ul>
+      <li>Data Structures: E.g. arrays, stacks, queues, linked lists, trees, tries graphs, hash tables</li>
+      <li>Algorithms: E.g. sorting, dynamic programming, BFS + DFS (searching), recursion</li>
+    </ul>
+  </li>
+  <li><strong>Don’t jump straight into coding!</strong> ask questions about parameters, how large are the parameters received, anything as needed. If not very large then you don’t have to worry about time vs space complexity and Big-O.</li>
+  <li>Stop and question as much as you can, but don’t be annoying.</li>
+  <li>Start with brute force approach:
+    <ul>
+      <li>Tell interviewer about it. Don’t necessarily have to code this part.</li>
+    </ul>
+  </li>
+  <li>Avoid nested loops / O(n^2) /O(a*b)</li>
+  <li>Interviewer wants to see:
+    <ul>
+      <li>You understand problem</li>
+      <li>Can solve it naively and brute by thinking it out loud.</li>
+      <li>Make logical steps towards the solution.
+        <ul>
+          <li>Modularize code (pieces of code that do one thing).</li>
+          <li>Make it readable.</li>
+        </ul>
+      </li>
+      <li>When you have a solution. Talk with interviewer as ways in which it can be broken down.</li>
+      <li><strong>AFTER YOU SOLVE IT</strong> you can talk about your thinking and research you might do to make it better. Like ES6+ functions, other data structures that could make it more readable or work better.</li>
+    </ul>
+  </li>
+  <li>Interviewer if satisfied, or out of time, will end the interview accordingly.</li>
+</ul>
 
 <h2 id="one-last-thing">One Last Thing…</h2>
 
@@ -164,6 +214,20 @@
   </li>
   <li>If you can, prepare your own questions ahead of time.</li>
 </ul>
+
+<h2 id="bonus-sample-question">BONUS: SAMPLE QUESTION</h2>
+
+<p>I decided to take a chance at the classic Facebook question delineated on <a href="https://www.youtube.com/watch?v=4UWDyJq8jZg&amp;t=7s">this video</a>.</p>
+
+<p><strong>The Question</strong></p>
+
+<p>Given a list of people with their birth and death YEARS, find the year with the highest population.</p>
+
+<p><strong>The Solution</strong></p>
+
+<p>I implemented a class-based approach. If you can’t see the code below just access it <a href="https://repl.it/@fbohz/CodingInterviewQsPractice#index.js">here</a>.</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/CodingInterviewQsPractice?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <p>You’ve got this! 👊🏼</p>
 :ET

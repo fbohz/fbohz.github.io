@@ -1,4 +1,4 @@
-I"V�<blockquote>
+I"K�<blockquote>
   <p>In Building <a href="https://studio-ghibli-fanhub.herokuapp.com/">Studio Ghibli’s Fan Hub</a>, a project made with React, I decided to implement Firebase for its backend.</p>
 </blockquote>
 
@@ -136,7 +136,8 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="kc">null</span>
 
 <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span>
+  <span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">currentUser</span><span class="p">:</span> <span class="nx">user</span> <span class="p">})</span>
   <span class="p">})</span>
 <span class="p">}</span>
@@ -160,9 +161,11 @@
 
 <span class="p">{</span>
  <span class="nx">props</span><span class="p">.</span><span class="nx">currentUser</span> <span class="p">?</span> 
- <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">signOut</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">LOGOUT</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err"> 
+ <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> 
+ <span class="nx">auth</span><span class="p">.</span><span class="nx">signOut</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">LOGOUT</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err"> 
 </span> <span class="p">:</span> 
- <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> <span class="nx">to</span><span class="o">=</span><span class="dl">"</span><span class="s2">/signin</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">LOGIN</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
+ <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span> 
+  <span class="nx">to</span><span class="o">=</span><span class="dl">"</span><span class="s2">/signin</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">LOGIN</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
 </span><span class="p">}</span>
 </code></pre></div></div>
 
@@ -194,7 +197,7 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1">// firebase.utils.js</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">createUserProfileDocument</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">userAuth</span><span class="p">,</span> <span class="nx">additionalData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">createUser</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">userAuth</span><span class="p">,</span> <span class="nx">addData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">userAuth</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 
   <span class="kd">const</span> <span class="nx">userRef</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="s2">`users/</span><span class="p">${</span><span class="nx">userAuth</span><span class="p">.</span><span class="nx">uid</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
@@ -209,10 +212,11 @@
         <span class="nx">displayName</span><span class="p">,</span>
         <span class="nx">email</span><span class="p">,</span>
         <span class="nx">createdAt</span><span class="p">,</span>
-        <span class="p">...</span><span class="nx">additionalData</span>
+        <span class="p">...</span><span class="nx">addData</span>
       <span class="p">});</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error creating user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error creating user</span><span class="dl">'</span><span class="p">,</span> 
+      <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -224,8 +228,9 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
 
 <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="k">async</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">createUserProfileDocument</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span>
+  <span class="k">async</span> <span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">createUser</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
 <span class="p">})</span>
 <span class="p">}</span>
 
@@ -262,7 +267,7 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="k">async</span> <span class="nx">userAuth</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">userAuth</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">userRef</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createUserProfileDocument</span><span class="p">(</span><span class="nx">userAuth</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">userRef</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">userAuth</span><span class="p">);</span>
 
         <span class="nx">userRef</span><span class="p">.</span><span class="nx">onSnapshot</span><span class="p">(</span><span class="nx">snapShot</span> <span class="o">=&gt;</span> <span class="p">{</span>
           <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
@@ -300,43 +305,43 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 
 <p><strong>Populating Our Firebase With Additional Data</strong></p>
 
-<p>We need to get back to our Firestore console and add another collection. Before we do that lets take a look at a small part of our current JS data object:</p>
+<p>We need to get back to our Firestore console and add another collection. Before we do that lets take at how our shop.data basic structure looks:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// shop.data.js</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">SHOP_DATA</span> <span class="o">=</span>  <span class="p">{</span>
-  <span class="na">memorabilia</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Memorabilia</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">memorabilia</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Calcifer Toy (Handsewn)</span><span class="dl">'</span><span class="p">,</span>
-          <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://i.ibb.co/BydFmjr/shop.jpg</span><span class="dl">'</span><span class="p">,</span>
-          <span class="na">price</span><span class="p">:</span> <span class="mi">10</span>
-        <span class="p">},</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-    
-    <span class="na">films</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Selected Films (Inc. Digital + BluRay/DVD + Movie Poster)</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">films</span><span class="dl">'</span><span class="p">,</span>
-        <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span>
-            <span class="na">id</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-            <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Nausicaä of the Valley of the Wind</span><span class="dl">'</span><span class="p">,</span>
-            <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://www.studioghibli.com.au/wp-content/uploads/2017/07/1475-title-treatment-portrait-key-art-normal-medium-683x1024.jpg</span><span class="dl">'</span><span class="p">,</span>
-            <span class="na">price</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
-            <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Warrior and pacifist Princess Nausicaä desperately struggles to prevent two warring nations from destroying themselves and their dying planet.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="na">director</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
-            <span class="na">producer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
-            <span class="na">release_date</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1984</span><span class="dl">"</span><span class="p">,</span>
-          <span class="p">},</span>  
-        <span class="p">]</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="na">memorabilia</span><span class="p">:</span> <span class="p">{</span>
+<span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Memorabilia</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">memorabilia</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">items</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Calcifer Toy (Handsewn)</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">imageUrlHere</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">},</span>
+
+<span class="na">films</span><span class="p">:</span> <span class="p">{</span>
+  <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Selected Films</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">routeName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">films</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Nausicaä of the Valley of the Wind</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">imageUrlHere</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Warrior and pacifist Princess Nausicaä</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">director</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">producer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hayao Miyazaki</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">release_date</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1984</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>  
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>As you check your Firebase is almost the same, it has keys that point to names that hold values. This is because Firebase is NoSQL so it can have as many properties as possible (properties can be different among documents of same collections) as it is not stored as tables like SQL.</p>
@@ -344,7 +349,8 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 <p>Firestore supports many types of data. So we need to think about what data we will store as. With that in mind, lets export our <code class="highlighter-rouge">shop.data.js</code> by adding this on our Firebase <code class="highlighter-rouge">firebase.utils.js</code> file.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// firebase.utils.js</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">addCollectionAndDocuments</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">collectionKey</span><span class="p">,</span> <span class="nx">objectsToAdd</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">addCollectionAndDocuments</span> <span class="o">=</span> 
+  <span class="k">async</span> <span class="p">(</span><span class="nx">collectionKey</span><span class="p">,</span> <span class="nx">objectsToAdd</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">collectionRef</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collectionKey</span><span class="p">)</span>
 
   <span class="kd">const</span> <span class="nx">batch</span> <span class="o">=</span> <span class="nx">firestore</span><span class="p">.</span><span class="nx">batch</span><span class="p">()</span>
