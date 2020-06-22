@@ -46,18 +46,19 @@ This is **linear**. As the number of elements increase so does the number of ope
 const nemo = ['nemo'];
 const large = new Array(199999).fill('nemo') 
 
-    function findNemo(array) {
-    let t0 = performance.now()
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === 'nemo') {
-        console.log('Found NEMO!');
-        break;
-        }
-    }
-    let t1 = performance.now() 
-    // this is performance in speed not crucial but for demo purposes.
-    console.log(t1-t0, 'miliseconds')
-    }
+  function findNemo(array) {
+  let t0 = performance.now()
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] === 'nemo') {
+      console.log('Found NEMO!');
+      break;
+      }
+  }
+  let t1 = performance.now() 
+  // this is performance in speed 
+  // but is not crucial just for demo purposes.
+  console.log(t1-t0, 'miliseconds')
+  }
 
 findNemo(nemo); // O(n) -> Linear Time
   ```
@@ -117,11 +118,12 @@ A classic example is the fibonacci with recursion:
 
 ```js
 function fibonacci(num){
-    if (num <= 1){
-        return num
-    }
+  if (num <= 1){
+      return num
+  }
 
-    return fibonacci(num - 2) + fibonacci(num - 1)
+  return fibonacci(num - 2) 
+    + fibonacci(num - 1)
 }
 ```
 
@@ -135,15 +137,16 @@ function fibonacci(num){
 
 ```javascript
 
-    // O(2^n)
-    function fibonacciRecursive(n) {
-    if (n < 2){
-        return n;
-    }
-    return fibonacciRecursive(n - 1) + fibonacciRecursive (n - 2)
-    }
+  // O(2^n)
+  function fibonacciRecursive(n) {
+  if (n < 2){
+      return n;
+  }
+  return fibonacciRecursive(n - 1) 
+    + fibonacciRecursive (n - 2)
+  }
 
-    fibonacciRecursive(6)
+  fibonacciRecursive(6)
 
 ```
 
@@ -158,14 +161,14 @@ function fibonacci(num){
 
 ```javascript 
 function compressBoxesTwice(box1, box2)
-  box1.forEach(b => {
-          console.log(b)
+box1.forEach(b => {
+       console.log(b)
 
-  })
-  box2.forEach(b => {
-          console.log(b)
+})
+box2.forEach(b => {
+       console.log(b)
 
-  })
+})
 ```
 
 **This is actually O(a + b) NOT O(n)**. This because of different terms for inputs.
@@ -176,22 +179,22 @@ function compressBoxesTwice(box1, box2)
 4. **Drop Non-Dominants**
 
 ```javascript
-  function printAllNumbersThenAllPairSums(numbers) {
+function printNumsThenAllPairSums(numbers) {
 
-  console.log('these are the numbers:');
-  numbers.forEach(function(number) {
-      console.log(number);
-  });
+console.log('these are the numbers:');
+numbers.forEach(function(number) {
+   console.log(number);
+});
 
-  console.log('and these are their sums:');
-  numbers.forEach(function(firstNumber) {
-      numbers.forEach(function(secondNumber) {
-      console.log(firstNumber + secondNumber);
-      });
-  });
-  }
+console.log('and these are their sums:');
+numbers.forEach(function(firstNumber) {
+   numbers.forEach(function(secondNumber) {
+   console.log(firstNumber + secondNumber);
+   });
+});
+}
 
-  printAllNumbersThenAllPairSums([1,2,3,4,5])
+printNumsThenAllPairSums([1,2,3,4,5])
 ```
 
 - This could be as `O(n + n^2)`. But you need to drop non-dominants. n^2 is more important since it is worst. So drop `n` and it will be as `O(n^2)`. 
@@ -211,19 +214,19 @@ What adds space complexity?
 Space complexity refers to additional space. Example:
   
 ```javascript
-    function boooo(n) {
-    for (let i = 0; i < n; i++) {
-        console.log('booooo');
-    }
+  function boooo(n) {
+  for (let i = 0; i < n; i++) {
+      console.log('booooo');
+  }
 }
 
 // Space complexity O(n)
 function arrayOfHiNTimes(n) {
-    var hiArray = [];
-    for (let i = 0; i < n; i++) {
-        hiArray[i] = 'hi';
-    }
-    return hiArray;
+  var hiArray = [];
+  for (let i = 0; i < n; i++) {
+      hiArray[i] = 'hi';
+  }
+  return hiArray;
 }
 ```
 
