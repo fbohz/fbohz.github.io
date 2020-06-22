@@ -49,7 +49,8 @@ So pretty much we decide if we want them left-right or right-left, top-bottom et
 
 ```css
 .container {
-  flex-direction: row | row-reverse | column | column-reverse;
+  flex-direction: row | row-reverse 
+  | column | column-reverse;
 }
 ```
 
@@ -77,7 +78,10 @@ With justify-content we can align our items along the main axis. You can distrib
 
 ```css
 .container {
-  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+  justify-content: flex-start | flex-end 
+  | center | space-between | space-around 
+  | space-evenly | start | end 
+  | left | right ... + safe | unsafe;
 }
 ```
 
@@ -91,7 +95,10 @@ We use it with justify-content to align items. This more specifically with align
 
 ```css
 .container {
-  align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+  align-items: stretch | flex-start | flex-end 
+  | center | baseline | first baseline 
+  | last baseline | start | end |
+   self-start | self-end + ... safe | unsafe;
 }
 ```
 
@@ -100,7 +107,8 @@ We use it with justify-content to align items. This more specifically with align
 With align-content you can align items along multiple lines:
 
 ```css
-align-content: flex-start | flex-end | center | space-between | space-around | stretch
+align-content: flex-start | flex-end | center
+ | space-between | space-around | stretch
 ```
 
 If there's only one line, this property will have no effect.
@@ -114,8 +122,10 @@ order: <integer>;
 flex-grow: <number>; /* default 0 */
 flex-shrink: <number>; /* default 1 */
 flex-basis: <length> | auto; /* default auto */
-flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-align-self: auto | flex-start | flex-end | center | baseline | stretch;
+flex: none | [ <'flex-grow'> <'flex-shrink'>?
+ || <'flex-basis'> ]
+align-self: auto | flex-start | flex-end
+ | center | baseline | stretch;
 ```
 
 **Order**
@@ -154,7 +164,8 @@ Align self sets how the selected item will be aligned. It also overrides the ali
 
 ```css
 .item {
-  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+  align-self: auto | flex-start 
+  | flex-end | center | baseline | stretch;
 }
 ```
 
