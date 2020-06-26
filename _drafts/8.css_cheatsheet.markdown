@@ -112,6 +112,11 @@ animation: moveInBottom .5s ease-out .75,
 
 Whenever you work with animations and with `translate()`, many times `backface-visibility: hidden;` fixes it. So try to add it it if having issues
 
+
+**`overflow: hidden`**
+
+Another trick when an element is to big and is overflowing. You can use `overflow: hidden` to fix it.
+
 **Pseudo Elements and Pseudo Classes**
 
 *Pseudo classes* are special state of a selector. For example `.btn:link` selects the elements on a special condition in this case when as link.
@@ -230,3 +235,4 @@ The `-w` will keep watching for whatever we do in our code. You can also install
 [Box Sizing](https://css-tricks.com/box-sizing/)
 [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
 [Linea Free Icons](https://linea.io/)
+[Coverr - Free Videos](http://coverr.co/)
