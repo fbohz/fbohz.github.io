@@ -113,6 +113,7 @@ Then once you define it, you can add it to the specific element you want to appl
 animation: moveInBottom .5s ease-out .75, 
 }
 ```
+
 **`backface-visibility: hidden`**
 
 Whenever you work with animations and with `translate()`, many times `backface-visibility: hidden;` fixes it. So try to add it it if having issues
@@ -241,3 +242,4 @@ The `-w` will keep watching for whatever we do in our code. You can also install
 [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
 [Linea Free Icons](https://linea.io/)
 [Coverr - Free Videos](http://coverr.co/)
+[Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila!
