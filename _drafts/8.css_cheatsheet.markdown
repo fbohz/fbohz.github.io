@@ -68,6 +68,11 @@ You can then use rem as this:
 }
 ```
 
+**`!important`**
+
+`!important` overrides specificity rules. Can save headaches to make it work before you debug accordingly.
+
+You can add it also on utilities (SASS), reusable stylings file. [Read more](https://css-tricks.com/when-using-important-is-the-right-choice/).
 
 **`box-sizing: border-box`**
 
