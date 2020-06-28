@@ -242,4 +242,5 @@ The `-w` will keep watching for whatever we do in our code. You can also install
 [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
 [Linea Free Icons](https://linea.io/)
 [Coverr - Free Videos](http://coverr.co/)
-[Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila!
+[Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila! You can compare bezier curves with [this tool](https://cubic-bezier.com/#.17,.67,.83,.67).
+[Sizzy](https://sizzy.co/), a tool for responsive website building.
