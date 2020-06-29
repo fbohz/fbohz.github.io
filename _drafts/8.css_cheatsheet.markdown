@@ -149,7 +149,19 @@ There are various pseudo elements. Take a sneak peak and learn more about them [
 
 With box shadow you can add shadow to elements. Take a look at the [box shadow generator](https://www.cssmatic.com/box-shadow).
 
-## EXTRAS - SASS Preprocessor
+**`@supports` For Older Browser Support**
+
+You can do graceful degradation with `@supports`. Example:
+
+```css
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+}
+```
+
+## EXTRA - SASS Preprocessor
 
 **Implement SASS Variables**
 
@@ -234,6 +246,24 @@ Also note if you wanna use it in your project just install it. With `npm i node-
 
 The `-w` will keep watching for whatever we do in our code. You can also install `npm i live-server -g`. Then run it as `live-server` on root folder. For the changes to be reflected without needing to reload manually.
 
+## EXTRA#2 - Build Scripts
+
+We can implement simple NPM build processes after we finish a feature.
+
+![Screen Shot 2020-06-28 at 7 35 10 PM](https://user-images.githubusercontent.com/15071636/85962487-9a0c5380-b976-11ea-8dae-b021b308f223.png)
+
+We do this on `package.json`, check it on [Github repository](https://github.com/fbohz/css-learning/blob/master/museo-demo/package.json).
+
+There are a couple of NPM packages we use, we can install as `npm i concat --save-dev`, `npm i autoprefixer --save-dev`, `npm i postcss-cli --save-dev`, `npm i npm-run-all --save-dev`.
+
+Also note the `--parallel` flag on start. It means both run at the same time.
+
+So to run all you'll just do:
+
+`npm run build:css`
+
+And your css will be compiled, concat, compressed and ready for production! 
+
 ## Resources
 <p>👉&nbsp;<a rel="noopener noreferrer" href="https://github.com/jonasschmedtmann/advanced-css-course">Udemy Course material and instructions on GitHub</a></p>
 <p><a rel="noopener noreferrer" href="http://codingheroes.io/resources/">👉 Udemy resources page</a></p>
@@ -244,3 +274,4 @@ The `-w` will keep watching for whatever we do in our code. You can also install
 [Coverr - Free Videos](http://coverr.co/)
 [Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila! You can compare bezier curves with [this tool](https://cubic-bezier.com/#.17,.67,.83,.67).
 [Sizzy](https://sizzy.co/), a tool for responsive website building.
+[Can I Use](https://caniuse.com/), for browser support checking
