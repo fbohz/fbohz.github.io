@@ -1,0 +1,182 @@
+I"^6<blockquote>
+  <p>What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the <a href="https://yijingballz.herokuapp.com/">Yijing-Ball-Z</a> app.</p>
+</blockquote>
+
+<h1 id="graphql--apollo---flash-debrief">GraphQL + Apollo - Flash Debrief</h1>
+
+<p>What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the <a href="https://yijingballz.herokuapp.com/">Yijing-Ball-Z</a> app.</p>
+
+<p>Look at the traditional backend diagram:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84446658-9c974b00-ac0b-11ea-904c-4d98969eee84.png" alt="Screen Shot 2020-06-11 at 5 46 58 PM" /></p>
+
+<p>We make requests to specific endpoints to get some data. Above you can see the REST paradigm, with either POST, GET, PUT etc requests. With deeply nested endpoints e.g. users/userId/posts we could make at least multiple requests just to get user posts.</p>
+
+<p>Now GraphQL tries to solve this differently from REST APIs. So first we need to make our server into a <em>GraphQL backend server</em>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84519685-0fe69e80-ac98-11ea-9a30-6c084793c264.png" alt="Screen Shot 2020-06-12 at 10 32 21 AM" /></p>
+
+<p>So you can see first that there’s only one endpoint exposed instead of multiple endpoints. Then from here we make all requests to either a <em>query</em> (ask/read data) or <em>mutation</em> (create/update/delete data). These requests look pretty much like JSON objects. So we don’t need multiple endpoints to just access data.</p>
+
+<p><strong>Playing with GraphQL</strong></p>
+
+<p>Take a look at the <a href="https://crwn-clothing.com/">GraphQL Playground</a>. Here we can start playing with GraphQL queries for a sample project. Please refer to GraphQL <a href="https://graphql.org/graphql-js/basic-types/">documentation</a> for queries help. You can implement this playground when you build your own GraphQL server.</p>
+
+<p>Here’s an example of a query you can do on this playground:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84521206-4a513b00-ac9a-11ea-9b49-a1a2f0fb0b02.png" alt="Screen Shot 2020-06-12 at 10 48 35 AM" /></p>
+
+<p>Inside our query we can only make certain requests as defined on the db as things we can take. If you look at the schema you can see what is available. We can define our schema in many ways for example a Person schema:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="nx">ID</span><span class="o">!</span>
+  <span class="nx">name</span><span class="p">:</span> <span class="nb">String</span><span class="o">!</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="nx">Int</span><span class="o">!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The exclamation mark means mandatory. Items is an array, then inside items there’s an item. Then if you click on docs you can see the type of queries you can make.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84521635-ee3ae680-ac9a-11ea-8324-d1b7662fd4b9.png" alt="Screen Shot 2020-06-12 at 10 52 55 AM" /></p>
+
+<p>If we pass then ID of collection we can get a collection, we can also get a collection by a title. So whatever we see we have access it means it was built by the backend server and made available to us. Here’s an example of a query we can make:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">query</span> <span class="p">{</span>
+  <span class="nx">collections</span> <span class="p">{</span>
+    <span class="nx">id</span>
+    <span class="nx">title</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>If you click run with this query then you get an object containing all the collections. You can also pass in items to get the items as specified on the schema. As this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">query</span> <span class="p">{</span>
+  <span class="nx">collections</span> <span class="p">{</span>
+    <span class="nx">id</span>
+    <span class="nx">title</span>
+    <span class="nx">items</span> <span class="p">{</span>
+      <span class="nx">id</span>
+      <span class="nx">name</span>
+      <span class="nx">price</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now what if you wanted to query by ID:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">query</span> <span class="p">{</span>
+  <span class="nx">collection</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cjwuuj5bz000i0719rrtw5gqk</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">title</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>For mutations we’ll start with the <code class="highlighter-rouge">mutation</code> keyword. Back to our Person example consider this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mutation</span> <span class="p">{</span>
+  <span class="nx">createPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">36</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">name</span>
+    <span class="nx">age</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now in your schema you might define it as such:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+  <span class="nx">createPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="nx">Int</span><span class="o">!</span><span class="p">):</span> <span class="nx">Person</span><span class="o">!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Pretty easy right?</p>
+
+<p><em>Note</em>: as React developers, we will usually only concern ourselves with the frontend implementation of GraphQL. If you’re curious as to how to  build a GraphQL server, below are some resources, as well as a list of some popular options out there for building such a server:</p>
+
+<ul>
+  <li>Backend Implementation <a href="https://github.com/ZhangMYihua/crwn-clothing-prisma">Example</a>. Uses <a href="https://www.prisma.io/">Prisma</a></li>
+  <li><a href="https://hasura.io/">Hasura</a></li>
+  <li><a href="https://www.apollographql.com/docs/apollo-server/">Apollo Server</a></li>
+  <li>Quick way to build a GraphQL server: <a href="https://github.com/prisma/graphql-yoga">graphql-yoga</a></li>
+  <li>A quick <a href="https://blog.apollographql.com/tutorial-building-a-graphql-server-cddaa023c035">step by step guide</a> on how to set up your own GraphQL server</li>
+  <li>Here’s my backend <a href="https://github.com/fbohz/yijing-ball-z_backend"><strong>Rails API + GraphQL Implementation</strong></a>.</li>
+</ul>
+
+<p><strong>Introduction to Apollo</strong></p>
+
+<p>Ensure you install it as well as GraphQL:</p>
+
+<p><code class="highlighter-rouge">yarn add apollo-boost react-apollo graphql</code></p>
+
+<p>Apollo client lets us use the GraphQL API toolkit. Apollo also caches the data so we don’t double request it.</p>
+
+<p>Take a look at the <code class="highlighter-rouge">index.js</code> on the following <a href="https://github.com/fbohz/graphql-practice-example">GraphQL example repository</a>. We could test making a query using <code class="highlighter-rouge">gql</code> function as this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>client.query({
+  query: gql`
+  {
+    getCollectionsByTitle(title: "hats") 
+    {
+    id
+    title
+    items {
+      id
+      name
+    }
+   }
+  }
+  `
+}).then(res =&gt; console.log(res))
+
+</code></pre></div></div>
+
+<p>Note how here the <code class="highlighter-rouge">client.query</code> returns a promise.</p>
+
+<p><strong>Apollo Container</strong></p>
+
+<p>On the example repo take a look at the Collections-Ov-GraphQL component. This container does the fetching and includes loading attribute we can use. You might see how Apollo extrapolates a lot of the verbose promise code, resolving etc. So it feels like synchronous even though we’re fetching the database.</p>
+
+<p><strong>GraphQL vs Redux</strong></p>
+
+<p>There are benefits in both. Redux has very fleshed out architecture. You can actually use <em>both</em> in the same app, however you might actually be having to handle two pieces of state management. So usually Apollo replaces Redux but this is up to you, but if you keep both then it could affect the single source of truth concept.</p>
+
+<p>Here’s how Redux works:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84534360-627f8500-acaf-11ea-9eb6-f5afb178394a.png" alt="Screen Shot 2020-06-12 at 1 19 23 PM" /></p>
+
+<p>Here’s how Apollo works:</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/84534678-fa7d6e80-acaf-11ea-8c80-663aca370fff.png" alt="Screen Shot 2020-06-12 at 1 23 38 PM" /></p>
+
+<p><em>Local cache</em> replaces our reducer. We access/modify our data through a query or mutation. These resolver functions can get or modify data and they can get it from local cache as internal state.</p>
+
+<p><strong>Mutations on the Client (Frontend)</strong></p>
+
+<p>Mutations are a bit different and you can check the example Repo and specifically the <a href="https://github.com/fbohz/graphql-practice-example/tree/master/src/graphql">graphql folder</a>. Basically you create a resolvers.js file that handles the mutations inside a graphql folder in src.</p>
+
+<p><code class="highlighter-rouge">extend</code> keyword in GraphQL behaves a little bit different than JS, read more <a href="https://www.apollographql.com/docs/react/development-testing/client-schema-mocking/#1-extend-your-server-schema-with-a-client-only-field">here</a>. Another key concept are resolvers methods, the <a href="https://www.apollographql.com/docs/react/data/local-state/#local-resolvers">GraphQL documentation</a> can explain them in detail. Here the cache object you can <a href="https://www.apollographql.com/docs/react/caching/cache-configuration/">read more</a> about it.</p>
+
+<p>Notice also how we import and pass to our client in index.js the resolvers and typeDefs defined on resolver.js. Here for example the <code class="highlighter-rouge">toggleCartHidden</code> mutation is used on header-container that is in charge of dealing with the graphql querying using the Query element and then renders the header-component.</p>
+
+<p>You might also notice in resolvers.js the <code class="highlighter-rouge">@client</code> this tells Apollo to look on the local cache not the server. Finally on the cart-icon container you might see that it uses <code class="highlighter-rouge">compose</code> and <code class="highlighter-rouge">graphql</code> functions, that look kind of like Redux, you can access the <a href="https://www.apollographql.com/docs/react/api/react-apollo/#graphqlquery-configcomponent">documentation</a> to see how to implement in detail.</p>
+
+<p>Mutations can be a complex topic, so read on the resources and make your own tests. Complete Apollo documentation in the link <a href="https://www.apollographql.com/docs/react/essentials/mutations/">here</a>. However do have in mind that if you would like to implement it consider having a container that deals with the graphql logic then the actual presentational component so the latter can be reused as it is not solely related to graphql.</p>
+
+<p><strong>What’s Next</strong></p>
+
+<ul>
+  <li>Build your own <em>GraphQL server</em> from scratch <a href="https://www.howtographql.com/choose/"><strong>here</strong></a>.</li>
+  <li>Checkout my GraphQL implementation using Vanilla JS + Rails API (<a href="https://github.com/fbohz/yijing-ball-z_frontend"><strong>frontend</strong></a>/<a href="https://github.com/fbohz/yijing-ball-z_backend"><strong>backend</strong></a>).</li>
+</ul>
+
+<p><strong>Conclusion: Should You Use GraphQL?</strong></p>
+
+<p>GraphQL can be very challenging since there’s so much to learn at the beginning. I tried to touch on some interesting concepts, with demo projects both in React and Vanilla JS. The rest is for you to keep digging and motivate yourself to start implementing it in your own project.</p>
+
+<p>Do note that the issues with REST that GraphQL tries to solve, are important propositions. The problem with implementations such as Apollo is that it needs both backend and frontend adoption. Setting up backend with can be hard so taking this risk might be difficult. Also this tech is new, not like Redux which there are so many resources out there. Apollo client and GraphQL are relatively new and the paradigm might change. So for now learning GraphQL is great, but do keep your strong skills on Redux, since on scaling it performs really well, and has been industry tested.</p>
+
+:ET

@@ -2,15 +2,18 @@
 /* from http://stackoverflow.com/a/23393920 */
 
 .highlight pre code * {
-  white-space: nowrap;    // this sets all children inside to nowrap
+  /* this sets all children inside to nowrap */
+  white-space: nowrap;    
 }
 
 .highlight pre {
-  overflow-x: auto;       // this sets the scrolling in x
+  /* this sets the scrolling in x */
+  overflow-x: auto;       
 }
 
 .highlight pre code {
-  white-space: pre;       // forces <code> to respect <pre> formatting
+  /* forces <code> to respect <pre> formatting */
+  white-space: pre;       
 }
 
 
@@ -82,3 +85,10 @@
 .highlight .vi { color: teal; }
 .highlight .il { color: #009999; }
 .highlight .gc { color: #999; background-color: #EAF2F5; }
+
+
+@media screen and (max-width: 800px) {
+  .highlight pre {
+    font-size: small;
+  }
+}

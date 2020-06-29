@@ -127,11 +127,12 @@ Apollo client lets us use the GraphQL API toolkit. Apollo also caches the data s
 
 Take a look at the `index.js` on the following [GraphQL example repository](https://github.com/fbohz/graphql-practice-example). We could test making a query using `gql` function as this:
 
-```js
+```html
 client.query({
   query: gql`
   {
-    getCollectionsByTitle(title: "hats") {
+    getCollectionsByTitle(title: "hats") 
+    {
     id
     title
     items {

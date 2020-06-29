@@ -1,4 +1,4 @@
-I"8<blockquote>
+I"8<blockquote>
   <p>What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the <a href="https://yijingballz.herokuapp.com/">Yijing-Ball-Z</a> app.</p>
 </blockquote>
 
@@ -119,7 +119,8 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">({</span>
   <span class="na">query</span><span class="p">:</span> <span class="nx">gql</span><span class="s2">`
   {
-    getCollectionsByTitle(title: "hats") {
+    getCollectionsByTitle(title: "hats") 
+    {
     id
     title
     items {
