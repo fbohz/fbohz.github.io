@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Styled Components"
+title:      "CSS In JS? Yes! Styled Components 💅🏽"
 date:       2020-06-29 19:31:03 -0400
 permalink:  styled_components_intro
 filename: 2020-06-29-styled_components_intro
