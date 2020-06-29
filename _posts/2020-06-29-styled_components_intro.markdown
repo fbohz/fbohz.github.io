@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "CSS In JS? Yes! Styled Components 💅🏽"
-date:       2020-06-29 19:31:03 -0400
+date:       2020-06-29 09:31:03 -0400
 permalink:  styled_components_intro
 filename: 2020-06-29-styled_components_intro
 ---
@@ -32,22 +32,21 @@ SC will make our code into components, so then we can *encapsulate* our CSS to a
 
 After you [read](https://styled-components.com/) and install SC (`yarn add styled-components`) you should import it on the specific component you want to implement it. The documentation has a simple example:
 
-```js
+```html
 import React from 'react'
 import styled from 'styled-components'
 
-// Create a Title component that'll render an <h1> tag with some styles
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
 `;
-// Create a Wrapper component that'll render a <section> tag with some styles
+
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
 `;
-// Use Title and Wrapper like any other React component – except they're styled!
+
 render(
   <Wrapper>
     <Title>
@@ -57,7 +56,7 @@ render(
 );
 ```
 
-Here you can see that the attribute after `style` it is just the element, so it could be an h2, div, img etc. Then we use string interpolation just like we usually do in React. However here we add our own styling. The styles we create are just elements that we can then use but with styles. These elements themselves can have additional styling, class names etc.
+Here you can see that the attribute after `style` it is just the element, so it could be an h2, div, img etc. Then we use string interpolation just like we usually do in React. However here we add our own styling. The styles we create are just elements that we can then use but with styles. These elements themselves can have additional styling, class names etc. So we use Title and Wrapper like any other React component – except they're styled!
 
 Now if you do a console.log you will see that SC gives each component their own unique class name. Because of this styles will never bleed. So you can share names with different components, and they will never be collisions. 
 
@@ -78,8 +77,10 @@ So let's say you have a Homepage component with a className of "homepage" you'll
   align-items: center;
 }
 ```
-```js
-// homepage.styles.js 
+
+homepage.styles.js:
+
+```html
 import styled from 'styled-components';
 
 export const HomePageContainer = styled.div`
@@ -110,21 +111,21 @@ const HomePage = () => (
 
 Quiet easy right? With more complicated components you might need to go through the documentation, but all-in-all usually is pretty straightforward. You add styles as different const and for example if you need to style an imported element such as Link from React Router you'll just do:
 
-```js
+```html
 import {Link} from 'react-router-dom'
 
 export const OptionLink = styled(Link)`
     height: 100%;
 `
 
-// then we use it in our component as pass the props as usual
-
 <OptionLink to="/shop"> SHOP <OptionLink/>
 ```
 
+You saw how we use it in our component as pass the props as usual.
+
 If you need to leverage CSS to reuse and share with other styles you can write it with style components such as in this example:
 
-```js
+```html
 import styled, { css } from 'styled-components';
 
 const ReusableStyles = css`
@@ -147,9 +148,9 @@ If you want to make even more easier you can just use the `as` keyword and it wi
 <OptionLink as='div' onClick{() => handleChange()} />
 ```
 
-With SC css you can also conditionally render css blocks.
+With SC css you can also conditionally render CSS blocks.
 
-```js
+```html
 const buttonStyles = css`
   background-color: black;
   color: white;

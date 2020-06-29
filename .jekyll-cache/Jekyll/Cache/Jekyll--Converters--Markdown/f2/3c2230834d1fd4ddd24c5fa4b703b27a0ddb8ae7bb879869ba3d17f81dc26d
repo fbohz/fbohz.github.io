@@ -1,0 +1,187 @@
+I"Q4<blockquote>
+  <p>Styled Components can be an advanced topic, and it comes with tradeoffs with pros and cons. As you move into becoming an advanced React developer know when to use this tool is efficient and when you should not add this overhead. Each project and each situation is different and you should make the right call before you jump into the latest trend.</p>
+</blockquote>
+
+<h1 id="css-in-js-yes-styled-components-">CSS In JS? Yes! Styled Components 💅🏽</h1>
+
+<p>This is a hot topic. The usual way was separating your css files and add your styles as needed. Then import them to the appropriate component. With React we scope the CSS to the specific component that we want to style.</p>
+
+<p>Back then styling was very simple, nowadays with large scales app styling can get very complicated and organizing CSS as difficult.</p>
+
+<p>Problem can be with CSS that shares same namespace so if another developer adds their own styling to <code class="highlighter-rouge">.name</code> then it could cause conflicts. To overcome this different implementations such as <a href="http://getbem.com/">BEM</a> have risen. However with BEM class names can become very nested with lots of mental overhead.</p>
+
+<p>With React we could leverage this even further by creating style constants then apply it to the specific component. E.g.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/83706504-43ad2e80-a5dd-11ea-8564-d654dc5aa643.png" alt="Screen Shot 2020-06-03 at 9 00 14 PM" /></p>
+
+<p>With this way there are some limitation with limited functionality (not all CSS selectors are available here) but the most popular enhancement to CSS in JS right now is Styled Components (SC).</p>
+
+<p>To purists they believe CSS should be done in CSS but performance might be enhanced along with the readability of your app.</p>
+
+<p><strong>What is Styled Components?</strong></p>
+
+<p>SC will make our code into components, so then we can <em>encapsulate</em> our CSS to avoid the usual problems of styles leaking across components.</p>
+
+<p><em>Note</em>: If you’re on VS Code we recommend installing the <code class="highlighter-rouge">vscode-styled-components</code> extension, it will highlight your syntax so you get used to and it will help you get a head start with this great library.</p>
+
+<p>After you <a href="https://styled-components.com/">read</a> and install SC (<code class="highlighter-rouge">yarn add styled-components</code>) you should import it on the specific component you want to implement it. The documentation has a simple example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react'
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
+render(
+  <span class="nt">&lt;Wrapper&gt;</span>
+    <span class="nt">&lt;Title&gt;</span>
+      Hello World!
+    <span class="nt">&lt;/Title&gt;</span>
+  <span class="nt">&lt;/Wrapper&gt;</span>
+);
+</code></pre></div></div>
+
+<p>Here you can see that the attribute after <code class="highlighter-rouge">style</code> it is just the element, so it could be an h2, div, img etc. Then we use string interpolation just like we usually do in React. However here we add our own styling. The styles we create are just elements that we can then use but with styles. These elements themselves can have additional styling, class names etc. So we use Title and Wrapper like any other React component – except they’re styled!</p>
+
+<p>Now if you do a console.log you will see that SC gives each component their own unique class name. Because of this styles will never bleed. So you can share names with different components, and they will never be collisions.</p>
+
+<p>SC also supports all selectors and it will even support <code class="highlighter-rouge">props</code>! Learn more about it in <a href="https://styled-components.com/docs/basics#passed-props">docs</a>.</p>
+
+<p><strong>Implementing SC in our React App</strong></p>
+
+<p>Now for small apps you could definitely implements SC in the components themselves. However you can also separate SC into their own JS files for better access by other developers. Here’s the naming structure of folders and files.</p>
+
+<p>So let’s say you have a Homepage component with a className of “homepage” you’ll then create a new JS file that will hold the specific SC code. Then you will just take a look at the CSS file code and convert it as SC code as this:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* old css file */</span>
+<span class="nc">.homepage</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>homepage.styles.js:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">HomePageContainer</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>And our Homepage changes:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//old Homepage.js</span>
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">'</span><span class="s1">homepage</span><span class="dl">'</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+
+
+<span class="c1">//Homepage.js with SC</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HomePageContainer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./homepage.styles</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">HomePageContainer</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/HomePageContainer</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Quiet easy right? With more complicated components you might need to go through the documentation, but all-in-all usually is pretty straightforward. You add styles as different const and for example if you need to style an imported element such as Link from React Router you’ll just do:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Link</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">OptionLink</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">(</span><span class="nx">Link</span><span class="p">)</span><span class="s2">`
+    height: 100%;
+`</span>
+
+<span class="c1">// then we use it in our component as pass the props as usual</span>
+
+<span class="o">&lt;</span><span class="nx">OptionLink</span> <span class="nx">to</span><span class="o">=</span><span class="dl">"</span><span class="s2">/shop</span><span class="dl">"</span><span class="o">&gt;</span> <span class="nx">SHOP</span> <span class="o">&lt;</span><span class="nx">OptionLink</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>If you need to leverage CSS to reuse and share with other styles you can write it with style components such as in this example:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">styled</span><span class="p">,</span> <span class="p">{</span> <span class="nx">css</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">styled-components</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">ReusableStyles</span> <span class="o">=</span> <span class="nx">css</span><span class="s2">`
+    display: flex;
+    cursor: pointer;
+`</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">OptionLink</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">(</span><span class="nx">Link</span><span class="p">)</span><span class="s2">`
+    </span><span class="p">${</span><span class="nx">ReusableStyles</span><span class="p">}</span><span class="s2">
+`</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">OptionDiv</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+    </span><span class="p">${</span><span class="nx">ReusableStyles</span><span class="p">}</span><span class="s2">
+`</span>
+</code></pre></div></div>
+
+<p>If you want to make even more easier you can just use the <code class="highlighter-rouge">as</code> keyword and it will do the same as the reusable css code above without importing the css module. With the ‘as’ keyword you can also include <code class="highlighter-rouge">{}</code> to import other components etc.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">OptionLink</span> <span class="k">as</span><span class="o">=</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span> <span class="nx">onClick</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleChange</span><span class="p">()}</span> <span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>With SC css you can also conditionally render css blocks.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">buttonStyles</span> <span class="o">=</span> <span class="nx">css</span><span class="s2">`
+  background-color: black;
+  color: white;
+  border: none;
+
+  &amp;:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">invertedButtonStyles</span> <span class="o">=</span> <span class="nx">css</span><span class="s2">`
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+
+  &amp;:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">googleSignInStyles</span> <span class="o">=</span> <span class="nx">css</span><span class="s2">`
+  background-color: #4285f4;
+  color: white;
+
+  &amp;:hover {
+    background-color: #357ae8;
+    border: none;
+  }
+`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">getButtonStyles</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">isGoogleSignIn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">googleSignInStyles</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">props</span><span class="p">.</span><span class="nx">inverted</span> <span class="p">?</span> <span class="nx">invertedButtonStyles</span> <span class="p">:</span> <span class="nx">buttonStyles</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>You might notice that you can also implement SCSS patterns with SC.</p>
+
+<p><strong>Styled Components Tradeoffs</strong></p>
+
+<p>Styled Components can be an advanced topic, and it comes with tradeoffs with pros and cons. As you move into becoming an advanced React developer know when to use this tool is efficient and when you should not add this overhead. Each project and each situation is different and you should make the right call before you jump into the latest trend.</p>
+:ET
