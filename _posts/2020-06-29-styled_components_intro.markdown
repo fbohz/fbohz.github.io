@@ -10,7 +10,7 @@ filename: 2020-06-29-styled_components_intro
 
 # CSS In JS? Yes! Styled Components 💅🏽
 
-This is a hot topic. The usual way was separating your css files and add your styles as needed. Then import them to the appropriate component. With React we scope the CSS to the specific component that we want to style.
+This is a hot topic. The usual way was separating your CSS files and add your styles as needed. Then import them to the appropriate component. With React we scope the CSS to the specific component that we want to style.
 
 Back then styling was very simple, nowadays with large scales app styling can get very complicated and organizing CSS as difficult. 
 
