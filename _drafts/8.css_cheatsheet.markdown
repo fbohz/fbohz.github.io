@@ -12,6 +12,8 @@ filename: 2020-07-25-css_cheatsheet
 
 For reference check [Github repositoryhttps://github.com/fbohz/css-learning/tree/master/museo-demo](https://github.com/fbohz/css-learning/tree/master/museo-demo).
 
+There's also a great [CSS Reference](http://tympanus.net/codrops/css_reference/) you can checkout. 
+
 **Three Pillars to write good CSS**
 
 1. *Responsive Design*: Build website that works well on all devices. You'll have to know about fluid layouts, media queries, responsive images, correct units (for e.g. font sizes) and desktop-first vs mobile-first.
