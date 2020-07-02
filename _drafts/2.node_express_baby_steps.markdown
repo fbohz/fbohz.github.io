@@ -1,0 +1,136 @@
+---
+layout: post
+title:      "Node.js + Express - Baby Steps 🍼"
+# date:       2020-07-30 09:31:03 -0400
+permalink:  node_express_baby_steps
+filename: 2020-07-30-node_express_baby_steps
+---
+
+> Another thing you can see is that Express automatically sends app headers for you. With Express we can easily build an stateless API (in which the client will ask for specific info) and follow patterns such as REST to build routes with GET, POST, PUT, you name it!
+
+# Node.js + Express - Baby Steps 🍼
+
+Today we'll be taking some baby steps into the Node.js world 👶🏽. 
+
+![Screen Shot 2020-06-29 at 7 57 33 PM](https://user-images.githubusercontent.com/15071636/86070758-140a0e80-ba43-11ea-8d52-74dbefbf529b.png)
+
+In Node we have synchronous code, which can be called also blocking code. Async code is non-blocking that can run the background. So by running code in the background it seems faster and the app can do many things at the same time. 
+
+![Screen Shot 2020-06-29 at 8 38 11 PM](https://user-images.githubusercontent.com/15071636/86072999-84fff500-ba48-11ea-9a97-554fdf7ab674.png)
+
+**Asynchronous Nature of Node.js**
+
+Node is single threaded, so all users access the same single thread.  If a user access the line with synchronous code it can be a problem (e.g. read very large file), with async code then multiple users can run queries at same time (e.g. login, read file, logout etc). So time-consuming data can run in background and once completed will finish the request.
+
+Example of blocking vs non-blocking code:
+
+```js
+// playing with fs module - SYNCHRONOUS / BLOCKING
+
+const t1 = fs.readFileSync('./txt/input.txt', 'utf-8') 
+const t2 = `This Text: ${t1}. Created ${Date.now()}`
+
+fs.writeFileSync('./txt/output.txt', t2)
+
+//  NON BLOCK - ASYNC EXAMPLE
+
+fs.readFile('./txt/start.txt', 'utf-8', 
+// be wary of callback hell nesting here
+    (err, data) => {
+    console.log(data)
+})
+```
+
+Node.js is built on callbacks. But be wary of *callback hell*, e.g.
+
+![Screen Shot 2020-06-29 at 8 46 45 PM](https://user-images.githubusercontent.com/15071636/86073609-b927e580-ba49-11ea-98fb-810268dba659.png)
+
+Inside callbacks, Node is well know for them to start nesting many levels down. We can escape this callback hell with async await or promises (I'll discuss this in a future article).
+
+## Creating a Simple Web Server
+
+We can create a simple node server as this:
+
+```js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.end('Hellooo')
+})
+
+// saved variable then listen port
+// localhost default is '127.0.0.1'
+server.listen(8000, '127.0.0.1', () => {
+    console.log('listening on port 8000')
+} )
+
+```
+
+By using `createServer()` we then pass the callback function executed each time the server is requested. Then we listen on port 8000. So if you go to http://localhost:8000/ on your browser you'll see: 'Hellooo'. Can it get more easy?
+
+Now if you console.log the `req` object you'll see a bunch of stuff, so we get access to a bunch of stuff to handle requests.
+
+**Routing in pure Node.js**
+
+Routing can get complicated in a big app so Express is recommended but we can implement with Node as this for demo purposes. We can modify our server as this:
+
+```js
+const server = http.createServer((req, res) => {
+const pathName = req.url
+
+if (pathName === '/') {
+    res.end('Hellooo Root')
+} else if (pathName === '/product') {
+    res.end('Hellooo Product')
+} else  {
+    res.writeHead(404, {
+        'Content-type': 'text/html',
+        'my-own-header': 'hello-world'
+        });
+    res.end('<h1>Page not found!</h1>');
+}}
+```
+
+On the 404 response we send back a header, which is a piece of info about the response sent back. `my-own-header` is like custom metadata we can see on the console then Network tab on Chrome. 
+
+## Sneak-peak of Express
+
+Express is a Node.js framework. It is the most popular framework. It has some characteristics.
+
+![Screen Shot 2020-07-01 at 12 46 16 PM](https://user-images.githubusercontent.com/15071636/86275433-e3d48400-bb98-11ea-979f-1c97aa4a4e61.png)
+
+So we can write apps so much faster, looks simpler as well.
+
+**Express Setup and Basic Routing**
+
+Note Express is fully written on Node but it abstracts away all the complexities.
+
+To start make sure you `npm init` and `npm i express`. Then create your `App.js` file that will contain your express server. Example
+
+```js
+const express = require('express')
+const app = express()
+
+// routing with GET
+
+app.get('/', (req, res) => {
+    res.status(200)
+    .json({
+    message: "Hi from Express world!",
+    app: "Museo API"
+    })
+})
+
+const port = 4000
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+})
+```
+
+Here `.get()` similar to Node has access to the request and response objects, but in Express there are event more methods. Now if you navigate to localhost:4000 you get "Hello from Express World!" as JSON and thus we have an Express API!.
+
+Another thing you can see is that Express automatically sends app headers for you. With Express we can easily build an stateless API (in which the client will ask for specific info) and follow patterns such as REST to build routes with GET, POST, PUT, you name it!
+
+## Resources 
+[Node Docs](https://nodejs.org/en/docs/)
+[Express Docs](https://expressjs.com/)
