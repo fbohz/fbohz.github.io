@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Solving Callback Hell: JS Promises and Async-Await in Node.js"
+title:      "Solving Callback Hell😈: JS Promises and Async-Await in Node.js"
 # date:       2020-08-10 09:31:03 -0400
 permalink:  async_await_node
 filename: 2020-08-10-async_await_node
@@ -8,9 +8,9 @@ filename: 2020-08-10-async_await_node
 
 > Async/Await was introduced recently. In order to use async/await we need to use mark functions as `async` functions. Async functions return a promise and we can use one or more await functions. 
 
-# Solving Callback Hell: JS Promises and Async-Await in Node.js
+# Solving Callback Hell😈: JS Promises and Async-Await in Node.js
 
-Have you heard about *callback hell* in Node.js?
+Last week we went through the baby steps involved in Node.js and setting up a Express server. Now we left a question unanswered, remember *callback hell* in Node.js?
 
 ```js
 const fs = require("fs");
@@ -138,5 +138,7 @@ We can wait for multiple promises using `Promise.all` by passing as an array of 
   console.log(imgs);
 ```
 
-## Resources 
+## Further Reading 
 [Node Docs](https://nodejs.org/en/docs/)
+[Callback Hell](http://callbackhell.com/)
+[Node.js Async Best Practices & Avoiding the Callback Hell](https://blog.risingstack.com/node-js-async-best-practices-avoiding-callback-hell-node-js-at-scale/)
