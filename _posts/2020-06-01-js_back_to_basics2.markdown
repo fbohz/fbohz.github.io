@@ -116,4 +116,4 @@ You can also **overwrite** global variables. So avoid them.
 
 ## Concluding Thoughts
 
-This seems to be a robust discussion on JS foundational concepts. There are still other concepts worth exploring including IIFE, this keyword and more. Please be sure to read on them. An article I previously wrote about this can be found [here](https://medium.com/swlh/javascript-this-a-quick-example-regular-arrow-functions-and-methods-95fdfae01c98).
+This seems to be a robust discussion on JS foundational concepts. There are still other concepts worth exploring including IIFE, `this` keyword and more. Please be sure to read on them. An article I previously wrote about `this` can be found [here](https://medium.com/swlh/javascript-this-a-quick-example-regular-arrow-functions-and-methods-95fdfae01c98).
