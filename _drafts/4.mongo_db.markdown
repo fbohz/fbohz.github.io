@@ -1,0 +1,139 @@
+---
+layout: post
+title: "MongoDB - A Sweet Database 🥭"
+# date:       2020-07-06 19:31:03 -0400
+permalink: mongo_db
+filename: 2020-07-20-mongo_db
+---
+
+> MongoDB is a NoSQL database...Each database can have one or more _collection_. What in RDBS are tables. Each collection can have one or more data structures or single entity called _document_, like table rows in RDBS.
+
+# MongoDB - A Sweet Database 🥭
+
+MongoDB is a NoSQL database, compared to relational databases such as MySQL. In MongoDB:
+
+- Each database can have one or more _collection_. What in RDBS are tables.
+- Each collection can have one or more data structures or single entity called _document_, like table rows in RDBS.
+
+MongoDB is defined more specifically as:
+
+![Screen Shot 2020-07-03 at 8 17 39 PM](https://user-images.githubusercontent.com/15071636/86502577-4c268f80-bd6a-11ea-82e9-b4149a3bb40f.png)
+
+MongoDB uses as data structure like JSON called _BSON_. BSON is typed so documents are typed. Meaning all values _have a data type_, like string, boolean, number. All MongoDB documents are typed as well. With MongoDB you can have multiple values in one field, unlike RDBS. You can also have embedded documents. BSON documents have a limit on size as well.
+
+_Embedding/Denormalizing_: Including related data into a single document. It allows for quicker access and easier data models (better performance). But it's not always the best solution. Opposite is normalization in RDBS, which involves creating new tables, joining them.
+
+**Installing Using MongoDB**
+
+You can install locally MongoDB community server or use Atlas version in the cloud. After installing lets say locally you can create a new db, just run the shell by doing `mongod`, starting mongo shell on a new tab with just `mongo` and then doing `use dbName`. You can create a collection by doing this:
+
+`db.tours.insertOne({name: "Test Tour", price: 297})`
+
+Note you refer to your current database as `db` even though you named your database differently. You can refer to newly created document as such:
+
+`db.tours.find()`
+
+MongoDB automatically creates unique ids for documents created. You can show databases available and collections by doing either `show dbs` or `show collection`.
+
+You can also insert many documents just by doing for example `db.tours.insertMany([{},{}])`. You can also have different fields in different documents. So no limitation on fields as could be with RDBS.
+
+If for some reasons you have issues with the running mongod process you can force stop it by doing `sudo killall mongod`.
+
+## CRUD with MongoDB
+
+**Reading**
+
+We already completed the C of CRUD by creating documents. Below are some reading/querying operators.`find()`: You can also pass a filter object. E.g. `db.tours.find({difficulty: "easy"})`
+
+You can make even more complex searches with _query operators_. Query operators start with an `$`, for example less than or equal is `$lte`. E.g. `db.tours.find({price {$lte: 500}})`.
+
+You can also have two search criteria. E.g `db.tours.find({price {$lt: 500}, rating: {$gte: 4.8}})`. Here `gte` is greater than or equal and `lt` is simply less than.
+
+Or queries can be performed as with `$or`. E.g `db.tours.find($or: [{price {$lt: 500}, rating: {$gte: 4.8}}])`. If you want to show only one field, e.g. name only you can do `db.tours.find({difficulty: "easy"}, {name: 1})`.
+
+You're starting to see how in MongoDB everything works with objects!
+
+**Updating**
+
+Similar to insertOne, insertMany we can do to update for example `db.tours.updateOne({name: "Test Name"}, {$set: {price: 499}})`. As you can see first you're like querying for the document then you update it. We use the `$set` operator and because we use insertOne if many matches only the first match is updated.
+
+To update more than one document if we expect multiple matches we can do `db.tours.UpdateMany({price {$lt: 500}, rating: {$gte: 4.8}}, {$set {premium: true}})`.
+
+**Delete**
+
+Delete is straightforward and we have `deleteOne` and `deleteMany`. For example: `db.tours.deleteMany({rating: {$lt: 4.8}})`. To delete _all_ documents in a collection you just pass an empty object as this `db.tours.deleteMany({})`.
+
+## Bonus: Using the Mongoose Library
+
+You can install with `npm i mongoose`. The relationship between MongoDB and Mongoose is similar as to that of Node.js and Express, so it a level up abstraction higher. The Object Data Modeling (ODM) it uses it is just a way to talk to the database. Mongoose allows for for rapid development. It also allows for schemas to model data, relationships, easy validation, query API and other middleware.
+
+In Mongoose we have the schema and the model. The _schema_ is where the data is modeled, data structure is described, with default values and validation. The Mongoose _model_ is a wrapper for the schema, which provides an interface to make CRUD operations on the database.
+
+**Creating a Schema and Model in Mongoose**
+
+Mongoose is about models. We create these models as blueprints for our db, in order to creates objects. In order to create a model we need a schema. In the most basic sense we can define our schema as such:
+
+```js
+const tourSchema = new mongoose.Schema({
+  name: String,
+  rating: Number,
+  price: Number,
+});
+```
+
+We can refine it by adding some validations.
+
+```js
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "must have name"],
+    unique: true,
+  },
+  rating: {
+    type: Number,
+    default: 4.5,
+  },
+  price: {
+    type: Number,
+    required: [true, "must have price"],
+  },
+});
+```
+
+Now we can create our model. Always remember models are capitalized in mongoose.
+
+```js
+const Tour = mongoose.model("Tour", tourSchema);
+```
+
+**Testing Our Model: Creating Documents**
+
+We can create new documents based upon the model we created.
+
+```js
+const testTour = new Tour({
+  name: "Magic Monquira",
+  rating: 4.7,
+  price: 49,
+});
+```
+
+We can now save using `.save()` which produces a promise we can consume as well. The result value of the promise is a document.
+
+```js
+testTour
+  .save()
+  .then((doc) => {
+    console.log(doc);
+  })
+  .catch((err) => console.log("ERROR: ", err));
+```
+
+Now you can check your db using the MongoDB Atlas or Compass interface and there you go you just used Mongoose to save to our MongoDB database, pretty easy right from our code!
+
+## Resources
+
+[Mongo DB Community Server](https://www.mongodb.com/try/download/community)
+You can install [Compass App](https://www.mongodb.com/products/compass) to make easy CRUD Operators and with a nice Graphical interface.
+[Mongoose Docs](https://mongoosejs.com/docs/api.html).
