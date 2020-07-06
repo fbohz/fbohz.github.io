@@ -74,7 +74,7 @@ Now if you console.log the `req` object you'll see a bunch of stuff, so we get a
 
 **Routing with Pure Node.js**
 
-Routing can get complicated in a big app so Express is recommended but we can implement with Node as this for demo purposes. We can modify our server as this:
+Routing can get complicated in a big app so Express is recommended but we'll talk about  it next. For now we can modify our server as this:
 
 ```js
 const server = http.createServer((req, res) => {
