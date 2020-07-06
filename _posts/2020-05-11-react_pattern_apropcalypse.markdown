@@ -7,7 +7,7 @@ permalink:  react_pattern_apropcalypse
 
 > React patterns are useful to promote code reuse while maintaining component simplicity and flexibility.
 
-Today we'll go over some React patterns I learned while participating at [Byteconf React](https://www.bytesized.xyz/react-2020). React patterns are useful to promote code reuse while maintaining component simplicity and flexibility. This article is a bit on the **advanced React** side.
+Today we'll go over some React patterns I learned while participating at [Byteconf React](https://www.bytesized.xyz/react-2020). React patterns are useful to promote code reuse while maintaining component simplicity and flexibility. This article is a bit on the **advanced React** side. 
 
 ## Typical Component Development
 

@@ -10,7 +10,9 @@ filename: 2020-07-20-mongo_db
 
 # MongoDB - A Sweet Database 🥭
 
-MongoDB is a NoSQL database, compared to relational databases such as MySQL. In MongoDB:
+MongoDB is a NoSQL database, compared to relational databases such as MySQL. In the latest reincarnation of our Yijing Ball-Z (YBZ), we implemented Mongo.DB/Mongoose on top of Express. So feel free to refer to the [Mongo.DB YBZ Repository](https://github.com/fbohz/ybz-backend-node-express) as you read along.
+
+In MongoDB:
 
 - Each database can have one or more _collection_. What in RDBS are tables.
 - Each collection can have one or more data structures or single entity called _document_, like table rows in RDBS.
@@ -137,3 +139,4 @@ Now you can check your db using the MongoDB Atlas or Compass interface and there
 [Mongo DB Community Server](https://www.mongodb.com/try/download/community)
 You can install [Compass App](https://www.mongodb.com/products/compass) to make easy CRUD Operators and with a nice Graphical interface.
 [Mongoose Docs](https://mongoosejs.com/docs/api.html).
+[Mongoose Queries](https://mongoosejs.com/docs/queries.html).

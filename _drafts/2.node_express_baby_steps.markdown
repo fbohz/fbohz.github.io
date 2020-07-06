@@ -185,9 +185,9 @@ Now the easiest way to define these variables and environments is to add them to
 
 ```js
 // top level code server.js
-const dotenv = require('dotenv')
+const dotenv = require("dotenv");
 // read config.env and save as env variables
-dotenv.config({path: './config.env'})
+dotenv.config({ path: "./config.env" });
 ```
 
 ## BONUS 2 - ESLint and Prettier Cheatsheet
@@ -197,14 +197,17 @@ Install this to use ESLint and prettier with cool config to make your Node life 
 ```sql
 npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-jsx-a11y eslint-plugin-react-hooks eslint-plugin-node eslint-plugin-import  eslint-plugin-react eslint-config-airbnb --save-dev
 ```
+
 In the repo you can check the `.eslintrc.json` and `.prettierrc` file configurations used.
 
 So although we took some baby steps on this exploration, I think they were enough to prepare us to fly with express in no time 🧙🏾‍♂️💫.
 
 ## Resources
 
-[Node Docs](https://nodejs.org/en/docs/)
-[Express Docs](https://expressjs.com/)
-[Express Middleware list](https://expressjs.com/en/resources/middleware.html)
-[Prettier](https://prettier.io/)
-[ESLint](https://eslint.org/docs/rules)
+[Node Docs](https://nodejs.org/en/docs/).
+[Express Docs](https://expressjs.com/).
+[Express Middleware list](https://expressjs.com/en/resources/middleware.html).
+[Prettier](https://prettier.io/).
+[ESLint](https://eslint.org/docs/rules).
+[GraphQL on top of express server](https://graphql.org/graphql-js/running-an-express-graphql-server/).
+[GraphQL + Express + MongoDB Tutorial](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216).
