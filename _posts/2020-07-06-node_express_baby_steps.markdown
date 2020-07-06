@@ -27,8 +27,8 @@ Example of blocking vs non-blocking code:
 ```js
 // playing with fs module - SYNCHRONOUS / BLOCKING
 
-const t1 = fs.readFileSync("./txt/input.txt", "utf-8");
-const t2 = `This Text: ${t1}. Created ${Date.now()}`;
+const t1 = fs.readFileSync("./large-txt", "utf-8");
+const t2 = `${t1} \n Done ${Date.now()}`;
 
 fs.writeFileSync("./txt/output.txt", t2);
 
@@ -48,7 +48,7 @@ Node.js is built on callbacks. But be wary of _callback hell_, e.g.
 
 ![Screen Shot 2020-06-29 at 8 46 45 PM](https://user-images.githubusercontent.com/15071636/86073609-b927e580-ba49-11ea-98fb-810268dba659.png)
 
-Inside callbacks, Node is well know for them to start nesting many levels down. We can escape this callback hell with async await or promises (I'll discuss this in a future article).
+Node is well known for callbacks to start nesting many levels down. We can escape this callback hell with async await or promises (I'll discuss this in a future article).
 
 ## Creating a Simple Web Server
 
@@ -68,11 +68,11 @@ server.listen(8000, "127.0.0.1", () => {
 });
 ```
 
-By using `createServer()` we then pass the callback function executed each time the server is requested. Then we listen on port 8000. So if you go to http://localhost:8000/ on your browser you'll see: 'Hellooo'. Can it get more easy?
+By using `createServer()` we then pass the callback function executed each time the server is requested. Then we listen on port 8000. So if you go to http://localhost:8000 on your browser you'll see: 'Hellooo'. Can it get more easy?
 
 Now if you console.log the `req` object you'll see a bunch of stuff, so we get access to a bunch of stuff to handle requests.
 
-**Routing in pure Node.js**
+**Routing with Pure Node.js**
 
 Routing can get complicated in a big app so Express is recommended but we can implement with Node as this for demo purposes. We can modify our server as this:
 
