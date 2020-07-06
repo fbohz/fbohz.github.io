@@ -129,7 +129,7 @@ app.listen(port, () => {
 });
 ```
 
-Here `.get()` similar to Node has access to the request and response objects, but in Express there are event more methods. Now if you navigate to localhost:4000 you get "Hello from Express World!" as JSON and thus we have an Express API!.
+Here `.get()` similar to Node, which has access to the request and response objects, but in Express there are even more methods. Now if you navigate to localhost:4000 you get "Hello from Express World!" as JSON and thus we have an Express API!.
 
 Another thing you can see is that Express automatically sends app headers for you. With Express we can easily build an stateless API (in which the client will ask for specific info) and follow patterns such as REST to build routes with GET, POST, PUT, you name it!
 
