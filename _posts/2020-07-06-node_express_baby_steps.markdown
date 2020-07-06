@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Node.js + Express - Baby Steps 🍼"
-# date:       2020-07-30 09:31:03 -0400
+date:       2020-07-06 09:31:03 -0400
 permalink: node_express_baby_steps
-filename: 2020-07-30-node_express_baby_steps
+filename: 2020-07-06-node_express_baby_steps
 ---
 
 > With Express we can easily build an stateless API...and follow patterns such as REST to build routes with GET, POST, PUT, you name it!
