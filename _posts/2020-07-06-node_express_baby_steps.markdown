@@ -12,6 +12,8 @@ filename: 2020-07-06-node_express_baby_steps
 
 Today we'll be taking some baby steps into the Node.js world 👶🏽. You can check the latest incarnation of the [Yijing Ball-Z with Node/Express](https://github.com/fbohz/ybz-backend-node-express) as you follow along.
 
+Node.js: Pros vs Cons
+
 ![Screen Shot 2020-06-29 at 7 57 33 PM](https://user-images.githubusercontent.com/15071636/86070758-140a0e80-ba43-11ea-8d52-74dbefbf529b.png)
 
 In Node we have synchronous code, which can be called also blocking code. Async code is non-blocking that can run the background. So by running code in the background it seems faster and the app can do many things at the same time.
@@ -204,10 +206,10 @@ So although we took some baby steps on this exploration, I think they were enoug
 
 ## Resources
 
-[Node Docs](https://nodejs.org/en/docs/). </br>
-[Express Docs](https://expressjs.com/). </br>
-[Express Middleware list](https://expressjs.com/en/resources/middleware.html).</br>
-[Prettier](https://prettier.io/). </br>
-[ESLint](https://eslint.org/docs/rules). </br>
-[GraphQL on top of express server](https://graphql.org/graphql-js/running-an-express-graphql-server/). </br>
-[GraphQL + Express + MongoDB Tutorial](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216).
+- [**Node Docs**](https://nodejs.org/en/docs/). 
+- [**Express Docs**](https://expressjs.com/).
+- [**Express Middleware list**](https://expressjs.com/en/resources/middleware.html).
+- [**Prettier**](https://prettier.io/).
+- [**ESLint**](https://eslint.org/docs/rules).
+- [**GraphQL on top of express server**](https://graphql.org/graphql-js/running-an-express-graphql-server/).
+- [**GraphQL + Express + MongoDB Tutorial**](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216).
