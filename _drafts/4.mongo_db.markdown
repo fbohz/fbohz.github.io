@@ -134,7 +134,7 @@ testTour
 
 Now you can check your db using the MongoDB Atlas or Compass interface and there you go you just used Mongoose to save to our MongoDB database, pretty easy right from our code!
 
-## Resources
+## Level Up 🍄 Readings
 
 - [**Mongo DB Community Server**](https://www.mongodb.com/try/download/community)
 - You can install [**Compass App**](https://www.mongodb.com/products/compass) to make easy CRUD Operators and with a nice Graphical interface.
