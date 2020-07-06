@@ -152,7 +152,7 @@ app.use((req, res, next) => {
 
 Now you can use `req.requestTime` in any body of any request! There are many middlewares out there you don't have to manually create them yourself. It will make your life and development much easier.
 
-So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using `.use()`. Also there should be a server.js files that deals with just starting the server and server configurations. Checkout such files in the [repo here](https://github.com/fbohz/museo-node/blob/master/).
+So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using `.use()`. Also there should be a server.js files that deals with just starting the server and server configurations. Checkout such files in the [YBZ repo](https://github.com/fbohz/ybz-backend-node-express).
 
 **The Importance of Middlewares in Express**
 
