@@ -10,7 +10,7 @@ filename: 2020-07-06-node_express_baby_steps
 
 # Node.js + Express - Baby Steps 🍼
 
-Today we'll be taking some baby steps into the Node.js world 👶🏽.
+Today we'll be taking some baby steps into the Node.js world 👶🏽. You can check the latest incarnation of the [Yijing Ball-Z with Node/Express](https://github.com/fbohz/ybz-backend-node-express) as you follow along.
 
 ![Screen Shot 2020-06-29 at 7 57 33 PM](https://user-images.githubusercontent.com/15071636/86070758-140a0e80-ba43-11ea-8d52-74dbefbf529b.png)
 
