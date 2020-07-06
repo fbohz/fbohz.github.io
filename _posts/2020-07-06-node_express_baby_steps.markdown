@@ -151,7 +151,7 @@ app.use((req, res, next) => {
 
 Now you can use `req.requestTime` in any body of any request! There are many middlewares out there you don't have to manually create them yourself. It will make your life and development much easier.
 
-So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using `.use()`. Also there should be a server.js files that deals with just starting the server and server configurations. Checkout such files in the [YBZ repo](https://github.com/fbohz/ybz-backend-node-express).
+So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using `.use()`. Also there should be a server.js file that deals with just starting the server and server configurations. Checkout such file in the [YBZ repo](https://github.com/fbohz/ybz-backend-node-express).
 
 **The Importance of Middlewares in Express**
 
@@ -171,7 +171,7 @@ exports.checkId = (req, res, next, value) => {
 };
 
 // tour routes
-const { checkId } = require("../controllers/tourController");
+const { checkId } = require("./tourController");
 
 router.param("id", checkId);
 ```
@@ -203,7 +203,7 @@ In the repo you can check the `.eslintrc.json` and `.prettierrc` file configurat
 
 So although we took some baby steps on this exploration, I think they were enough to prepare us to fly with express in no time 🧙🏾‍♂️💫.
 
-## Resources
+## Continue Your Journey
 
 - [**Node Docs**](https://nodejs.org/en/docs/). 
 - [**Express Docs**](https://expressjs.com/).
