@@ -99,7 +99,9 @@ On the 404 response we send back a header, which is a piece of info about the re
 
 Express is a Node.js framework. It is the most popular framework. It has some characteristics.
 
-![Screen Shot 2020-07-01 at 12 46 16 PM](https://user-images.githubusercontent.com/15071636/86275433-e3d48400-bb98-11ea-979f-1c97aa4a4e61.png)
+- Node.js framework with useful abstractions
+- Allows for easy organization into MVC structure
+- Rapid development of Node.js by implementing some robust features including server-side rendering, middleware, complex routing, better handling of response/request cycle.
 
 So we can write apps so much faster, looks simpler as well.
 
