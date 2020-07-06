@@ -204,10 +204,10 @@ So although we took some baby steps on this exploration, I think they were enoug
 
 ## Resources
 
-[Node Docs](https://nodejs.org/en/docs/).
-[Express Docs](https://expressjs.com/).
-[Express Middleware list](https://expressjs.com/en/resources/middleware.html).
-[Prettier](https://prettier.io/).
-[ESLint](https://eslint.org/docs/rules).
-[GraphQL on top of express server](https://graphql.org/graphql-js/running-an-express-graphql-server/).
+[Node Docs](https://nodejs.org/en/docs/). </br>
+[Express Docs](https://expressjs.com/). </br>
+[Express Middleware list](https://expressjs.com/en/resources/middleware.html).</br>
+[Prettier](https://prettier.io/). </br>
+[ESLint](https://eslint.org/docs/rules). </br>
+[GraphQL on top of express server](https://graphql.org/graphql-js/running-an-express-graphql-server/). </br>
 [GraphQL + Express + MongoDB Tutorial](https://medium.com/@utkarshprakash/setting-up-graphql-server-with-nodejs-express-and-mongodb-d72fba13216).
