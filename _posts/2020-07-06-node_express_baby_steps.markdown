@@ -16,9 +16,7 @@ Node.js: Pros vs Cons
 
 ![Screen Shot 2020-06-29 at 7 57 33 PM](https://user-images.githubusercontent.com/15071636/86070758-140a0e80-ba43-11ea-8d52-74dbefbf529b.png)
 
-In Node we have synchronous code, which can be called also blocking code. Async code is non-blocking that can run the background. So by running code in the background it seems faster and the app can do many things at the same time.
-
-![Screen Shot 2020-06-29 at 8 38 11 PM](https://user-images.githubusercontent.com/15071636/86072999-84fff500-ba48-11ea-9a97-554fdf7ab674.png)
+In Node we have synchronous code, which can be called also *blocking code*. Async code is non-blocking that can run the background. So by running code in the background it seems faster and the app can do many things at the same time. Node usually has its sync vs async versions of methods e.g. readFile vs readFileSync. Unless it is top level code do not run sync methods. More on this to follow.
 
 **Asynchronous Nature of Node.js**
 
