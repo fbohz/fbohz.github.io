@@ -97,9 +97,8 @@ On the 404 response we send back a header, which is a piece of info about the re
 
 ## Sneak-peak of Express
 
-Express is a Node.js framework. It is the most popular framework. It has some characteristics.
+Express is a Node.js framework with useful abstractions. It is the most popular framework. It has some characteristics.
 
-- Node.js framework with useful abstractions
 - Allows for easy organization into MVC structure
 - Rapid development of Node.js by implementing some robust features including server-side rendering, middleware, complex routing, better handling of response/request cycle.
 
