@@ -26,7 +26,9 @@ ECMAScript was created as governing body of JS. It tells engine creators paramet
 
 Interpreter translates and reads file line-by-line. Compiler doesn't translate on the fly. Compiler does one run and then writes a new program in a program that the computer can understand like machine code. You can still run JS using one or the other.
 
-**Babel and Typescript**: They are heavily used in the Javascript ecosystem and you should now have a good idea of what they are:
+**Babel and Typescript** 
+
+They are heavily used in the Javascript ecosystem and you should now have a good idea of what they are.
 
 Babel is a Javascript compiler that takes your modern JS code and returns  browser compatible JS (older JS code). Typescript is a superset of Javascript that compiles down to Javascript.
 
@@ -42,7 +44,7 @@ Interpreter is good for JS. Interpreters can get very slow with things like loop
 
 **Compared with other languages**
 
-.exe is usually a C++ file that is compiled to a executable machine code file.Java uses the JVM to compile code.
+.exe is usually a C++ file that is compiled to a executable machine code file. Java uses the JVM to compile code.
 
 Javascript initially was an interpreted language with time evolving JS has compilers as part of V8 engine, so depends. Python can also be run through a compiler or interpreted.
 
@@ -52,7 +54,7 @@ Be mindful with some keywords and JS patterns that can make code not optimized.
 
 ![3](https://user-images.githubusercontent.com/15071636/81311646-4868dc00-904b-11ea-9d81-4430dc05d9da.png)
 
-Thinks like inline caching and hidden classes will also learn. For hidden class you want to assign properties of the object in the constructor or add things in the same order. 
+Thinks like inline caching and hidden classes. For hidden class you want to assign properties of the object in the constructor or add things in the same order. 
 
 Some of these optimizations help the compiler.
 
@@ -66,7 +68,7 @@ WebAssembly - could make things better and avoid some JIT Compiler and make thin
 
 ## JS Engine Key Concepts
 
-### Call Stack and Memory Heap
+**Call Stack and Memory Heap**
 
 JS engine needs to store and keep track of everything. Memory heap uses, allocates memory. Call stack keeps track of where we are in the code in the execution.
 
@@ -116,18 +118,18 @@ Common memory leaks:
 
 An example happened with SoundCloud plug-in the background [here](https://developers.soundcloud.com/blog/garbage-collection-in-redux-applications)
 
-*JS Single Threaded*
+**JS is Single Threaded**
 
-JS is a single threaded programming language so only one set of instructions at the time. It only has **one call stack**.
+JS is a single threaded programming language so only one set of instructions at the time. It only has *one call stack*.
 
 Because of this JS is synchronous, doing one thing at a time.
 - This could make difficult with long running tasks. An example is `alert` that when it is executed only alert runs.
 
-However most of the time we **don't use JS Engine** but use the **JS Runtime** to make things asynchronous.
+However most of the time we *don't use JS Engine* but use the *JS Runtime* to make things asynchronous.
 
 ## JavaScript Runtime
 
-So how do we make asynchronous calls with the JS Runtime.
+So how do we make asynchronous calls? with the JS Runtime.
 
 *Web API* 
 
@@ -145,14 +147,8 @@ console.log('1')
 setTimeout(() => {console.log('2')}, 0)
 
 console.log('3')
-
-/*
-Runs 1, 3, 2 because it has timeout. No matter the length.
-Then moved away from call stack gives back to web API.
-So after it keeps running the next line
-*/
 ```
-This event loop runs all the time, won't start putting anything to the call stack is empty and already runs.
+This runs 1, 3, 2 because it has timeout. No matter the length. Then moved away from call stack gives back to web API for setTimeout. 
 
 No matter how fast setTimeout is, it still gets sent to the Web API.
 
@@ -164,6 +160,6 @@ This makes it possible to not rely on just one call stack and memory heap and ac
 
 There are many Runtimes, so what is *Node.js*? 
 
-**Node.js** is a *runtime*. So it runs outside the browser. It is a C++ program, like a Node.exe. Node you can access file systems and other things. There are differences such as in Node there's not window but it is replaced with `global`. It creates a runtime outside of the browser. It also uses the asynchronous runtime.
+**Node.js** is a *runtime*. So it runs outside the browser. It is a C++ program, like a Node.exe. With Node you can access the file system and other things. There are differences such as in Node there's not window but it is replaced with `global`. It creates a runtime outside of the browser. It also uses the asynchronous runtime.
 
-**Stay tuned for next week's article**, as we'll talk about more basic JavaScript concepts. Till then!
+**Stay tuned for next week's article**, as we'll talk about more basic JavaScript concepts. 'Till then!
