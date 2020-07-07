@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "React Hooks: Going Beyond `useState`"
+title:      "React Hooks: Going Beyond useState"
 date:       2020-07-07 19:31:03 -0400
 permalink:  going_beyond_usestate_react
 filename: 2020-07-07-going_beyond_usestate_react
