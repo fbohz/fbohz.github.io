@@ -6,7 +6,7 @@ permalink:  going_beyond_usestate_react
 filename: 2020-07-07-going_beyond_usestate_react
 ---
 
-> Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy
+> Hooks are fairly new, but apps are using them, there's still a lot of hype around them. A lot of companies have built scalable apps without hooks, so it'll take time to migrate to hooks.
 
 # React Hooks: Going Beyond `useState`
 
