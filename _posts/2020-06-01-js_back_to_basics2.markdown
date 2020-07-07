@@ -27,30 +27,31 @@ As soon as JS engine sees `()` it creates an **Execution Context (EC)**:
   - This global() has the `globalObject` and `this`.
   - In browser the globalObject is the `window`.
   - Depending on the function context `this` might refer to one thing or the other.
-  - you can add functions, variables to this globalObject
-- **Execution base** is where you run your code.
+  - You can add functions, variables to this globalObject
+- *Execution base* is where you run your code.
 
 **Lexical Environment / Scope**
 - It means **where** you write something.
 - They are like little universes each time there's a new execution context.
-- functions within functions are in the lexical environment of another functions
+- Functions within functions are in the lexical environment of another functions (closures).
 - Knowing where it was written, the compiler can make decisions what to do.
-- Remember every time we add a new function we create a new planet.
+- Remember every time we add a new function we create a "new planet".
 
-Execution context tells which lexical environment (planet) is currently running.
+Execution context tells which lexical environment ("planet") is currently running.
 
-**Our lexical scope (available data + variables where functions were defined) determines our available variables NOT where the function is called (dynamic scop)**. It doesn't matter where we call our functions.
+**Our lexical scope (available data + variables where functions were defined) determines our available variables NOT where the function is called (dynamic scope)**. It doesn't matter where we call our functions.
 
 *The very first lexical environment is the global environment*.
 
 **Hoisting**
-In the creation phase (when set globalObject and this) before execution of code we have hosting:
+
+In the creation phase (when set globalObject and 'this') before execution of code we have hosting:
 - Hoisting is the behavior of moving variables and fn declarations to their context.
 - During creation phase (first go through) it allocates memory. As soon as they see variables or function it allocates them, the first run they will be as `undefined`.
-  - variables with `var` are then **partially hoisted**. Var is as undefined.
+  - Variables with `var` are then **partially hoisted**. Var is as undefined.
     - `let` and `const` are NOT hoisted.
-  - function declarations are **fully hoisted**.
-  - function expressions (defined with var) are partially and `undefined`.
+  - Function declarations are **fully hoisted**.
+  - Function expressions (defined with var) are partially and `undefined`.
 - Compiler is not moving lines but in the first pass is just **allocating memory**
 
 
@@ -59,9 +60,9 @@ In the creation phase (when set globalObject and this) before execution of code 
 Remember JS **programs assign in memory variables and then write functions to do something with those variables**.
 
 So what are functions?
-- function *declaration* start with `function` keyword. They get hoisted. Define at run-time.
-- function *expression* are saved to a variable. Expressions don't get hoisted. Defined at parse-time, first run because hoisted.  . 
-- Function have invocation/call/execution
+- Function *declaration* start with `function` keyword. They get hoisted. Define at run-time.
+- Function *expression* are saved to a variable. Expressions don't get hoisted. Defined at parse-time, first run because hoisted.  . 
+- Functions have invocation/call/execution
   - We invoke by running in parenthesis like `myFunction()`.
 - With function invocation we get the `arguments` keyword.
   - This arguments keyword gives us an object with the arguments.
