@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Solving Callback Hell😈: JS Promises and Async-Await in Node.js"
-# date:       2020-08-10 09:31:03 -0400
+date:       2020-07-13 09:31:03 -0400
 permalink:  async_await_node
-filename: 2020-08-10-async_await_node
+filename: 2020-07-13-async_await_node
 ---
 
 > Async/Await was introduced recently. In order to use async/await we need to use mark functions as `async` functions. Async functions return a promise and we can use one or more await functions. 
