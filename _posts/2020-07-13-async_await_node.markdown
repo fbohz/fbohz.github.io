@@ -139,6 +139,6 @@ We can wait for multiple promises using `Promise.all` by passing as an array of 
 ```
 
 ## Further Reading 
-- [Node Docs](https://nodejs.org/en/docs/)
-- [Callback Hell](http://callbackhell.com/)
-- [Node.js Async Best Practices & Avoiding the Callback Hell](https://blog.risingstack.com/node-js-async-best-practices-avoiding-callback-hell-node-js-at-scale/)
+- [**Node Docs**](https://nodejs.org/en/docs/)
+- [**Callback Hell**](http://callbackhell.com/)
+- [**Node.js Async Best Practices & Avoiding the Callback Hell**](https://blog.risingstack.com/node-js-async-best-practices-avoiding-callback-hell-node-js-at-scale/)
