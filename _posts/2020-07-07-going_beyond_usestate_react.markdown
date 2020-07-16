@@ -6,7 +6,7 @@ permalink:  going_beyond_usestate_react
 filename: 2020-07-07-going_beyond_usestate_react
 ---
 
-> Hooks are fairly new, but apps are using them, there's still a lot of hype around them. A lot of companies have built scalable apps without hooks, so it'll take time to migrate to hooks.
+> Hooks are fairly new, and there's still a lot of hype around them. However, a lot of companies have built scalable apps without hooks. So for some companies, it'll take time to migrate to Hooks.
 
 # React Hooks: Going Beyond `useState`
 
@@ -178,7 +178,7 @@ It is rare that you have an app that uses both. But you'll have to decide. Thing
 
 **Should we adopt Hooks?**
 
-Hooks are fairly new, but apps are using them, there's still a lot of hype around them. A lot of companies have built scalable apps without hooks, so it'll take time to migrate to hooks. Below are some resources you can use in your learning of these exciting hooks.
+Hooks are fairly new, and there's still a lot of hype around them. However, a lot of companies have built scalable apps without hooks. So for some companies, it'll take time to migrate to hooks. Below are some resources you can use in your learning of these exciting Hooks.
 
 - [React Redux Hooks](https://react-redux.js.org/next/api/hooks). Look into the useSelector.
 - [Complete guide of useEffect](https://overreacted.io/a-complete-guide-to-useeffect/).
