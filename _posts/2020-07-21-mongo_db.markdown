@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "MongoDB - A Sweet Database 🥭"
-# date:       2020-07-06 19:31:03 -0400
+date:       2020-07-20 09:31:03 -0400
 permalink: mongo_db
-filename: 2020-07-20-mongo_db
+filename: 2020-07-21-mongo_db
 ---
 
 > MongoDB is a NoSQL database...Each database can have one or more _collection_. What in RDBS are tables. Each collection can have one or more data structures or single entity called _document_, like table rows in RDBS.
