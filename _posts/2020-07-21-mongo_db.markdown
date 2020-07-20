@@ -10,7 +10,7 @@ filename: 2020-07-21-mongo_db
 
 # MongoDB - A Sweet Database 🥭
 
-MongoDB is a NoSQL database, compared to relational databases such as MySQL. In the latest reincarnation of our Yijing Ball-Z (YBZ), we implemented Mongo.DB/Mongoose on top of Express. So feel free to refer to the [Mongo.DB YBZ Repository](https://github.com/fbohz/ybz-backend-node-express) as you read along.
+MongoDB is a NoSQL database, compared to relational databases such as MySQL. In the latest reincarnation of our Yijing Ball-Z (YBZ) and Snake HTML5 Game, we implemented Mongo.DB/Mongoose on top of Express. So feel free to refer to the [Mongo.DB YBZ Repository](https://github.com/fbohz/ybz-backend-node-express) and [Snake Node Backend](https://github.com/fbohz/snake-game-node-backend) as you read along.
 
 In MongoDB:
 
