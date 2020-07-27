@@ -2,8 +2,8 @@
 layout: post
 title:      "HTML5 + JS Games - An Intro to the Canvas Element"
 date:       2020-07-27 09:31:03 -0400
-permalink:  html_js_games_intro
-filename:   2020-07-27-html_js_games_intro
+permalink:  html_js_games_canvas
+filename:   2020-07-27-html_js_games_canvas
 ---
 
 > HTML Games are fun way to practice your HTML `canvas` tag skills as well as Javascript concepts.
