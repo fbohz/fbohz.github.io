@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "HTML5 + JS Games - An Intro to the Canvas Element"
+title:      "HTML5 + JS Games - An Intro to the Canvas Element 👾"
 date:       2020-07-27 09:31:03 -0400
 permalink:  html_js_games_canvas
 filename:   2020-07-27-html_js_games_canvas
