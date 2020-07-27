@@ -22,7 +22,8 @@ HTML Games are fun way to practice your HTML `canvas` tag skills as well as Java
 
 ```html
 <body>
-    <canvas height="500" width="500" style="border: 2px solid #000;" id="ctx">
+    <canvas height="500" width="500" 
+    style="border: 2px solid #000;" id="ctx">
     </canvas>
 </body>
 ```
@@ -34,7 +35,9 @@ HTML Games are fun way to practice your HTML `canvas` tag skills as well as Java
 With `fillText()` you can add text, in specific x and y coordinates, and get something like this:
 
 ```js
-var ctx = document.getElementById("ctx").getContext('2d');
+var ctx = document.getElementById("ctx")
+    .getContext('2d');
+
 ctx.fillText("HOLA BRAVE NEW WORLD!", 150, 250);
 ```
 
@@ -93,7 +96,10 @@ We can easily draw our square by accessing the square attributes:
 
 ```js
 ctx.fillStyle = square.color
-ctx.fillRect(square.x, square.y, square.width, square.height)
+ctx.fillRect(
+    square.x, square.y, 
+    square.width, square.height
+    )
 ```
 
 **Using JS Functions**
