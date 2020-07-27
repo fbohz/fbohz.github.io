@@ -8,7 +8,7 @@ filename:   2020-07-27-html_js_games_canvas
 
 > HTML Games are fun way to practice your HTML `canvas` tag skills as well as Javascript concepts.
 
-# HTML5 + JS Games - An Intro to the Canvas Element
+# HTML5 + JS Games - An Intro to the Canvas Element 👾
 
 Couple of weeks ago I built a clone of the arcade classic snake, [Retro Snake](http://fbohz.com/html5_games/retro_snake.html). Today we'll talk about some basic concepts involved in building HTML5 and JS games.
 
