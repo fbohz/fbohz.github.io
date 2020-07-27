@@ -23,8 +23,8 @@ HTML Games are fun way to practice your HTML `canvas` tag skills as well as Java
 ```html
 <body>
     <canvas height="500" width="500" 
-    style="border: 2px solid #000;" id="ctx">
-    </canvas>
+    style="border: 2px solid #000;" 
+    id="ctx"></canvas>
 </body>
 ```
 
