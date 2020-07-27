@@ -150,6 +150,6 @@ When building HTML5 + JS games make sure you:
 
 **Resources**
 
-- Here's my implementation of snake. Note I used Express/MongoDB as a backend to track high scores, [<b>Retro Snake</b>](http://fbohz.com/html5_games/retro_snake.html).
+- Here's my implementation of snake, [<b>Retro Snake</b>](http://fbohz.com/html5_games/retro_snake.html). Note I used Express/MongoDB as a backend to track high scores.
 - Read [<b>W3 Schools HTML Canvas Drawing</b>](https://www.w3schools.com/graphics/canvas_drawing.asp).
 - Checkout [<b>MDN Drawing Shapes with Canvas</b>](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes).
