@@ -46,7 +46,7 @@ ctx.fillText("HOLA BRAVE NEW WORLD!", 150, 250);
 To make font larger you can do like `ctx.font = "30px Calibri"`.
 
 
-**Draw Line in Canvas**
+**Draw a Line in Canvas**
 
 `strokeText()`: gives embossed look to font.
 
