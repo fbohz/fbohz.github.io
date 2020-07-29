@@ -1,0 +1,261 @@
+I"rH<blockquote>
+  <p>For reference check my CSS Project <a href="https://github.com/fbohz/css-learning/tree/master/museo-demo">Github repository</a>.</p>
+</blockquote>
+
+<h1 id="css-cool-tricks-cheatsheet-">CSS Cool Tricks Cheatsheet 😎</h1>
+
+<p>For reference check <a href="https://github.com/fbohz/css-learning/tree/master/museo-demo">Github repositoryhttps://github.com/fbohz/css-learning/tree/master/museo-demo</a>.</p>
+
+<p>There’s also a great <a href="http://tympanus.net/codrops/css_reference/">CSS Reference</a> you can checkout.</p>
+
+<p><strong>Three Pillars to write good CSS</strong></p>
+
+<ol>
+  <li><em>Responsive Design</em>: Build website that works well on all devices. You’ll have to know about fluid layouts, media queries, responsive images, correct units (for e.g. font sizes) and desktop-first vs mobile-first.</li>
+  <li><em>Writing maintainable/scalable code</em>: Write code that is clean and reusable. Think about CSS folder architecture, and class naming.</li>
+  <li><em>Web Performance</em>: Make it faster and smaller in size. Less HTTP request, compress code, use CSS preprocessor. Also less images and compress images.</li>
+</ol>
+
+<p><strong>Resetting styles globally</strong></p>
+
+<p>Sometimes you want to reset styles from those that might be imposed by the browser in default here’s an example</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Attribute selectors</strong></p>
+
+<p>We can selecting attributes by wrapping them in <code class="highlighter-rouge">[]</code></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">/* ^ means starts with */</span>
+
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"col-"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><strong>Converting <code class="highlighter-rouge">px</code> units to <code class="highlighter-rouge">rem</code></strong></p>
+
+<p>Remember rem is related to root font size so by setting the root font size then use rem you can easily make changes to root without changing all lines of codes. You can specify root font size as this. Now but having root font size as px we could better use percentages.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">html</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">62.5%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Since usually font size is 16px here we are saying 62.5% which is roughly 10px. This will mean that 1rem is 10px, 2rem is 20px and so forth.</p>
+
+<p>You can then use rem as this:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.logo-box</span> <span class="p">{</span>
+ <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+ <span class="c">/* 4rem = 40px */</span>
+ <span class="nl">top</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span> 
+ <span class="nl">left</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong><code class="highlighter-rouge">!important</code></strong></p>
+
+<p><code class="highlighter-rouge">!important</code> overrides specificity rules. Can save headaches to make it work before you debug accordingly.</p>
+
+<p>You can add it also on utilities (SASS), reusable stylings file. <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">Read more</a>.</p>
+
+<p><strong><code class="highlighter-rouge">box-sizing: border-box</code></strong></p>
+
+<p>With box-sizing: border-box;, we can change the box model to what was once the “quirky” way, where an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that it’s found its way into reset styles. So border-box can help make responsive layouts more manageable.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/85438771-eceaa300-b551-11ea-8a51-b767df986fc8.png" alt="Screen Shot 2020-06-23 at 1 02 30 PM" /></p>
+
+<p><strong><code class="highlighter-rouge">clip-path: polygon()</code></strong></p>
+
+<p>You specify polygon you want to add the clipping you add clippings with x and y coordinates left to right.  Use <a href="https://bennettfeely.com/clippy/">Clippy tool</a> to calculate it for you!</p>
+
+<p><strong>CSS Animations with <code class="highlighter-rouge">@keyframes</code> and <code class="highlighter-rouge">animation</code></strong></p>
+
+<p>We use <code class="highlighter-rouge">@keyframes</code> and then give animation a name. Then you specify what happens when animation starts, ends and anything in the middle.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@keyframes</span> <span class="n">moveInLeft</span> <span class="p">{</span>
+<span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+ <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+ <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+ <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+ <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then once you define it, you can add it to the specific element you want to apply with <code class="highlighter-rouge">animation</code> keyword.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.btn-animated</span> <span class="p">{</span>
+<span class="c">/* animation name, animation duration
+    animation timing function, 
+    animation delay
+*/</span>
+<span class="nl">animation</span><span class="p">:</span> <span class="n">moveInBottom</span> <span class="m">.5s</span> <span class="n">ease-out</span> <span class="m">.75</span><span class="p">,</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong><code class="highlighter-rouge">backface-visibility: hidden</code></strong></p>
+
+<p>Whenever you work with animations and with <code class="highlighter-rouge">translate()</code>, many times <code class="highlighter-rouge">backface-visibility: hidden;</code> fixes it. So try to add it it if having issues</p>
+
+<p><strong><code class="highlighter-rouge">overflow: hidden</code></strong></p>
+
+<p>Another trick when an element is to big and is overflowing. You can use <code class="highlighter-rouge">overflow: hidden</code> to fix it.</p>
+
+<p><strong>Pseudo Elements and Pseudo Classes</strong></p>
+
+<p><em>Pseudo classes</em> are special state of a selector. For example <code class="highlighter-rouge">.btn:link</code> selects the elements on a special condition in this case when as link.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.btn</span><span class="nd">:link</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>Pseudo elements</em> allow us to select certain part of an element. They are denoted with two colons to differentiate them from pseudo classes. This is the syntax:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">selector</span><span class="nd">::pseudo-element</span> <span class="p">{</span>
+  <span class="py">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are various pseudo elements. Take a sneak peak and learn more about them <a href="https://blog.logrocket.com/a-guide-to-css-pseudo-elements/">here</a>.</p>
+
+<p><strong><code class="highlighter-rouge">box-shadow</code></strong></p>
+
+<p>With box shadow you can add shadow to elements. Take a look at the <a href="https://www.cssmatic.com/box-shadow">box shadow generator</a>.</p>
+
+<p><strong><code class="highlighter-rouge">@supports</code> For Older Browser Support</strong></p>
+
+<p>You can do graceful degradation with <code class="highlighter-rouge">@supports</code>. Example:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@supports</span> <span class="p">(</span><span class="n">-webkit-backdrop-filter</span><span class="p">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">10px</span><span class="p">))</span> <span class="n">or</span> <span class="p">(</span><span class="n">backdrop-filter</span><span class="p">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">10px</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nl">-webkit-backdrop-filter</span><span class="p">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">10px</span><span class="p">);</span>
+    <span class="py">backdrop-filter</span><span class="p">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">10px</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="err">$</span><span class="n">color-black</span><span class="p">,</span> <span class="m">.3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="extra---sass-preprocessor">EXTRA - SASS Preprocessor</h2>
+
+<p><strong>Implement SASS Variables</strong></p>
+
+<p>We can use SASS to implement variables, e.g. when specifying colors.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">$</span><span class="nt">color-primary</span><span class="o">:</span> <span class="nf">#f9ed69</span>
+
+<span class="nt">nav</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="err">$</span><span class="n">color-primary</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Implement Nesting With SASS</strong></p>
+
+<p>In SASS you can do</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.navigation</span> <span class="p">{</span>
+  <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+
+  <span class="err">li</span> <span class="err">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+
+    <span class="err">&amp;:first-child</span> <span class="err">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>Note <code class="highlighter-rouge">&amp;</code> replaces selectors up to the point so will be <code class="highlighter-rouge">.navigation li:first-child</code>. SCSS above is the equivalent in vanilla CSS as:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.navigation</span> <span class="p">{</span>
+ <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.navigation</span> <span class="nt">li</span> <span class="p">{</span>
+ <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.navigation</span> <span class="nt">li</span><span class="nd">:first-child</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Be careful on how deeper you go on nesting, usually don’t go deeper than two levels!</p>
+
+<p><strong>Mixins</strong></p>
+
+<p><em>Mixin</em> is a reusable piece of code. Let’s say we want to implement a <a href="https://www.w3schools.com/howto/howto_css_clearfix.asp">Clearfix</a> in multiple places. We use the <code class="highlighter-rouge">@mixin</code> keyword to define it and <code class="highlighter-rouge">@include</code> where we want to use it.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="n">clearfix</span> <span class="p">{</span>
+ <span class="o">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+     <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
+     <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+     <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="err">'</span>
+ <span class="p">}</span>   
+<span class="p">}</span>
+
+<span class="nt">nav</span> <span class="p">{</span>
+ <span class="err">@include</span> <span class="err">clearfix;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can also pass in variables to mixin definitions, just make sure when you want to use it also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS become familiar with them, although mixins are used in the majority of times.</p>
+
+<p>Also note if you wanna use it in your project just install it. With <code class="highlighter-rouge">npm i node-sass --save-dev</code>.</p>
+
+<p><strong>Fast Development Environment with SASS</strong></p>
+
+<p><em>Remember</em> to install SASS. Then you can compile by adding this script in package.json:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="nl">"compile:sass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node-sass sass/main.scss css/style.css -w
+},
+</span></code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">-w</code> will keep watching for whatever we do in our code. You can also install <code class="highlighter-rouge">npm i live-server -g</code>. Then run it as <code class="highlighter-rouge">live-server</code> on root folder. For the changes to be reflected without needing to reload manually.</p>
+
+<h2 id="extra2---build-scripts">EXTRA#2 - Build Scripts</h2>
+
+<p>We can implement simple NPM build processes after we finish a feature.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/85962487-9a0c5380-b976-11ea-8dae-b021b308f223.png" alt="Screen Shot 2020-06-28 at 7 35 10 PM" /></p>
+
+<p>We do this on <code class="highlighter-rouge">package.json</code>, check it on <a href="https://github.com/fbohz/css-learning/blob/master/museo-demo/package.json">Github repository</a>.</p>
+
+<p>There are a couple of NPM packages we use, we can install as <code class="highlighter-rouge">npm i concat --save-dev</code>, <code class="highlighter-rouge">npm i autoprefixer --save-dev</code>, <code class="highlighter-rouge">npm i postcss-cli --save-dev</code>, <code class="highlighter-rouge">npm i npm-run-all --save-dev</code>.</p>
+
+<p>Also note the <code class="highlighter-rouge">--parallel</code> flag on start. It means both run at the same time.</p>
+
+<p>So to run all you’ll just do:</p>
+
+<p><code class="highlighter-rouge">npm run build:css</code></p>
+
+<p>And your css will be compiled, concat, compressed and ready for production!</p>
+
+<h2 id="resources">Resources</h2>
+<p>👉&nbsp;<a rel="noopener noreferrer" href="https://github.com/jonasschmedtmann/advanced-css-course">Udemy Course material and instructions on GitHub</a></p>
+<p><a rel="noopener noreferrer" href="http://codingheroes.io/resources/">👉 Udemy resources page</a></p>
+<p><a href="https://docs.emmet.io/cheat-sheet/">Emmet Cheat Sheet</a>. Write HTML faster in VS Code
+<a href="https://css-tricks.com/box-sizing/">Box Sizing</a>
+<a href="https://css-tricks.com/snippets/html/glyphs/">HTML Glyphs</a>
+<a href="https://linea.io/">Linea Free Icons</a>
+<a href="http://coverr.co/">Coverr - Free Videos</a>
+<a href="https://easings.net/">Easings.net</a>.Pick your favorite transition and then copy the <code class="highlighter-rouge">cubic-bezier</code> function and voila! You can compare bezier curves with <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this tool</a>.
+<a href="https://sizzy.co/">Sizzy</a>, a tool for responsive website building.
+<a href="https://caniuse.com/">Can I Use</a>, for browser support checking</p>
+:ET

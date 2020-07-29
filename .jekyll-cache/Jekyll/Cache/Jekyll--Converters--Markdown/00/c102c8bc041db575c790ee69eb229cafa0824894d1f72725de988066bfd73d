@@ -1,0 +1,137 @@
+I"�!<blockquote>
+  <p>We’ll expand on last week’s concepts and talk about other exciting JS foundational concepts!</p>
+</blockquote>
+
+<p><em>Note:</em> This is a follow up is a continuation to <a href="http://fbohz.com/js_back_to_basics1">last week’s article</a>.</p>
+
+<h2 id="js-back-to-basics-part-ii">JS Back-to-basics Part II</h2>
+
+<p>This week, we’ll expand on last week’s concepts and talk about other exciting JS foundational concepts!</p>
+
+<p><em>Quick Reminder</em>
+In JS we basically</p>
+<ul>
+  <li>Assign variables</li>
+  <li>Write functions</li>
+</ul>
+
+<p>That’s all we really do, all the time!</p>
+
+<p>As soon as JS engine sees <code class="highlighter-rouge">()</code> it creates an <strong>Execution Context (EC)</strong>:</p>
+<ul>
+  <li>Items get pushed to our call stack each with its own execution context</li>
+  <li>It starts with the <code class="highlighter-rouge">global()</code> execution context (first item in the stack), then narrows down to the function being called.
+    <ul>
+      <li>This global() has the <code class="highlighter-rouge">globalObject</code> and <code class="highlighter-rouge">this</code>.</li>
+      <li>In browser the globalObject is the <code class="highlighter-rouge">window</code>.</li>
+      <li>Depending on the function context <code class="highlighter-rouge">this</code> might refer to one thing or the other.</li>
+      <li>You can add functions, variables to this globalObject</li>
+    </ul>
+  </li>
+  <li><em>Execution base</em> is where you run your code.</li>
+</ul>
+
+<p><strong>Lexical Environment / Scope</strong></p>
+<ul>
+  <li>It means <strong>where</strong> you write something.</li>
+  <li>They are like little universes each time there’s a new execution context.</li>
+  <li>Functions within functions are in the lexical environment of another functions (closures).</li>
+  <li>Knowing where it was written, the compiler can make decisions what to do.</li>
+  <li>Remember every time we add a new function we create a “new planet”.</li>
+</ul>
+
+<p>Execution context tells which lexical environment (“planet”) is currently running.</p>
+
+<p><strong>Our lexical scope (available data + variables where functions were defined) determines our available variables NOT where the function is called (dynamic scope)</strong>. It doesn’t matter where we call our functions.</p>
+
+<p><em>The very first lexical environment is the global environment</em>.</p>
+
+<p><strong>Hoisting</strong></p>
+
+<p>In the creation phase (when set globalObject and ‘this’) before execution of code we have hosting:</p>
+<ul>
+  <li>Hoisting is the behavior of moving variables and fn declarations to their context.</li>
+  <li>During creation phase (first go through) it allocates memory. As soon as they see variables or function it allocates them, the first run they will be as <code class="highlighter-rouge">undefined</code>.
+    <ul>
+      <li>Variables with <code class="highlighter-rouge">var</code> are then <strong>partially hoisted</strong>. Var is as undefined.
+        <ul>
+          <li><code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> are NOT hoisted.</li>
+        </ul>
+      </li>
+      <li>Function declarations are <strong>fully hoisted</strong>.</li>
+      <li>Function expressions (defined with var) are partially and <code class="highlighter-rouge">undefined</code>.</li>
+    </ul>
+  </li>
+  <li>Compiler is not moving lines but in the first pass is just <strong>allocating memory</strong></li>
+</ul>
+
+<p><strong>Function Invocation</strong></p>
+
+<p>Remember JS <strong>programs assign in memory variables and then write functions to do something with those variables</strong>.</p>
+
+<p>So what are functions?</p>
+<ul>
+  <li>Function <em>declaration</em> start with <code class="highlighter-rouge">function</code> keyword. They get hoisted. Define at run-time.</li>
+  <li>Function <em>expression</em> are saved to a variable. Expressions don’t get hoisted. Defined at parse-time, first run because hoisted.  .</li>
+  <li>Functions have invocation/call/execution
+    <ul>
+      <li>We invoke by running in parenthesis like <code class="highlighter-rouge">myFunction()</code>.</li>
+    </ul>
+  </li>
+  <li>With function invocation we get the <code class="highlighter-rouge">arguments</code> keyword.
+    <ul>
+      <li>This arguments keyword gives us an object with the arguments.</li>
+      <li><code class="highlighter-rouge">arguments</code> is only available when we create new execution context with a function.</li>
+      <li>Remember <strong>do not use arguments keyword</strong>. They are not an array, so cannot use array methods but if you use <code class="highlighter-rouge">Array.from</code> you could convert into array object it.</li>
+    </ul>
+  </li>
+  <li>You can also use spread operator in our arguments such as. <code class="highlighter-rouge">function marry(...args) {console.log(args[0])}</code></li>
+</ul>
+
+<p><strong>Variable Environment</strong></p>
+
+<p>What about variables created inside of execution contexts of functions? They are called Variable Environment.</p>
+
+<p>Some functions have access to certain variables, while others not. Remember functions have their own execution content in which variables reside and the first execution context is the global() one.</p>
+
+<p>Variables default to their outermost execution context. Execution context have their own variable environment.</p>
+
+<p><strong>Scope Chain</strong></p>
+
+<p>Each EC has a link to the outer world. When the code runs it goes down the scope chain in parent environment if it doesn’t find variable.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">x</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">printX</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>Lexical or <strong>static</strong> scope, only by looking at code determines  which environment a certain variable lives in. Scope chain starts inner and goes all the way to global context.</p>
+
+<p><strong>Function lexical environment</strong>, creates closures on environment.  This closures are defined internally so you cannot access outside for a variable that is defined internally.</p>
+
+<p><img src="https://user-images.githubusercontent.com/15071636/81589013-b0d2f880-937e-11ea-9b06-0e95b6118953.png" alt="scopeclosure" /></p>
+
+<p><strong>Reminder</strong>
+Remember <code class="highlighter-rouge">undefined</code> means, <strong>yes</strong> we have ‘x’ variable but it doesn’t have any value while something like <code class="highlighter-rouge">Reference Error</code> is like ‘x’ is completely undeclared not found anywhere in the scope chain.</p>
+
+<p>Lexical environment === [[scope]]. So each environment has a field, and each field with its own scope and the link to next scope. Also named [[scope]]. <code class="highlighter-rouge">Scopes</code> will give you all the scopes you can test in console.</p>
+
+<p><strong>Function vs Block Scope</strong>
+Scope means what variables we have access to.</p>
+
+<p>Other coding languages have <em>block scope</em>. Any time you do code in curly brackets <code class="highlighter-rouge">{}</code> you create block scope. In JS this is done with <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> create block scope!</p>
+
+<p>So let and const <strong>create block scope</strong> just like in {}</p>
+
+<p><strong>Caution with Global Variables</strong></p>
+
+<p>You can pollute global namespace. Remember <strong>we have limited space and our memory heap is limited</strong>. You can pollute global scope by keeping adding global variables.</p>
+
+<p>You can also <strong>overwrite</strong> global variables. So avoid them.</p>
+
+<h2 id="concluding-thoughts">Concluding Thoughts</h2>
+
+<p>This seems to be a robust discussion on JS foundational concepts. There are still other concepts worth exploring including IIFE, <code class="highlighter-rouge">this</code> keyword and more. Please be sure to read on them. An article I previously wrote about <code class="highlighter-rouge">this</code> can be found <a href="https://medium.com/swlh/javascript-this-a-quick-example-regular-arrow-functions-and-methods-95fdfae01c98">here</a>.</p>
+:ET
