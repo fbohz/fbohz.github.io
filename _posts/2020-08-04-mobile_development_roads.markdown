@@ -17,6 +17,8 @@ There are few options available when it comes to mobile development.
 - Highest performance
 - Full access to device capabilities
 
+Basically when you hear 'native' it doesn't mean that you are writing in machine code. There's still some level of abstraction, so although called native, it is not to the strictest sense.
+
 However you'll need *two separate code bases*. So can we do mobile app and use a single code base? 
 
 *Option 1: Mobile Web Apps*
@@ -46,7 +48,7 @@ However you'll need *two separate code bases*. So can we do mobile app and use a
 
 *Compiled/Interpreted/VM hybrid app*
 - The code is written in one language (such as C# or JavaScript) and gets
-compiled/interpreted to native code or run on VM for each supported platform. The result is a native app for each platform, but less freedom during development
+compiled/interpreted to native code or run on a Virtual Machine (VM) for each supported platform. The result is a native app for each platform, but less freedom during development
 - Examples: React Native, NativeScript, Appcelerator Titanium, Xamarin, Embarcadero, FireMonkey
 
 *Different types of frameworks aimed to build hybrid apps*
