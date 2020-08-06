@@ -77,7 +77,7 @@ as 3D games)
 - Increased time and effort required to mimic a native UI and
 feel
 - Not all device and native features (fully) supported
-- Risk of being rejected by Apple if app does not feel native
+- Risk of being rejected by Apple if app does not feel 'native'
 enough (for example, a simple website)
 
 **Where Hybrid Apps Work Best**
