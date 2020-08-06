@@ -10,7 +10,7 @@ filename: 2020-08-05-getting_started_react_native
 
 # Getting Started with React Native
 
-**Note:** This article on React Native assumes previous knowledge on React so there will be concepts that come from React. While reading please refer to the [**source code repository**](https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo). Read my previous blog on React basics if you need a refresher.
+**Before you get started:** This article on React Native assumes previous knowledge on React so there will be concepts that come from React. While reading please refer to the [**Demo repository**](https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo) I made previously. Also, read my previous blog on [React basics](http://fbohz.com/react_basics_refresher) if you need a refresher.
 
 React Native (RN) is:
 
