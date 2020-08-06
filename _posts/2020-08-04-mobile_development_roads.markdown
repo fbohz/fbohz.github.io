@@ -19,7 +19,7 @@ There are few options available when it comes to mobile development.
 
 Basically when you hear 'native' it doesn't mean that you are writing in machine code. There's still some level of abstraction, so although called native, it is not to the strictest sense.
 
-However you'll need *two separate code bases*. So can we do mobile app and use a single code base? 
+You'll also need *two separate code bases*. So can we do mobile app and use a single code base? 
 
 *Option 1: Mobile Web Apps*
 - Fully hosted in the mobile browser
