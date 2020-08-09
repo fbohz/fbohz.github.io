@@ -59,7 +59,7 @@ via JS byte code)
 - Commercial Frameworks aiming to produce real native code like Xamarin
 (using C#) or Embarcadero
 
-## Advantages/Disadvantages of Hybrid Development
+## Good vs Bad of Hybrid Development
 
 **Advantages of Hybrid Approach**
 - Developer can use existing skills
