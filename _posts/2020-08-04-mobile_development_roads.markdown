@@ -8,7 +8,7 @@ filename: 2020-08-04-mobile_development_roads
 
 > You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native)...
 
-# Mobile Development - Which Road To Take📱?
+# Mobile Development - Which Road To Take?📱
 
 There are few options available when it comes to mobile development.
 
