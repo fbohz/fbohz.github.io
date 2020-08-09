@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"q<blockquote>
   <p>You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native)…</p>
 </blockquote>
 
@@ -13,7 +13,9 @@
   <li>Full access to device capabilities</li>
 </ul>
 
-<p>However you’ll need <em>two separate code bases</em>. So can we do mobile app and use a single code base?</p>
+<p>Basically when you hear ‘native’ it doesn’t mean that you are writing in machine code. There’s still some level of abstraction, so although called native, it is not to the strictest sense.</p>
+
+<p>You’ll also need <em>two separate code bases</em>. So could we do a mobile app and use a single code base?</p>
 
 <p><em>Option 1: Mobile Web Apps</em></p>
 <ul>
@@ -51,7 +53,7 @@
 <p><em>Compiled/Interpreted/VM hybrid app</em></p>
 <ul>
   <li>The code is written in one language (such as C# or JavaScript) and gets
-compiled/interpreted to native code or run on VM for each supported platform. The result is a native app for each platform, but less freedom during development</li>
+compiled/interpreted to native code or run on a Virtual Machine (VM) for each supported platform. The result is a native app for each platform, but less freedom during development</li>
   <li>Examples: React Native, NativeScript, Appcelerator Titanium, Xamarin, Embarcadero, FireMonkey</li>
 </ul>
 
@@ -86,7 +88,7 @@ as 3D games)</li>
   <li>Increased time and effort required to mimic a native UI and
 feel</li>
   <li>Not all device and native features (fully) supported</li>
-  <li>Risk of being rejected by Apple if app does not feel native
+  <li>Risk of being rejected by Apple if app does not feel ‘native’
 enough (for example, a simple website)</li>
 </ul>
 
@@ -104,7 +106,7 @@ platforms of choice and the app’s requirements.</li>
   </li>
 </ul>
 
-<p>You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native). Take Facebook app as an example, it is completely done using React Native!</p>
+<p>You will be surprised that many of the mobile applications that you use are actually hybrid mobile applications (using frameworks like React Native). Take Facebook app as an example.</p>
 
 <p>So now that you know the options available <em>which road will you take?</em></p>
 
