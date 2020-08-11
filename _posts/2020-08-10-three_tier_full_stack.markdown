@@ -2,7 +2,7 @@
 layout: post
 title:      "Three-Tier Architecture & Full-Stack Development"
 date:       2020-08-10 09:31:03 -0400
-permalink:  three_tier_architecture
+permalink:  three_tier_full_stack
 filename: 2020-08-10-three_tier_full_stack
 ---
 
