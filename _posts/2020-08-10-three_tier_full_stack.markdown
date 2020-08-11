@@ -32,11 +32,11 @@ This information delivery is supported behind the scenes by a back end support w
 
 **Unifying a Single Language**
 
-There's a trend in using **one language** for all three tiers. This will make one more prone to specialize as *full-stack web developer*. This is what Javascript try to do by implementing for example React presentation, NodeJS business logic and MongoDB for data access. 
+There's a trend in using **one language** for all three tiers. This will make one more prone to specialize as *full-stack web developer*. This is what Javascript tries to do by implementing for example React presentation, Node business logic and MongoDB for data access. 
 
 ![2](https://user-images.githubusercontent.com/15071636/82156410-8b436480-9840-11ea-97ce-92bbe22307a7.png)
 
-So, you could have the front end implemented for example, as a single page application using frameworks like Angular or React. You have the server side or the business logic layer being implemented using technologies like NodeJS, which is also dependent on JavaScript, and then you have the data storage itself being implemented using technologies like Mongo DB, which stores data in the form of JSON documents. The information exchange between the server-side and the client-side is usually done using JSON as the format, and the server-side supports a REST API endpoint.
+So, you could have the front end implemented for example, as a single page application using frameworks like Angular or React. You have the server side or the business logic layer being implemented using technologies like Node, which is also dependent on JavaScript, and then you have the data storage itself being implemented using technologies like Mongo DB, which stores data in the form of JSON documents. The information exchange between the server-side and the client-side is usually done using JSON as the format, and the server-side supports a REST API endpoint.
 
 **Resources**
 
