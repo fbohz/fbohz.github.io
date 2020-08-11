@@ -1,20 +1,20 @@
 ---
 layout: post
-title:      "What is a Three-Tier Architecture?"
-# date:       2020-07-20 19:31:03 -0400
+title:      "Three-Tier Architecture & Full-Stack Development"
+date:       2020-08-10 09:31:03 -0400
 permalink:  three_tier_architecture
-filename: 2020-08-03-three_tier_architecture
+filename: 2020-08-10-three_tier_full_stack
 ---
 
 > We often hear people talking about the three tier architecture for web development...while these tiers often have different languages, there are systems that implement a single language for all tiers
 
-# What is a Three-Tier Architecture?
+# Three-Tier Architecture & Full-Stack Development
 
 We often hear people talking about the three tier architecture for web development. In this approach, the entire web application is organized into three different layers. 
 
 1. The *presentation layer* which is concerned with delivering the information to the user. So, those are usually the UI related concerns that are dealt with at the presentation layer. Here we usually have HTML, CSS, and JavaScript.
-2. The *business logic layer* on the other hand is concerned more about the data, the data validation, the dynamic content processing, and generating the content to be delivered to the user. Here we usually have Ruby, Python, Java, C++ or PHP.
-3. This is backed up behind the scenes with the data persistence layer or the *data access layer*. So, this is concerned with how we store and interact with the data, typically in the form of a database and access this data through an API. So business logic layer interacts with the database like mySQL or Postgress.
+2. The *business logic layer* on the other hand is concerned more about the data, the data validation, the dynamic content processing, and generating the content to be delivered to the user. Here we usually have, Node, Ruby, Python, Java, C++ or PHP.
+3. This is backed up behind the scenes with the data persistence layer or the *data access layer*. So, this is concerned with how we store and interact with the data, typically in the form of a database and access this data through an API. So business logic layer interacts with the database like MongoDB or PostgreSQL.
 
 There needs to be specialist in on one or the other layers. So you can specialize in one or the other layer. Also, while these tiers often have different languages, there are systems that implement a single language for all tiers.
 
@@ -28,7 +28,7 @@ Typically, in a browser where the user accesses the information, and this is whe
 
 *Backend*
 
-This information delivery is supported behind the scenes by a back end support which is typically implemented these days using technologies like PHP, Java, ASP.NET, Ruby, Python or NodeJS.
+This information delivery is supported behind the scenes by a back end support which is typically implemented these days using technologies like PHP, Java, ASP.NET, Ruby, Python or Node.
 
 **Unifying a Single Language**
 
