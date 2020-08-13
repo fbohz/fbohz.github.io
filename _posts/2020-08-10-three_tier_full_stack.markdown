@@ -16,19 +16,21 @@ We often hear people talking about the three tier architecture for web developme
 2. The *business logic layer* on the other hand is concerned more about the data, the data validation, the dynamic content processing, and generating the content to be delivered to the user. Here we usually have, Node, Ruby, Python, Java, C++ or PHP.
 3. This is backed up behind the scenes with the data persistence layer or the *data access layer*. So, this is concerned with how we store and interact with the data, typically in the form of a database and access this data through an API. So business logic layer interacts with the database like MongoDB or PostgreSQL.
 
-There needs to be specialist in on one or the other layers. So you can specialize in one or the other layer. Also, while these tiers often have different languages, there are systems that implement a single language for all tiers.
+Today, we could have an specialist in one of these layers. 
 
 ![1](https://user-images.githubusercontent.com/15071636/82156217-93e76b00-983f-11ea-9ed2-efcb1b31db65.png)
+
+Also, while these tiers often have different languages, there are systems that implement a single language for all tiers.
 
 **Frontend vs Backend**
 
 *Front End*
 
-Typically, in a browser where the user accesses the information, and this is where we use technologies like HTML, CSS and JavaScript to render the content for the user.
+Typically, in a browser where the user can access the information, and this is where we use technologies like HTML, CSS and JavaScript are used to render content for the user.
 
 *Backend*
 
-This information delivery is supported behind the scenes by a back end support which is typically implemented these days using technologies like PHP, Java, ASP.NET, Ruby, Python or Node.
+This information delivery is managed behind the scenes by a back end support which is typically implemented nowadays using technologies like PHP, Java, ASP.NET, Ruby, Python or Node.
 
 **Unifying a Single Language**
 
@@ -36,7 +38,7 @@ There's a trend in using **one language** for all three tiers. This will make on
 
 ![2](https://user-images.githubusercontent.com/15071636/82156410-8b436480-9840-11ea-97ce-92bbe22307a7.png)
 
-So, you could have the front end implemented for example, as a single page application using frameworks like Angular or React. You have the server side or the business logic layer being implemented using technologies like Node, which is also dependent on JavaScript, and then you have the data storage itself being implemented using technologies like Mongo DB, which stores data in the form of JSON documents. The information exchange between the server-side and the client-side is usually done using JSON as the format, and the server-side supports a REST API endpoint.
+So, you could have the front end implemented as a single page application using frameworks like Angular or React. You have the server side or the business logic layer being implemented using technologies like Node, which is also dependent on JavaScript, and then you have the data storage itself being implemented using technologies like Mongo DB, which stores data in the form of JSON documents. The information exchange between the server-side and the client-side is usually done using JSON as the format, and the server-side supports a REST API endpoint.
 
 **Resources**
 
