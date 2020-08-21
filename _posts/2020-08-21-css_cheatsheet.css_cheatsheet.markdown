@@ -198,7 +198,7 @@ In SASS you can do nesting and it will read much better.
 }
 ```
 
-Note `&` replaces selectors up to the point. So in normal CSS this will equate  `.navigation li:first-child`. In CSS we would write everything above as the following (notice how we save a lot of repetition):
+Note that `&` replaces selectors up to the point. So in normal CSS this will equate  `.navigation li:first-child`. In CSS we would write everything above as the following (notice how we save a lot of repetition):
 
 ```css
 .navigation {
@@ -240,9 +240,9 @@ You can also pass in variables to mixin definitions. Just make sure when you wan
 
 *Remember* to install SASS. Then you can compile by adding this script in package.json:
 
-```json
+```ruby
 "scripts": {
- "compile:sass": "node-sass sass/main.scss css/style.css -w
+ "compile:sass": "node-sass sass/main.scss css/style.css -w"
 },
 ```
 
