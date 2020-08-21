@@ -254,13 +254,26 @@ We can implement simple NPM build processes after we finish a feature.
 
 ![Screen Shot 2020-06-28 at 7 35 10 PM](https://user-images.githubusercontent.com/15071636/85962487-9a0c5380-b976-11ea-8dae-b021b308f223.png)
 
-We do this on `package.json`, check it on [Github repository](https://github.com/fbohz/css-learning/blob/master/museo-demo/package.json).
-
 There are a couple of NPM packages we use, we can install as `npm i concat --save-dev`, `npm i autoprefixer --save-dev`, `npm i postcss-cli --save-dev`, `npm i npm-run-all --save-dev`.
 
-Also note the `--parallel` flag on start. It means both run at the same time.
+We do this on `package.json`, check it on [Github repository](https://github.com/fbohz/css-learning/blob/master/museo-demo/package.json) or see below the updated scripts part on package.json:
 
-So to run all you'll just do:
+```ruby
+"scripts": {
+  "watch:sass": "node-sass sass/main.scss css/style.css -w",
+  "devserver": "live-server",
+  "start": "npm-run-all --parallel devserver watch:sass",
+  "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+  "concat:css": "concat -o css/style.concat.css css/linea-icon-fonts.css css/style.comp.css",
+  "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+  "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+  "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+},
+```
+
+Note the `--parallel` flag on start script. It means both run at the same time. On compile script be careful of your own .scss and .css file locations and update it accordingly.
+
+It doesn't matter if you don't understand everything. To compile your SASS into CSS all you do:
 
 `npm run build:css`
 
