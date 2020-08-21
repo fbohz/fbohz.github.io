@@ -10,7 +10,7 @@ filename: 2020-08-21-css_cheatsheet
 
 # CSS Cool Tricks Cheatsheet 😎
 
-If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier. I applied some if this tricks while I was building Museo, a [Vanilla CSS/SCSS Landing Page](https://github.com/fbohz/css-learning/tree/master/museo-demo).
+If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier. I applied some if this tricks while I was building Museo, a [Vanilla CSS/SCSS Landing Page](http://fbohz.com/css-learning/museo-demo/index.html).
 
 **Know About the Three Pillars to write good CSS**
 
