@@ -266,7 +266,7 @@ So to run all you'll just do:
 
 With this, your CSS will be compiled, concat, compressed and ready for production! Bam💥
 
-## Resources
+## Even More Tricks and Resources
 
 - [**CSS Reference**](http://tympanus.net/codrops/css_reference/) you can take a look. 
 - [**Emmet Cheat Sheet**](https://docs.emmet.io/cheat-sheet/). Write HTML faster in VS Code
