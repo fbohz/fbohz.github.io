@@ -1,0 +1,279 @@
+---
+layout: post
+title:      "CSS Cool Tricks Cheatsheet 😎"
+date:       2020-08-21 09:31:03 -0400
+permalink:  css_cheatsheet
+filename: 2020-08-21-css_cheatsheet
+---
+
+> For reference check my CSS Project [Github repository](https://github.com/fbohz/css-learning/tree/master/museo-demo).
+
+# CSS Cool Tricks Cheatsheet 😎
+
+For reference check [Github repositoryhttps://github.com/fbohz/css-learning/tree/master/museo-demo](https://github.com/fbohz/css-learning/tree/master/museo-demo).
+
+There's also a great [CSS Reference](http://tympanus.net/codrops/css_reference/) you can checkout. 
+
+**Three Pillars to write good CSS**
+
+1. *Responsive Design*: Build website that works well on all devices. You'll have to know about fluid layouts, media queries, responsive images, correct units (for e.g. font sizes) and desktop-first vs mobile-first.
+2. *Writing maintainable/scalable code*: Write code that is clean and reusable. Think about CSS folder architecture, and class naming.
+3. *Web Performance*: Make it faster and smaller in size. Less HTTP request, compress code, use CSS preprocessor. Also less images and compress images.
+
+**Resetting styles globally**
+
+Sometimes you want to reset styles from those that might be imposed by the browser in default here's an example
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+**Attribute selectors**
+
+We can selecting attributes by wrapping them in `[]`
+
+```css
+
+/* ^ means starts with */
+
+[class^="col-"] {
+    float: left;
+    background-color: orange;
+}
+
+```
+
+**Converting `px` units to `rem`**
+
+Remember rem is related to root font size so by setting the root font size then use rem you can easily make changes to root without changing all lines of codes. You can specify root font size as this. Now but having root font size as px we could better use percentages. 
+
+```css
+html {
+    font-size: 62.5%;
+}
+```
+
+Since usually font size is 16px here we are saying 62.5% which is roughly 10px. This will mean that 1rem is 10px, 2rem is 20px and so forth. 
+
+You can then use rem as this:
+
+```css
+.logo-box {
+ position: absolute;
+ /* 4rem = 40px */
+ top: 4rem; 
+ left: 4rem;
+}
+```
+
+**`!important`**
+
+`!important` overrides specificity rules. Can save headaches to make it work before you debug accordingly.
+
+You can add it also on utilities (SASS), reusable stylings file. [Read more](https://css-tricks.com/when-using-important-is-the-right-choice/).
+
+**`box-sizing: border-box`**
+
+ With box-sizing: border-box;, we can change the box model to what was once the “quirky” way, where an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that it’s found its way into reset styles. So border-box can help make responsive layouts more manageable.
+
+![Screen Shot 2020-06-23 at 1 02 30 PM](https://user-images.githubusercontent.com/15071636/85438771-eceaa300-b551-11ea-8a51-b767df986fc8.png)
+
+**`clip-path: polygon()`**
+
+You specify polygon you want to add the clipping you add clippings with x and y coordinates left to right.  Use [Clippy tool](https://bennettfeely.com/clippy/) to calculate it for you!
+
+**CSS Animations with `@keyframes` and `animation`**
+
+We use `@keyframes` and then give animation a name. Then you specify what happens when animation starts, ends and anything in the middle.
+
+```css
+@keyframes moveInLeft {
+0% {
+ opacity: 0;
+ transform: translateX(-100px);
+}
+
+100% {
+ opacity: 1;
+ transform: translate(0);
+}
+}
+```
+
+Then once you define it, you can add it to the specific element you want to apply with `animation` keyword.
+
+```css
+.btn-animated {
+/* animation name, animation duration
+    animation timing function, 
+    animation delay
+*/
+animation: moveInBottom .5s ease-out .75, 
+}
+```
+
+**`backface-visibility: hidden`**
+
+Whenever you work with animations and with `translate()`, many times `backface-visibility: hidden;` fixes it. So try to add it it if having issues
+
+
+**`overflow: hidden`**
+
+Another trick when an element is to big and is overflowing. You can use `overflow: hidden` to fix it.
+
+**Pseudo Elements and Pseudo Classes**
+
+*Pseudo classes* are special state of a selector. For example `.btn:link` selects the elements on a special condition in this case when as link.
+
+```css
+.btn:link {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+```
+
+*Pseudo elements* allow us to select certain part of an element. They are denoted with two colons to differentiate them from pseudo classes. This is the syntax:
+
+```css
+selector::pseudo-element {
+  property: value;
+}
+```
+
+There are various pseudo elements. Take a sneak peak and learn more about them [here](https://blog.logrocket.com/a-guide-to-css-pseudo-elements/).
+
+**`box-shadow`**
+
+With box shadow you can add shadow to elements. Take a look at the [box shadow generator](https://www.cssmatic.com/box-shadow).
+
+**`@supports` For Older Browser Support**
+
+You can do graceful degradation with `@supports`. Example:
+
+```css
+@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+}
+```
+
+## EXTRA - SASS Preprocessor
+
+**Implement SASS Variables**
+
+We can use SASS to implement variables, e.g. when specifying colors.
+
+```css
+
+$color-primary: #f9ed69
+
+nav {
+  background-color: $color-primary;
+}
+```
+
+**Implement Nesting With SASS**
+
+In SASS you can do 
+
+```css
+.navigation {
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+```
+
+Note `&` replaces selectors up to the point so will be `.navigation li:first-child`. SCSS above is the equivalent in vanilla CSS as:
+
+```css
+.navigation {
+ list-style: none;
+}
+
+.navigation li {
+ display: inline-block;
+}
+
+.navigation li:first-child {
+  margin: 0;
+}
+```
+
+Be careful on how deeper you go on nesting, usually don't go deeper than two levels!
+
+**Mixins**
+
+*Mixin* is a reusable piece of code. Let's say we want to implement a [Clearfix](https://www.w3schools.com/howto/howto_css_clearfix.asp) in multiple places. We use the `@mixin` keyword to define it and `@include` where we want to use it.
+
+```css
+@mixin clearfix {
+ &:after {
+     content: "";
+     clear: both;
+     display: table'
+ }   
+}
+
+nav {
+ @include clearfix;
+}
+```
+
+You can also pass in variables to mixin definitions, just make sure when you want to use it also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS become familiar with them, although mixins are used in the majority of times.
+
+Also note if you wanna use it in your project just install it. With `npm i node-sass --save-dev`.
+
+**Fast Development Environment with SASS**
+
+*Remember* to install SASS. Then you can compile by adding this script in package.json:
+
+```json
+"scripts": {
+ "compile:sass": "node-sass sass/main.scss css/style.css -w
+},
+```
+
+The `-w` will keep watching for whatever we do in our code. You can also install `npm i live-server -g`. Then run it as `live-server` on root folder. For the changes to be reflected without needing to reload manually.
+
+## EXTRA#2 - Build Scripts
+
+We can implement simple NPM build processes after we finish a feature.
+
+![Screen Shot 2020-06-28 at 7 35 10 PM](https://user-images.githubusercontent.com/15071636/85962487-9a0c5380-b976-11ea-8dae-b021b308f223.png)
+
+We do this on `package.json`, check it on [Github repository](https://github.com/fbohz/css-learning/blob/master/museo-demo/package.json).
+
+There are a couple of NPM packages we use, we can install as `npm i concat --save-dev`, `npm i autoprefixer --save-dev`, `npm i postcss-cli --save-dev`, `npm i npm-run-all --save-dev`.
+
+Also note the `--parallel` flag on start. It means both run at the same time.
+
+So to run all you'll just do:
+
+`npm run build:css`
+
+And your css will be compiled, concat, compressed and ready for production! 
+
+## Resources
+<p>👉&nbsp;<a rel="noopener noreferrer" href="https://github.com/jonasschmedtmann/advanced-css-course">Udemy Course material and instructions on GitHub</a></p>
+<p><a rel="noopener noreferrer" href="http://codingheroes.io/resources/">👉 Udemy resources page</a></p>
+[Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/). Write HTML faster in VS Code
+[Box Sizing](https://css-tricks.com/box-sizing/)
+[HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
+[Linea Free Icons](https://linea.io/)
+[Coverr - Free Videos](http://coverr.co/)
+[Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila! You can compare bezier curves with [this tool](https://cubic-bezier.com/#.17,.67,.83,.67).
+[Sizzy](https://sizzy.co/), a tool for responsive website building.
+[Can I Use](https://caniuse.com/), for browser support checking
