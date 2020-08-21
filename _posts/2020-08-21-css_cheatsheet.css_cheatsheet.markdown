@@ -6,19 +6,19 @@ permalink:  css_cheatsheet
 filename: 2020-08-21-css_cheatsheet
 ---
 
-> If you always feel you have to look up CSS terms, checkout this cheatsheet! It will probably make your CSS life easier.
+> If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier.
 
 # CSS Cool Tricks Cheatsheet 😎
 
 If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier. I applied some if this tricks while I was building Museo, a [Vanilla CSS/SCSS Landing Page](http://fbohz.com/css-learning/museo-demo/index.html).
 
-**Know About the Three Pillars to write good CSS**
+**Know About the Three Pillars to Write Good CSS**
 
 1. *Responsive Design*: Building a website that works well on all devices. You'll have to know about fluid layouts, media queries, responsive images, correct units (for e.g. font sizes) and desktop-first vs mobile-first.
 2. *Writing maintainable/scalable code*: Write code that is clean and reusable. Think about CSS folder architecture, and class naming.
 3. *Web Performance*: Make it faster and smaller in size. Less HTTP requests, compress code, and use a CSS preprocessor. Also less images and if images, compress them.
 
-**Resetting Styles Globally**
+**Reset Styles Globally**
 
 Sometimes you want to reset styles from those that might be imposed by the browser by default. Here's an example
 
@@ -160,6 +160,8 @@ You can do graceful degradation with `@supports`. Example:
     background-color: rgba($color-black, .7);
 }
 ```
+
+This will make your CSS support older browsers.
 
 ## BONUS - SASS Preprocessor
 
