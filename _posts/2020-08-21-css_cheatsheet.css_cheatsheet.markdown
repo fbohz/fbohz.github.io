@@ -161,7 +161,7 @@ You can do graceful degradation with `@supports`. Example:
 }
 ```
 
-## EXTRA - SASS Preprocessor
+## BONUS - SASS Preprocessor
 
 If you wanna use SASS in your project just install it with `npm i node-sass --save-dev`.
 
@@ -262,17 +262,17 @@ So to run all you'll just do:
 
 `npm run build:css`
 
-And your css will be compiled, concat, compressed and ready for production! Bam💥
+With this, your CSS will be compiled, concat, compressed and ready for production! Bam💥
 
 ## Resources
 
-- Great [CSS Reference](http://tympanus.net/codrops/css_reference/) you can take a look. 
-- [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/). Write HTML faster in VS Code
-- [Box Sizing](https://css-tricks.com/box-sizing/)
-- [HTML Glyphs](https://css-tricks.com/snippets/html/glyphs/)
-- [Linea Free Icons](https://linea.io/)
-- [Coverr - Free Videos](http://coverr.co/)
-- [Easings.net](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila! You can compare bezier curves with [this tool](https://cubic-bezier.com/#.17,.67,.83,.67).
-- [Sizzy](https://sizzy.co/), a tool for responsive website building.
-- [Good Udemy Course](https://github.com/jonasschmedtmann/advanced-css-course)
-- [Can I Use](https://caniuse.com/), for browser support checking
+- [**CSS Reference**](http://tympanus.net/codrops/css_reference/) you can take a look. 
+- [**Emmet Cheat Sheet**](https://docs.emmet.io/cheat-sheet/). Write HTML faster in VS Code
+- [**Box Sizing**](https://css-tricks.com/box-sizing/)
+- [**HTML Glyphs**](https://css-tricks.com/snippets/html/glyphs/)
+- [**Linea Free Icons**](https://linea.io/)
+- [**Coverr - Free Videos**](http://coverr.co/)
+- [**Easings.net**](https://easings.net/).Pick your favorite transition and then copy the `cubic-bezier` function and voila! You can compare bezier curves with [this tool](https://cubic-bezier.com/#.17,.67,.83,.67).
+- [**Sizzy**](https://sizzy.co/), a tool for responsive website building.
+- [**Good Udemy Course**](https://github.com/jonasschmedtmann/advanced-css-course)
+- [**Can I Use**](https://caniuse.com/), for browser support checking
