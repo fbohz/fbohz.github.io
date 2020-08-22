@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "CSS Cool Tricks Cheatsheet 😎"
-date:       2020-08-21 09:31:03 -0400
+date:       2020-08-19 09:31:03 -0400
 permalink:  css_cheatsheet
-filename: 2020-08-21-css_cheatsheet
+filename: 2020-08-19-css_cheatsheet
 ---
 
 > If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier.
