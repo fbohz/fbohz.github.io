@@ -1,4 +1,4 @@
-I"9Q<blockquote>
+I"<Q<blockquote>
   <p>If you always feel you have to look up CSS terms, checkout this cheatsheet! It will make your CSS life easier.</p>
 </blockquote>
 
@@ -64,17 +64,17 @@
 
 <p><code class="highlighter-rouge">!important</code> overrides specificity rules. Can save headaches to make it work before you debug accordingly.</p>
 
-<p>You can add it also on utilities (using SASS), as reusable stylings file. <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">Read more</a>.</p>
+<p>You can add it also on utilities (using SASS), as reusable stylings. <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">Read more</a>.</p>
 
 <p><strong><code class="highlighter-rouge">box-sizing: border-box</code></strong></p>
 
-<p>With <code class="highlighter-rouge">box-sizing: border-box</code> we can change the box model. This is useful when an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that it’s found its way into reset styles. So border-box can help make responsive layouts more manageable.</p>
+<p>With <code class="highlighter-rouge">box-sizing: border-box</code> we can change the box model. This is useful when an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that has found its way into reset styles. So border-box can help make responsive layouts more manageable.</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/85438771-eceaa300-b551-11ea-8a51-b767df986fc8.png" alt="Screen Shot 2020-06-23 at 1 02 30 PM" /></p>
 
 <p><strong><code class="highlighter-rouge">clip-path: polygon()</code></strong></p>
 
-<p>You specify polygon you want to add the clipping, then you add clippings with x and y coordinates left to right.  Use <a href="https://bennettfeely.com/clippy/">Clippy tool</a> to calculate it for you! You can make some cool polygons.</p>
+<p>You specify the polygon you want to add the clipping. Then you add clippings with x and y coordinates left to right.  Use <a href="https://bennettfeely.com/clippy/">Clippy tool</a> to calculate it for you! You can make some cool polygon effects.</p>
 
 <p><strong>CSS Animations with <code class="highlighter-rouge">@keyframes</code> and <code class="highlighter-rouge">animation</code></strong></p>
 
@@ -93,7 +93,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Then once you define it, you can add it to the specific element you want to apply with <code class="highlighter-rouge">animation</code> keyword.</p>
+<p>Then once you define it, you can add it to the specific element you want to apply with the <code class="highlighter-rouge">animation</code> keyword.</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.btn-animated</span> <span class="p">{</span>
 <span class="c">/* animation name, animation duration
@@ -106,7 +106,7 @@
 
 <p><strong><code class="highlighter-rouge">backface-visibility: hidden</code></strong></p>
 
-<p>Whenever you work with animations and with <code class="highlighter-rouge">translate()</code>, many times <code class="highlighter-rouge">backface-visibility: hidden;</code> fixes many errors. So try to add it, if you are having issues!</p>
+<p>Whenever you work with animations and with <code class="highlighter-rouge">translate()</code>, many times <code class="highlighter-rouge">backface-visibility: hidden;</code> fixes many errors. So try to add it if you are having issues!</p>
 
 <p><strong><code class="highlighter-rouge">overflow: hidden</code></strong></p>
 
@@ -216,7 +216,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>You can also pass in variables to mixin definitions. Just make sure when you want to use it, also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS so become familiar with them, but mixins are used in the majority of times.</p>
+<p>You can also pass in variables to mixin definitions. Just make sure when you want to use it, also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS so become familiar with them, but mixins are used the majority of times.</p>
 
 <p><strong>Fast Development Environment with SASS</strong></p>
 
