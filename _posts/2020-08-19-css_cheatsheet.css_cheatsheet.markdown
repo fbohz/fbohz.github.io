@@ -72,17 +72,17 @@ You can then use rem as this:
 
 `!important` overrides specificity rules. Can save headaches to make it work before you debug accordingly.
 
-You can add it also on utilities (using SASS), as reusable stylings file. [Read more](https://css-tricks.com/when-using-important-is-the-right-choice/).
+You can add it also on utilities (using SASS), as reusable stylings. [Read more](https://css-tricks.com/when-using-important-is-the-right-choice/).
 
 **`box-sizing: border-box`**
 
- With `box-sizing: border-box` we can change the box model. This is useful when an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that it’s found its way into reset styles. So border-box can help make responsive layouts more manageable.
+ With `box-sizing: border-box` we can change the box model. This is useful when an element’s specified width and height aren’t affected by padding or borders. This has proven so useful in responsive design that has found its way into reset styles. So border-box can help make responsive layouts more manageable.
 
 ![Screen Shot 2020-06-23 at 1 02 30 PM](https://user-images.githubusercontent.com/15071636/85438771-eceaa300-b551-11ea-8a51-b767df986fc8.png)
 
 **`clip-path: polygon()`**
 
-You specify polygon you want to add the clipping, then you add clippings with x and y coordinates left to right.  Use [Clippy tool](https://bennettfeely.com/clippy/) to calculate it for you! You can make some cool polygons. 
+You specify the polygon you want to add the clipping. Then you add clippings with x and y coordinates left to right.  Use [Clippy tool](https://bennettfeely.com/clippy/) to calculate it for you! You can make some cool polygon effects. 
 
 **CSS Animations with `@keyframes` and `animation`**
 
@@ -102,7 +102,7 @@ We use `@keyframes` and then give animation a name. Then you specify what happen
 }
 ```
 
-Then once you define it, you can add it to the specific element you want to apply with `animation` keyword.
+Then once you define it, you can add it to the specific element you want to apply with the `animation` keyword.
 
 ```css
 .btn-animated {
@@ -116,7 +116,7 @@ animation: moveInBottom .5s ease-out .75,
 
 **`backface-visibility: hidden`**
 
-Whenever you work with animations and with `translate()`, many times `backface-visibility: hidden;` fixes many errors. So try to add it, if you are having issues!
+Whenever you work with animations and with `translate()`, many times `backface-visibility: hidden;` fixes many errors. So try to add it if you are having issues!
 
 
 **`overflow: hidden`**
@@ -234,7 +234,7 @@ nav {
 }
 ```
 
-You can also pass in variables to mixin definitions. Just make sure when you want to use it, also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS so become familiar with them, but mixins are used in the majority of times.
+You can also pass in variables to mixin definitions. Just make sure when you want to use it, also pass in the variable for the mixin to work. Mixins then do become like functions. There are also extends and functions in SCSS so become familiar with them, but mixins are used the majority of times.
 
 **Fast Development Environment with SASS**
 
