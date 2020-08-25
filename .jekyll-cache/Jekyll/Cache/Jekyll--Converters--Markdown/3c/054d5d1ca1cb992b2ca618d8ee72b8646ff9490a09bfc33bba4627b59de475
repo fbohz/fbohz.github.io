@@ -1,0 +1,248 @@
+I"�6<blockquote>
+  <p>Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver.</p>
+</blockquote>
+
+<h1 id="data-structures">Data Structures</h1>
+
+<p>Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver.</p>
+
+<p>While reading this article have this in mind:</p>
+
+<p><code class="highlighter-rouge">Programs = Data Structures + Algorithms</code></p>
+
+<p>OR</p>
+
+<p><code class="highlighter-rouge">Data Structures + Algorithms = Programs</code></p>
+
+<h2 id="what-are-data-structures-ds">What are Data Structures (DS)</h2>
+<ul>
+  <li>If you know about DS you can adapt to other coding problems and languages.</li>
+  <li>If you know the fundamentals then you can make decisions in different areas.</li>
+  <li>DS:
+    <ul>
+      <li>Collection of values, you can have functions apply to them. Each one is different of what it can do.</li>
+      <li>They are specialized to do certain things. like tools. Most of the time they are prebuilt</li>
+      <li></li>
+      <li>You can put things in DS and take them out.</li>
+      <li>There are <strong>ton of Data Structures</strong>. Most of them you wouldn’t encounter them most of the time.
+        <ul>
+          <li>E.g. Blockchain is a DS a way to hold info, Arrays and Objects in JS are DS.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>There are always <strong>tradeoffs</strong>. Just like readability, memory and speed. In DS here are:
+    <ul>
+      <li>How to Build One</li>
+      <li>How to Use it</li>
+    </ul>
+  </li>
+  <li>Each language has <strong>data structures to organize data types</strong>.</li>
+  <li>With each data structure you can do access, search, insertion, deletion, sort. Each data structure might be good for one or the other. See https://www.bigocheatsheet.com/</li>
+</ul>
+
+<h2 id="computers-and-data">Computers and Data</h2>
+
+<ul>
+  <li>Variables are stored in RAM and is not persistent. Storage is persistance. RAM is faster than regular storage (e.g Hard Drive)</li>
+  <li>RAM is like a shelf with a lot of info. Each shelf holds 1 byte of storage.</li>
+  <li>DS in modern PCs are stored in different ways. E.g. a variable as number can stored in 32 bits or 4 bytes.</li>
+  <li>Each data type has a number of bits and allocated on the system. Some data structures are organized next to each other others more apart. That is why DS are powerful, thinking a bit low level.</li>
+  <li>This could help us write great code.</li>
+  <li>In JS we could build our own data structures such as stacks as they are not included.</li>
+</ul>
+
+<h2 id="arrays">Arrays</h2>
+
+<ul>
+  <li>Arrays are stored in sequential order, and have <strong>smallest footprint</strong>.</li>
+  <li>Array methods like lookup are fast O(1). Push O(1).</li>
+  <li>unshift or splice is O(n): so we think add items at beginning, or deleting for is not the best data structure to do so.</li>
+</ul>
+
+<p><strong>Static vs Dynamic Arrays</strong></p>
+
+<ul>
+  <li>Static: you specify array and items. We copy array to new location to allocate space with new item in sequential order. C++ does this.</li>
+  <li>Dynamic: Allow not think about memory and machine takes care of it. Like JS.</li>
+</ul>
+
+<p>With this in mind <code class="highlighter-rouge">push</code> can also be O(n). JS usually doubles space when creating array and if you <code class="highlighter-rouge">push</code> JS could copy the array again and allocate new space.</p>
+
+<h1 id="hash-tables--objects-in-js">Hash Tables / (Objects in JS)</h1>
+
+<p>Like hashes in Ruby. They are named objects in JS:</p>
+
+<ul>
+  <li>Hash Tables allow to set key/value pair.
+    <ul>
+      <li>with hash tables key is like our index in arrays.</li>
+      <li>this is done through a hash function.</li>
+    </ul>
+  </li>
+  <li>Hash Functions:
+    <ul>
+      <li>Fn that generates a value of fix length for every input received.</li>
+      <li>Idempotent: an fn given an input always has the same output.</li>
+    </ul>
+  </li>
+  <li>Hashes could be a bit slower because of hash functions.
+    <ul>
+      <li>We need them to be really fast then. The hashing fn then is really fast.</li>
+    </ul>
+  </li>
+  <li>When declared hash properties are created somewhere in memory.</li>
+  <li>Accessing properties some cases can be O(1)</li>
+</ul>
+
+<p><strong>Hash Collisions</strong></p>
+
+<ul>
+  <li>Nothing tells the hash function to evenly distribute data.</li>
+  <li>Sometimes collisions occur. This is inevitable.
+    <ul>
+      <li>When two data are stored in same memory spaces, hashes needs to do something to deal with it.</li>
+      <li>Hash collisions theoretically <strong>slows downs reading and writing as O(n)</strong></li>
+      <li>You can deal with collisions many ones one of them is linked lists.</li>
+    </ul>
+  </li>
+  <li>So lookups in hash tables occasionally are O(n)</li>
+  <li>As hashes do not have order, JS in ES6 implemented ways to have order such as Map() and Set() which are particular hashes/objects.</li>
+</ul>
+
+<p><strong>Hash Tables vs Arrays</strong></p>
+
+<ul>
+  <li>Hash tables allow very fast quick access to items O(1). Arrays in search are O(n)</li>
+  <li>Most of the time in hash tables insert is O(1), although there are collisions.</li>
+  <li>Arrays are placed next to each other and not order. Hash tables are kind of all over the place.</li>
+</ul>
+
+<h3 id="hash-table-review">Hash Table Review</h3>
+
+<ul>
+  <li><strong>Probably most common interview question</strong>.
+    <ul>
+      <li>Optimizing nested loops O(n^2) to O(n) with hash tables.</li>
+    </ul>
+  </li>
+  <li>We learned that:
+    <ul>
+      <li>Hashes have fast lookups, fast inserts, and flexible keys.</li>
+      <li>However they are unordered and have slow key iteration.</li>
+    </ul>
+  </li>
+  <li>With hash tables we <strong>increase space complexity (tradeoff)</strong></li>
+</ul>
+
+<h2 id="hashes-and-arrays-questions-examples">Hashes and Arrays Questions Examples</h2>
+
+<p>Note: Usually string questions are <strong>array questions</strong>. Like reversing strings etc. If you cannot see question examples below, click <a href="https://repl.it/@fbohz/DataStructuresBlogQA#index.js">here</a>.</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/DataStructuresBlogQA?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h2 id="linked-lists">Linked Lists</h2>
+
+<ul>
+  <li>Two types: Singly and doubly.</li>
+  <li>Remember arrays had bad performance with insert and delete and they had to re-arrange themselves in memory once in a while.</li>
+  <li>Hashes brought problems like ordering. Hashes can be solved by linked lists.</li>
+  <li>What is a linked list?
+    <ul>
+      <li>Link lists have pointers to next node.</li>
+      <li>First node is called the head, and the last is usually the last node.</li>
+      <li>Linked lists are <strong>null terminated</strong> so the tail <strong>points to null</strong></li>
+      <li>So these lists are simply elements that link to each other and the last points to null.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">linkedList</span><span class="p">:</span> <span class="nx">apples</span> <span class="o">--&gt;</span> <span class="nx">grapes</span> <span class="o">--&gt;</span> <span class="nx">pears</span>
+
+    <span class="nx">apples</span>
+    <span class="mi">8947</span> <span class="o">--&gt;</span> <span class="nx">grapes</span>
+             <span class="mi">8742</span> <span class="o">--&gt;</span> <span class="nx">pears</span>
+                       <span class="mi">372</span> <span class="o">--&gt;</span> <span class="kc">null</span>
+</code></pre></div></div>
+<ul>
+  <li>Javascript <strong>doesn’t have linked lists</strong> but <strong>we can build linked lists</strong></li>
+</ul>
+
+<p><strong>Linked Lists vs Array vs Hashes</strong></p>
+<ul>
+  <li>In link list you start at head then traverse / iterate as needed until hit null</li>
+  <li>Array are located next to each other, linked lists are all over kind of like hashes</li>
+  <li>Inserts in middle of linked lists are better than arrays.</li>
+  <li>Linked lists have advantages from hash tables that it can sort data.</li>
+  <li>perpend and append is O(1), lookup, insert, delete is O(n).</li>
+</ul>
+
+<p>What is a pointer? Is a reference to another in memory. Example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">o1</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+  <span class="c1">// o2 has a pointer to o1 in memory, NOT copying it.</span>
+  <span class="kd">const</span> <span class="nx">o2</span> <span class="o">=</span> <span class="nx">o1</span>
+  <span class="nx">o1</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">,</span> <span class="nx">o1</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">,</span> <span class="nx">o2</span><span class="p">)</span>
+  <span class="c1">// =&gt; should log false both, since its a pointer.</span>
+</code></pre></div></div>
+
+<p>If you delete the pointer then the reference sticks. There’s garbage collection in JS.</p>
+
+<h2 id="building-our-js-linked-list">Building our JS Linked List</h2>
+
+<p>Check below or click <a href="https://repl.it/@fbohz/BlogLinkedLists">here</a> for the code.</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogLinkedLists?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<ul>
+  <li><code class="highlighter-rouge">insert()</code> is the hardest method to implement in linked lists.</li>
+  <li>all you’re doing is <strong>removing pointers</strong> or <strong>adding pointers</strong> as a way to add or delete from linked lists</li>
+  <li><strong>How is inserting and deleting O(1) in bigocheatsheet?</strong></li>
+  <li>One step to add a new item, constant time, independent of total list length, therefore O(1).</li>
+  <li>If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s O(n).</li>
+  <li>More: https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case</li>
+</ul>
+
+<h2 id="doubly-linked-lists">Doubly Linked Lists</h2>
+
+<ul>
+  <li>In doubly link lists the difference is that <strong>there is a extra piece of data that points to previous node. So you can reverse</strong>.</li>
+  <li>In doubly you can traverse backwards.</li>
+  <li>Searching can be more efficient than singly linked list.</li>
+  <li>However you <strong>increase space complexity</strong>.</li>
+</ul>
+
+<h3 id="converting-single-to-doubly-linked-list">Converting Single to Doubly Linked list</h3>
+
+<p>Check below or click <a href="https://repl.it/@fbohz/BlogLinkedLDoubly">here</a>.</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogLinkedLDoubly?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h2 id="singly-vs-doubly-linked-lists">Singly vs Doubly Linked Lists</h2>
+
+<ul>
+  <li>Singly requires less memory. <strong>Could be a bit faster than doubly</strong>.</li>
+  <li>Singly is used for expensive memory and not that much searching.</li>
+  <li>With doubly you can delete, insert backwards as needed. But there’s more space complexity.</li>
+  <li>With doubly you can delete fairly easy. They are good with good operations for searching.</li>
+  <li>Most of the time the questions are theoretical and about singly linked lists.</li>
+</ul>
+
+<h2 id="linked-lists-interview-questions">Linked Lists: Interview Questions</h2>
+
+<p>Reverse singly list. Create method reverse() that will reverse singly list. See below or click <a href="https://repl.it/@fbohz/BlogLinkLQA#index.js">here</a>:</p>
+
+<iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogLinkLQA?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h2 id="linked-lists-conclusion">Linked Lists Conclusion</h2>
+
+<ul>
+  <li>reverse() method above is probably the most difficult concept in data structures.</li>
+  <li>Linked Lists are low level DS. Used in hashes and stacks.</li>
+  <li>Linked Lists have slow lookup and more memory. But they are ordered, fast deletion/insertion and flexible size.</li>
+  <li>Linked Lists working with them can be difficult to manage all pointers but <strong>linked lists are useful in implementing browsing history, file systems etc</strong>.</li>
+  <li>You might want to use linked lists when deleting in hash tables, but this is up to you.</li>
+</ul>
+:ET

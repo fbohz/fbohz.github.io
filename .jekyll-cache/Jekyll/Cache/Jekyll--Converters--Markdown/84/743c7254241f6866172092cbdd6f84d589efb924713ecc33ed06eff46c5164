@@ -1,0 +1,144 @@
+I"�!<blockquote>
+  <p>Following in our cheatsheet series. We now tackle into Unix. As Web developers we live a lot in the terminal so knowing Unix commands is a key skill, so let’s dive in!</p>
+</blockquote>
+
+<h1 id="unix-cheatsheet-">Unix Cheatsheet 🤓📗!</h1>
+
+<p>Following in our cheatsheet series. We now tackle into Unix. As Web developers we live a lot in the terminal so knowing Unix commands is a key skill, so let’s dive in!</p>
+
+<h2 id="terminal-basics---commands">Terminal Basics - Commands</h2>
+
+<p>Every command line command is actually a little computer program, even commands as simple as clear. These commands all tend to have the following structure:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="p">[</span><span class="nx">command</span><span class="p">][</span><span class="nx">options</span><span class="p">][</span><span class="nx">arguments</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Your home directory (~) is the directory where your terminal always starts.</li>
+</ul>
+
+<p><strong>Basics Cheats</strong></p>
+<ul>
+  <li>Exit terminal with <code class="highlighter-rouge">Ctrl + D</code></li>
+  <li>Do <code class="highlighter-rouge">tab</code> when writing and will autocomplete.</li>
+  <li><em>ls -l</em>: long detailed info</li>
+  <li><em>wc</em>: word count. e.g. wc todo.txt</li>
+  <li><em>cat</em>: The cat command is often used to print text files to the terminal, despite the fact that it’s really meant to <strong>concatenate files</strong>. E.g. cat todo.txt todo2.txt</li>
+  <li>You can see the contents of the file you created using either the <code class="highlighter-rouge">cat</code> program to display the contents, or the <code class="highlighter-rouge">less</code> program to open the file for viewing. After viewing with <code class="highlighter-rouge">less</code>, remember that you should hit <code class="highlighter-rouge">q</code> to get back to the terminal.</li>
+  <li><em>head</em> and <em>tail</em>: There are also two easy to remember programs for glimpsing the beginning or end of a text file: head and tail.</li>
+  <li><em>&gt;</em> output direction: s. One easy way to create a file is using <strong>output redirection</strong>. Output redirection stores text that would be normally printed to the command line in a text file. You can use output redirection by typing the greater-than sign (&gt;) at the end of a command followed by the name of the new file that will contain the output from the proceeding command. E.g. echo “I’m in the file.” &gt; echo-out.txt
+    <ul>
+      <li>Looks like it worked! You can also append text to the <strong>end of a file</strong> using two greater-than signs <em>(»).</em> Let’s try this feature out:
+        <ul>
+          <li>echo “I have been appended.” » echo-out.txt</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Edit files:
+    <ul>
+      <li>use <em>nano</em>: Control + O in order to save the changes you’ve made to the text file, or Control + X in order to exit nano and go back to the prompt.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Migration and Destroy</strong></p>
+
+<ul>
+  <li>use cmd <code class="highlighter-rouge">mv</code> to move things
+    <ul>
+      <li>also <code class="highlighter-rouge">mv</code> can <em>rename</em> things as second argument. E.g.  <code class="highlighter-rouge">mv todo.txt todo2.txt</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">cp</code> copies, first argument the file you want to copy the second the location. <code class="highlighter-rouge">cp hi.txt Desktop</code>
+    <ul>
+      <li><code class="highlighter-rouge">-r</code> option, ensures that the underlying directory structure of the directory you wish to copy remains intact.</li>
+    </ul>
+  </li>
+  <li><em>delete not recommended</em>
+    <ul>
+      <li>there’s no undo btn</li>
+      <li><code class="highlighter-rouge">rm text.txt</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="beyond-basic-cheats">Beyond Basic Cheats</h2>
+
+<ul>
+  <li><em>man command</em>: Each of the commands that we’ve discussed so far are thoroughly documented, and you can view their documentation using the man for <em>manual</em> command, where the first argument to man is the command you’re curious about.
+    <ul>
+      <li>e.g. <code class="highlighter-rouge">man</code> ls</li>
+    </ul>
+  </li>
+  <li>. You could type <code class="highlighter-rouge">apropos editor</code> into the command line which will print a list of results</li>
+  <li><strong>less command</strong>
+    <ul>
+      <li>Once you’ve opened a log file (or any file) using less file-name, use the following keys to search. Please note that the match will be highlighted automatically by default.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Forward Search
+/ – search for a pattern which will take you to the next occurrence.
+n – for next match in forward
+N – for previous match in backward
+Backward Search
+? – search for a pattern which will take you to the previous occurrence.
+n – for next match in backward direction
+N – for previous match in forward direction</p>
+
+<ul>
+  <li>The <strong>* (“star”) wildcard</strong> represents zero or more of any character, and it can be used to match names of files and folders in the command line. For example if I wanted to list all of the files in my Photos directory which have a name that starts with “2017” I could do the following <code class="highlighter-rouge">ls 2017 *</code></li>
+</ul>
+
+<p><strong>Searching</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">grep</code>: used to search <strong>within</strong>. <code class="highlighter-rouge">grep "California states.txt</code></li>
+  <li>
+    <p><code class="highlighter-rouge">find</code>: you can find files with any flags. <code class="highlighter-rouge">find . -name "*.jpg"</code></p>
+  </li>
+  <li><code class="highlighter-rouge">history</code>: shows history of your commands.
+    <ul>
+      <li><code class="highlighter-rouge">head -n 5 ~/.bash_history</code> look for recent history and <strong>access actual file</strong>.</li>
+      <li>history does not show the content of ~/.bash_history. Instead, it shows the current content of Bash’s history list in memory for this session.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">~/.bash_profile</code>
+    <ul>
+      <li>The ~/.bash_profile is a list of Unix commands that are run every time we open our terminal, usually with a different command on every line.</li>
+      <li>One of the most common commands used in a ~/.bash_profile is the alias command, which creates a shorter name for a command. E.g. <code class="highlighter-rouge">alias docs='cd ~/Documents'</code> now you can use it with <code class="highlighter-rouge">docs</code>.</li>
+    </ul>
+  </li>
+  <li><em>differences in files</em>
+    <ul>
+      <li><code class="highlighter-rouge">diff</code>: <code class="highlighter-rouge">diff first.txt second.txt</code></li>
+      <li>We could also compare differing lines in a side-by-side comparison using sdiff: <code class="highlighter-rouge">sdiff four.txt six.txt</code></li>
+      <li>we could do checksum with <code class="highlighter-rouge">md5 </code>.  E.g. <code class="highlighter-rouge">md5 states.txt</code>. Same with <code class="highlighter-rouge">shasum</code>.</li>
+    </ul>
+  </li>
+  <li>using pipes <code class="highlighter-rouge">|</code>: The pipe allows us to take the output of a command, which would normally be printed to the console, and use it as the input to another command. It’s like fitting an actual pipe between the end of one program and connecting it to the top of another program. You use it with <code class="highlighter-rouge">grep</code>.
+    <ul>
+      <li>E.g. count all names that end in vowel: <code class="highlighter-rouge">grep "[aeiou]$" index.html | wc -l</code></li>
+    </ul>
+  </li>
+  <li><em>makefile</em>
+    <ul>
+      <li>You would get all files then cd into directory, get a makefile and run make.</li>
+      <li>E.g. <code class="highlighter-rouge">cd ~/Documents/Bio makefile install.make</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Reminders, Tips</strong></p>
+<ul>
+  <li>using <code class="highlighter-rouge">echo</code>
+    <ul>
+      <li><code class="highlighter-rouge">echo "hi!" &gt;&gt; sample.txt</code> </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+<p>Read this <a href="https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management">article</a>.</p>
+:ET
