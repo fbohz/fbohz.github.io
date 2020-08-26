@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Learning About Flexbox"
-# date:       2020-07-25 19:31:03 -0400
+date:       2020-08-26 09:31:03 -0400
 permalink:  learning_about_flexbox_css
-filename: 2020-07-25-learning_about_flexbox_css
+filename: 2020-08-26-learning_about_flexbox_css
 ---
 
 > It might be common to think that software engineers don't have to deal or worry about UI. Being that delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
