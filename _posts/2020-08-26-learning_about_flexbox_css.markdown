@@ -6,11 +6,11 @@ permalink:  learning_about_flexbox_css
 filename: 2020-08-26-learning_about_flexbox_css
 ---
 
-> It might be common to think that software engineers don't have to deal or worry about UI. Being that delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
+> It might be common to think that software engineers don't have to deal or worry about UI, since it is delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
 
 # Learning About Flexbox
 
-It might be common to think that software engineers don't have to deal or worry about UI. Being that delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
+It might be common to think that software engineers don't have to deal or worry about UI, since it is delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.
 
 **What Is Flexbox**
 
