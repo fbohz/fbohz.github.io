@@ -173,10 +173,7 @@ box2.forEach(b => {
 })
 ```
 
-**This is actually O(a + b) NOT O(n)**. This because of different terms for inputs.
-
-- If parallel loops you *ADD*. E.g. a + b
-- If nested loops you *multiply*. E.g. a * b
+**This is actually O(a + b) NOT O(n)**. This because of different terms for inputs. If parallel loops you *ADD*. E.g. a + b. If nested loops you *multiply*. E.g. a * b
 
 4. **Drop Non-Dominants**
 
