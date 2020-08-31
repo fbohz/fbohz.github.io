@@ -1,4 +1,4 @@
-I"V<blockquote>
+I"�U<blockquote>
   <p>If you apply 100 companies, it can be that 1% would actually get back to you. Starting this week I’ll begin some exploration on computer science concepts so you too can increase your response percentage to 5% or more.</p>
 </blockquote>
 
@@ -153,20 +153,18 @@
 
 <h2 id="simplifying-big-o-big-o-rules">SIMPLIFYING BIG-O (BIG-O RULES)</h2>
 
-<ol>
-  <li><strong>Worst Case</strong>: Big-O cares at the worst case only.
-    <ul>
-      <li>Identify worst case. You could have O(1) but if O(n), then the Big-O is O(n).</li>
-    </ul>
-  </li>
-  <li><strong>Remove Constants</strong>.
-    <ul>
-      <li>Identify things that don’t change and remove them.</li>
-      <li>E.g. you have two loops and so O(2n) but 2 is constant so it’s actually O(n)</li>
-    </ul>
-  </li>
-  <li><strong>Different terms for inputs</strong></li>
-</ol>
+<p>1) <strong>Worst Case</strong>: Big-O cares at the worst case only.</p>
+<ul>
+  <li>Identify worst case. You could have O(1) but if O(n), then the Big-O is O(n).</li>
+</ul>
+
+<p>2) <strong>Remove Constants</strong>.</p>
+<ul>
+  <li>Identify things that don’t change and remove them.</li>
+  <li>E.g. you have two loops and so O(2n) but 2 is constant so it’s actually O(n)</li>
+</ul>
+
+<p>3) <strong>Different terms for inputs</strong></p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">compressBoxesTwice</span><span class="p">(</span><span class="nx">box1</span><span class="p">,</span> <span class="nx">box2</span><span class="p">)</span>
 <span class="nx">box1</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">b</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -179,16 +177,9 @@
 <span class="p">})</span>
 </code></pre></div></div>
 
-<p><strong>This is actually O(a + b) NOT O(n)</strong>. This because of different terms for inputs.</p>
+<p><strong>This is actually O(a + b) NOT O(n)</strong>. This because of different terms for inputs. If parallel loops you <em>ADD</em>. E.g. a + b. If nested loops you <em>multiply</em>. E.g. a * b</p>
 
-<ul>
-  <li>If parallel loops you <em>ADD</em>. E.g. a + b</li>
-  <li>If nested loops you <em>multiply</em>. E.g. a * b</li>
-</ul>
-
-<ol>
-  <li><strong>Drop Non-Dominants</strong></li>
-</ol>
+<p>4) <strong>Drop Non-Dominants</strong></p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printNumsThenAllPairSums</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
 
