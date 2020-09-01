@@ -152,7 +152,7 @@ function fibonacci(num){
 
 ```
 
-## SIMPLIFYING BIG-O (BIG-O RULES)
+## BIG-O RULES
 
 1) **Worst Case**: Big-O cares at the worst case only.
    - Identify worst case. You could have O(1) but if O(n), then the Big-O is O(n).
