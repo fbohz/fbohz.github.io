@@ -80,7 +80,7 @@ Note the 1 is arbitrary but this can be O(2), O(3) but do narrow it down to O(1)
 
 If you see nested loops you it is O(n^2). So the performance decreases n^2 as input grows not lineally.
 
-**You get interview questions to make O(n^2) into an O(n) or better**. O(n^2) example:
+**You might get interview questions to make O(n^2) into an O(n) or better**. Here's an example:
 
 ```javascript
 //Log all pairs of an array
@@ -114,6 +114,8 @@ There is a certain way to calculate number of nodes of perfect binary trees:
   - This like **looking through a phone book**. You look based upon the names you want. So **divide an conquer**. Only need to explore subset of tree.
   - Binary search trees allows us to search efficiently. Google uses this method too.
 
+If this sounds too complicated. Don't worry it sounds for me too 😅.
+
 ### `O(2^n)` Exponential time - PRETTY BAD - Worst Than O(n^2)
 
 A classic example is the fibonacci with recursion:
@@ -138,7 +140,6 @@ function fibonacci(num){
 
 
 ```javascript
-
   // O(2^n)
   function fibonacciRecursive(n) {
   if (n < 2){
@@ -149,7 +150,6 @@ function fibonacci(num){
   }
 
   fibonacciRecursive(6)
-
 ```
 
 ## BIG-O RULES
@@ -175,7 +175,10 @@ box2.forEach(b => {
 })
 ```
 
-**This is actually O(a + b) NOT O(n)**. This because of different terms for inputs. If parallel loops you *ADD*. E.g. a + b. If nested loops you *multiply*. E.g. a * b
+**This is actually O(a + b) NOT O(n)**. This because of different terms for inputs. 
+
+- If parallel loops you *add*. E.g. a + b. 
+- If nested loops you *multiply*. E.g. a * b
 
 4) **Drop Non-Dominants**
 
@@ -235,9 +238,11 @@ Often it is a tradeoff of optimizing code it *will increase space complexity*.
 
 ## Final Notes
 
-Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. So you need to get the right balance between run time, space and readability. BigO is crucial for bigger apps but work on it, it will make you a better engineer. Focus on O(1), O(n) and O(n^2) then expand into others.
+**For Technical Interviews**: Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. In interviews most of time you'll wanna do `O(n)` and `O(1)`!
 
-In interviews most of time you'll do O(n) and O(1)!
+You also need to get the right balance between run time, space and readability. Big-O is crucial for bigger apps, still you need to work and understand it. It will make you a better engineer. 
+
+**How to Start**: Focus on `O(1)`, `O(n)` and `O(n^2)` then expand into others.
 
 ## Read More
 
