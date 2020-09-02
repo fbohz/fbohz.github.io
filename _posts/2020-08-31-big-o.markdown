@@ -6,32 +6,32 @@ permalink:  big-o
 filename: 2020-08-31-big-o
 ---
 
-> If you apply 100 companies, it can be that 1% would actually get back to you. Starting this week I'll begin some exploration on computer science concepts so you too can increase your response percentage to 5% or more.
+> If you apply to 100 companies, it can be that 1% would actually get back to you. This could be the case if you're starting as a software developer. With that 1% you really need to be good at algorithms to take advantage of those precious opportunities. 
 
 # Simply BIG-O
 
-If you apply 100 companies, it can be that 1% would actually get back to you. Starting this week I'll begin some exploration on computer science concepts so you too can increase your response percentage to 5% or more.
+If you apply to 100 companies, it can be that 1% would actually get back to you. This could be the case if you're starting as a software developer. With that 1% you really need to be good at algorithms to take advantage of those precious opportunities. 
 
 **What is good code?**
 
 It usually means Readable and Scalable. *BIG O means  scalable code*:
 
 - Scalable means speed. It also means memory. 
-- What's the memory usage of code? You can use Big O for this too. 
-- Memory vs. Speed is usually a sacrifice. You get better speed you might have more memory.  
+- What's the memory usage of code? You can use Big-O for this too. 
+- Memory vs. Speed is usually a sacrifice. You get better speed (performance) but you might have more memory.  
 
-Note 'faster code' (in terms how long it takes to compile) also depends of what CPU you have, the server etc. So it's hard to measure good code, in terms of how fast it performs.
+*Note*: Faster code (in terms how long it takes to compile) also depends of what CPU you have, the server etc. So it's hard to measure good code in terms of how 'fast' it performs.
 
-**What is Big-O**
+**What is Big-O?**
 
-Big-O means: as inputs grows, how much does your function slow down? As elements, input increases how many *operations* does your function has to do?
+Big-O means as inputs grows, how much does your function slow down? As elements, input increases how many *operations* does your function has to do?
 
 - The slower it slows down, the better.
-- Big O calculates the number of steps and calculations *NOT* time it takes to run.
+- Big-O calculates the number of steps and calculations *not* time it takes to run.
 
-BIG O is important for big applications. Scalable code is thinking long term. Since we cannot pin down the exact runtime (in seconds) of an algorithms we measure how *quickly the runtime grows in relation to its input and as the input gets immensely large*.
+Big-O is important for big applications. Scalable code is thinking long term. Since we cannot pin down the exact runtime (in seconds) of an algorithms we measure how *quickly the runtime grows in relation to its input and as the input gets immensely large*.
 
-Good developers make these decisions efficiently. Big-O can give us reliable data in terms of *Time Complexity*. At the end we'll discuss about Space Complexity as well.
+Good developers make these decisions efficiently. Big-O can give us reliable data in terms of *Time Complexity*. At the end of this article we'll discuss about Space Complexity as well.
 
 As we drill down Big-O notations below, please refer to the [Big-O Cheatsheet](https://www.bigocheatsheet.com/) and to the graph below:
 
@@ -48,11 +48,11 @@ This is **linear**. As the number of elements increase so does the number of ope
 const nemo = ['nemo'];
 const large = new Array(199999).fill('nemo') 
 
-  function findNemo(array) {
+  function findingNemo(array) {
   let t0 = performance.now()
   for (let i = 0; i < array.length; i++) {
       if (array[i] === 'nemo') {
-      console.log('Found NEMO!');
+      console.log('Here is NEMO!');
       break;
       }
   }
@@ -62,7 +62,7 @@ const large = new Array(199999).fill('nemo')
   console.log(t1-t0, 'miliseconds')
   }
 
-findNemo(nemo); // O(n) -> Linear Time
+findingNemo(nemo); // O(n) -> Linear Time
   ```
 
 ### `O(1)` - Constant Time - EXCELLENT
@@ -70,23 +70,23 @@ findNemo(nemo); // O(n) -> Linear Time
 With O(1) it will always be the same calculation no matter how big the input grows.
   
 ```javascript 
-    function OnFn(box) {
-        console.log(box[1])
-    }
+  function OnFn(box) {
+      console.log(box[1])
+  }
 ```
 Note the 1 is arbitrary but this can be O(2), O(3) but do narrow it down to O(1) because to represent constant time. O(1) is used with Objects/Hash Tables data structures.
 
 ### `O(n^2)` - Nested Loops - BAD
 
-If you see nested loops you it is O(n^2)! So the performance decreases n^2 as input grows not lineally.
+If you see nested loops you it is O(n^2). So the performance decreases n^2 as input grows not lineally.
 
 **You get interview questions to make O(n^2) into an O(n) or better**. O(n^2) example:
 
 ```javascript
-//Log all pairs of array
+//Log all pairs of an array
 
 const boxes = ['a', 'b', 'c', 'd', 'e'];
-function logAllPairsOfArray(array) {
+function logAllPairsArray(array) {
 for (let i = 0; i < array.length; i++) {
   for (let j = 0; j < array.length; j++) {
   console.log(array[i], array[j])
@@ -95,7 +95,7 @@ for (let i = 0; i < array.length; i++) {
 }
 // nested loops so O(n^2)
 
-logAllPairsOfArray(boxes)
+logAllPairsArray(boxes)
 ```
 
 ### `O(n!)` - Factorial Time - MOST Expensive One
@@ -154,7 +154,7 @@ function fibonacci(num){
 
 ## BIG-O RULES
 
-1) **Worst Case**: Big-O cares at the worst case only.
+1) **Worst Case**: Big-O looks at the worst case only.
    - Identify worst case. You could have O(1) but if O(n), then the Big-O is O(n).
 
 2) **Remove Constants**.
@@ -204,7 +204,7 @@ printNumsThenAllPairSums([1,2,3,4,5])
 
 ### Space Complexity (Memory)
 
-When program executes it will **heap** (store variables) or **stack** (keep track of function calls).
+When a program executes it will **heap** (store variables) or **stack** (keep track of function calls).
 You also look at total size and see how much memory is being used.
 
 What adds space complexity?
@@ -215,19 +215,19 @@ What adds space complexity?
 Space complexity refers to additional space. Example:
   
 ```javascript
-  function boooo(n) {
+  function boooo👻(n) {
   for (let i = 0; i < n; i++) {
       console.log('booooo');
   }
 }
 
 // Space complexity O(n)
-function arrayOfHiNTimes(n) {
-  var hiArray = [];
+function arrayOfNTimes(n) {
+  var holaArray = [];
   for (let i = 0; i < n; i++) {
-      hiArray[i] = 'hi';
+      holaArray[i] = 'hola';
   }
-  return hiArray;
+  return holaArray;
 }
 ```
 
