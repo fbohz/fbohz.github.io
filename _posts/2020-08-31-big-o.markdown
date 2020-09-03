@@ -114,7 +114,7 @@ There is a certain way to calculate number of nodes of perfect binary trees:
 
 If this sounds too complicated. Don't worry it sounds for me too 😅.
 
-### `O(2^n)` Exponential time - PRETTY BAD - Worst Than O(n^2)
+### `O(2^n)` Exponential time - PRETTY BAD - Worst Than `O(n^2)`
 
 A classic example is the fibonacci with recursion:
 
