@@ -220,20 +220,16 @@ What adds space complexity?
 Space complexity refers to additional space. Example:
   
 ```javascript
-  function boooo👻(n) {
-  for (let i = 0; i < n; i++) {
-      console.log('booooo');
-  }
-}
-
 // Space complexity O(n)
-function arrayOfNTimes(n) {
+function sayHola(n) {
   var holaArray = [];
   for (let i = 0; i < n; i++) {
-      holaArray[i] = 'hola';
+      holaArray[i] = 'hola👋🏼';
   }
   return holaArray;
 }
+
+sayHola(100)
 ```
 
 Remember that tradeoff of optimizing code it is often that it *will increase space complexity*.
