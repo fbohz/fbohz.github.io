@@ -14,7 +14,7 @@ If you apply to 100 companies, it can be that 1% would actually get back to you.
 
 **What is good code?**
 
-It usually means Readable and Scalable. *BIG O means  scalable code*:
+It usually means Readable and Scalable. *BIG-O means  scalable code*:
 
 - Scalable means speed. It also means memory. 
 - What's the memory usage of code? You can use Big-O for this too. 
