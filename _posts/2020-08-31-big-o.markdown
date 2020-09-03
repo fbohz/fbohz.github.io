@@ -33,37 +33,40 @@ Big-O is important for big applications. Scalable code is thinking long term. Si
 
 Good developers make these decisions efficiently. Big-O can give us reliable data in terms of *Time Complexity*. At the end of this article we'll discuss about Space Complexity as well.
 
-As we drill down Big-O notations below, please refer to the [Big-O Cheatsheet](https://www.bigocheatsheet.com/) and to the graph below:
+As we drill down on Big-O notations, please refer to the [Big-O Cheatsheet](https://www.bigocheatsheet.com/) and to the graph below:
 
 ![Screen Shot 2020-06-18 at 7 29 26 PM](https://user-images.githubusercontent.com/15071636/85084334-1db98980-b19a-11ea-8b28-d5e2076dc251.png)
 
-Remember we *cannot express speed in seconds*, so the size of the input we usually call it `n`. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2). Let's go through each of these BigO examples. 
+Have in mind that we *cannot express speed in seconds*. The size of the input we usually call it `n`. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2). 
+
+With that in mind, let's go through each of these Big-O examples. 
   
 ### `O(n)` - Linear - PREFERRED
 
 This is **linear**. As the number of elements increase so does the number of operations. Example:
 
  ```javascript 
-//  MESURE TIME SPENT
-const nemo = ['nemo'];
-const large = new Array(199999).fill('nemo') 
-
-  function findingNemo(array) {
+function findingNemo(message, array) {
   let t0 = performance.now()
   for (let i = 0; i < array.length; i++) {
-      if (array[i] === 'nemo') {
-      console.log('Here is NEMO!');
+      if (array[i] === 'nemo' || array[i] <= 40) {
+      console.log(message, 'Found NEMO!');
       break;
       }
   }
+  // Time is just for demo purposes.
   let t1 = performance.now() 
-  // this is performance in speed 
-  // but is not crucial just for demo purposes.
   console.log(t1-t0, 'miliseconds')
   }
 
-findingNemo(nemo); // O(n) -> Linear Time
-  ```
+const nemo = ['nemo'];
+const large = Array.from({length: 40000}, () => Math.floor(Math.random() * 40000));
+
+findingNemo('With Nemo: ', nemo); 
+findingNemo('Larger Array: ', large); 
+```
+
+If you run this you might notice that the time varies a lot. Again there are CPU, processor and other considerations that makes it hard to evaluate performance in terms of time. That is why we use Big-O and with this algorithm we say it is O(n).
 
 ### `O(1)` - Constant Time - EXCELLENT
 
@@ -74,11 +77,11 @@ With O(1) it will always be the same calculation no matter how big the input gro
       console.log(box[1])
   }
 ```
-Note the 1 is arbitrary but this can be O(2), O(3) but do narrow it down to O(1) because to represent constant time. O(1) is used with Objects/Hash Tables data structures.
+Note the 1 is arbitrary. This can be O(2), O(3) but do narrow it down to O(1), to represent constant time. O(1) is used with Objects/Hash Tables data structures.
 
 ### `O(n^2)` - Nested Loops - BAD
 
-If you see nested loops you it is O(n^2). So the performance decreases n^2 as input grows not lineally.
+If you see nested loops you it is O(n^2). Performance decreases n^2 as input grows, so it is not lineally.
 
 **You might get interview questions to make O(n^2) into an O(n) or better**. Here's an example:
 
@@ -94,13 +97,8 @@ for (let i = 0; i < array.length; i++) {
 }
 }
 // nested loops so O(n^2)
-
 logAllPairsArray(boxes)
 ```
-
-### `O(n!)` - Factorial Time - MOST Expensive One
-
-It means you add a nested loop for every input. You probably would never see it.
 
 ### `O(log n)` - EXCELLENT - Used in Tree Data Structures
 
@@ -141,16 +139,20 @@ function fibonacci(num){
 
 ```javascript
   // O(2^n)
-  function fibonacciRecursive(n) {
+function fibonacciRecursive(n) {
   if (n < 2){
       return n;
   }
-  return fibonacciRecursive(n - 1) 
-    + fibonacciRecursive (n - 2)
-  }
+return fibonacciRecursive(n - 1) 
+  + fibonacciRecursive (n - 2)
+}
 
-  fibonacciRecursive(6)
+fibonacciRecursive(6)
 ```
+
+### `O(n!)` - Factorial Time - MOST Expensive One
+
+It means you add a nested loop for every input. You probably would never see it.
 
 ## BIG-O RULES
 
@@ -175,7 +177,7 @@ box2.forEach(b => {
 })
 ```
 
-**This is actually O(a + b) NOT O(n)**. This because of different terms for inputs. 
+*This is actually O(a + b) NOT O(n)*. This because of different terms for inputs. 
 
 - If parallel loops you *add*. E.g. a + b. 
 - If nested loops you *multiply*. E.g. a * b
@@ -234,7 +236,7 @@ function arrayOfNTimes(n) {
 }
 ```
 
-Often it is a tradeoff of optimizing code it *will increase space complexity*.
+Remember that tradeoff of optimizing code it is often that it *will increase space complexity*.
 
 ## Final Notes
 
