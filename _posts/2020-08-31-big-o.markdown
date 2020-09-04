@@ -60,7 +60,9 @@ function findingNemo(message, array) {
   }
 
 const nemo = ['nemo'];
-const large = Array.from({length: 40000}, () => Math.floor(Math.random() * 40000));
+const large = Array.from({length: 40000}, () => 
+    Math.floor(Math.random() * 40000
+));
 
 findingNemo('With Nemo: ', nemo); 
 findingNemo('Larger Array: ', large); 
