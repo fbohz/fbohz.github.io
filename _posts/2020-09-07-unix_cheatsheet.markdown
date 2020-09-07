@@ -20,31 +20,31 @@ Every command line command is actually a little computer program, even with simp
     [command][options][arguments]
 ```
 
-Starting Tip: Your home directory (~) is the directory where your terminal always starts.
+Starting Tip: Your home directory (`~`) is the directory where your terminal always starts.
 
 
 **Basics Cheats**
 - Exit terminal with `Ctrl + D`
 - Press `tab` when writing and will autocomplete.
 - `ls -l`: long detailed info
-- `wc`: word count. e.g. wc todo.txt
-- `cat`: The cat command is often used to print text files to the terminal, despite the fact that it’s really meant to **concatenate files**. E.g. cat todo.txt todo2.txt
+- `wc`: word count. e.g. `wc todo.txt`
+- `cat`: The cat command is often used to print text files to the terminal, despite the fact that it’s really meant to **concatenate files**. E.g. `cat todo.txt todo2.txt`
 - You can see the contents of the file you created using either the `cat` program to display the contents, or the `less` program to open the file for viewing. After viewing with `less`, remember that you should hit `q` to get back to the terminal.
 - `head` and `tail`: There are also two easy to remember programs for glimpsing the beginning or end of a text file: head and tail.
-- `>` output direction: s. One easy way to create a file is using **output redirection**. Output redirection stores text that would be normally printed to the command line in a text file. You can use output redirection by typing the greater-than sign (>) at the end of a command followed by the name of the new file that will contain the output from the proceeding command. E.g. echo "I'm in the file." > echo-out.txt
+- `>` output direction: s. One easy way to create a file is using **output redirection**. Output redirection stores text that would be normally printed to the command line in a text file. You can use output redirection by typing the greater-than sign (>) at the end of a command followed by the name of the new file that will contain the output from the proceeding command. E.g. `echo "I'm in the file." > echo-out.txt`
   - Looks like it worked! You can also append text to the **end of a file** using two greater-than signs *(>>).* Let’s try this feature out: 
-    - echo "I have been appended." >> echo-out.txt
+    - `echo "I have been appended." >> echo-out.txt`
 - Edit files:
   - use `nano`: Control + O in order to save the changes you’ve made to the text file, or Control + X in order to exit nano and go back to the prompt.
 
 **Migration and Destroy**
 
-- use cmd `mv` to move things
-  - also `mv` can *rename* things as second argument. E.g.  `mv todo.txt todo2.txt`
+- Use cmd `mv` to move things
+  - Also `mv` can *rename* things as second argument. E.g.  `mv todo.txt todo2.txt`
 - `cp` copies, first argument the file you want to copy the second the location. `cp hi.txt Desktop`
   - `-r` option, ensures that the underlying directory structure of the directory you wish to copy remains intact.
-- *delete not recommended*
-  - there's no undo btn
+- Delete **(not recommended)**
+  - Be careful in terminal there's no undo button. E.g.
   - `rm text.txt`
 
 
@@ -52,8 +52,8 @@ Starting Tip: Your home directory (~) is the directory where your terminal alway
 
 - *`man` command*: Each of the commands that we’ve discussed so far are thoroughly documented, and you can view their documentation using the man for *manual* command, where the first argument to man is the command you’re curious about.
   - e.g. `man` ls
-- . You could type `apropos editor` into the command line which will print a list of results
-- **less command**
+- You could type `apropos editor` into the command line which will print a list of results
+- `less` command
   - Once you’ve opened a log file (or any file) using less file-name, use the following keys to search. Please note that the match will be highlighted automatically by default.
 
 Forward Search:
@@ -93,5 +93,6 @@ Backward Search
 - Use `echo`
   - `echo "hi!" >> sample.txt` 
 
-## Continue Your Learning
-Read this [article](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management).
+## Resources
+
+- Read this [article](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management).
