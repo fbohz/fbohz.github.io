@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Unix Cheatsheet"
-# date:       2020-07-25 19:31:03 -0400
+date:       2020-09-07 07:31:03 -0400
 permalink:  unix_cheatsheet
-filename: 2020-07-25-unix_cheatsheet
+filename: 2020-09-07-unix_cheatsheet
 ---
 
 > Following in our cheatsheet series. We now tackle into Unix. As Web developers we live a lot in the terminal so knowing Unix commands is a key skill, so let's dive in!
