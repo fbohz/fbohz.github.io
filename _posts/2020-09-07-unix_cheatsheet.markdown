@@ -14,7 +14,7 @@ Following in our cheatsheet series. Today we tackle into Unix. As Web developers
 
 ## Terminal Basic Commands
 
-Every command line command is actually a little computer program, even with simple commands. These commands tend to have the following structure:
+**Every command line command is actually a little computer program**, even with simple commands. These commands tend to have the following structure:
 
 ```js
     [command][options][arguments]
