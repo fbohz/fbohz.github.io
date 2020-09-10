@@ -12,7 +12,7 @@ filename: 2020-09-07-unix_cheatsheet
 
 Following in our cheatsheet series. Today we tackle into Unix. As Web developers we live a lot in the terminal so knowing Unix commands is a key skill. Let's dive in!
 
-## Terminal Basics - Commands
+## Terminal Basic Commands
 
 Every command line command is actually a little computer program, even with simple commands. These commands tend to have the following structure:
 
