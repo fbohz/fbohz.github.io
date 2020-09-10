@@ -86,10 +86,6 @@ Backward Search
   - You would get all files then cd into directory, get a makefile and run make.
   - E.g. `cd ~/Documents/Bio makefile install.make`
 
-**One Last Word...**
-- Use `echo`
-  - `echo "hi!" >> sample.txt` 
-
 ## Resources
 
 - Read this [article](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management).
