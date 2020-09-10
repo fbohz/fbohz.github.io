@@ -29,11 +29,10 @@ Starting Tip: Your home directory (`~`) is the directory where your terminal alw
 - `ls -l`: long detailed info
 - `wc`: word count. e.g. `wc todo.txt`
 - `cat`: The cat command is often used to print text files to the terminal, despite the fact that it’s really meant to **concatenate files**. E.g. `cat todo.txt todo2.txt`
-- You can see the contents of the file you created using either the `cat` program to display the contents, or the `less` program to open the file for viewing. After viewing with `less`, remember that you should hit `q` to get back to the terminal.
+- You can see the contents of the file you created using either the `cat` to display the contents, or `less` to open the file for viewing. After viewing with `less`, remember that you should hit `q` to get back to the terminal.
 - `head` and `tail`: There are also two easy to remember programs for glimpsing the beginning or end of a text file: head and tail.
-- `>` output direction: s. One easy way to create a file is using **output redirection**. Output redirection stores text that would be normally printed to the command line in a text file. You can use output redirection by typing the greater-than sign (>) at the end of a command followed by the name of the new file that will contain the output from the proceeding command. E.g. `echo "I'm in the file." > echo-out.txt`
-  - Looks like it worked! You can also append text to the **end of a file** using two greater-than signs *(>>).* Let’s try this feature out: 
-    - `echo "I have been appended." >> echo-out.txt`
+- `>` output direction: One easy way to create a file is using **output redirection**. Output redirection stores text that would be normally printed to the command line in a text file. You can use output redirection by typing the greater-than sign (>) at the end of a command followed by the name of the new file that will contain the output from the proceeding command. E.g. `echo "I'm in the file." > echo-out.txt`
+  - You can also append text to the **end of a file** using two greater-than signs *(>>).* Let’s try this feature out: `echo "I have been appended." >> echo-out.txt`
 - Edit files:
   - use `nano`: Control + O in order to save the changes you’ve made to the text file, or Control + X in order to exit nano and go back to the prompt.
 
@@ -44,9 +43,7 @@ Starting Tip: Your home directory (`~`) is the directory where your terminal alw
 - `cp` copies, first argument the file you want to copy the second the location. `cp hi.txt Desktop`
   - `-r` option, ensures that the underlying directory structure of the directory you wish to copy remains intact.
 - Delete **(not recommended)**
-  - Be careful in terminal there's no undo button. E.g.
-  - `rm text.txt`
-
+  - Use `rm` command. Be careful in terminal there's no undo button. E.g. `rm text.txt`
 
 ## More Cheats
 
