@@ -37,7 +37,7 @@ Data Structures (DS):
   - How to build one?
   - How to use it?
 - Each language has **data structures to organize data types**.   
-- With each data structure you can do access, search, insertion, deletion, sort. Each data structure might be good for one or the other. See https://www.bigocheatsheet.com/ 
+- With each data structure you can do access, search, insertion, deletion, sort. Each data structure might be good for one or the other. See [Big-O CheatSheet](https://www.bigocheatsheet.com/).
 
 ## Computers and Data
 
