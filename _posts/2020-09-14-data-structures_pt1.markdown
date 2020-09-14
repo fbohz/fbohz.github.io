@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "DRAFTS_TEMPLATE"
+title:      "Learning About Data Structures Part 1"
 date:       2020-09-14 07:31:03 -0400
 permalink:  data-structures_pt1
 filename: 2020-09-14-data-structures_pt1
@@ -8,9 +8,9 @@ filename: 2020-09-14-data-structures_pt1
 
 > Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver. 
 
-# Data Structures
+# Learning About Data Structures Part 1
 
-Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver. 
+Learning about data structures is an essential part of becoming a more experienced developer. Such knowledge will also help you to be a better problem solver. 
 
 While reading this article have this in mind:
 
