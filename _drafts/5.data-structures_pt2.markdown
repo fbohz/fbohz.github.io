@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Data Structures Part 2"
+title:      "Learning About Data Structures Part 2"
 # date:       2020-07-15 19:31:03 -0400
 permalink:  data-structures_pt2
 filename: 2020-07-15-data-structures_pt2
@@ -8,7 +8,7 @@ filename: 2020-07-15-data-structures_pt2
 
 > Learning about data structures is an essential part of becoming a more experienced developers. This is the second part of the series, and will be the longest one, buckle down.
 
-# Data Structures Part 2
+# Learning About Data Structures Part 2
 
 Learning about data structures is an essential part of becoming a more experienced developers. This is the second part of the series, and will be the longest one, buckle down.
 

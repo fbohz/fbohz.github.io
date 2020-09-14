@@ -1,87 +1,92 @@
-I"�U<blockquote>
-  <p>If you apply 100 companies, it can be that 1% would actually get back to you. Starting this week I’ll begin some exploration on computer science concepts so you too can increase your response percentage to 5% or more.</p>
+I"�X<blockquote>
+  <p>If you apply to 100 companies, it can be that 1% would actually get back to you. This could be the case if you’re starting as a software developer. With that 1% you really need to be good at algorithms to take advantage of those precious opportunities.</p>
 </blockquote>
 
 <h1 id="simply-big-o">Simply BIG-O</h1>
 
-<p>If you apply 100 companies, it can be that 1% would actually get back to you. Starting this week I’ll begin some exploration on computer science concepts so you too can increase your response percentage to 5% or more.</p>
+<p>If you apply to 100 companies, it can be that 1% would actually get back to you. This could be the case if you’re starting as a software developer. With that 1% you really need to be good at algorithms to take advantage of those precious opportunities.</p>
 
 <p><strong>What is good code?</strong></p>
 
-<p>It usually means Readable and Scalable. <em>BIG O means  scalable code</em>:</p>
+<p>It usually means Readable and Scalable. <em>BIG-O means  scalable code</em>:</p>
 
 <ul>
   <li>Scalable means speed. It also means memory.</li>
-  <li>What’s the memory usage of code? You can use Big O for this too.</li>
-  <li>Memory vs. Speed is usually a sacrifice. You get better speed you might have more memory.</li>
+  <li>What’s the memory usage of code? You can use Big-O for this too.</li>
+  <li>Memory vs. Speed is usually a sacrifice. You get better speed (performance) but you might have more memory.</li>
 </ul>
 
-<p>Note ‘faster code’ (in terms how long it takes to compile) also depends of what CPU you have, the server etc. So it’s hard to measure good code, in terms of how fast it performs.</p>
+<p><em>Note</em>: Faster code (in terms how long it takes to compile) also depends of what CPU you have, the server etc. So it’s hard to measure good code in terms of how ‘fast’ it performs.</p>
 
-<p><strong>What is Big-O</strong></p>
+<p><strong>What is Big-O?</strong></p>
 
-<p>Big-O means: as inputs grows, how much does your function slow down? As elements, input increases how many <em>operations</em> does your function has to do?</p>
+<p>Big-O means as inputs grows, how much does your function slow down? As elements, input increases how many <em>operations</em> does your function has to do?</p>
 
 <ul>
   <li>The slower it slows down, the better.</li>
-  <li>Big O calculates the number of steps and calculations <em>NOT</em> time it takes to run.</li>
+  <li>Big-O calculates the number of steps and calculations <em>not</em> time it takes to run.</li>
 </ul>
 
-<p>BIG O is important for big applications. Scalable code is thinking long term. Since we cannot pin down the exact runtime (in seconds) of an algorithms we measure how <em>quickly the runtime grows in relation to its input and as the input gets immensely large</em>.</p>
+<p>Big-O is important for big applications. Scalable code is thinking long term. Since we cannot pin down the exact runtime (in seconds) of an algorithms we measure how <em>quickly the runtime grows in relation to its input and as the input gets immensely large</em>.</p>
 
-<p>Good developers make these decisions efficiently. Big-O can give us reliable data in terms of <em>Time Complexity</em>. At the end we’ll discuss about Space Complexity as well.</p>
+<p>Good developers make these decisions efficiently. Big-O can give us reliable data in terms of <em>Time Complexity</em>. At the end of this article we’ll discuss about Space Complexity as well.</p>
 
-<p>As we drill down Big-O notations below, please refer to the <a href="https://www.bigocheatsheet.com/">Big-O Cheatsheet</a> and to the graph below:</p>
+<p>As we drill down on Big-O notations, please refer to the <a href="https://www.bigocheatsheet.com/">Big-O Cheatsheet</a> and to the graph below:</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/85084334-1db98980-b19a-11ea-8b28-d5e2076dc251.png" alt="Screen Shot 2020-06-18 at 7 29 26 PM" /></p>
 
-<p>Remember we <em>cannot express speed in seconds</em>, so the size of the input we usually call it <code class="highlighter-rouge">n</code>. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2). Let’s go through each of these BigO examples.</p>
+<p>Have in mind that we <em>cannot express speed in seconds</em>. The size of the input we usually call it <code class="highlighter-rouge">n</code>. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2).</p>
+
+<p>With that in mind, let’s go through each of these Big-O examples.</p>
 
 <h3 id="on---linear---preferred"><code class="highlighter-rouge">O(n)</code> - Linear - PREFERRED</h3>
 
 <p>This is <strong>linear</strong>. As the number of elements increase so does the number of operations. Example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  MESURE TIME SPENT</span>
-<span class="kd">const</span> <span class="nx">nemo</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">nemo</span><span class="dl">'</span><span class="p">];</span>
-<span class="kd">const</span> <span class="nx">large</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">199999</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="dl">'</span><span class="s1">nemo</span><span class="dl">'</span><span class="p">)</span> 
-
-  <span class="kd">function</span> <span class="nx">findNemo</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">findingNemo</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">t0</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">nemo</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Found NEMO!</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">nemo</span><span class="dl">'</span> <span class="o">||</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Found NEMO!</span><span class="dl">'</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
       <span class="p">}</span>
   <span class="p">}</span>
+  <span class="c1">// Time is just for demo purposes.</span>
   <span class="kd">let</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> 
-  <span class="c1">// this is performance in speed </span>
-  <span class="c1">// but is not crucial just for demo purposes.</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">t1</span><span class="o">-</span><span class="nx">t0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">miliseconds</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">}</span>
 
-<span class="nx">findNemo</span><span class="p">(</span><span class="nx">nemo</span><span class="p">);</span> <span class="c1">// O(n) -&gt; Linear Time</span>
+<span class="kd">const</span> <span class="nx">nemo</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">nemo</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">large</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">({</span><span class="na">length</span><span class="p">:</span> <span class="mi">40000</span><span class="p">},</span> <span class="p">()</span> <span class="o">=&gt;</span> 
+    <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">40000</span>
+<span class="p">));</span>
+
+<span class="nx">findingNemo</span><span class="p">(</span><span class="dl">'</span><span class="s1">With Nemo: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">nemo</span><span class="p">);</span> 
+<span class="nx">findingNemo</span><span class="p">(</span><span class="dl">'</span><span class="s1">Larger Array: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">large</span><span class="p">);</span> 
 </code></pre></div></div>
+
+<p>If you run this you might notice that the time varies a lot. Again there are CPU, processor and other considerations that makes it hard to evaluate performance in terms of time. That is why we use Big-O and with this algorithm we say it is O(n).</p>
 
 <h3 id="o1---constant-time---excellent"><code class="highlighter-rouge">O(1)</code> - Constant Time - EXCELLENT</h3>
 
 <p>With O(1) it will always be the same calculation no matter how big the input grows.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">OnFn</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">box</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">OnFn</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">box</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="p">}</span>
 </code></pre></div></div>
-<p>Note the 1 is arbitrary but this can be O(2), O(3) but do narrow it down to O(1) because to represent constant time. O(1) is used with Objects/Hash Tables data structures.</p>
+<p>Note the 1 is arbitrary. This can be O(2), O(3) but do narrow it down to O(1), to represent constant time. O(1) is used with Objects/Hash Tables data structures.</p>
 
 <h3 id="on2---nested-loops---bad"><code class="highlighter-rouge">O(n^2)</code> - Nested Loops - BAD</h3>
 
-<p>If you see nested loops you it is O(n^2)! So the performance decreases n^2 as input grows not lineally.</p>
+<p>If you see nested loops you it is O(n^2). Performance decreases n^2 as input grows, so it is not lineally.</p>
 
-<p><strong>You get interview questions to make O(n^2) into an O(n) or better</strong>. O(n^2) example:</p>
+<p><strong>You might get interview questions to make O(n^2) into an O(n) or better</strong>. Here’s an example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Log all pairs of array</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Log all pairs of an array</span>
 
 <span class="kd">const</span> <span class="nx">boxes</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e</span><span class="dl">'</span><span class="p">];</span>
-<span class="kd">function</span> <span class="nx">logAllPairsOfArray</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">logAllPairsArray</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span>
@@ -89,13 +94,8 @@
 <span class="p">}</span>
 <span class="p">}</span>
 <span class="c1">// nested loops so O(n^2)</span>
-
-<span class="nx">logAllPairsOfArray</span><span class="p">(</span><span class="nx">boxes</span><span class="p">)</span>
+<span class="nx">logAllPairsArray</span><span class="p">(</span><span class="nx">boxes</span><span class="p">)</span>
 </code></pre></div></div>
-
-<h3 id="on---factorial-time---most-expensive-one"><code class="highlighter-rouge">O(n!)</code> - Factorial Time - MOST Expensive One</h3>
-
-<p>It means you add a nested loop for every input. You probably would never see it.</p>
 
 <h3 id="olog-n---excellent---used-in-tree-data-structures"><code class="highlighter-rouge">O(log n)</code> - EXCELLENT - Used in Tree Data Structures</h3>
 
@@ -113,6 +113,8 @@
     </ul>
   </li>
 </ul>
+
+<p>If this sounds too complicated. Don’t worry it sounds for me too 😅.</p>
 
 <h3 id="o2n-exponential-time---pretty-bad---worst-than-on2"><code class="highlighter-rouge">O(2^n)</code> Exponential time - PRETTY BAD - Worst Than O(n^2)</h3>
 
@@ -137,23 +139,25 @@
   <li>This O(n log n) is because it is still compared, everything at least once, but it is not compared everything to everything.</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-  <span class="c1">// O(2^n)</span>
-  <span class="kd">function</span> <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// O(2^n)</span>
+<span class="kd">function</span> <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">){</span>
       <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
-    <span class="o">+</span> <span class="nx">fibonacciRecursive</span> <span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">}</span>
+<span class="k">return</span> <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+  <span class="o">+</span> <span class="nx">fibonacciRecursive</span> <span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
 
-  <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-
+<span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="simplifying-big-o-big-o-rules">SIMPLIFYING BIG-O (BIG-O RULES)</h2>
+<h3 id="on---factorial-time---most-expensive-one"><code class="highlighter-rouge">O(n!)</code> - Factorial Time - MOST Expensive One</h3>
 
-<p>1) <strong>Worst Case</strong>: Big-O cares at the worst case only.</p>
+<p>It means you add a nested loop for every input. You probably would never see it.</p>
+
+<h2 id="big-o-rules">BIG-O RULES</h2>
+
+<p>1) <strong>Worst Case</strong>: Big-O looks at the worst case only.</p>
 <ul>
   <li>Identify worst case. You could have O(1) but if O(n), then the Big-O is O(n).</li>
 </ul>
@@ -177,7 +181,12 @@
 <span class="p">})</span>
 </code></pre></div></div>
 
-<p><strong>This is actually O(a + b) NOT O(n)</strong>. This because of different terms for inputs. If parallel loops you <em>ADD</em>. E.g. a + b. If nested loops you <em>multiply</em>. E.g. a * b</p>
+<p><em>This is actually O(a + b) NOT O(n)</em>. This because of different terms for inputs.</p>
+
+<ul>
+  <li>If parallel loops you <em>add</em>. E.g. a + b.</li>
+  <li>If nested loops you <em>multiply</em>. E.g. a * b</li>
+</ul>
 
 <p>4) <strong>Drop Non-Dominants</strong></p>
 
@@ -207,7 +216,7 @@
 
 <h3 id="space-complexity-memory">Space Complexity (Memory)</h3>
 
-<p>When program executes it will <strong>heap</strong> (store variables) or <strong>stack</strong> (keep track of function calls).
+<p>When a program executes it will <strong>heap</strong> (store variables) or <strong>stack</strong> (keep track of function calls).
 You also look at total size and see how much memory is being used.</p>
 
 <p>What adds space complexity?</p>
@@ -219,29 +228,27 @@ You also look at total size and see how much memory is being used.</p>
 
 <p>Space complexity refers to additional space. Example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">boooo</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Space complexity O(n)</span>
+<span class="kd">function</span> <span class="nx">sayHola</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">holaArray</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">booooo</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">holaArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hola👋🏼</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">holaArray</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// Space complexity O(n)</span>
-<span class="kd">function</span> <span class="nx">arrayOfHiNTimes</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">hiArray</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">hiArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">hiArray</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="nx">sayHola</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Often it is a tradeoff of optimizing code it <em>will increase space complexity</em>.</p>
+<p>Remember that tradeoff of optimizing code it is often that it <em>will increase space complexity</em>.</p>
 
 <h2 id="final-notes">Final Notes</h2>
 
-<p>Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. So you need to get the right balance between run time, space and readability. BigO is crucial for bigger apps but work on it, it will make you a better engineer. Focus on O(1), O(n) and O(n^2) then expand into others.</p>
+<p><strong>For Technical Interviews</strong>: Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. In interviews most of time you’ll wanna do <code class="highlighter-rouge">O(n)</code> and <code class="highlighter-rouge">O(1)</code>!</p>
 
-<p>In interviews most of time you’ll do O(n) and O(1)!</p>
+<p>You also need to get the right balance between run time, space and readability. Big-O is crucial for bigger apps, still you need to work and understand it. It will make you a better engineer.</p>
+
+<p><strong>How to Start</strong>: Focus on <code class="highlighter-rouge">O(1)</code>, <code class="highlighter-rouge">O(n)</code> and <code class="highlighter-rouge">O(n^2)</code> then expand into others.</p>
 
 <h2 id="read-more">Read More</h2>
 
