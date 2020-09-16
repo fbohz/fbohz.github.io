@@ -10,7 +10,7 @@ filename: 2020-09-16-data-structures_pt2
 
 # Learning About Data Structures Part 2
 
-Learning about data structures is an essential part of becoming a more experienced developers. This is the second part of the series, and will be the longest one, buckle down.
+Learning about data structures is an essential part of becoming a more experienced developer. This is the second part of the series (and will be the longest one), buckle down 🚀.
 
 ## Stacks & Queues
 
@@ -26,7 +26,7 @@ Learning about data structures is an essential part of becoming a more experienc
 **Other uses**
 
 - Browser history. Undo/Redo. This idea comes from stack. 
-- Methods are pop() - O(1), push() - O(1) and peek() - O(1). Traverse is not recommended in stack.
+- Methods are `pop()` O(1), `push()` O(1) and `peek()` O(1). Traverse is not recommended in stack.
 
 **Queues**
 
@@ -35,19 +35,19 @@ Are like an entrance to a rollercoaster. They have a **first in first out (FIFO)
 Uses:
 
 - If you have a wait-list app, could use queues. Restaurant to see if you have table, could use queues. Uber/Lyft uses queues. Printers too.
-- Methods are enqueue() - O(1), dequeue() - O(1) and peek() - O(1). Again traversing is not recommended (lookup())
-- Dequeue() unlike pop() takes first person, pop() in stack takes last.
+- Methods are `enqueue()` O(1), `dequeue()` O(1) and `peek()` O(1). Again traversing is not recommended (lookup())
+- Dequeue() unlike pop() takes first one out whereas pop() in Stacks takes last.
 - *Do not build a queue using arrays since its inefficient*.
 
 ## Stack and Queues Implementations
 
-How can you build stack and queues in JS?
-- Stacks: Arrays or Linked Lists
+How can you build stack and queues in JavaScript?
+- Stacks: Use Arrays or build out of Linked Lists
   - **Both work very well.** 
   - Think about what are your needs.
-- Queues: Arrays or Linked lists. 
-  - **Arrays not recommended**. Because you have to traverse O(n) when you shift and remove.
-  - Use always Linked Lists
+- Queues: Also Arrays or through Linked lists. 
+  - Here **Arrays not recommended**. Because you have to traverse O(n) when you shift and remove.
+  - Use always Linked Lists for queues.
 
 ### Stack / Queues Examples
 
@@ -74,11 +74,11 @@ For example interview Question check [discussion](https://leetcode.com/problems/
 - Linked lists, arrays are linear. Linked lists are considered a type of tree
 - Trees have **only one parent** and it can **leaf notes**
 - Within trees you can have **sub trees**
-- Example:
-  - DOM is a tree data structure. HTML is parent then body is parent with many children.
-- Facebook comments have a tree DS, with commments of comments etc.
+- Facebook comments have a tree DS, with comments of comments etc.
 - Abstract syntax tree. Code is broken down by a machine as this.
 - There are many tree data structures.
+
+Examples: DOM is a tree data structure. HTML is parent then body is parent with many children.
 
 ## Binary Trees
 
@@ -88,49 +88,52 @@ For example interview Question check [discussion](https://leetcode.com/problems/
   - **Perfect Binary tree** - nodes are full nothing is missing. They are efficient. Number of nodes double as it goes down. Second property states that bottom levels equal top levels + 1. **So there are some efficiencies here** as O(log N)
   - **Full binary tree** - the opposite and only meets requirements of binary tree.
 
-## O(log n) - Reminder
+## `O(log n)`- Reminder
 - There is a certain way to calculate num of nodes of perfect binary trees.
     - You calculate 2 to the power of level in question.
-      - E.g. Level 0: 2^0 = 1. Number of nodes: 1. Lvl 2: 2^2 = 4. etc.
+    - E.g. Level 0: 2^0 = 1. Number of nodes: 1. Lvl 2: 2^2 = 4. etc.
     - Based on this formula you can do 2^treeHeight - 1 to know how many total nodes. E.g. 3 Level Tree: 2^3 - 1 = 7 nodes.
-      - We can simplify as **log notes = treeHeight**. So you by knowing this, you can limit steps by going in one branch.
+    - We can simplify as **log notes = treeHeight**. So you by knowing this, you can limit steps by going in one branch.
 - So O(log n) is like **divide and conquer**. Choice of next element is one of several. We only choose one not all. 
-  - **Like looking throgh a phonebook**. You look based upon the names you want. So divide an conquer. Only need to explore subset of tree.
+- **Like looking through a phone book**. You look based upon the names you want. So divide an conquer. Only need to explore subset of tree.
 - Binary search trees allows us to search efficiently. Google uses this method too.
 
-## Binary Search Trees (BST) - Most common Tree DS.
+If this sounds complicated, try to get the idea to begin with 😅.
 
-- What is BST:
-  - They are **really good at searching**, comparing things.
-  - This DS preserves relationships. Like folders, parent folder, subfolder etc., they have unlike Hash Tables.
-    - e.g.
-        101
-        /  \
-        33   105
-        / \    / \
-        9  37  104 144
-    - Here lookup is very easy you can find by going left of right depending on number.
-    - insert and delete are also O(log n). For example delete 105, decide which node takes place. Reordering those happens.
-      - Always traversing and with conditionals saving time to insert, delete.
-- Resource: https://visualgo.net/bn/bst?slide=1
+## Binary Search Trees (BST) - Most Common Tree Data Structure.
+
+What is BST?
+- They are **really good at searching** and comparing things.
+- BSTs preserves relationships. Like folders, parent folder, sub-folder etc., unlike Hash Tables.
+- Visual example:
+      101
+      /  \
+      33   105
+      / \    / \
+      9  37  104 144
+  - Here lookup is very easy you can find by going left of right depending on number.
+  - Insert and delete are also `O(log n)`. For example delete 105, decide which node to start.
+- Always use traversing and with conditionals saving time to insert, delete.
+- Read more: [https://visualgo.net/bn/bst?slide=1](https://visualgo.net/bn/bst?slide=1)
 
 
 ### BST Pros and Cons
 
-- Very good performance better than O(n), assuming bST is balanced.
+- Very good performance better than `O(n)`, assuming BST is balanced.
 - Ordered and flexible size.
-- No O(1) operations, since traversal is required.
-- BST is not the fastest, sometimes Arrays out perform them.
+- **No** O(1) operations, since traversal is required.
+- BST is not the fastest, sometimes Arrays outperform them.
 
-
-### Unbalanced vs Balances BST
+### Unbalanced vs Balanced BSTs
 
 - **Unbalanced BST**: Where are the nodes are either on the right or left. Becoming more like linked lists. Unbalanced become O(n) for lookup, insert, delete. 
-- **Balanced (PREFERRED)**: How do you balance your trees?
-  - By algorithms. Programming languages provide libraries and tools for this.
+- **Balanced (PREFERRED)**: 
+
+How do you balance your trees?
+By algorithms. Programming languages do provide libraries and tools to help you build them.
 
 
-### BST Exercise
+### BST In Code
 
 See below or click [here](https://repl.it/@fbohz/BlogBST-eg).
 
@@ -140,47 +143,50 @@ See below or click [here](https://repl.it/@fbohz/BlogBST-eg).
 - These trees are used a library and balance trees.
 - These balance the trees when finds they are not unbalanced.
 - There are resources for you to visualize them:
-  - https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7
-  - https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5
-  - https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
-  - https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+  - [https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7](https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7)
+  - [https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5](https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5)
+  - [https://www.cs.usfca.edu/~galles/visualization/AVLtree.html](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
+  - [https://www.cs.usfca.edu/~galles/visualization/RedBlack.html](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 
-### Binary Heaps and Trie
+### Heaps and Tries
 
 **Heaps**
 
-- Mostly Binary Heaps.
-  - **Parent greater than children**.
-  - Like priority queues, sorting algorightms.
-  - But left and right can be any value. So lookup as O(n) here.
-  - They are good at doing comparitve.
-  - **There's left to right insertion**. You can implement binary heap with arrays.
-- Priority Queue:
-  - Different than queues with FIFO.
-  - **Elements with higher priority are server before than lower priority**.
-  - Example of priority queue:
-    - Emerency room, airplane boarding.
-  - It gives a sense of structure and order.
+Heaps are mostly *Binary Heaps*.
+- **Parent greater than children**.
+- Like priority queues, sorting algorightms.
+- But left and right can be any value. So lookup as O(n) here.
+- They are good at doing comparitve.
+- **There's left to right insertion**. You can implement binary heap with arrays.
 
-`Memory Heap != Heap Data Structure in JS.`
-  
+Priority Queues:
+- Different than queues with FIFO.
+- **Elements with higher priority are server before than lower priority**.
+- Example of priority queue:
+  - Emergency room, airplane boarding.
+- It gives a sense of structure and order.
+
+**Remember**
+
+- `Memory Heap != Heap Data Structure in JS.`
 - Searching lookup is slower.
 - Gives idea of priority.
 - Most of the time insert is fast.
 - Methods like find max and fin min are available and very fast.
   
-**Trie:**
+**Trie**
 
 - Specialized tree used in searching, most often with text.
 - In most cases it outperform most data structures, depending what is doing.
-- How it works:
-  - Empty root node.
-  - Letters are added after.
-  - They are also called **prefixed tree**, like autocompleted.
-  - Used for searching words on dictionary, word suggestions. 
+
+**How Tries work**
+- Empty root node.
+- Letters are added after.
+- They are also called **prefixed tree**, like autocompleted.
+- Used for searching words on dictionary, word suggestions. 
 - Lookup here is fast, you look for length then move. Space complexity also has advantages. Prefixes save space.
 
-## Trees Conclusion
+## Recap on Trees
 
 - [**Arboreal.js**](https://github.com/afiore/arboreal) lets you use it and create the tree you want. You won't be creating trees from scratch.
 - You need to understand how they work.    
@@ -188,39 +194,45 @@ See below or click [here](https://repl.it/@fbohz/BlogBST-eg).
 
 ## Graphs
 
-Last data structure!
+Our last data structure! 🙌🏼
+
+What are Graphs?
 
 - Graph is a set of values related in pair fashion.
-  - Like a network
-  - Each item is called a node or vertex.
-  - Nodes are connected with edges.
-- They model real work relationships. Kind of like internet works. 
-- To represent roads, friends. Google maps uses graphs to determine shortest map.
+- Like a network
+- Each item is called a node or vertex.
+- Nodes are connected with edges.
+- They model real work relationships. Kind of like how the internet works. 
+- Used to represent roads, friends. Google maps uses graphs to determine the shortest route.
 - **Linked lists, trees are a type of graphs!**
 
+### Types of Graphs
 
-## Types of Graphs
+Directed vs Undirected
 
-- Directed vs Undirected
-    - **Directed**:
-      - One way street.
-      - Twitter is more directed if they follow me i don't necessarily follow them
-    - **Undirected**:
-      - Two way street.
-      - Facebook is undirected a friend can be connected to another
-- Unweighted and Weighted
-    - Weighted graphs has information in the edges / connections too.
-      - Google Maps uses weighted graphs. Like fastes way in 1-6.
-- Cyclic vs Acyclic
-    - If vertices are connected in a cycle are cyclic.
-      - Cyclic are common in weighted because there's a way to go back.
-  - Example: https://internet-map.net/
-- Directed Acyclic Graph is common in projects such as IOTA a blockchain project.
-    - Many trees can also create this data structure.
-  - There are some online graphs you can see and check to test your knowledge.
+- **Directed**:
+  - One way street.
+  - Twitter is more directed if they follow me i don't necessarily follow them
+- **Undirected**:
+  - Two way street.
+  - Facebook is undirected a friend can be connected to another
 
-## Graph Exercise
-- Building / representing a graph. Considering this graph how can you build it.
+Unweighted and Weighted
+
+- Weighted graphs has information in the edges / connections too.
+- Google Maps uses weighted graphs. Like fastest way in 1-6.
+
+Cyclic vs Acyclic
+
+- If vertices are connected in a cycle are cyclic.
+  - Cyclic are common in weighted because there's a way to go back.
+  - Example: [https://internet-map.net/](https://internet-map.net/)
+- Directed Acyclic Graph is common in projects such as IOTA a blockchain project. Many trees can also create this data structure.
+- There are some online graph resources you can see and check to test your knowledge.
+
+### Graph Exercise
+
+Building / representing a graph. Considering this graph how can you build it.
 ```
     2 - 0
     /  \
@@ -252,31 +264,34 @@ Some options:
   }
 ```
 
-## Exercise Graph Implementation:
+### Graph (Undirected / Unweighted) Implementation:
 
-- **Undirected / Unweighted Graph Example**.
-- Using adjacency list. For the adjacency list. **Use a hash table**.
+- Using adjacency list. **Use a hash table**.
 - We use objects because shifting/unshifting in Arrays is expensive.
 
 See below or click [here](https://repl.it/@fbohz/BlogGraphExample#index.js) for the example code.
 
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogGraphExample?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-## Review Graphs
+## Last Words on Graphs
 
 - They look pretty complex but they are pretty simple once you have other DS taken care of.
 - **In interviews graphs aren't that big because it takes time**.
-- Learn fundamentals.
-    - Think how you hold data in graphs such as adjacency matrix
-    - Types of graphs
-    - How you can create graphs.
+
+Learn the fundamentals.
+- Think how you hold data in graphs such as adjacency matrix
+- Types of graphs. How you can create graphs.
 - Performance and Big O is complicated because of so many graphs.
 - There are algorithms to help.
 - Scaling is hard as you will need a big team to build graph structures that scale well
-- [**Neo4j**](https://neo4j.com/) a tool to build complex structures as this.
+
+[**Neo4j**](https://neo4j.com/) a tool to build complex structures as this.
 
 # Data Structures (DS) Review
 
 - Technology is built on data structures. There might be more to come but you know the basics.
 - Blockchain has hashes, linked lists, tries etc. Anyone can build their own data structure.
 - With DS understood now you can take on algorithms that many companies ask.
+- Programming languages do provide libraries and tools to help you build many data structures. Don't feel you have to reinvent the wheel!
+
+**Remember** all this information is important to know it high level but do not worry if you can't grasp it all. The more you study it and see it and with time concepts will settle in and in no time you'll be making magic with data structures! 🧙🏾‍♂️
