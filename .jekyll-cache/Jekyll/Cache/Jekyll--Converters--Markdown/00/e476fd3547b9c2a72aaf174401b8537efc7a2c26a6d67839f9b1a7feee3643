@@ -1,4 +1,4 @@
-I"É#<blockquote>
+I"º#<blockquote>
   <p>Following in our cheatsheet series. We now tackle into Unix. As Web developers we live a lot in the terminal so knowing Unix commands is a key skill, so letâ€™s dive in!</p>
 </blockquote>
 
@@ -125,7 +125,5 @@ Backward Search</li>
 
 <h2 id="resources">Resources</h2>
 
-<ul>
-  <li>Read this <a href="https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management">article</a>.</li>
-</ul>
+<p>Read this <a href="https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management">article</a>.</p>
 :ET

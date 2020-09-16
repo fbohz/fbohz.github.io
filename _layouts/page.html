@@ -9,8 +9,8 @@ layout: default
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
                     <h1 class="w3-animate-zoom">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    <hr class="small">
-                    <span class="subheading">{% if page.title != "About Me" %}{{ site.description }}{% endif %}</span>
+                    <span class="subheading"><small>{% if page.subtitle %}{{ page.subtitle }}{% endif %}</small></span>
+                    <span class="subheading"><b>{% if page.title != "About Me" %}{{ site.description }}{% endif %}</b></span>
                 </div>
             </div>
         </div>

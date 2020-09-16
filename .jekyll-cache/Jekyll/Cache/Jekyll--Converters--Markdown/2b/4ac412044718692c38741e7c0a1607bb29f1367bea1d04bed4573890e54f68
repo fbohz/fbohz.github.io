@@ -1,4 +1,4 @@
-I"�6<blockquote>
+I"�9<blockquote>
   <p>Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver.</p>
 </blockquote>
 
@@ -22,8 +22,7 @@
 
 <ul>
   <li>Collection of values, you can have functions apply to them. Each one is different of what it can do.</li>
-  <li>They are specialized to do certain things. like tools. Most of the time they are prebuilt</li>
-  <li></li>
+  <li>They are specialized to do certain things. like tools. Most of the time they are prebuilt.</li>
   <li>You can put things in DS and take them out.</li>
   <li>There are <strong>ton of Data Structures</strong>. Most of them you wouldn’t encounter them most of the time.
     <ul>
@@ -56,8 +55,8 @@
 
 <ul>
   <li>Arrays are stored in sequential order, and have <strong>smallest footprint</strong>.</li>
-  <li>Array methods like lookup are fast O(1). Push O(1).</li>
-  <li>unshift or splice is O(n): so we think add items at beginning, or deleting for is not the best data structure to do so.</li>
+  <li>Array methods like lookup are fast <code class="highlighter-rouge">O(1)</code>. Push <code class="highlighter-rouge">O(1)</code>.</li>
+  <li>Unshift or splice is <code class="highlighter-rouge">O(n)</code>: so we think add items at beginning, or deleting for is not the best data structure to do so.</li>
 </ul>
 
 <p><strong>Static vs Dynamic Arrays</strong></p>
@@ -71,7 +70,7 @@
 
 <h1 id="hash-tables--objects-in-js">Hash Tables / (Objects in JS)</h1>
 
-<p>Like hashes in Ruby. They are named objects in JS:</p>
+<p>Like hashes in Ruby. They are referred as objects in JavaScript.</p>
 
 <ul>
   <li>Hash Tables allow to set key/value pair.
@@ -82,20 +81,20 @@
   </li>
   <li>Hash Functions:
     <ul>
-      <li>Fn that generates a value of fix length for every input received.</li>
-      <li>Idempotent: an fn given an input always has the same output.</li>
+      <li>Functions that generates a value of fix length for every input received.</li>
+      <li>Idempotent: an function that given an input always has the same output.</li>
     </ul>
   </li>
   <li>Hashes could be a bit slower because of hash functions.
     <ul>
-      <li>We need them to be really fast then. The hashing fn then is really fast.</li>
+      <li>We need them to be really fast then. The hashing function then is really fast.</li>
     </ul>
   </li>
   <li>When declared hash properties are created somewhere in memory.</li>
   <li>Accessing properties some cases can be O(1)</li>
   <li><strong>Probably most common interview question</strong>.
     <ul>
-      <li>Optimizing nested loops O(n^2) to O(n) with hash tables.</li>
+      <li>Optimizing nested loops <code class="highlighter-rouge">O(n^2)</code> to <code class="highlighter-rouge">O(n)</code> with hash tables.</li>
     </ul>
   </li>
 </ul>
@@ -119,14 +118,14 @@
       <li>You can deal with collisions many ones one of them is linked lists.</li>
     </ul>
   </li>
-  <li>So lookups in hash tables occasionally are O(n)</li>
+  <li>So lookups in hash tables occasionally are <code class="highlighter-rouge">O(n)</code>.</li>
   <li>As hashes do not have order, JS in ES6 implemented ways to have order such as Map() and Set() which are particular hashes/objects.</li>
 </ul>
 
 <p><strong>Hash Tables vs Arrays</strong></p>
 
 <ul>
-  <li>Hash tables allow very fast quick access to items O(1). Arrays in search are O(n)</li>
+  <li>Hash tables allow very fast quick access to items <code class="highlighter-rouge">O(1)</code>. Arrays in search are <code class="highlighter-rouge">O(n)</code>.</li>
   <li>Most of the time in hash tables insert is O(1), although there are collisions.</li>
   <li>Arrays are placed next to each other and not order. Hash tables are kind of all over the place.</li>
 </ul>
@@ -143,14 +142,14 @@
   <li>Two types: Singly and doubly.</li>
   <li>Remember arrays had bad performance with insert and delete and they had to re-arrange themselves in memory once in a while.</li>
   <li>Hashes brought problems like ordering. Hashes can be solved by linked lists.</li>
-  <li>What is a linked list?
-    <ul>
-      <li>Link lists have pointers to next node.</li>
-      <li>First node is called the head, and the last is usually the last node.</li>
-      <li>Linked lists are <strong>null terminated</strong> so the tail <strong>points to null</strong></li>
-      <li>So these lists are simply elements that link to each other and the last points to null.</li>
-    </ul>
-  </li>
+</ul>
+
+<p>What is a linked list?</p>
+<ul>
+  <li>Link lists have pointers to next node.</li>
+  <li>First node is called the head, and the last is usually the last node.</li>
+  <li>Linked lists are <strong>null terminated</strong> so the tail <strong>points to null</strong></li>
+  <li>So these lists are simply elements that link to each other and the last points to null.</li>
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">linkedList</span><span class="p">:</span> <span class="nx">apples</span> <span class="o">--&gt;</span> <span class="nx">grapes</span> <span class="o">--&gt;</span> <span class="nx">pears</span>
@@ -160,7 +159,7 @@
              <span class="mi">8742</span> <span class="o">--&gt;</span> <span class="nx">pears</span>
                        <span class="mi">372</span> <span class="o">--&gt;</span> <span class="kc">null</span>
 </code></pre></div></div>
-<p>Javascript <strong>doesn’t have linked lists</strong> but <strong>we can build linked lists</strong>.</p>
+<p>Javascript <strong>doesn’t have linked lists</strong> but <strong>we can build them</strong>.</p>
 
 <p><strong>Linked Lists vs Array vs Hashes</strong></p>
 <ul>
@@ -168,7 +167,7 @@
   <li>Array are located next to each other, linked lists are all over kind of like hashes</li>
   <li>Inserts in middle of linked lists are better than arrays.</li>
   <li>Linked lists have advantages from hash tables that it can sort data.</li>
-  <li>perpend and append is O(1), lookup, insert, delete is O(n).</li>
+  <li>Prepend and append is <code class="highlighter-rouge">O(1)</code>, lookup, insert, delete is <code class="highlighter-rouge">O(n)</code>.</li>
 </ul>
 
 <p>What is a pointer? Is a reference to another in memory. Example:</p>
@@ -192,12 +191,12 @@
 
 <ul>
   <li><code class="highlighter-rouge">insert()</code> is the hardest method to implement in linked lists.</li>
-  <li>all you’re doing is <strong>removing pointers</strong> or <strong>adding pointers</strong> as a way to add or delete from linked lists</li>
-  <li><strong>How is inserting and deleting O(1) in bigocheatsheet?</strong></li>
-  <li>One step to add a new item, constant time, independent of total list length, therefore O(1).</li>
-  <li>If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s O(n).</li>
-  <li>More: https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case</li>
+  <li>All you’re doing is <strong>removing pointers</strong> or <strong>adding pointers</strong> as a way to add or delete from linked lists</li>
+  <li><strong>How is inserting and deleting O(1)?</strong> One step to add a new item, constant time, independent of total list length, therefore <code class="highlighter-rouge">O(1)</code>.</li>
+  <li>If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s <code class="highlighter-rouge">O(n)</code>.</li>
 </ul>
+
+<p>Read more: <a href="https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case">https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case</a></p>
 
 <h2 id="doubly-linked-lists">Doubly Linked Lists</h2>
 
@@ -239,4 +238,6 @@
   <li>Linked Lists working with them can be difficult to manage all pointers but <strong>linked lists are useful in implementing browsing history, file systems etc</strong>.</li>
   <li>You might want to use linked lists when deleting in hash tables, but this is up to you.</li>
 </ul>
+
+<p>In our next chapter, things will get more interesting. So stay tuned for more data structures! 💫</p>
 :ET
