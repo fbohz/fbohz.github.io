@@ -6,7 +6,7 @@ permalink:  data-structures_pt2
 filename: 2020-09-16-data-structures_pt2
 ---
 
-> Learning about data structures is an essential part of becoming a more experienced developers. This is the second part of the series, and will be the longest one, buckle down.
+> Learning about data structures is an essential part of becoming a more experienced developer. This is the second part of the series (and will be the longest one), buckle down 🚀.
 
 # Learning About Data Structures Part 2
 
@@ -37,11 +37,11 @@ Uses:
 - If you have a wait-list app, could use queues. Restaurant to see if you have table, could use queues. Uber/Lyft uses queues. Printers too.
 - Methods are `enqueue()` O(1), `dequeue()` O(1) and `peek()` O(1). Again traversing is not recommended (lookup())
 - Dequeue() unlike pop() takes first one out whereas pop() in Stacks takes last.
-- *Do not build a queue using arrays since its inefficient*.
+
+*Reminder*: Do not build a queue using arrays since its inefficient.
 
 ## Stack and Queues Implementations
 
-How can you build stack and queues in JavaScript?
 - Stacks: Use Arrays or build out of Linked Lists
   - **Both work very well.** 
   - Think about what are your needs.
@@ -49,7 +49,9 @@ How can you build stack and queues in JavaScript?
   - Here **Arrays not recommended**. Because you have to traverse O(n) when you shift and remove.
   - Use always Linked Lists for queues.
 
-### Stack / Queues Examples
+So, how can you build stack and queues using JavaScript?
+
+### Stack / Queues Example
 
 See below or click [here](https://repl.it/@fbohz/BlogStackQueuesEG#index.js).
 
@@ -88,7 +90,7 @@ Examples: DOM is a tree data structure. HTML is parent then body is parent with 
   - **Perfect Binary tree** - nodes are full nothing is missing. They are efficient. Number of nodes double as it goes down. Second property states that bottom levels equal top levels + 1. **So there are some efficiencies here** as O(log N)
   - **Full binary tree** - the opposite and only meets requirements of binary tree.
 
-## `O(log n)`- Reminder
+### `O(log n)`- Reminder
 - There is a certain way to calculate num of nodes of perfect binary trees.
     - You calculate 2 to the power of level in question.
     - E.g. Level 0: 2^0 = 1. Number of nodes: 1. Lvl 2: 2^2 = 4. etc.
@@ -100,9 +102,9 @@ Examples: DOM is a tree data structure. HTML is parent then body is parent with 
 
 If this sounds complicated, try to get the idea to begin with 😅.
 
-## Binary Search Trees (BST) - Most Common Tree Data Structure.
+## Binary Search Trees (BST)
 
-What is BST?
+Most Common Tree Data Structure. What is BST?
 - They are **really good at searching** and comparing things.
 - BSTs preserves relationships. Like folders, parent folder, sub-folder etc., unlike Hash Tables.
 - Visual example:
@@ -114,7 +116,8 @@ What is BST?
   - Here lookup is very easy you can find by going left of right depending on number.
   - Insert and delete are also `O(log n)`. For example delete 105, decide which node to start.
 - Always use traversing and with conditionals saving time to insert, delete.
-- Read more: [https://visualgo.net/bn/bst?slide=1](https://visualgo.net/bn/bst?slide=1)
+
+Read more: [https://visualgo.net/bn/bst?slide=1](https://visualgo.net/bn/bst?slide=1)
 
 
 ### BST Pros and Cons
@@ -122,31 +125,35 @@ What is BST?
 - Very good performance better than `O(n)`, assuming BST is balanced.
 - Ordered and flexible size.
 - **No** O(1) operations, since traversal is required.
-- BST is not the fastest, sometimes Arrays outperform them.
+
+*Note*: BST is not the fastest, sometimes Arrays outperform them.
 
 ### Unbalanced vs Balanced BSTs
 
 - **Unbalanced BST**: Where are the nodes are either on the right or left. Becoming more like linked lists. Unbalanced become O(n) for lookup, insert, delete. 
-- **Balanced (PREFERRED)**: 
+- **Balanced (preferred)**: 
 
 How do you balance your trees?
 By algorithms. Programming languages do provide libraries and tools to help you build them.
 
 
-### BST In Code
+### BST Example In Code
 
 See below or click [here](https://repl.it/@fbohz/BlogBST-eg).
 
 
 ### AVL Trees + Red Black Tree (Balancing Binary Search Trees)
 
-- These trees are used a library and balance trees.
-- These balance the trees when finds they are not unbalanced.
-- There are resources for you to visualize them:
+- These trees are used with a library and balance trees.
+- These balance the trees when it finds they are not unbalanced.
+
+There are resources for you to visualize them:
   - [https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7](https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7)
   - [https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5](https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5)
   - [https://www.cs.usfca.edu/~galles/visualization/AVLtree.html](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
   - [https://www.cs.usfca.edu/~galles/visualization/RedBlack.html](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
+
+🤓📗 Always look up how to visualize trees and any data structure in fact. 
 
 ### Heaps and Tries
 
