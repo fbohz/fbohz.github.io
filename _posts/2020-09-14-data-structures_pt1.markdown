@@ -27,8 +27,7 @@ If you know about data structures you can adapt to other coding problems and lan
 Data Structures (DS):
 
 - Collection of values, you can have functions apply to them. Each one is different of what it can do.
-- They are specialized to do certain things. like tools. Most of the time they are prebuilt
--  
+- They are specialized to do certain things. like tools. Most of the time they are prebuilt.
 - You can put things in DS and take them out.
 - There are **ton of Data Structures**. Most of them you wouldn't encounter them most of the time.
   - E.g. Blockchain is a DS a way to hold info, Arrays and Objects in JS are DS.
@@ -69,19 +68,19 @@ Like hashes in Ruby. They are referred as objects in JavaScript.
   - with hash tables key is like our index in arrays.
   - this is done through a hash function.
 - Hash Functions:
-  - Fn that generates a value of fix length for every input received.
-  - Idempotent: an fn given an input always has the same output.
+  - Functions that generates a value of fix length for every input received.
+  - Idempotent: an function that given an input always has the same output.
 - Hashes could be a bit slower because of hash functions.
-  - We need them to be really fast then. The hashing fn then is really fast.
+  - We need them to be really fast then. The hashing function then is really fast.
 - When declared hash properties are created somewhere in memory.
 - Accessing properties some cases can be O(1)
 - **Probably most common interview question**.
-  - Optimizing nested loops O(n^2) to O(n) with hash tables.
+  - Optimizing nested loops `O(n^2)` to `O(n)` with hash tables.
 
 Remember: 
 
-  - Hashes have fast lookups, fast inserts, and flexible keys.
-  - However they are unordered and have slow key iteration.
+- Hashes have fast lookups, fast inserts, and flexible keys.
+- However they are unordered and have slow key iteration.
 - With hash tables we **increase space complexity (tradeoff)**
 
 **Hash Collisions**
@@ -112,11 +111,12 @@ Note: Usually string questions are **array questions**. Like reversing strings e
 - Two types: Singly and doubly.
 - Remember arrays had bad performance with insert and delete and they had to re-arrange themselves in memory once in a while. 
 - Hashes brought problems like ordering. Hashes can be solved by linked lists.
-- What is a linked list?
-  - Link lists have pointers to next node.
-  - First node is called the head, and the last is usually the last node.
-  - Linked lists are **null terminated** so the tail **points to null**
-  - So these lists are simply elements that link to each other and the last points to null.
+
+What is a linked list?
+- Link lists have pointers to next node.
+- First node is called the head, and the last is usually the last node.
+- Linked lists are **null terminated** so the tail **points to null**
+- So these lists are simply elements that link to each other and the last points to null.
 
 ```javascript
     linkedList: apples --> grapes --> pears
@@ -126,7 +126,7 @@ Note: Usually string questions are **array questions**. Like reversing strings e
              8742 --> pears
                        372 --> null
 ```
-Javascript **doesn't have linked lists** but **we can build linked lists**.
+Javascript **doesn't have linked lists** but **we can build them**.
 
 **Linked Lists vs Array vs Hashes**
 - In link list you start at head then traverse / iterate as needed until hit null
@@ -161,7 +161,8 @@ Check below or click [here](https://repl.it/@fbohz/BlogLinkedLists) for the code
 - **How is inserting and deleting O(1) in bigocheatsheet?**
 - One step to add a new item, constant time, independent of total list length, therefore O(1).
 - If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s O(n).
-- More: https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case
+
+More to read: [https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case](https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case)
 
 ## Doubly Linked Lists
 
