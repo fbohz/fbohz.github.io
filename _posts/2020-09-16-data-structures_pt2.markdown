@@ -107,14 +107,17 @@ If this sounds complicated, try to get the idea to begin with 😅.
 Most Common Tree Data Structure. What is BST?
 - They are **really good at searching** and comparing things.
 - BSTs preserves relationships. Like folders, parent folder, sub-folder etc., unlike Hash Tables.
-- Visual example:
+
+Visual example:
+```      
       101
       /  \
       33   105
       / \    / \
       9  37  104 144
-  - Here lookup is very easy you can find by going left of right depending on number.
-  - Insert and delete are also `O(log n)`. For example delete 105, decide which node to start.
+```
+- Here lookup is very easy you can find by going left of right depending on number.
+ - Insert and delete are also `O(log n)`. For example delete 105, decide which node to start.
 - Always use traversing and with conditionals saving time to insert, delete.
 
 Read more: [https://visualgo.net/bn/bst?slide=1](https://visualgo.net/bn/bst?slide=1)
@@ -161,9 +164,9 @@ There are resources for you to visualize them:
 
 Heaps are mostly *Binary Heaps*.
 - **Parent greater than children**.
-- Like priority queues, sorting algorightms.
-- But left and right can be any value. So lookup as O(n) here.
-- They are good at doing comparitve.
+- Like priority queues, sorting algorithms.
+- But left and right can be any value. So lookup as `O(n)` here.
+- They are good at doing comparative.
 - **There's left to right insertion**. You can implement binary heap with arrays.
 
 Priority Queues:
@@ -195,9 +198,10 @@ Priority Queues:
 
 ## Recap on Trees
 
-- [**Arboreal.js**](https://github.com/afiore/arboreal) lets you use it and create the tree you want. You won't be creating trees from scratch.
 - You need to understand how they work.    
 - Try to practice and build one from scratch.
+
+[**Arboreal.js**](https://github.com/afiore/arboreal) lets you use it and create the tree you want. You won't be creating trees from scratch.
 
 ## Graphs
 
@@ -211,7 +215,8 @@ What are Graphs?
 - Nodes are connected with edges.
 - They model real work relationships. Kind of like how the internet works. 
 - Used to represent roads, friends. Google maps uses graphs to determine the shortest route.
-- **Linked lists, trees are a type of graphs!**
+
+**Linked lists, trees are a type of graphs!**
 
 ### Types of Graphs
 
@@ -233,9 +238,10 @@ Cyclic vs Acyclic
 
 - If vertices are connected in a cycle are cyclic.
   - Cyclic are common in weighted because there's a way to go back.
-  - Example: [https://internet-map.net/](https://internet-map.net/)
 - Directed Acyclic Graph is common in projects such as IOTA a blockchain project. Many trees can also create this data structure.
 - There are some online graph resources you can see and check to test your knowledge.
+
+Example: [https://internet-map.net/](https://internet-map.net/)
 
 ### Graph Exercise
 
