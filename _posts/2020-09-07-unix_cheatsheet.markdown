@@ -88,4 +88,4 @@ Backward Search
 
 ## Resources
 
-- Read this [article](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management).
+Read this [article](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management).
