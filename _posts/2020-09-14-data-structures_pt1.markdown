@@ -50,8 +50,8 @@ Data Structures (DS):
 ## Arrays
 
 - Arrays are stored in sequential order, and have **smallest footprint**.
-- Array methods like lookup are fast O(1). Push O(1). 
-- unshift or splice is O(n): so we think add items at beginning, or deleting for is not the best data structure to do so.
+- Array methods like lookup are fast `O(1)`. Push `O(1)`. 
+- Unshift or splice is `O(n)`: so we think add items at beginning, or deleting for is not the best data structure to do so.
 
 **Static vs Dynamic Arrays**
 
@@ -90,12 +90,12 @@ Remember:
   - When two data are stored in same memory spaces, hashes needs to do something to deal with it.
   - Hash collisions theoretically **slows downs reading and writing as O(n)**
   - You can deal with collisions many ones one of them is linked lists.
-- So lookups in hash tables occasionally are O(n)
+- So lookups in hash tables occasionally are `O(n)`.
 - As hashes do not have order, JS in ES6 implemented ways to have order such as Map() and Set() which are particular hashes/objects.
 
 **Hash Tables vs Arrays**
 
-- Hash tables allow very fast quick access to items O(1). Arrays in search are O(n)
+- Hash tables allow very fast quick access to items `O(1)`. Arrays in search are `O(n)`.
 - Most of the time in hash tables insert is O(1), although there are collisions.
 - Arrays are placed next to each other and not order. Hash tables are kind of all over the place.
 
@@ -133,7 +133,7 @@ Javascript **doesn't have linked lists** but **we can build them**.
 - Array are located next to each other, linked lists are all over kind of like hashes
 - Inserts in middle of linked lists are better than arrays.
 - Linked lists have advantages from hash tables that it can sort data.
-- perpend and append is O(1), lookup, insert, delete is O(n). 
+- Prepend and append is `O(1)`, lookup, insert, delete is `O(n)`. 
 
 What is a pointer? Is a reference to another in memory. Example: 
 
@@ -157,10 +157,9 @@ Check below or click [here](https://repl.it/@fbohz/BlogLinkedLists) for the code
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogLinkedLists?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 - `insert()` is the hardest method to implement in linked lists.
-- all you're doing is **removing pointers** or **adding pointers** as a way to add or delete from linked lists
-- **How is inserting and deleting O(1) in bigocheatsheet?**
-- One step to add a new item, constant time, independent of total list length, therefore O(1).
-- If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s O(n).
+- All you're doing is **removing pointers** or **adding pointers** as a way to add or delete from linked lists
+- **How is inserting and deleting O(1)?** One step to add a new item, constant time, independent of total list length, therefore `O(1)`.
+- If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s `O(n)`.
 
 More to read: [https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case](https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case)
 
