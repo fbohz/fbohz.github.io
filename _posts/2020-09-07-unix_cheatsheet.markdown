@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Unix Cheatsheet"
+title:      "Unix Cheatsheet🤓📗"
 date:       2020-09-07 07:31:03 -0400
 permalink:  unix_cheatsheet
 filename: 2020-09-07-unix_cheatsheet
