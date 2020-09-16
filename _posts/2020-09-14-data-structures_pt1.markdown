@@ -161,7 +161,7 @@ Check below or click [here](https://repl.it/@fbohz/BlogLinkedLists) for the code
 - **How is inserting and deleting O(1)?** One step to add a new item, constant time, independent of total list length, therefore `O(1)`.
 - If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s `O(n)`.
 
-More to read: [https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case](https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case)
+Read more: [https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case](https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case)
 
 ## Doubly Linked Lists
 
