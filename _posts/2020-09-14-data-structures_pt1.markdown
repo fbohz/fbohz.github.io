@@ -63,7 +63,7 @@ With this in mind `push` can also be O(n). JS usually doubles space when creatin
 
 # Hash Tables / (Objects in JS)
 
-Like hashes in Ruby. They are named objects in JS: 
+Like hashes in Ruby. They are referred as objects in JavaScript. 
 
 - Hash Tables allow to set key/value pair.
   - with hash tables key is like our index in arrays.
@@ -197,3 +197,5 @@ Reverse singly list. Create method reverse() that will reverse singly list. See 
 - Linked Lists have slow lookup and more memory. But they are ordered, fast deletion/insertion and flexible size.
 - Linked Lists working with them can be difficult to manage all pointers but **linked lists are useful in implementing browsing history, file systems etc**.
 - You might want to use linked lists when deleting in hash tables, but this is up to you.
+
+In our next chapter, things will get more interesting. So stay tuned for more data structures! 💫

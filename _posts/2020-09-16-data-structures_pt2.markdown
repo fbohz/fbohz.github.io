@@ -289,7 +289,7 @@ See below or click [here](https://repl.it/@fbohz/BlogGraphExample#index.js) for 
 ## Last Words on Graphs
 
 - They look pretty complex but they are pretty simple once you have other DS taken care of.
-- **In interviews graphs aren't that big because it takes time**.
+- **In interviews graphs aren't that big because it takes time to build them**.
 
 Learn the fundamentals.
 - Think how you hold data in graphs such as adjacency matrix
