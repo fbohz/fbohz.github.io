@@ -302,9 +302,10 @@ Learn the fundamentals.
 
 # Data Structures (DS) Review
 
-- Technology is built on data structures. There might be more to come but you know the basics.
-- Blockchain has hashes, linked lists, tries etc. Anyone can build their own data structure.
-- With DS understood now you can take on algorithms that many companies ask.
-- Programming languages do provide libraries and tools to help you build many data structures. Don't feel you have to reinvent the wheel!
+- Technology is built on data structures. There might be more to come but make sure you have a strong foundation on the basics.
+- Anyone can build their own data structure. E.g. with Blockchain we have special hashes, linked lists, tries etc. 
+- With DS understood now you can take on algorithms, the other piece of the puzzle that many large companies ask.
+- Programming languages do provide libraries and tools to help you build many data structures.
+- Don't feel you have to reinvent the wheel!
 
-**Remember** all this information is important to know it high level but do not worry if you can't grasp it all. The more you study it and see it and with time concepts will settle in and in no time you'll be making magic with data structures! 🧙🏾‍♂️
+**Remember** all this information is important to know it high level but do not worry if you can't grasp it all. The more you study it and see it and with time concepts will settle in and. In no time you'll be making magic with data structures! 🧙🏾‍♂️
