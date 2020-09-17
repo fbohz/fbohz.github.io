@@ -65,8 +65,8 @@ With this in mind `push` can also be O(n). JS usually doubles space when creatin
 Like hashes in Ruby. They are referred as objects in JavaScript. 
 
 - Hash Tables allow to set key/value pair.
-  - with hash tables key is like our index in arrays.
-  - this is done through a hash function.
+  - With hash tables key is like our index in arrays.
+  - This is done through a hash function.
 - Hash Functions:
   - Functions that generates a value of fix length for every input received.
   - Idempotent: an function that given an input always has the same output.
@@ -74,14 +74,14 @@ Like hashes in Ruby. They are referred as objects in JavaScript.
   - We need them to be really fast then. The hashing function then is really fast.
 - When declared hash properties are created somewhere in memory.
 - Accessing properties some cases can be O(1)
-- **Probably most common interview question**.
+- **Probably the most common interview question**.
   - Optimizing nested loops `O(n^2)` to `O(n)` with hash tables.
 
 Remember: 
 
 - Hashes have fast lookups, fast inserts, and flexible keys.
 - However they are unordered and have slow key iteration.
-- With hash tables we **increase space complexity (tradeoff)**
+- With hash tables we **increase space complexity (tradeoff)**.
 
 **Hash Collisions**
 
