@@ -102,16 +102,15 @@ Other lifecycle methods:
 
 Check out this useful [diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) on React lifecycle methods.
 
+**Dawn of SPAs**
 
-**Birth of SPAs**
+Before you used to make requests to the backend you'll visit one or another page. Now with SPAs, although the Javascript file is bigger, we don't have to keep coming back to request a new page to the server. Today we just *request for data* and refresh any part of page we need. 
 
-Before you used to make requests to the backend you'll visit one or another page. Now with SPAs although the JS file is bigger, we don't have to keep coming back to request a new page to the server and just *request for data* and refresh any part of page we need. 
-
-So with SPAs you'll start talking with APIs to get the data you need. So we build pages dynamically depending on user input.
+So with SPAs you'll start talking with APIs to get the data you need. We build pages dynamically depending on user input.
 
 **When do we decide to break a part of our app into a component?**
 
-This is key for you to practice and know as a React developer. You should decide this for your self. The idea is that you can reuse this components on other applications and make things more flexible. So you start building your component library. Learn more about component libraries [here](http://fbohz.com/component_library_storybook). 
+This is key for you to practice and know as a React developer. You should decide this for yourself. The idea is that you can reuse this components on other applications and make things more flexible. So you start building your component library. Learn more about component libraries [here](http://fbohz.com/component_library_storybook). 
 
 **State and Props**
 
@@ -121,18 +120,22 @@ Remember you can also put state wherever you want. You'll have to practice how t
 
 When you work on your tree of state you might want to *lift state* to parent components so that it can be shared by children. 
 
+Managing state can become tedious and complicated at best, we recommend you using [Redux](https://redux.js.org/) state management add-on as your state gets more complicated. 
+
 **Synchronous vs Asynchronous**
 
-Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React does not know. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. In order to see change after when using setState you must use the second argument on its syntax.
+Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React does not know. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. 
+
+In order to see change after when using setState you must use the second argument on its syntax. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
 
 **Virtual DOM**
 
-Remember we don't directly (imperatively) change the DOM. React takes care of through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own parameters that is why React feels so fast. 
+Remember we don't directly (imperatively) change the DOM. React takes care of the DOM through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own patterns, that is why React feels so fast. 
 
-So React takes all the hard work on showing and hiding elements from the DOM for us but we have to learn its mechanism for re-render and how we manage state. 
+So React takes all the hard work on showing and hiding elements from the DOM for us, but we have to learn its re-render mechanism and how we manage state. This will make us a pro React developer.
 
 
-## So how, can I be a top React developer?
+## How Can I be a Top React Developer?
 
 - **Decide on Components**: What is a component and how you will divide the app.
 - Decide on **state and where it lives**.
