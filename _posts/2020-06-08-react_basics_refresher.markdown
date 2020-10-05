@@ -33,7 +33,7 @@ This is a React refresher on the basics, **recommended to those with experience 
   - Reusable components and we can use many component NPM packages. E.g React.Bootstrap, Blueprint etc.
 - *Unidirectional* Data Flow.
   - Anytime we want something to change `state` has to change.
-  - Data flows oneway. State changes and trickle down. Data can't move up.
+  - Data flows one way. State changes and trickle down. Data can't move up.
   - This could allow for easier debugging.
   - Angular is often thought as the opposite.
 - React is not a framework
