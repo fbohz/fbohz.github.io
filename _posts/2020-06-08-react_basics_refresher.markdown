@@ -15,7 +15,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 - Back in the day, websites had synchronous tasks from the backend, and refreshed the page every time new data was needed.
 - jQuery took care of complexities and also worked in all browsers
-- Backbone.js allowed to organize these js files.
+- Backbone.js allowed to organize these .js files.
 - Single Page Applications (SPA) were born out of working more and more with the DOM.
   - AJAX downloading all files at once. JS updating as needed.
 - Angular.js was born out of this. It had containers that wrap a project. It also had an MVC pattern.
