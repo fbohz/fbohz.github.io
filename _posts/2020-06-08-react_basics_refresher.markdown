@@ -45,13 +45,13 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 ## Create React App
 
-- Run as as `npx create-react-app myAppName`
-- Create React App is CLI created so we can build fast React apps.
-- `npx` allows you to build using Create React App without globally installing it first.
-- `react-scripts` does things for us so we don't worry about webpack nor Babel. 
-- When we do `build` on React project, it will take all code inside src and bring it to public folder.
+- Run as `npx create-react-app <app-name>`
+- Create-React-App is CLI created so we can build fast apps.
+- `npx` allows you to build using Create-React-App without globally installing it first.
+- When we do `build` on React project, it will take all code inside src folder and bring it to public folder.
 - Babel will make sure that the JS files will work on all browsers.
 - Webpack is a module bundler that allows to write modular code. It takes all our Javascript and optimizes it for us.
+- `react-scripts` does things for us so we don't worry about Webpack nor Babel. 
 - React library allows us to write JSX. ReactDOM like the virtual DOM which interacts with the actual DOM, and makes DOM decisions for us.
 
 **Warning: Ejecting Create-React-App**
@@ -76,15 +76,15 @@ Our React components act like custom elements that we can mix with common HTML e
 
 You can have react components as classes or as functions. React class components have a `render()` method. We use classes to get access to `state` and `setState` to change state. We build these with ES6 `class` syntax.
 
-To be able to do special things we get to use the special attribute `props` that carry data, functions and everything to make our application work effectively.
+To be able to do special things we get to use the special attribute `props` that carry data, functions and anything in between to make our application work effectively.
 
-We can also have components that *do not* extend from `React.Component`. We can also get access to state via *hooks*. We build this with ES6 arrow function syntax. In the past these functional components only received props and returned HTML form JSX. With hooks, this has changed.
+We can also have components that *do not* extend from `React.Component`. We can also get access to state via *hooks*. We build this with ES6 arrow functions. In the past these functional components only received props and returned HTML form JSX. With hooks, this has changed.
 
-Last thing. You might notice on Class Components could have methods and arrow function declarations inside. 
+You might notice how Class Components could have methods and arrow function declarations inside. 
 
 **Good Rule of Thumb**: 
 
-Use *arrow functions* on any class methods you define that aren't part of React (i.e. render(), componentDidMount()).
+Use *arrow functions* on any class methods you define that aren't part of React (i.e. render or componentDidMount.
 
 **React Lifecycle Methods (Class Components)**
 
@@ -104,35 +104,37 @@ Check out this useful [diagram](https://projects.wojtekmaj.pl/react-lifecycle-me
 
 **Dawn of SPAs**
 
-Before you used to make requests to the backend and you'll visit one or more pages. Now with SPAs, although the Javascript file is bigger, we don't have to keep coming back to request a new page to the server. Today we just *request for data* and refresh any part of page we need. 
+Before you used to make requests to the backend and you'll visit one or more pages. Now with SPAs (although the Javascript file is bigger) we don't have to keep coming back to request a new page to the server. Today we just *request for data* and refresh any part of page we need. 
 
-So with SPAs you'll start talking with APIs to get the data you need. We build pages dynamically depending on user input.
+So with SPAs you'll start talking with APIs to get the data you need. We build pages dynamically depending on user input/interaction.
 
-**When do we decide to break a part of our app into a component?**
+**How do we decide to break a part of our app into a component?**
 
-This is key for you to practice and know as a React developer. You should decide this for yourself. The idea is that you can reuse this components on other applications and make things more flexible. So you start building your component library. Learn more about component libraries [here](http://fbohz.com/component_library_storybook). 
+This is key for you to practice and know as a React developer. You should decide this for yourself. The idea is that you can reuse this components on other applications and make things more flexible. So you start building your component library. 
+
+Learn more about component libraries [here](http://fbohz.com/component_library_storybook). 
 
 **State and Props**
 
 When we pass down state, this is usually received as prop by children. This is related to *one way data flow* of React. 
 
-Remember you can also put state wherever you want. You'll have to practice how to implement that. Every time state changes there might be implications on re-render and could apply performance. You'll start creating a *tree of state* that changes effect trickle down.
+Remember you can also put state wherever you want. You'll have to practice how to implement that. Every time state changes there might be implications on re-render and could affect performance. You'll start seeing how there is a *tree of state* that any changes might have trickle down effects.
 
 When you work on your tree of state you might want to *lift state* to parent components so that it can be shared by children. 
 
-Managing state can become tedious and complicated at best, we recommend you using [Redux](https://redux.js.org/) state management add-on as your state gets more complicated. 
+Managing state can become tedious and complicated at best, we recommend using [Redux](https://redux.js.org/) state management add-on as your state gets more complicated. 
 
 **Synchronous vs Asynchronous**
 
-Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React does not know. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. 
+Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React knows. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. 
 
-In order to see change after when using setState you must use the second argument on its syntax. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
+Tip: In order to see changes after using setState you must use the second argument on its syntax. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
 
 **Virtual DOM**
 
 Remember we don't directly (imperatively) change the DOM. React takes care of the DOM through the virtual DOM. React has what is called `synthetic event`, which it means that React will interfere on all events and decide what to do. React only deals with the real DOM when it sees fit and with its own patterns, that is why React feels so fast. 
 
-So React takes all the hard work on showing and hiding elements from the DOM for us, but we have to learn its re-render mechanism and how we manage state. This will make us a pro React developer.
+So React takes all the hard work on showing and hiding elements from the DOM for us. But we have to learn its re-render mechanism and how to manage state. This will make us a pro React developer.
 
 
 ## How Can I be a Top React Developer?
