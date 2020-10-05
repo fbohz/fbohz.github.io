@@ -33,7 +33,7 @@ This is a React refresher on the basics, **recommended to those with experience 
   - Reusable components and we can use many component NPM packages. E.g React.Bootstrap, Blueprint etc.
 - *Unidirectional* Data Flow.
   - Anytime we want something to change `state` has to change.
-  - Data flows one way. State changes and trickle down. Data can't move up.
+  - Data flows oneway. State changes and trickle down. Data can't move up.
   - This could allow for easier debugging.
   - Angular is often thought as the opposite.
 - React is not a framework
@@ -128,7 +128,7 @@ Managing state can become tedious and complicated at best, we recommend using [R
 
 Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React knows. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. 
 
-Tip: In order to see changes after using setState you must use the second argument on its syntax. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
+Tip: In order to see changes after using setState you must use its second argument. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
 
 **Virtual DOM**
 
@@ -136,12 +136,11 @@ Remember we don't directly (imperatively) change the DOM. React takes care of th
 
 So React takes all the hard work on showing and hiding elements from the DOM for us. But we have to learn its re-render mechanism and how to manage state. This will make us a pro React developer.
 
-
 ## How Can I be a Top React Developer?
 
-- **Decide on Components**: What is a component and how you will divide the app.
-- Decide on **state and where it lives**.
-- Know **what changes when state changes**.
+1) **Decide on Components**: What is a component and how will you divide the app.
+2) Decide on **state and where it lives**. Decide how you'll manage state (e.g. Redux, hooks, or props).
+3) Know **what changes when state changes**.
 
 ## Resources
 
