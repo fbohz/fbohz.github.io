@@ -82,7 +82,7 @@ We can also have components that *do not* extend from `React.Component`. We can 
 
 Last thing. You might notice on Class Components could have methods and arrow function declarations inside. 
 
-*Good Rule of Thumb**: 
+**Good Rule of Thumb**: 
 
 Use *arrow functions* on any class methods you define that aren't part of React (i.e. render(), componentDidMount()).
 
