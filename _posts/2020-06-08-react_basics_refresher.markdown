@@ -58,7 +58,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 - You have all scripts for Webpack to build, start and test your app.
 - It's a lot of code, so not recommended to eject. 
-- It is like a lot of competing with developers that work full time on this. They keep up-to-date with industry trends.
+- It is a lot like competing with a team of developers that work full time on this. They keep up-to-date with industry trends.
 
 ## Expanding React Key Concepts
 
