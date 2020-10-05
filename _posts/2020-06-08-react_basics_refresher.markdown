@@ -26,15 +26,16 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 -  React virtual DOM (don't touch the DOM). React will do it. 
    - *Imperative Programming*: Changing directly the DOM through JS (e.g. `getElementById`). This approach has that it becomes difficult to point and identify relationships between events.
-   - *Declarative Programming*: Declares to React what the state or data should look like. React will make the decision of how to implement it. This `state` is one big JS object. Resulting in less complexity, faster developer times. 
+   - *Declarative Programming*: Declares to React what the state or data should look like. React will make the decision of how to implement it. This `state` is one big JavaScript object. Resulting in less complexity, and faster developer times. 
 - *Components* 
-  - Put together they form bigger components and form the whole app. You can copy these components and reuse them. Components are built with JSX.
-  - Reusable components e.g. React.bootstrap, Blueprint etc.
+  - Put them together and they form bigger components and the whole app. You can copy these components and reuse them. 
+  - Components are built with JSX. JSX stands for JavaScript XML. JSX allows us to write HTML with JavaScript.
+  - Reusable components and we can use many component NPM packages. E.g React.Bootstrap, Blueprint etc.
 - *Unidirectional* Data Flow.
-  - Anytime we want something to change 'state' has to change.
+  - Anytime we want something to change `state` has to change.
   - Data flows one way. State changes and trickle down. Data can't move up.
   - This could allow for easier debugging.
-  - Angular is opposite here.
+  - Angular is often thought as opposite here.
 - React is not a framework
   - Angular is a framework and gives you everything. 
   - *React is a library* and lets you use any tools you want from outside.
@@ -49,14 +50,15 @@ This is a React refresher on the basics, **recommended to those with experience 
 - `npx` allows you to build using Create React App without globally installing it first.
 - `react-scripts` does things for us so we don't worry about webpack nor Babel. 
 - When we do `build` on React project, it will take all code inside src and bring it to public folder.
-- Babel will make sure that the JS files will work on all browser.
-- Webpack is a module bundler. Let us write modular code. It takes all our javascript and optimize it for us.
-- React library allows us to write JSX. ReactDOM like the virtual DOM which interacts with the actual DOM.
+- Babel will make sure that the JS files will work on all browsers.
+- Webpack is a module bundler that allows to write modular code. It takes all our Javascript and optimizes it for us.
+- React library allows us to write JSX. ReactDOM like the virtual DOM which interacts with the actual DOM, and makes DOM decisions for us.
 
-**Warning: Ejecting Create React App**
+**Warning: Ejecting Create-React-App**
 
-- You have all scripts for webpack and build, start and test scripts.
-- It's a lot of code, so not recommended to eject. It is like a lot of competing with developers that work full time on this. They keep up-to-date with industry trends.
+- You have all scripts for Webpack to build, start and test your app.
+- It's a lot of code, so not recommended to eject. 
+- It is like a lot of competing with developers that work full time on this. They keep up-to-date with industry trends.
 
 ## Expanding React Key Concepts
 
@@ -64,25 +66,29 @@ This is a React refresher on the basics, **recommended to those with experience 
 
 JSX has different keywords such as `className` instead of regular HTML 'class'. Also anything in between `{}` is JavaScript injected through JSX.
 
-React always intercepts all events and then we use setState to trigger a *re-render*, because state just got updated. 
+React always intercepts all events and then we use setState to trigger a *re-render*. React re-renders anytime state is updated. 
 
-JSX creates that virtual DOM and then re-renders as state changes.
+So JSX creates that virtual DOM with state and then React re-renders the DOM as state changes.
 
 **React Components**
 
-You can have react components as classes just as functions. React class components have a `render()` method. We use classes to get access to `state` and `setState` to change state. We build these with `class` syntax.
-
-We can also have components that *do not* extend from `React.Component`, we can also get access to state via *hooks*. We build this with ES6 arrow function syntax. In the past these functional components only received props and returned HTML form JSX.
-
 Our React components act like custom elements that we can mix with common HTML elements but with special powers! 
+
+You can have react components as classes or as functions. React class components have a `render()` method. We use classes to get access to `state` and `setState` to change state. We build these with ES6 `class` syntax.
 
 To be able to do special things we get to use the special attribute `props` that carry data, functions and everything to make our application work effectively.
 
-Last thing. You might notice on Class Components could have methods and arrow function declarations inside. A good rule of thumb is this: *Use arrow functions on any class methods you define and aren't part of React (i.e. render(), componentDidMount())*.
+We can also have components that *do not* extend from `React.Component`. We can also get access to state via *hooks*. We build this with ES6 arrow function syntax. In the past these functional components only received props and returned HTML form JSX. With hooks, this has changed.
+
+Last thing. You might notice on Class Components could have methods and arrow function declarations inside. 
+
+**A good rule of thumb is this**: 
+
+Use *arrow functions* on any class methods you define and aren't part of React (i.e. render(), componentDidMount()).
 
 **React Lifecycle Methods (Class Components)**
 
-They are methods that get called automatically by React in particular instances of the component life.
+They are methods that get called automatically by React in particular instances of its component life.
 
 1. `constructor()`: Called first. Allows the class to have access to lifecycle components. Here is where you declare your state.
 2. `render()`: Render is called next to display HTML.
