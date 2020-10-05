@@ -18,7 +18,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 - Backbone.js allowed to organize these .js files.
 - Single Page Applications (SPA) were born out of working more and more with the DOM.
   - AJAX downloading all files at once. JS updating as needed.
-- Angular.js was born out of this. It had containers that wrap a project. It also had an MVC pattern.
+- Angular.js was born out of this. It had containers that wrap the project. It also had an MVC pattern.
     - Angular in the beginning was very complex. Data flowing everywhere and app maintenance was harder.
 - In 2013 React was released by Facebook. In 2014 Angular was also rewritten as a response.
 
