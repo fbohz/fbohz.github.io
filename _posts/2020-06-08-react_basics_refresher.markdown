@@ -35,7 +35,7 @@ This is a React refresher on the basics, **recommended to those with experience 
   - Anytime we want something to change `state` has to change.
   - Data flows one way. State changes and trickle down. Data can't move up.
   - This could allow for easier debugging.
-  - Angular is often thought as opposite here.
+  - Angular is often thought as the opposite.
 - React is not a framework
   - Angular is a framework and gives you everything. 
   - *React is a library* and lets you use any tools you want from outside.
