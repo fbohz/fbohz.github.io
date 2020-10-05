@@ -84,7 +84,7 @@ Last thing. You might notice on Class Components could have methods and arrow fu
 
 *Good Rule of Thumb**: 
 
-Use *arrow functions* on any class methods you define and aren't part of React (i.e. render(), componentDidMount()).
+Use *arrow functions* on any class methods you define that aren't part of React (i.e. render(), componentDidMount()).
 
 **React Lifecycle Methods (Class Components)**
 
