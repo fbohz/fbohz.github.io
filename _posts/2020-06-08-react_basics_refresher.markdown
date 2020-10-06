@@ -104,7 +104,7 @@ Check out this useful [diagram](https://projects.wojtekmaj.pl/react-lifecycle-me
 
 **Dawn of SPAs**
 
-Before you used to make requests to the backend and you'll visit one or more pages. Now with SPAs (although the Javascript file is bigger) we don't have to keep coming back to request a new page to the server. Today we just *request for data* and refresh any part of page we need. 
+Before you used to make requests to the backend and you'll visit one or more pages. Now with SPAs (although the Javascript file is bigger) we don't have to keep coming back to request a new page to the server. Today we just *request for data* and refresh any part of the page we need. 
 
 So with SPAs you'll start talking with APIs to get the data you need. We build pages dynamically depending on user input/interaction.
 
