@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "React "5 Minute" Refresher"
+title:      React "5 Minute" Refresher
 date:       2020-06-08 19:31:03 -0400
 permalink:  react_basics_refresher
 ---
