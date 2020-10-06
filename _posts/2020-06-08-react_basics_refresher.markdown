@@ -128,7 +128,7 @@ Managing state can become tedious and complicated at best, we recommend using [R
 
 Remember this distinction. Synchronous happens literally immediately. Async takes time that JavaScript nor React knows. JS runs the code after it, and then returns when the promise is resolved. React `setState()` is async, because React decides for itself when is the best time to run it. 
 
-Tip: In order to see changes after using setState you must use its second argument. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea).
+Tip: In order to see changes after using setState you must use its second argument. [Read more](https://medium.com/@yelstin.fernandes/using-setstates-optional-second-parameter-in-react-js-1ecd5de6f1ea). There has been state management improvements specially with Hooks. However Redux has been well tested for scale. Do stick to Redux to manage more complex state.
 
 **Virtual DOM**
 
