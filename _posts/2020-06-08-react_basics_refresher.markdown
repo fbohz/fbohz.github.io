@@ -43,7 +43,7 @@ This is a React refresher on the basics, **recommended to those with experience 
   - React Native
   - React Desktop and React 360 (VR)
 
-## Create React App
+## Create-React-App
 
 - Run as `npx create-react-app <app-name>`
 - Create-React-App is CLI created so we can build fast apps.
@@ -74,7 +74,7 @@ So JSX creates that virtual DOM with state and then React re-renders the DOM as 
 
 Our React components act like custom elements that we can mix with common HTML elements but with special powers! 
 
-You can have react components as classes or as functions. React class components have a `render()` method. We use classes to get access to `state` and `setState` to change state. We build these with ES6 `class` syntax.
+You can have React components as classes or as functions. React class components have a `render()` method. We use classes to get access to `state` and `setState` to change state. We build these with ES6 `class` syntax.
 
 To be able to do special things we get to use the special attribute `props` that carry data, functions and anything in between to make our application work effectively.
 
