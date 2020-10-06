@@ -78,13 +78,13 @@ You can have React components as classes or as functions. React class components
 
 To be able to do special things we get to use the special attribute `props` that carry data, functions and anything in between to make our application work effectively.
 
-We can also have components that *do not* extend from `React.Component`. We can also get access to state via *hooks*. We build this with ES6 arrow functions. In the past these functional components only received props and returned HTML form JSX. With hooks, this has changed.
+We can also have components that *do not* extend from `React.Component`. We can also get access to state via *hooks*. We build this with ES6 arrow functions. In the past these functional components only received props and returned HTML from JSX. With hooks, this has changed.
 
 You might notice how Class Components could have methods and arrow function declarations inside. 
 
 **Good Rule of Thumb**: 
 
-Use *arrow functions* on any class methods you define that aren't part of React (i.e. render or componentDidMount).
+Use *arrow functions* on any methods you define that aren't part of React (i.e. render or componentDidMount).
 
 **React Lifecycle Methods (Class Components)**
 
