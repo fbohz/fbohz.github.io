@@ -1,13 +1,13 @@
 ---
 layout: post
-title:      React "5 Minute" Refresher
+title:      React ⏱ "5 Minute" Refresher
 date:       2020-06-08 19:31:03 -0400
 permalink:  react_basics_refresher
 ---
 
 > This is a React refresher on the basics...If you're new to React this should get you started on a conceptual realm. 
 
-# React "5 Minute" Refresher
+# React ⏱ "5 Minute" Refresher
 
 This is a React refresher on the basics, **recommended to those with experience in React**. If you're new to React this should get you started on a conceptual realm. 
 
