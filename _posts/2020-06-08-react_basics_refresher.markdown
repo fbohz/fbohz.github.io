@@ -1,13 +1,13 @@
 ---
 layout: post
-title:      "React 5 Minute Refresher"
+title:      "React "5 Minute" Refresher"
 date:       2020-06-08 19:31:03 -0400
 permalink:  react_basics_refresher
 ---
 
 > This is a React refresher on the basics...If you're new to React this should get you started on a conceptual realm. 
 
-# React 5 Minute Refresher
+# React "5 Minute" Refresher
 
 This is a React refresher on the basics, **recommended to those with experience in React**. If you're new to React this should get you started on a conceptual realm. 
 
@@ -136,7 +136,7 @@ Remember we don't directly (imperatively) change the DOM. React takes care of th
 
 So React takes all the hard work on showing and hiding elements from the DOM for us. But we have to learn its re-render mechanism and how to manage state. This will make us a pro React developer.
 
-## How Can I be a Top React Developer?
+## How Can I be a Top React Developer? 🚀
 
 1) **Decide on Components**: What is a component and how will you divide the app.
 2) Decide on **state and where it lives**. Decide how you'll manage state (e.g. Redux, hooks, or props).
