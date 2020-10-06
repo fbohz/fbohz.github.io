@@ -54,7 +54,7 @@ This is a React refresher on the basics, **recommended to those with experience 
 - `react-scripts` does things for us so we don't worry about Webpack nor Babel. 
 - React library allows us to write JSX. ReactDOM like the virtual DOM which interacts with the actual DOM, and makes DOM decisions for us.
 
-**Warning: Ejecting Create-React-App**
+**Warning:** Ejecting Create-React-App
 
 - You have all scripts for Webpack to build, start and test your app.
 - It's a lot of code, so not recommended to eject. 
@@ -84,7 +84,7 @@ You might notice how Class Components could have methods and arrow function decl
 
 **Good Rule of Thumb**: 
 
-Use *arrow functions* on any class methods you define that aren't part of React (i.e. render or componentDidMount.
+Use *arrow functions* on any class methods you define that aren't part of React (i.e. render or componentDidMount).
 
 **React Lifecycle Methods (Class Components)**
 
