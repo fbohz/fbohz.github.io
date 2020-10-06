@@ -92,13 +92,13 @@ They are methods that get called automatically by React in particular instances 
 
 1. `constructor()`: Called first. Allows the class to have access to lifecycle components. Here is where you declare your state.
 2. `render()`: Render is called next to display HTML.
-3. `componentDidMount()`: This lifecycle component when component is mounted good when calling fetch requests. This will cause a re-render so `render()` gets called again. This runs every time you refresh the page.
-4. `componentDidUpdate`: Any updates brings your component to updating phase. React here selectively changes parts of the DOM and it *doesn't remount the component*. `componentDidUpdate` is called after update. Here you can do additional fetch calls as you compare prev and new props. [**Read more**](https://reactjs.org/docs/react-component.html#componentdidupdate).
+3. `componentDidMount()`: This lifecycle method is called when component is mounted and good for calling API requests. This will also cause a re-render so `render()` gets called again. It runs every time you refresh the page.
+4. `componentDidUpdate`: Any state updates brings your component to this updating phase. React here selectively changes parts of the DOM and it *doesn't remount the component*. `componentDidUpdate` is called after update. Here you can do additional fetch calls as you compare previous and new props. [**Read more**](https://reactjs.org/docs/react-component.html#componentdidupdate).
 
 Other lifecycle methods:
 
-- `shouldComponentUpdate()`: It checks the props and can decide whether or not update. This is done for optimization read [**here**](https://reactjs.org/docs/react-component.html#shouldcomponentupdate) to learn more. You can also consider using React Pure Components, read [**here**](https://reactjs.org/docs/react-api.html#reactpurecomponent).
-- `componentWillUnmount()`: Called when a component is being removed from the DOM. This is where cleanup can be done, such as memory leaks that JS garbage collection has not picked up. Read [**docs**](https://reactjs.org/docs/react-component.html#componentwillunmount) to learn more.
+- `shouldComponentUpdate()`: It checks the props and can decide whether or not update. This is done for optimization. Read [**here**](https://reactjs.org/docs/react-component.html#shouldcomponentupdate) to learn more. You can also consider using React Pure Components, read [**here**](https://reactjs.org/docs/react-api.html#reactpurecomponent).
+- `componentWillUnmount()`: Called when a component is being removed from the DOM. This is where cleanup can be done, including memory leaks that JS garbage collection has not picked up. Read [**docs**](https://reactjs.org/docs/react-component.html#componentwillunmount) to learn more.
 
 Check out this useful [diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) on React lifecycle methods.
 
