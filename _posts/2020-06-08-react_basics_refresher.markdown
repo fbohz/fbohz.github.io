@@ -138,9 +138,9 @@ So React takes all the hard work on showing and hiding elements from the DOM for
 
 ## How Can I be a Top React Developer? 🚀
 
-1) **Decide on Components**: What is a component and how will you divide the app.
-2) Decide on **state and where it lives**. Decide how you'll manage state (e.g. Redux, hooks, or props).
-3) Know **what changes when state changes**.
+1. **Decide on Components**: What is a component and how will you divide the app.
+2. Decide on **state and where it lives**. Decide how you'll manage state (e.g. Redux, hooks, or props).
+3. Know **what changes when state changes**.
 
 ## Resources
 
