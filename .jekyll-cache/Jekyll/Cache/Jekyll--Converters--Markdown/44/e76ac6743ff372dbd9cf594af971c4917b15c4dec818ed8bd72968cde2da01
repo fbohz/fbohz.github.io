@@ -1,4 +1,4 @@
-I"J<blockquote>
+I"�J<blockquote>
   <p>Learning about data structures is an essential part of becoming a more experienced developer. This is the second part of the series (and will be the longest one), buckle down 🚀.</p>
 </blockquote>
 
@@ -368,11 +368,12 @@ By algorithms. Programming languages do provide libraries and tools to help you 
 <h1 id="data-structures-ds-review">Data Structures (DS) Review</h1>
 
 <ul>
-  <li>Technology is built on data structures. There might be more to come but you know the basics.</li>
-  <li>Blockchain has hashes, linked lists, tries etc. Anyone can build their own data structure.</li>
-  <li>With DS understood now you can take on algorithms that many companies ask.</li>
-  <li>Programming languages do provide libraries and tools to help you build many data structures. Don’t feel you have to reinvent the wheel!</li>
+  <li>Technology is built on data structures. There might be more to come but make sure you have a strong foundation on the basics.</li>
+  <li>Anyone can build their own data structure. E.g. with Blockchain we have special hashes, linked lists, tries etc.</li>
+  <li>With DS understood now you can take on algorithms, the other piece of the puzzle that many large companies ask.</li>
+  <li>Programming languages do provide libraries and tools to help you build many data structures.</li>
+  <li>Don’t feel you have to reinvent the wheel!</li>
 </ul>
 
-<p><strong>Remember</strong> all this information is important to know it high level but do not worry if you can’t grasp it all. The more you study it and see it and with time concepts will settle in and in no time you’ll be making magic with data structures! 🧙🏾‍♂️</p>
+<p><strong>Remember</strong> all this information is important to know it high level but do not worry if you can’t grasp it all. The more you study it and see it and with time concepts will settle in and. In no time you’ll be making magic with data structures! 🧙🏾‍♂️</p>
 :ET

@@ -150,4 +150,4 @@ So React takes all the hard work on showing and hiding elements from the DOM for
 - [**React course**](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/).
 - [**React Router**](https://reacttraining.com/react-router/web/guides/quick-start). For Navigation in React. How is navigation possible in SPAs? React Router takes advantage of the history API brought by modern browsers to mimic routing.
 
-😅 Well this wasn't literally a "5 minute" refresher. But hopefully it was useful. Happy React studying 🙌🏼
+😅 You know this wasn't literally a "5 minute" refresher. But hopefully it was useful. Happy React studying 🙌🏼

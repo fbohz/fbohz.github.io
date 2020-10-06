@@ -1,4 +1,4 @@
-I"Å9<blockquote>
+I"Ü9<blockquote>
   <p>Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver.</p>
 </blockquote>
 
@@ -75,8 +75,8 @@
 <ul>
   <li>Hash Tables allow to set key/value pair.
     <ul>
-      <li>with hash tables key is like our index in arrays.</li>
-      <li>this is done through a hash function.</li>
+      <li>With hash tables key is like our index in arrays.</li>
+      <li>This is done through a hash function.</li>
     </ul>
   </li>
   <li>Hash Functions:
@@ -92,7 +92,7 @@
   </li>
   <li>When declared hash properties are created somewhere in memory.</li>
   <li>Accessing properties some cases can be O(1)</li>
-  <li><strong>Probably most common interview question</strong>.
+  <li><strong>Probably the most common interview question</strong>.
     <ul>
       <li>Optimizing nested loops <code class="highlighter-rouge">O(n^2)</code> to <code class="highlighter-rouge">O(n)</code> with hash tables.</li>
     </ul>
@@ -104,7 +104,7 @@
 <ul>
   <li>Hashes have fast lookups, fast inserts, and flexible keys.</li>
   <li>However they are unordered and have slow key iteration.</li>
-  <li>With hash tables we <strong>increase space complexity (tradeoff)</strong></li>
+  <li>With hash tables we <strong>increase space complexity (tradeoff)</strong>.</li>
 </ul>
 
 <p><strong>Hash Collisions</strong></p>
