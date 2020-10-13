@@ -10,13 +10,13 @@ filename: 2020-06-15-three_tier_architecture
 
 # Beating The Technical Interview
 
-Last week (**link**) I shared my answer to a classical interview question from Facebook and my take on it using JavaScript. Today I'll talk about some interviewing tips when tackling with such technical questions!
+In the last couple of months I've had the opportunity to interview with many companies, couple of even had a FANG 🧛🏼‍♂. Today I'll talk about some interviewing tips when tackling with such technical questions!
 
-**How to Solve Coding Problems**
+**Knowing How to Solve Coding Problems**
 
 - This is what will set you apart from others.
 - Thought process is important in a coding interview.
-- Understand tradeoffs.
+- You must understand tradeoffs.
 
 ## What To Expect
 
@@ -25,7 +25,7 @@ When called for an interview, you can expect one (or a combination) of the follo
 - Coding challenges
   - Week long coding (or data) project
   - Timed technical assessment
-  - HackerRank or Codility challenge
+  - HackerRank, CoderPad or Codility challenge
   - Data science case study
 - Technical phone screens
   - Trivia
@@ -35,15 +35,15 @@ When called for an interview, you can expect one (or a combination) of the follo
   - White-boarding
   - Pair-programming
 
-Be also prepared for common questions such as:
+Be ready for common questions such as:
 
-- What is your understanding of _X_ROLE_?
+- What is your understanding of <X_ROLE>?
 - Describe your ideal day at work?
 - Tell me about yourself.
-- Why do you think you are great fit for _X_ROLE_?
-- Share your experience with _X_TECHNOLOGY_POSTED_ON_YOUR_RESUME_.
+- Why do you think you are great fit for <X_ROLE>?
+- Share your experience with <X_TECHNOLOGY_POSTED_ON_YOUR_RESUME>.
 
-Then, make sure you _are prepared_
+Make sure you _are prepared_
 
 - Know the structure / time-length of the interview.
   - Know if your interview is divided in x parts and how long is each part.
@@ -71,9 +71,9 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
 - What data structure, is it an array, object?
 - Is data in sorted? Are there duplicates?
 - Are you getting one data structure or two?
-- **Repeat Questions**
+- *Repeat the question to the interviewer*
 
-**Talk the Solution**
+**Talk out the Solution**
 
 - You can diagram an example data with as much info as possible.
   - Depict example in a more visual way. Here e.g line with years.
@@ -157,7 +157,7 @@ I decided to take a chance at the classic Facebook question delineated on [this 
 
 **The Question**
 
-Given a list of people with their birth and death YEARS, find the year with the highest population.
+Given a list of people with their birth and death YEARS, find the (1) year with the highest population.
 
 **The Solution**
 
@@ -165,21 +165,23 @@ I implemented a class-based approach. If you can't see the code below just acces
 
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/CodingInterviewQsPractice?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+**Note:** There are many variations of this question, and some of them might ask you a different return. Always ask for the edge cases! In this case there were only two test cases with obvious solutions.
+
 You've got this! 👊🏼
 
 ## Resources
 
-- (https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)[https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges]
-- (https://projecteuler.net/[https://projecteuler.net/])
-- (https://github.com/WomenWhoCodeNYC/Algorithms)[https://github.com/WomenWhoCodeNYC/Algorithms]
-- (https://www.hackerrank.com/)[https://www.hackerrank.com/]
-- (https://interviewing.io/)[https://interviewing.io/]
-- (https://leetcode.com/)[https://leetcode.com/]
-- (https://coderbyte.com/)[https://coderbyte.com/]
-- (https://www.careercup.com/)[https://www.careercup.com/]
-- (https://algs4.cs.princeton.edu/cheatsheet/)[https://algs4.cs.princeton.edu/cheatsheet/]
-- (https://github.com/sudheerj/javascript-interview-questions)[https://github.com/sudheerj/javascript-interview-questions]
-- (https://github.com/MaximAbramchuck/awesome-interview-questions)[https://github.com/MaximAbramchuck/awesome-interview-questions]
-- (https://online-learning.harvard.edu/course/cs50-introduction-computer-science)[https://online-learning.harvard.edu/course/cs50-introduction-computer-science]
-- (https://github.com/young/frontend-interviewing/tree/master/questions)[https://github.com/young/frontend-interviewing/tree/master/questions]
-- (https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing)[https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing]
+* (https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)[https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges]
+* (https://projecteuler.net/[https://projecteuler.net/])
+* (https://github.com/WomenWhoCodeNYC/Algorithms)[https://github.com/WomenWhoCodeNYC/Algorithms]
+* (https://www.hackerrank.com/)[https://www.hackerrank.com/]
+* (https://interviewing.io/)[https://interviewing.io/]
+* (https://leetcode.com/)[https://leetcode.com/]
+* (https://coderbyte.com/)[https://coderbyte.com/]
+* (https://www.careercup.com/)[https://www.careercup.com/]
+* (https://algs4.cs.princeton.edu/cheatsheet/)[https://algs4.cs.princeton.edu/cheatsheet/]
+* (https://github.com/sudheerj/javascript-interview-questions)[https://github.com/sudheerj/javascript-interview-questions]
+* (https://github.com/MaximAbramchuck/awesome-interview-questions)[https://github.com/MaximAbramchuck/awesome-interview-questions]
+* (https://online-learning.harvard.edu/course/cs50-introduction-computer-science)[https://online-learning.harvard.edu/course/cs50-introduction-computer-science]
+* (https://github.com/young/frontend-interviewing/tree/master/questions)[https://github.com/young/frontend-interviewing/tree/master/questions]
+* (https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing)[https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing]
