@@ -172,17 +172,17 @@ You've got this! 👊🏼
 
 ## Resources
 
-* (https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)[https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges]
-* (https://projecteuler.net/[https://projecteuler.net/])
-* (https://github.com/WomenWhoCodeNYC/Algorithms)[https://github.com/WomenWhoCodeNYC/Algorithms]
-* (https://www.hackerrank.com/)[https://www.hackerrank.com/]
-* (https://interviewing.io/)[https://interviewing.io/]
-* (https://leetcode.com/)[https://leetcode.com/]
-* (https://coderbyte.com/)[https://coderbyte.com/]
-* (https://www.careercup.com/)[https://www.careercup.com/]
-* (https://algs4.cs.princeton.edu/cheatsheet/)[https://algs4.cs.princeton.edu/cheatsheet/]
-* (https://github.com/sudheerj/javascript-interview-questions)[https://github.com/sudheerj/javascript-interview-questions]
-* (https://github.com/MaximAbramchuck/awesome-interview-questions)[https://github.com/MaximAbramchuck/awesome-interview-questions]
-* (https://online-learning.harvard.edu/course/cs50-introduction-computer-science)[https://online-learning.harvard.edu/course/cs50-introduction-computer-science]
-* (https://github.com/young/frontend-interviewing/tree/master/questions)[https://github.com/young/frontend-interviewing/tree/master/questions]
-* (https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing)[https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing]
+* [https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges](https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)
+* [https://projecteuler.net/](https://projecteuler.net/)
+* [https://github.com/WomenWhoCodeNYC/Algorithms](https://github.com/WomenWhoCodeNYC/Algorithms)
+* [https://www.hackerrank.com/](https://www.hackerrank.com/)
+* [https://interviewing.io/](https://interviewing.io/)
+* [https://leetcode.com/](https://leetcode.com/)
+* [https://coderbyte.com/](https://coderbyte.com/)
+* [https://www.careercup.com/](https://www.careercup.com/)
+* [https://algs4.cs.princeton.edu/cheatsheet/](https://algs4.cs.princeton.edu/cheatsheet/)
+* [https://github.com/sudheerj/javascript-interview-questions](https://github.com/sudheerj/javascript-interview-questions)
+* [https://github.com/MaximAbramchuck/awesome-interview-questions](https://github.com/MaximAbramchuck/awesome-interview-questions)
+* [https://online-learning.harvard.edu/course/cs50-introduction-computer-science](https://online-learning.harvard.edu/course/cs50-introduction-computer-science)
+* [https://github.com/young/frontend-interviewing/tree/master/questions](https://github.com/young/frontend-interviewing/tree/master/questions)
+* [https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing](https://www.theodinproject.com/courses/getting-hired/lessons/preparing-to-interview-and-interviewing)
