@@ -150,6 +150,7 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
   - Don't be afraid of say 'I don't know'.
   - **Make an educated guess**.
 - If you can, prepare your own questions ahead of time.
+- **You don't know everything**. You can always follow up with your interviewer with additional details/improvements on a question or technical challenge. It will show your interviewer you are always learning and improving yourself. 
 
 ## BONUS: SAMPLE QUESTION
 
