@@ -166,7 +166,7 @@ I implemented a class-based approach. If you can't see the code below just acces
 
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/CodingInterviewQsPractice?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-**Note:** There are many variations of this question, and some of them might ask you a different return. Always ask for the edge cases! In this case there were only two test cases with obvious solutions.
+**Note:** There are many variations of this question, and some of them might ask you a different output. Always ask for the edge cases! In this case there were only two test cases with obvious solutions.
 
 You've got this! 👊🏼
 
