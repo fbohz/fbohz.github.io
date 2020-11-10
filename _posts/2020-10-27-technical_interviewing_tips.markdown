@@ -41,7 +41,7 @@ Be ready for common questions such as:
 - Describe your ideal day at work?
 - Tell me about yourself.
 - Why do you think you are great fit for *X_ROLE*?
-- Share your experience with *X_TECHNOLOGY_POSTED_ON_YOUR_RESUME*.
+- Share your experience with *X_TECHNOLOGY* (from your resume).
 
 Make sure you _are prepared_
 
