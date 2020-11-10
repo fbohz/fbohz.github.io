@@ -128,13 +128,13 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
 - Stop and question as much as you can, but don't be annoying.
 - Start with brute force approach:
   - Tell interviewer about it. Don't necessarily have to code this part.
-- Avoid nested loops / O(n^2) /O(a\*b)
+- Avoid nested loops such as O(n^2) or O(a\*b)
 - Interviewer wants to see:
   - You understand problem
   - Can solve it naively and brute by thinking it out loud.
   - Make logical steps towards the solution.
     - Modularize code (pieces of code that do one thing).
-    - Make it readable.
+    - Make i
   - When you have a solution. Talk with interviewer as ways in which it can be broken down.
   - **AFTER YOU SOLVE IT** you can talk about your thinking and research you might do to make it better. Like ES6+ functions, other data structures that could make it more readable or work better.
 - Interviewer if satisfied, or out of time, will end the interview accordingly.
