@@ -37,11 +37,11 @@ When called for an interview, you can expect one (or a combination) of the follo
 
 Be ready for common questions such as:
 
-- What is your understanding of <X_ROLE>?
+- What is your understanding of *X_ROLE*?
 - Describe your ideal day at work?
 - Tell me about yourself.
-- Why do you think you are great fit for <X_ROLE>?
-- Share your experience with <X_TECHNOLOGY_POSTED_ON_YOUR_RESUME>.
+- Why do you think you are great fit for *X_ROLE*?
+- Share your experience with *X_TECHNOLOGY_POSTED_ON_YOUR_RESUME*.
 
 Make sure you _are prepared_
 
