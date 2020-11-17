@@ -2,7 +2,7 @@
 layout: post
 title: "Beating The Technical Interview"
 date:       2020-10-27 09:31:03 -0400
-permalink: 2020-10-27-technical_interviewing_tips
+permalink: technical_interviewing_tips
 filename: 2020-10-27-technical_interviewing_tips
 ---
 
