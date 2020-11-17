@@ -61,7 +61,7 @@ Make sure you _are prepared_
 
 They want smart people that solve problems themselves without having other people to walk them by the hand all the time.
 
-## The Flow: Follow It and You Will Cruise the Interview.
+## *The Flow*: Follow It and You Will Cruise the Interview.
 
 As you follow the flow below, sometimes we'll refer to my previous blog and the example coding challenge. So refer to it you need a refresher.
 
