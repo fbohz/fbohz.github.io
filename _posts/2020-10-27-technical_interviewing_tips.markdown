@@ -6,7 +6,7 @@ permalink: technical_interviewing_tips
 filename: 2020-10-27-technical_interviewing_tips
 ---
 
-> You've got this! 👊🏼
+> In the last couple of months I’ve had the opportunity to interview with many companies...Today I’ll talk about some interviewing tips when tackling with such technical questions!
 
 # Beating The Technical Interview
 
