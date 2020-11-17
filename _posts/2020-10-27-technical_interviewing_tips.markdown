@@ -63,7 +63,7 @@ They want smart people that solve problems themselves without having other peopl
 
 ## *The Flow*: Follow It and You Will Cruise the Interview.
 
-As you follow the flow below, sometimes we'll refer to my previous blog and the example coding challenge. So refer to it you need a refresher.
+As you follow the flow below, refer to [this video](https://www.youtube.com/watch?v=4UWDyJq8jZg&t=7s) for an example coding challenge. 
 
 **Ask Questions**
 
@@ -71,7 +71,7 @@ As you follow the flow below, sometimes we'll refer to my previous blog and the 
 - What data structure, is it an array, object?
 - Is data in sorted? Are there duplicates?
 - Are you getting one data structure or two?
-- *Repeat the question to the interviewer*
+- *Repeat the question to the interviewer*.
 
 **Talk out the Solution**
 
