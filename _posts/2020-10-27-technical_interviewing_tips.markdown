@@ -90,8 +90,7 @@ As you follow the flow below, refer to [this video](https://www.youtube.com/watc
     - Death decrements population. Birth adds population.
     - Ask interviewer if they die that year does the death count that same year or following?
 - Think about your data structure:
-  - A table with years:
-  - E.g. 1750:1..etc.
+  - A table with years: E.g. 1750: 1 birth, 2 deaths and so on.
   - Need your min and max birth year since birth is what increments.
 
 **Refine solution with style**
