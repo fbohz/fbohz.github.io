@@ -171,8 +171,8 @@ You've got this! 👊🏼
 
 ## Resources
 
-* [WomenWhoCodeBoston Github Challenges](https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)
-* [Project Euler](https://projecteuler.net/)
+* [**WomenWhoCodeBoston Github Challenges**](https://github.com/WomenWhoCodeBoston/algorithms/tree/master/challenges)
+* [**Project Euler**](https://projecteuler.net/)
 * [WomenWhoCodeNYC Algorithms](https://github.com/WomenWhoCodeNYC/Algorithms)
 * [Hackerrank](https://www.hackerrank.com/)
 * [Interviewing.io](https://interviewing.io/)
