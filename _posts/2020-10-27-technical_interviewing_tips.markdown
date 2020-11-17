@@ -127,7 +127,7 @@ As you follow the flow below, refer to [this video](https://www.youtube.com/watc
 - Stop and question as much as you can, but don't be annoying.
 - Start with brute force approach:
   - Tell interviewer about it. Don't necessarily have to code this part.
-- Avoid nested loops such as O(n^2) or O(a\*b)
+- Avoid nested loops such as O(n^2) or O(a\*b).
 - Interviewer wants to see:
   - You understand problem
   - Can solve it naively and brute by thinking it out loud.
