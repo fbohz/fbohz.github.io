@@ -155,7 +155,7 @@ spanish.sort(function(a,b){
 
 Try running line sort(). You might have surprise because JS converts to string. With JS each browser will use their own ECMAScript implementation so differences might come as well.
   
-Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+Read more [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
 
 ### Sorting Algorithms
 
@@ -163,7 +163,7 @@ Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 - Most of the time talk about it, and implement it with frameworks.
 - **Interviews, will ask you for sure.**
 - There are Big O tradeoffs when using sorting algorithms.
-- Great learning resource: https://www.toptal.com/developers/sorting-algorithms
+- [Great learning resource](https://www.toptal.com/developers/sorting-algorithms). 
 
 ## Bubble Sort - DO NOT USE
 
@@ -202,7 +202,7 @@ Best case scenario is O(n) **very fast**. If your set is **mostly sorted use ins
 - Very efficient than most, but **more space complexity* with `O(n)`.
 - You probably won't be asked to do merge sort by yourself.
 
-Merge sort is stable but very hard to implement for yourself. More about stable algorithm: https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important 
+Merge sort is stable but very hard to implement for yourself. [More about stability in sorting algorithms](https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important).
 
 Merge Sort example: Scroll until the end of this article.
 
@@ -220,7 +220,7 @@ Uses pivoting technique. **Pretty complex to understand.**
 - **Selecting pivot is very important to avoid worst case**.
 - Quick sort is fastest on average, but can have bad consequences if you don't know how to use it. You can rely on merge or others if unsure.
 
-**Quick sort example**: https://repl.it/@fbohz/quickSort
+**[Quick sort example](https://repl.it/@fbohz/quickSort)**.
 
 ## Which Sort is Best?
 
@@ -228,7 +228,7 @@ Uses pivoting technique. **Pretty complex to understand.**
 - Insertion Sort can be used:  
   - If you only have few items, small input, and already sorted.
 - Merge Sort (**often used**)
-  - O(n log n) fast b/c of divide and conquer. Best fast and worst case is consistend.
+  - O(n log n) fast b/c of divide and conquer. Best fast and worst case is consistent.
   - If you're worried about worst case scenarios use this one. 
   - If space is an issue, it can be very expensive as O(n)
 - Quick sort (**often used**):
@@ -246,8 +246,8 @@ Others:
 Can we beat `O(n log n)`? Mathematically, is impossible. Means we have to sort by comparison.
 
 Tell me more about the other sorts:
-- Heap sort: https://brilliant.org/wiki/heap-sort/ 
-- Quick vs Heap sort comparison: https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort
+- [Heap sort](https://brilliant.org/wiki/heap-sort/).  
+- [Quick vs Heap sort comparison](https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort). 
 
 **Non Comparison Sorts**:
 - Radix sort and Counting Sort use this.
@@ -257,10 +257,10 @@ Tell me more about the other sorts:
 - So you could use it with numbers.
 
 **Resources**:
-- Radix Sort: https://brilliant.org/wiki/radix-sort/
-- Radix Sort Animation: https://www.cs.usfca.edu/~galles/visualization/RadixSort.html
-- Counting Sort: https://brilliant.org/wiki/counting-sort/
-- Counting Sort Animation: https://www.cs.usfca.edu/~galles/visualization/CountingSort.html
+- [Radix Sort](https://brilliant.org/wiki/radix-sort/). 
+- [Radix Sort Animation](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html). 
+- [Counting Sort](https://brilliant.org/wiki/counting-sort/).
+- [Counting Sort Animation](https://www.cs.usfca.edu/~galles/visualization/CountingSort.html) 
 
 ## Common Sorting Interview Questions
 
