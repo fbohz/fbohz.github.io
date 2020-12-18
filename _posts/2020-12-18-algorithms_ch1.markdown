@@ -96,12 +96,10 @@ Fibonacci adds first two items equals third item. Again this one can be done eit
 ## Recursion Tips:
 
 - Every time **using a tree or converting to a tree consider recursion**
- - You see a lot of divide and conquer in recursive solutions like a phonebook. These divide and conquer usually have recursive solutions.
+ - You see a lot of divide and conquer in recursive solutions like a phone-book. These divide and conquer usually have recursive solutions.
 - Tail call optimization
-- allows recursion without increasing the call stack.
-- REF: https://2ality.com/2015/06/tail-call-optimization.html
-- Great real world application example of when to use recursion: 
-- https://stackoverflow.com/questions/105838/real-world-examples-of-recursion
+- Allows recursion without increasing the call stack. Read [here](https://2ality.com/2015/06/tail-call-optimization.html).
+- Great [real world application example](https://stackoverflow.com/questions/105838/real-world-examples-of-recursion) of when to use recursion: 
 
 Interview triggers: 
 1. A problem can be divided into small problems, smaller instances of those problems. 
