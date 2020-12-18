@@ -122,7 +122,7 @@ When to use BFS or DFS? Time complexity is **same for both** `O(n)`
   - Ask the question **does the path exist**
   - Good: Less memory
   - Bad:** it can get slow if tree is very deep not very good finding shortest path**
-- Resource: https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+- [Good Resource](https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr).
 
 ## Common Interview Questions BFS vs DFS
 
@@ -149,16 +149,16 @@ Study to see how you explain to interviewer
 ## Coding BFS & DFS
 
 ### Breadth-first Search - Exercises
-- Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs
+- [Code Here](https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs). 
 - Uses a queue array
 - Usually is done with iteration.
 
 ### Breadth-first search (Recursive) - Exercises 
-- Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs-recursive
+- [Code Here](https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs-recursive). 
 - Just for fun.
 
 ### Depth-first search - Exercises
-- Code here: https://repl.it/@fbohz/DFS-InOrder-PostOrder-PreOrder-Trees-Traversals
+- [Code here](https://repl.it/@fbohz/DFS-InOrder-PostOrder-PreOrder-Trees-Traversals).
 - **stack** DS used here as it is Recursion. Height of tree will tell how much memory, memory consumption will depend on that.
 - preOrder: from parent
 - inOrder: order of nodes
@@ -170,12 +170,12 @@ Study to see how you explain to interviewer
 
 ### Validate a BST - Interview Qs
 -  A very common question you will get asked in an interview is **how to validate a binary search tree**! Hint, you want to use **BFS** for this.
--  Try it here: https://leetcode.com/problems/validate-binary-search-tree/
+-  Try it [here](https://leetcode.com/problems/validate-binary-search-tree/). 
 
 ### Graph Traversals
  - Tree traversal will be the same as Graph traversal. **Trees are a type of graphs**.
  - Graphs model real life, like recommendation engine (items related) using like BFS. Facebook what type of friend request or LinkedIn connection with DFS. 
- - See it in action: https://visualgo.net/en/dfsbfs?slide=1 
+ - [See it in action](https://visualgo.net/en/dfsbfs?slide=1) 
  
  **Remember** 
  - DFS is for shortest path. Closest to our node. Related items on Amazon, closest connections.
@@ -189,8 +189,6 @@ Study to see how you explain to interviewer
    - If very deep branch can get very slow. Needs to keep track of all the functions on the stack.
 
 ## Dijkstra + Bellman-Ford Algorithms
-
-Resource: https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e
 
 - **In interview you'll probably don't implement them**
 - BFS **doesn't care about weight**. So doesn't take to account weighted graphs.
@@ -206,12 +204,13 @@ In an Interview:
   - BFS can't be used because is weighted
   - Negative weights? If YES, Bellman. If NO, Dijkstra.
 
+[Read more](https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e). 
 ## Searching + Traversal Review
 - Searching and Traversal are one of the most popular algorithms.
 - Learned about how to traverse tree/graph.
 - Now we're better to equipped to answer questions.
-- Review the **Technical Interview Mind Map**
-  - https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link
+- Review the **Technical Interview Mind Map**. 
+- [More here](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link).
 
 ## Dynamic Programming (DP)
 
@@ -343,9 +342,9 @@ Think about your problem like this to implement DP:
 
 Here are some popular Dynamic Programming Questions (see if you can notice the pattern):
 
-1. House Robber: https://leetcode.com/problems/house-robber    
-2. Best Time to Buy and Sell Stock: https://leetcode.com/problems/best-time-to-buy-and-sell-stock   
-3. Climbing Stairs: https://leetcode.com/problems/climbing-stairs      
+1. [House Robber](https://leetcode.com/problems/house-robber)     
+2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)    
+3. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs)       
 
 ## Review of DP
 
