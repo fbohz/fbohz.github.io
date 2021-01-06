@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "On CS Algorithms: Chapter II"
-# date:       2020-08-15 19:31:03 -0400
+date:       2021-01-06 19:31:03 -0400
 permalink:  algorithms_ch2
-filename: 2020-08-15-algorithms_ch2
+filename: 2021-01-06-algorithms_ch2
 ---
 
 > We must remember that programs can be defined pretty much as `data structures + algorithms`. As we conclude this exploration we'll be discussing Searching algorithms and Dynamic Programming. 
