@@ -1,14 +1,14 @@
-I"�<blockquote>
+I"S�<blockquote>
   <p>Playing with AWS Services Part II - Hola Shenron!</p>
 </blockquote>
 
 <p><strong>Note:</strong> This is a continuation to my last blog on <a href="http://fbohz.com/aws_polly"><strong>TTS with AWS</strong></a> implemented on the Yijing Ball Z (YBZ).</p>
 
-<p>Now that with AWS we can read text out-loud, How about we implement <code class="highlighter-rouge">AWS.Translate</code> so we can improve our Duolingo listening skills and the let Polly read our translated Yijing text!</p>
+<p>Now that with AWS we can read text out-loud, How about we implement <code class="language-plaintext highlighter-rouge">AWS.Translate</code> so we can improve our Duolingo listening skills and the let Polly read our translated Yijing text!</p>
 
 <p>Again, if you don’t know how to setup AWS with Vanilla JS, read the <a href="http://fbohz.com/aws_polly">previous</a> blog to get your AWS SDK setup.</p>
 
-<p>1) To start, let’s instantiate our <code class="highlighter-rouge">AWS.Translate</code> variable so we can use it.</p>
+<p>1) To start, let’s instantiate our <code class="language-plaintext highlighter-rouge">AWS.Translate</code> variable so we can use it.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">translate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">Translate</span><span class="p">({</span><span class="na">region</span><span class="p">:</span> <span class="dl">'</span><span class="s1">us-east-1</span><span class="dl">'</span><span class="p">});</span>
 </code></pre></div></div>
@@ -38,7 +38,7 @@
 
 </code></pre></div></div>
 
-<p>3) Add eventListeners to our modal so it can be displayed shown. From Bulma documentation we need to add the <code class="highlighter-rouge">is-active</code> class to show the modal and remove it once its closed. We also need to make our buttons inside the modal visible.</p>
+<p>3) Add eventListeners to our modal so it can be displayed shown. From Bulma documentation we need to add the <code class="language-plaintext highlighter-rouge">is-active</code> class to show the modal and remove it once its closed. We also need to make our buttons inside the modal visible.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">showModal</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
@@ -66,8 +66,8 @@
 <p>4) Now that the basic navigation is setup. Let’s implement our text translation, basically I will implement it on the main YBZ content area, so whatever is there will be translated.</p>
 
 <ul>
-  <li>We’ll be using <code class="highlighter-rouge">translateText</code> from AWS.Translate, so read up on <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html"><strong>documentation</strong></a> to learn more.</li>
-  <li>This implementation traverses the DOM under my <code class="highlighter-rouge">main.content</code> and calls <code class="highlighter-rouge">translateText</code> on each node that has text.</li>
+  <li>We’ll be using <code class="language-plaintext highlighter-rouge">translateText</code> from AWS.Translate, so read up on <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Translate.html"><strong>documentation</strong></a> to learn more.</li>
+  <li>This implementation traverses the DOM under my <code class="language-plaintext highlighter-rouge">main.content</code> and calls <code class="language-plaintext highlighter-rouge">translateText</code> on each node that has text.</li>
   <li>I added the following code under our modal eventListener.</li>
 </ul>
 
@@ -113,7 +113,7 @@
 
 <ul>
   <li>We will be displaying a new button that informs the user they can have the text be read our loud to in the language specified.</li>
-  <li>We will be adding an eventListener on this new button that when clicked depending on the language will set the Polly voice according to the target language and call our <code class="highlighter-rouge">doSynthesize</code> function (from last blog entry) with the appropriate language voice.</li>
+  <li>We will be adding an eventListener on this new button that when clicked depending on the language will set the Polly voice according to the target language and call our <code class="language-plaintext highlighter-rouge">doSynthesize</code> function (from last blog entry) with the appropriate language voice.</li>
 </ul>
 
 <p>Below you’ll find the complete implementation with Polly implemented.</p>

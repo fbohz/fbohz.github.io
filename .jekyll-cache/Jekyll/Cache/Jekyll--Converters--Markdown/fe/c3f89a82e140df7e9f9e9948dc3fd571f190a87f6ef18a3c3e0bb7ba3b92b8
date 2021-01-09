@@ -1,4 +1,4 @@
-I",'<blockquote>
+I"�'<blockquote>
   <p>Playing with AWS Services - Would You Read For Me Polly?</p>
 </blockquote>
 
@@ -16,12 +16,12 @@
 
 <p>1) Setup:</p>
 <ul>
-  <li>Make sure to <code class="highlighter-rouge">npm install aws-sdk</code> and then <code class="highlighter-rouge">npm add aws-sdk</code> so we can use it in YBZ.</li>
+  <li>Make sure to <code class="language-plaintext highlighter-rouge">npm install aws-sdk</code> and then <code class="language-plaintext highlighter-rouge">npm add aws-sdk</code> so we can use it in YBZ.</li>
 </ul>
 
 <p>2) Add <strong>read-out-loud button</strong> on navbar:</p>
 <ul>
-  <li>The first thing we’ll do is modify our UI to add a button that we will then attach our <code class="highlighter-rouge">AWS.Polly</code> read listener.</li>
+  <li>The first thing we’ll do is modify our UI to add a button that we will then attach our <code class="language-plaintext highlighter-rouge">AWS.Polly</code> read listener.</li>
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">navbar-end</span><span class="dl">"</span><span class="o">&gt;</span> 
@@ -46,9 +46,9 @@
 
 </code></pre></div></div>
 
-<p>4) Create a function <code class="highlighter-rouge">doSynthesize()</code> that will execute the Polly script and read out loud the text when button is pressed.</p>
+<p>4) Create a function <code class="language-plaintext highlighter-rouge">doSynthesize()</code> that will execute the Polly script and read out loud the text when button is pressed.</p>
 <ul>
-  <li><code class="highlighter-rouge">synthesizeSpeech()</code> from <code class="highlighter-rouge">AWS.Polly</code> takes a <strong>params</strong> argument that takes the <code class="highlighter-rouge">text</code> argument we passed on <code class="highlighter-rouge">doSynthesize()</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">synthesizeSpeech()</code> from <code class="language-plaintext highlighter-rouge">AWS.Polly</code> takes a <strong>params</strong> argument that takes the <code class="language-plaintext highlighter-rouge">text</code> argument we passed on <code class="language-plaintext highlighter-rouge">doSynthesize()</code>.</li>
   <li>Read <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Polly.html"><strong>here</strong></a> and <a href="https://github.com/awsdocs/amazon-polly-developer-guide/tree/master/doc_source"><strong>here</strong></a> to learn more.</li>
 </ul>
 
@@ -80,7 +80,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>5) Add our event listener and call <code class="highlighter-rouge">doSynthesize()</code> if triggered</p>
+<p>5) Add our event listener and call <code class="language-plaintext highlighter-rouge">doSynthesize()</code> if triggered</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pollyBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.readpolly</span><span class="dl">"</span><span class="p">)</span>
 

@@ -1,4 +1,4 @@
-I")<blockquote>
+I"�)<blockquote>
   <p>Styled Components can be an advanced topic, and it comes with tradeoffs with pros and cons. As you move into becoming an advanced React developer know when to use this tool is efficient and when you should not add this overhead. Each project and each situation is different and you should make the right call before you jump into the latest trend.</p>
 </blockquote>
 
@@ -8,7 +8,7 @@
 
 <p>Back then styling was very simple, nowadays with large scales app styling can get very complicated and organizing CSS as difficult.</p>
 
-<p>Problem can be with CSS that shares same namespace so if another developer adds their own styling to <code class="highlighter-rouge">.name</code> then it could cause conflicts. To overcome this different implementations such as <a href="http://getbem.com/">BEM</a> have risen. However with BEM class names can become very nested with lots of mental overhead.</p>
+<p>Problem can be with CSS that shares same namespace so if another developer adds their own styling to <code class="language-plaintext highlighter-rouge">.name</code> then it could cause conflicts. To overcome this different implementations such as <a href="http://getbem.com/">BEM</a> have risen. However with BEM class names can become very nested with lots of mental overhead.</p>
 
 <p>With React we could leverage this even further by creating style constants then apply it to the specific component. E.g.</p>
 
@@ -22,9 +22,9 @@
 
 <p>SC will make our code into components, so then we can <em>encapsulate</em> our CSS to avoid the usual problems of styles leaking across components.</p>
 
-<p><em>Note</em>: If you’re on VS Code we recommend installing the <code class="highlighter-rouge">vscode-styled-components</code> extension, it will highlight your syntax so you get used to and it will help you get a head start with this great library.</p>
+<p><em>Note</em>: If you’re on VS Code we recommend installing the <code class="language-plaintext highlighter-rouge">vscode-styled-components</code> extension, it will highlight your syntax so you get used to and it will help you get a head start with this great library.</p>
 
-<p>After you <a href="https://styled-components.com/">read</a> and install SC (<code class="highlighter-rouge">yarn add styled-components</code>) you should import it on the specific component you want to implement it. The documentation has a simple example:</p>
+<p>After you <a href="https://styled-components.com/">read</a> and install SC (<code class="language-plaintext highlighter-rouge">yarn add styled-components</code>) you should import it on the specific component you want to implement it. The documentation has a simple example:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react'
 import styled from 'styled-components'
@@ -49,11 +49,11 @@ render(
 );
 </code></pre></div></div>
 
-<p>Here you can see that the attribute after <code class="highlighter-rouge">style</code> it is just the element, so it could be an h2, div, img etc. Then we use string interpolation just like we usually do in React. However here we add our own styling. The styles we create are just elements that we can then use but with styles. These elements themselves can have additional styling, class names etc. So we use Title and Wrapper like any other React component – except they’re styled!</p>
+<p>Here you can see that the attribute after <code class="language-plaintext highlighter-rouge">style</code> it is just the element, so it could be an h2, div, img etc. Then we use string interpolation just like we usually do in React. However here we add our own styling. The styles we create are just elements that we can then use but with styles. These elements themselves can have additional styling, class names etc. So we use Title and Wrapper like any other React component – except they’re styled!</p>
 
 <p>Now if you do a console.log you will see that SC gives each component their own unique class name. Because of this styles will never bleed. So you can share names with different components, and they will never be collisions.</p>
 
-<p>SC also supports all selectors and it will even support <code class="highlighter-rouge">props</code>! Learn more about it in <a href="https://styled-components.com/docs/basics#passed-props">docs</a>.</p>
+<p>SC also supports all selectors and it will even support <code class="language-plaintext highlighter-rouge">props</code>! Learn more about it in <a href="https://styled-components.com/docs/basics#passed-props">docs</a>.</p>
 
 <p><strong>Implementing SC in our React App</strong></p>
 
@@ -129,7 +129,7 @@ export const OptionDiv = styled.div`
 `
 </code></pre></div></div>
 
-<p>If you want to make even more easier you can just use the <code class="highlighter-rouge">as</code> keyword and it will do the same as the reusable css code above without importing the css module. With the ‘as’ keyword you can also include <code class="highlighter-rouge">{}</code> to import other components etc.</p>
+<p>If you want to make even more easier you can just use the <code class="language-plaintext highlighter-rouge">as</code> keyword and it will do the same as the reusable css code above without importing the css module. With the ‘as’ keyword you can also include <code class="language-plaintext highlighter-rouge">{}</code> to import other components etc.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">OptionLink</span> <span class="k">as</span><span class="o">=</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span> <span class="nx">onClick</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleChange</span><span class="p">()}</span> <span class="sr">/</span><span class="err">&gt;
 </span></code></pre></div></div>

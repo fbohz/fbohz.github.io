@@ -12,14 +12,14 @@ subtitle: All Entries
 
     {% if forloop.first %}
     <span id="top"></span>
-    <h4 id="{{ this_year }}-ref"> <center><b>Jump To Year |   </b>  
-    <a href="#{{ this_year }}-ref"> {{this_year}}</a>
+    <h4 id="{{ this_year }}-ref"> <center><b>Jump To Year | </b>  
+    <span><a href="#{{ this_year }}-ref"> {{this_year}}</a> | </span>
     {% endif %}
     
     {% if forloop.last %}
     {% else %}
     {% if this_year != next_year %}
-    <a href="#{{ next_year }}-ref">{{next_year}}</a>
+    <span><a href="#{{ next_year }}-ref">{{next_year}}</a> | </span>
     {% endif %}
     {% endif %}
     {% endfor %}

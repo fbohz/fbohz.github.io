@@ -1,4 +1,4 @@
-I"�X<blockquote>
+I" Z<blockquote>
   <p>If you apply to 100 companies, it can be that 1% would actually get back to you. This could be the case if you’re starting as a software developer. With that 1% you really need to be good at algorithms to take advantage of those precious opportunities.</p>
 </blockquote>
 
@@ -35,11 +35,11 @@
 
 <p><img src="https://user-images.githubusercontent.com/15071636/85084334-1db98980-b19a-11ea-8b28-d5e2076dc251.png" alt="Screen Shot 2020-06-18 at 7 29 26 PM" /></p>
 
-<p>Have in mind that we <em>cannot express speed in seconds</em>. The size of the input we usually call it <code class="highlighter-rouge">n</code>. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2).</p>
+<p>Have in mind that we <em>cannot express speed in seconds</em>. The size of the input we usually call it <code class="language-plaintext highlighter-rouge">n</code>. And the relationship with the algorithm so we could say for example our runtime grows lineally to the size of the input as O(n) or of the square of the size of the input as O(n^2).</p>
 
 <p>With that in mind, let’s go through each of these Big-O examples.</p>
 
-<h3 id="on---linear---preferred"><code class="highlighter-rouge">O(n)</code> - Linear - PREFERRED</h3>
+<h3 id="on---linear---preferred"><code class="language-plaintext highlighter-rouge">O(n)</code> - Linear - PREFERRED</h3>
 
 <p>This is <strong>linear</strong>. As the number of elements increase so does the number of operations. Example:</p>
 
@@ -67,7 +67,7 @@
 
 <p>If you run this you might notice that the time varies a lot. Again there are CPU, processor and other considerations that makes it hard to evaluate performance in terms of time. That is why we use Big-O and with this algorithm we say it is O(n).</p>
 
-<h3 id="o1---constant-time---excellent"><code class="highlighter-rouge">O(1)</code> - Constant Time - EXCELLENT</h3>
+<h3 id="o1---constant-time---excellent"><code class="language-plaintext highlighter-rouge">O(1)</code> - Constant Time - EXCELLENT</h3>
 
 <p>With O(1) it will always be the same calculation no matter how big the input grows.</p>
 
@@ -77,7 +77,7 @@
 </code></pre></div></div>
 <p>Note the 1 is arbitrary. This can be O(2), O(3) but do narrow it down to O(1), to represent constant time. O(1) is used with Objects/Hash Tables data structures.</p>
 
-<h3 id="on2---nested-loops---bad"><code class="highlighter-rouge">O(n^2)</code> - Nested Loops - BAD</h3>
+<h3 id="on2---nested-loops---bad"><code class="language-plaintext highlighter-rouge">O(n^2)</code> - Nested Loops - BAD</h3>
 
 <p>If you see nested loops you it is O(n^2). Performance decreases n^2 as input grows, so it is not lineally.</p>
 
@@ -97,7 +97,7 @@
 <span class="nx">logAllPairsArray</span><span class="p">(</span><span class="nx">boxes</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="olog-n---excellent---used-in-tree-data-structures"><code class="highlighter-rouge">O(log n)</code> - EXCELLENT - Used in Tree Data Structures</h3>
+<h3 id="olog-n---excellent---used-in-tree-data-structures"><code class="language-plaintext highlighter-rouge">O(log n)</code> - EXCELLENT - Used in Tree Data Structures</h3>
 
 <p>There is a certain way to calculate number of nodes of perfect binary trees:</p>
 
@@ -116,7 +116,7 @@
 
 <p>If this sounds too complicated. Don’t worry it sounds for me too 😅.</p>
 
-<h3 id="o2n-exponential-time---pretty-bad---worst-than-on2"><code class="highlighter-rouge">O(2^n)</code> Exponential time - PRETTY BAD - Worst Than O(n^2)</h3>
+<h3 id="o2n-exponential-time---pretty-bad---worst-than-on2"><code class="language-plaintext highlighter-rouge">O(2^n)</code> Exponential time - PRETTY BAD - Worst Than O(n^2)</h3>
 
 <p>A classic example is the fibonacci with recursion:</p>
 
@@ -130,7 +130,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="on-log-n---ok---better-than-on2-but-worst-than-on"><code class="highlighter-rouge">O(n log n)</code> - OK - Better than O(n^2) but worst than O(n)</h3>
+<h3 id="on-log-n---ok---better-than-on2-but-worst-than-on"><code class="language-plaintext highlighter-rouge">O(n log n)</code> - OK - Better than O(n^2) but worst than O(n)</h3>
 
 <ul>
   <li>This performs better than others.</li>
@@ -151,7 +151,7 @@
 <span class="nx">fibonacciRecursive</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="on---factorial-time---most-expensive-one"><code class="highlighter-rouge">O(n!)</code> - Factorial Time - MOST Expensive One</h3>
+<h3 id="on---factorial-time---most-expensive-one"><code class="language-plaintext highlighter-rouge">O(n!)</code> - Factorial Time - MOST Expensive One</h3>
 
 <p>It means you add a nested loop for every input. You probably would never see it.</p>
 
@@ -209,7 +209,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li>This could be as <code class="highlighter-rouge">O(n + n^2)</code>. But you need to drop non-dominants. n^2 is more important since it is worst. So drop <code class="highlighter-rouge">n</code> and it will be as <code class="highlighter-rouge">O(n^2)</code>.</li>
+  <li>This could be as <code class="language-plaintext highlighter-rouge">O(n + n^2)</code>. But you need to drop non-dominants. n^2 is more important since it is worst. So drop <code class="language-plaintext highlighter-rouge">n</code> and it will be as <code class="language-plaintext highlighter-rouge">O(n^2)</code>.</li>
   <li>Worry about the MOST important then drop the rest.</li>
   <li>Focus on dominant terms.</li>
 </ul>
@@ -244,11 +244,11 @@ You also look at total size and see how much memory is being used.</p>
 
 <h2 id="final-notes">Final Notes</h2>
 
-<p><strong>For Technical Interviews</strong>: Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. In interviews most of time you’ll wanna do <code class="highlighter-rouge">O(n)</code> and <code class="highlighter-rouge">O(1)</code>!</p>
+<p><strong>For Technical Interviews</strong>: Sometimes optimizing might not be the right choice at beginning. Get the problem solved first. In interviews most of time you’ll wanna do <code class="language-plaintext highlighter-rouge">O(n)</code> and <code class="language-plaintext highlighter-rouge">O(1)</code>!</p>
 
 <p>You also need to get the right balance between run time, space and readability. Big-O is crucial for bigger apps, still you need to work and understand it. It will make you a better engineer.</p>
 
-<p><strong>How to Start</strong>: Focus on <code class="highlighter-rouge">O(1)</code>, <code class="highlighter-rouge">O(n)</code> and <code class="highlighter-rouge">O(n^2)</code> then expand into others.</p>
+<p><strong>How to Start</strong>: Focus on <code class="language-plaintext highlighter-rouge">O(1)</code>, <code class="language-plaintext highlighter-rouge">O(n)</code> and <code class="language-plaintext highlighter-rouge">O(n^2)</code> then expand into others.</p>
 
 <h2 id="read-more">Read More</h2>
 

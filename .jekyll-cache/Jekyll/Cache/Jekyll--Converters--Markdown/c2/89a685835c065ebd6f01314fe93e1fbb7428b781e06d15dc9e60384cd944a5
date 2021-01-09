@@ -1,4 +1,4 @@
-I"�9<blockquote>
+I"�:<blockquote>
   <p>Learning about data structures is an essential part of becoming a more experienced developers. Such knowledge will also help you to be a better problem solver.</p>
 </blockquote>
 
@@ -8,11 +8,11 @@
 
 <p>While reading this article have this in mind:</p>
 
-<p><code class="highlighter-rouge">Programs = Data Structures + Algorithms</code></p>
+<p><code class="language-plaintext highlighter-rouge">Programs = Data Structures + Algorithms</code></p>
 
 <p>OR</p>
 
-<p><code class="highlighter-rouge">Data Structures + Algorithms = Programs</code></p>
+<p><code class="language-plaintext highlighter-rouge">Data Structures + Algorithms = Programs</code></p>
 
 <h2 id="what-are-data-structures-ds">What are Data Structures (DS)</h2>
 
@@ -55,8 +55,8 @@
 
 <ul>
   <li>Arrays are stored in sequential order, and have <strong>smallest footprint</strong>.</li>
-  <li>Array methods like lookup are fast <code class="highlighter-rouge">O(1)</code>. Push <code class="highlighter-rouge">O(1)</code>.</li>
-  <li>Unshift or splice is <code class="highlighter-rouge">O(n)</code>: so we think add items at beginning, or deleting for is not the best data structure to do so.</li>
+  <li>Array methods like lookup are fast <code class="language-plaintext highlighter-rouge">O(1)</code>. Push <code class="language-plaintext highlighter-rouge">O(1)</code>.</li>
+  <li>Unshift or splice is <code class="language-plaintext highlighter-rouge">O(n)</code>: so we think add items at beginning, or deleting for is not the best data structure to do so.</li>
 </ul>
 
 <p><strong>Static vs Dynamic Arrays</strong></p>
@@ -66,7 +66,7 @@
   <li><em>Dynamic</em>: Allow not think about memory and machine takes care of it. Like JS.</li>
 </ul>
 
-<p>With this in mind <code class="highlighter-rouge">push</code> can also be O(n). JS usually doubles space when creating array and if you <code class="highlighter-rouge">push</code> JS could copy the array again and allocate new space.</p>
+<p>With this in mind <code class="language-plaintext highlighter-rouge">push</code> can also be O(n). JS usually doubles space when creating array and if you <code class="language-plaintext highlighter-rouge">push</code> JS could copy the array again and allocate new space.</p>
 
 <h1 id="hash-tables--objects-in-js">Hash Tables / (Objects in JS)</h1>
 
@@ -94,7 +94,7 @@
   <li>Accessing properties some cases can be O(1)</li>
   <li><strong>Probably the most common interview question</strong>.
     <ul>
-      <li>Optimizing nested loops <code class="highlighter-rouge">O(n^2)</code> to <code class="highlighter-rouge">O(n)</code> with hash tables.</li>
+      <li>Optimizing nested loops <code class="language-plaintext highlighter-rouge">O(n^2)</code> to <code class="language-plaintext highlighter-rouge">O(n)</code> with hash tables.</li>
     </ul>
   </li>
 </ul>
@@ -118,14 +118,14 @@
       <li>You can deal with collisions many ones one of them is linked lists.</li>
     </ul>
   </li>
-  <li>So lookups in hash tables occasionally are <code class="highlighter-rouge">O(n)</code>.</li>
+  <li>So lookups in hash tables occasionally are <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
   <li>As hashes do not have order, JS in ES6 implemented ways to have order such as Map() and Set() which are particular hashes/objects.</li>
 </ul>
 
 <p><strong>Hash Tables vs Arrays</strong></p>
 
 <ul>
-  <li>Hash tables allow very fast quick access to items <code class="highlighter-rouge">O(1)</code>. Arrays in search are <code class="highlighter-rouge">O(n)</code>.</li>
+  <li>Hash tables allow very fast quick access to items <code class="language-plaintext highlighter-rouge">O(1)</code>. Arrays in search are <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
   <li>Most of the time in hash tables insert is O(1), although there are collisions.</li>
   <li>Arrays are placed next to each other and not order. Hash tables are kind of all over the place.</li>
 </ul>
@@ -167,7 +167,7 @@
   <li>Array are located next to each other, linked lists are all over kind of like hashes</li>
   <li>Inserts in middle of linked lists are better than arrays.</li>
   <li>Linked lists have advantages from hash tables that it can sort data.</li>
-  <li>Prepend and append is <code class="highlighter-rouge">O(1)</code>, lookup, insert, delete is <code class="highlighter-rouge">O(n)</code>.</li>
+  <li>Prepend and append is <code class="language-plaintext highlighter-rouge">O(1)</code>, lookup, insert, delete is <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
 </ul>
 
 <p>What is a pointer? Is a reference to another in memory. Example:</p>
@@ -190,10 +190,10 @@
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogLinkedLists?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 <ul>
-  <li><code class="highlighter-rouge">insert()</code> is the hardest method to implement in linked lists.</li>
+  <li><code class="language-plaintext highlighter-rouge">insert()</code> is the hardest method to implement in linked lists.</li>
   <li>All you’re doing is <strong>removing pointers</strong> or <strong>adding pointers</strong> as a way to add or delete from linked lists</li>
-  <li><strong>How is inserting and deleting O(1)?</strong> One step to add a new item, constant time, independent of total list length, therefore <code class="highlighter-rouge">O(1)</code>.</li>
-  <li>If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s <code class="highlighter-rouge">O(n)</code>.</li>
+  <li><strong>How is inserting and deleting O(1)?</strong> One step to add a new item, constant time, independent of total list length, therefore <code class="language-plaintext highlighter-rouge">O(1)</code>.</li>
+  <li>If you were to implement the Stack as an array, you could add the element to the far end of the array and keep a length count. That’s also O(1). However, you’d need to prebuild the array to some maximum length otherwise you’d have to copy its contents to a new larger array when it was filled up. That copy counts as part of the computational work in maintaining the stack, so it’s <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
 </ul>
 
 <p>Read more: <a href="https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case">https://www.quora.com/How-is-inserting-into-a-linked-list-O-1-I-dont-understand-how-this-is-the-worst-case</a></p>
@@ -232,7 +232,7 @@
 <h2 id="linked-lists-conclusion">Linked Lists Conclusion</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">reverse()</code> method above is probably the most difficult concept in data structures.</li>
+  <li><code class="language-plaintext highlighter-rouge">reverse()</code> method above is probably the most difficult concept in data structures.</li>
   <li>Linked Lists are low level DS. Used in hashes and stacks.</li>
   <li>Linked Lists have slow lookup and more memory. But they are ordered, fast deletion/insertion and flexible size.</li>
   <li>Linked Lists working with them can be difficult to manage all pointers but <strong>linked lists are useful in implementing browsing history, file systems etc</strong>.</li>

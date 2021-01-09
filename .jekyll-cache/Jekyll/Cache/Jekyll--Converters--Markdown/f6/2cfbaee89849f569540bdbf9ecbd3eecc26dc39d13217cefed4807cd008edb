@@ -1,4 +1,4 @@
-I"�-<blockquote>
+I"�/<blockquote>
   <p>This article on React Native assumes previous knowledge on React so there will be concepts that come from React.</p>
 </blockquote>
 
@@ -17,7 +17,7 @@
 
 <p><strong>React Native Approach</strong></p>
 
-<p>There are React native specific components such as <code class="highlighter-rouge">&lt;View&gt;</code> and <code class="highlighter-rouge">&lt;Text&gt;</code>. RN is a real mobile app. It also uses hot reloading.</p>
+<p>There are React native specific components such as <code class="language-plaintext highlighter-rouge">&lt;View&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;Text&gt;</code>. RN is a real mobile app. It also uses hot reloading.</p>
 
 <p>It also gives you the options to go native and inject out Swift/Java should you need. Although most of the time you shouldn’t do it.</p>
 
@@ -25,7 +25,7 @@
 
 <p><img src="https://user-images.githubusercontent.com/15071636/82259138-b43b2680-9920-11ea-86be-545e6896e3fd.png" alt="rn1" /></p>
 
-<p>Android has (V8 JS) and iOS (JS core), RN has the bridge that then implements its framework with JS. RN then spits out native code when we are ready to build with the <code class="highlighter-rouge">export SDK</code>.</p>
+<p>Android has (V8 JS) and iOS (JS core), RN has the bridge that then implements its framework with JS. RN then spits out native code when we are ready to build with the <code class="language-plaintext highlighter-rouge">export SDK</code>.</p>
 
 <p><strong>Getting Started: Using Expo (Preferred)</strong></p>
 
@@ -33,15 +33,15 @@
 
 <p>Then, to get everything running you should install Expo at <a href="https://expo.io/learn">expo.io</a>. Expo will ensure you can test app on mobile straight.</p>
 
-<p>After installation. To start directly with a new expo app use <code class="highlighter-rouge">expo init projectName</code> then do <code class="highlighter-rouge">expo start</code>. You can also clone the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo"><strong>source code repository</strong></a>. Then just do <code class="highlighter-rouge">npm install</code> and <code class="highlighter-rouge">expo start</code>.</p>
+<p>After installation. To start directly with a new expo app use <code class="language-plaintext highlighter-rouge">expo init projectName</code> then do <code class="language-plaintext highlighter-rouge">expo start</code>. You can also clone the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo"><strong>source code repository</strong></a>. Then just do <code class="language-plaintext highlighter-rouge">npm install</code> and <code class="language-plaintext highlighter-rouge">expo start</code>.</p>
 
 <p>From here, you’ll need to download the mobile app version (either in AppStore or GooglePlay) of Expo and create an account. Once in the Expo app just scan the generated QR code and you’re up and running!.</p>
 
 <p><strong>RN Project Structure</strong></p>
 
-<p>Similar convention with React but no <code class="highlighter-rouge">index.js</code>. <code class="highlighter-rouge">App.js</code> also is your entry point.</p>
+<p>Similar convention with React but no <code class="language-plaintext highlighter-rouge">index.js</code>. <code class="language-plaintext highlighter-rouge">App.js</code> also is your entry point.</p>
 
-<p>Also note the inline based styling different from React. <code class="highlighter-rouge">StyleSheet</code> is imported from RN like JS to apply styles that you can reuse. RN uses <em>flexbox</em> CSS.</p>
+<p>Also note the inline based styling different from React. <code class="language-plaintext highlighter-rouge">StyleSheet</code> is imported from RN like JS to apply styles that you can reuse. RN uses <em>flexbox</em> CSS.</p>
 
 <h2 id="react-native-components">React Native Components</h2>
 
@@ -59,25 +59,25 @@
 
 <p><img src="https://user-images.githubusercontent.com/15071636/82503725-73c5df00-9abf-11ea-93dc-2a5ae3287c92.png" alt="Screen Shot 2020-05-20 at 5 29 00 PM" /></p>
 
-<p>As you follow along don’t forget to download and run the following repo <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">here</a>. Again, if you navigate to <code class="highlighter-rouge">App.js</code>, you’ll notice <code class="highlighter-rouge">StyleSheet.create</code>, this is optional and you can also pass styles <strong>inline</strong> just like in React.</p>
+<p>As you follow along don’t forget to download and run the following repo <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">here</a>. Again, if you navigate to <code class="language-plaintext highlighter-rouge">App.js</code>, you’ll notice <code class="language-plaintext highlighter-rouge">StyleSheet.create</code>, this is optional and you can also pass styles <strong>inline</strong> just like in React.</p>
 
-<p>You might also notice how when you need to return more than one element you need to wrap it in a single element in this case we can do it in a <code class="highlighter-rouge">&lt;View&gt;</code>.</p>
+<p>You might also notice how when you need to return more than one element you need to wrap it in a single element in this case we can do it in a <code class="language-plaintext highlighter-rouge">&lt;View&gt;</code>.</p>
 
 <p><strong>Implementing React Native Elements</strong></p>
 
-<p>The following example uses <code class="highlighter-rouge">FlatList</code> from ‘react-native’ and <code class="highlighter-rouge">ListItem</code> from ‘react-native-elements’.</p>
+<p>The following example uses <code class="language-plaintext highlighter-rouge">FlatList</code> from ‘react-native’ and <code class="language-plaintext highlighter-rouge">ListItem</code> from ‘react-native-elements’.</p>
 
-<p>If you check on the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">repo</a>, you’ll see the <code class="highlighter-rouge">&lt;ListScreen&gt;</code> component. There you’ll identify the React Native’s <em>FlatList Element</em>:</p>
+<p>If you check on the <a href="https://github.com/fbohz/react-native-blogs-practice/tree/master/1.Demo">repo</a>, you’ll see the <code class="language-plaintext highlighter-rouge">&lt;ListScreen&gt;</code> component. There you’ll identify the React Native’s <em>FlatList Element</em>:</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/82512733-8bf52880-9ad6-11ea-9a40-03fd346f35d6.png" alt="Screen Shot 2020-05-20 at 8 14 30 PM" /></p>
 
-<p>So FlatList does optimizations for you for the mobile world when lists become big. Here the FlatList reminds us just like React that <code class="highlighter-rouge">key</code> is important. ‘Keys’ are important when this list is changed, RN will have to rebuild the entire list if we don’t specify the key. Keys optimize and RN will re-render only what it needs.</p>
+<p>So FlatList does optimizations for you for the mobile world when lists become big. Here the FlatList reminds us just like React that <code class="language-plaintext highlighter-rouge">key</code> is important. ‘Keys’ are important when this list is changed, RN will have to rebuild the entire list if we don’t specify the key. Keys optimize and RN will re-render only what it needs.</p>
 
 <p>FlatList properties:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">horizontal</code> will make list horizontal. Only need to add keyword <code class="highlighter-rouge">horizontal</code> as Flatlist element prop.</li>
-  <li>To hide horizontal bar below just have <code class="highlighter-rouge">showsHorizontalScrollIndicator={false}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">horizontal</code> will make list horizontal. Only need to add keyword <code class="language-plaintext highlighter-rouge">horizontal</code> as Flatlist element prop.</li>
+  <li>To hide horizontal bar below just have <code class="language-plaintext highlighter-rouge">showsHorizontalScrollIndicator={false}</code></li>
 </ul>
 
 <h2 id="rn-navigation">RN Navigation</h2>
@@ -111,15 +111,15 @@
 
 <p><img src="https://user-images.githubusercontent.com/15071636/82516115-99fb7700-9adf-11ea-80b6-00c9ef98ec47.png" alt="Screen Shot 2020-05-20 at 9 19 19 PM" /></p>
 
-<p>We add the text as string and use the <code class="highlighter-rouge">onPress</code> attribute. Remember Button element is self-closed. Out of both for navigation we recommend TouchableOpacity element if you need more customization.</p>
+<p>We add the text as string and use the <code class="language-plaintext highlighter-rouge">onPress</code> attribute. Remember Button element is self-closed. Out of both for navigation we recommend TouchableOpacity element if you need more customization.</p>
 
 <p><strong>Implementing Navigation</strong></p>
 
-<p>We implement navigation on RN with React Navigator. In <code class="highlighter-rouge">App.js</code> we see how it uses the <code class="highlighter-rouge">createStackNavigator()</code> method. Depending on the version of React Navigator the way you implement it might change.</p>
+<p>We implement navigation on RN with React Navigator. In <code class="language-plaintext highlighter-rouge">App.js</code> we see how it uses the <code class="language-plaintext highlighter-rouge">createStackNavigator()</code> method. Depending on the version of React Navigator the way you implement it might change.</p>
 
-<p>With props passed by the stackNavigator() we can tell what to show or not on the screen. To access the navigation object you access it by <code class="highlighter-rouge">props.navigation</code>. On the included <code class="highlighter-rouge">props.navigation.navigate()</code> method we can pass in the screen we defined on App.js and it will render the component we want! It is easy as:</p>
+<p>With props passed by the stackNavigator() we can tell what to show or not on the screen. To access the navigation object you access it by <code class="language-plaintext highlighter-rouge">props.navigation</code>. On the included <code class="language-plaintext highlighter-rouge">props.navigation.navigate()</code> method we can pass in the screen we defined on App.js and it will render the component we want! It is easy as:</p>
 
-<p><code class="highlighter-rouge">onPress={() =&gt; props.navigation.navigate('ComponentName')}</code></p>
+<p><code class="language-plaintext highlighter-rouge">onPress={() =&gt; props.navigation.navigate('ComponentName')}</code></p>
 
 <p>And voilà! This takes us to the basic navigation and UI display with React Native!</p>
 

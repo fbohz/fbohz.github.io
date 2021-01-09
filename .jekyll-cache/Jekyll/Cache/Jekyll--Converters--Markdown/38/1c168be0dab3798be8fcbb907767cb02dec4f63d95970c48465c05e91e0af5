@@ -1,4 +1,4 @@
-I"�<blockquote>
+I""<blockquote>
   <p>The Big Picture: Systems Design Basics - Part 1</p>
 </blockquote>
 
@@ -17,11 +17,11 @@
 <p><strong>Traffic, Storage, Bandwidth Estimates</strong>
 If we assume there are 2M new cuppings per month this actually means about 50M readings same month:</p>
 
-<p><code class="highlighter-rouge">2 * 50 =&gt; 50M</code></p>
+<p><code class="language-plaintext highlighter-rouge">2 * 50 =&gt; 50M</code></p>
 
 <p>What about <em>queries per second (QPS)</em>? Roughly ~0.77. So about one new cupping <strong>per second</strong>!</p>
 
-<p><code class="highlighter-rouge">2M / (3600(secs in hour)* 24hours * 30days) =~ 1</code></p>
+<p><code class="language-plaintext highlighter-rouge">2M / (3600(secs in hour)* 24hours * 30days) =~ 1</code></p>
 
 <p>What about reading? Well with our <em>1:50 ratio it means 50 readings per second</em>.</p>
 
@@ -29,13 +29,13 @@ If we assume there are 2M new cuppings per month this actually means about 50M r
 
 <p>Let’s assume we’ll store everything for five years. Since we have 2M every month we should expect to store roughly 120M!</p>
 
-<p><code class="highlighter-rouge">2M * 12months * 5years = 120M</code></p>
+<p><code class="language-plaintext highlighter-rouge">2M * 12months * 5years = 120M</code></p>
 
 <p>What about each particular cupping? Each cupping lets assume is 1KB of information since there are a lot of parameters to track per cupping as well as total score.</p>
 
 <p>Since hour total storage is 120M we should expect roughly 120GB of storage just of cuppings.</p>
 
-<p><code class="highlighter-rouge">120M * 1KB =~ 120GB</code></p>
+<p><code class="language-plaintext highlighter-rouge">120M * 1KB =~ 120GB</code></p>
 
 <p><em>Tip</em>: Try <a href="https://whatsabyte.com/P1/byteconverter.htm"><strong>this</strong></a> resource for a good byte/kb/gb etc. conversion tool.</p>
 

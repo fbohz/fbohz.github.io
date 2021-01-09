@@ -1,4 +1,4 @@
-I"0[<blockquote>
+I"�\<blockquote>
   <p>With Express we can easily build an stateless API…and follow patterns such as REST to build routes with GET, POST, PUT, you name it!</p>
 </blockquote>
 
@@ -60,9 +60,9 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>By using <code class="highlighter-rouge">createServer()</code> we then pass the callback function executed each time the server is requested. Then we listen on port 8000. So if you go to http://localhost:8000 on your browser you’ll see: ‘Hellooo’. Can it get more easy?</p>
+<p>By using <code class="language-plaintext highlighter-rouge">createServer()</code> we then pass the callback function executed each time the server is requested. Then we listen on port 8000. So if you go to http://localhost:8000 on your browser you’ll see: ‘Hellooo’. Can it get more easy?</p>
 
-<p>Now if you console.log the <code class="highlighter-rouge">req</code> object you’ll see a bunch of stuff, so we get access to a bunch of stuff to handle requests.</p>
+<p>Now if you console.log the <code class="language-plaintext highlighter-rouge">req</code> object you’ll see a bunch of stuff, so we get access to a bunch of stuff to handle requests.</p>
 
 <p><strong>Routing with Pure Node.js</strong></p>
 
@@ -84,7 +84,7 @@
 <span class="p">}}</span>
 </code></pre></div></div>
 
-<p>On the 404 response we send back a header, which is a piece of info about the response sent back. <code class="highlighter-rouge">my-own-header</code> is like custom metadata we can see on the console then Network tab on Chrome.</p>
+<p>On the 404 response we send back a header, which is a piece of info about the response sent back. <code class="language-plaintext highlighter-rouge">my-own-header</code> is like custom metadata we can see on the console then Network tab on Chrome.</p>
 
 <h2 id="sneak-peak-of-express">Sneak-peak of Express</h2>
 
@@ -101,7 +101,7 @@
 
 <p>Note Express is fully written on Node but it abstracts away all the complexities.</p>
 
-<p>To start make sure you <code class="highlighter-rouge">npm init</code> and <code class="highlighter-rouge">npm i express</code>. Then create your <code class="highlighter-rouge">App.js</code> file that will contain your express server. Example</p>
+<p>To start make sure you <code class="language-plaintext highlighter-rouge">npm init</code> and <code class="language-plaintext highlighter-rouge">npm i express</code>. Then create your <code class="language-plaintext highlighter-rouge">App.js</code> file that will contain your express server. Example</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
@@ -121,7 +121,7 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Here <code class="highlighter-rouge">.get()</code> similar to Node, which has access to the request and response objects, but in Express there are even more methods. Now if you navigate to localhost:4000 you get “Hello from Express World!” as JSON and thus we have an Express API!.</p>
+<p>Here <code class="language-plaintext highlighter-rouge">.get()</code> similar to Node, which has access to the request and response objects, but in Express there are even more methods. Now if you navigate to localhost:4000 you get “Hello from Express World!” as JSON and thus we have an Express API!.</p>
 
 <p>Another thing you can see is that Express automatically sends app headers for you. With Express we can easily build an stateless API (in which the client will ask for specific info) and follow patterns such as REST to build routes with GET, POST, PUT, you name it!</p>
 
@@ -131,7 +131,7 @@
 
 <p>When Express receives a request, it creates a request and response object. Data will be used to process the data. To do this you can use some middleware, which intercepts and does something with the data on different stages. So here middleware is between request and response. There’s the saying that everything is middleware, so router, setting headers, logging, parsing body.</p>
 
-<p>All middleware used in Express is called <em>middleware stack</em>. The req/res objects go into these middlewares and they call the <code class="highlighter-rouge">next()</code> function to move to the next middleware. This is called the pipeline until it reaches the final middleware that usually uses the <code class="highlighter-rouge">res.send()</code> method or similar (like <code class="highlighter-rouge">res.json()</code>). You can define your own middlewares:</p>
+<p>All middleware used in Express is called <em>middleware stack</em>. The req/res objects go into these middlewares and they call the <code class="language-plaintext highlighter-rouge">next()</code> function to move to the next middleware. This is called the pipeline until it reaches the final middleware that usually uses the <code class="language-plaintext highlighter-rouge">res.send()</code> method or similar (like <code class="language-plaintext highlighter-rouge">res.json()</code>). You can define your own middlewares:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// current time of request e.g.</span>
@@ -140,13 +140,13 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Now you can use <code class="highlighter-rouge">req.requestTime</code> in any body of any request! There are many middlewares out there you don’t have to manually create them yourself. It will make your life and development much easier.</p>
+<p>Now you can use <code class="language-plaintext highlighter-rouge">req.requestTime</code> in any body of any request! There are many middlewares out there you don’t have to manually create them yourself. It will make your life and development much easier.</p>
 
-<p>So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using <code class="highlighter-rouge">.use()</code>. Also there should be a server.js file that deals with just starting the server and server configurations. Checkout such file in the <a href="https://github.com/fbohz/ybz-backend-node-express">YBZ repo</a>.</p>
+<p>So as you grow your application, you wanna separate concerns. App.js then focuses mostly on middleware declarations using <code class="language-plaintext highlighter-rouge">.use()</code>. Also there should be a server.js file that deals with just starting the server and server configurations. Checkout such file in the <a href="https://github.com/fbohz/ybz-backend-node-express">YBZ repo</a>.</p>
 
 <p><strong>The Importance of Middlewares in Express</strong></p>
 
-<p>So the importance of express middlewares is that you can implement validations as middleware then it will apply every time it applies. For example here’s a function that will use the <code class="highlighter-rouge">params</code> middleware to check for ‘id’ and whether it exists. This will only fire if ‘id’ is on the params of the request.</p>
+<p>So the importance of express middlewares is that you can implement validations as middleware then it will apply every time it applies. For example here’s a function that will use the <code class="language-plaintext highlighter-rouge">params</code> middleware to check for ‘id’ and whether it exists. This will only fire if ‘id’ is on the params of the request.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tour controller</span>
 <span class="nx">exports</span><span class="p">.</span><span class="nx">checkId</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -170,9 +170,9 @@
 
 <h2 id="bonus---node-environment-variables">BONUS - Node Environment Variables</h2>
 
-<p>Node can run on development and production environments among others. You can run in a particular environment by doing for example on the terminal and starting your server as: <code class="highlighter-rouge">NODE_ENV=development node server.js</code>. This could be helpful if you use different db for development/production. You can also check environment variables with <code class="highlighter-rouge">process.env</code>.</p>
+<p>Node can run on development and production environments among others. You can run in a particular environment by doing for example on the terminal and starting your server as: <code class="language-plaintext highlighter-rouge">NODE_ENV=development node server.js</code>. This could be helpful if you use different db for development/production. You can also check environment variables with <code class="language-plaintext highlighter-rouge">process.env</code>.</p>
 
-<p>Now the easiest way to define these variables and environments is to add them to a <code class="highlighter-rouge">config.env</code> file. To do this use a dotenv NPM package you can install as <code class="highlighter-rouge">npm i dotenv</code>. After you define your variables you can use them on server.js as this:</p>
+<p>Now the easiest way to define these variables and environments is to add them to a <code class="language-plaintext highlighter-rouge">config.env</code> file. To do this use a dotenv NPM package you can install as <code class="language-plaintext highlighter-rouge">npm i dotenv</code>. After you define your variables you can use them on server.js as this:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// top level code server.js</span>
 <span class="kd">const</span> <span class="nx">dotenv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">dotenv</span><span class="dl">"</span><span class="p">);</span>
@@ -187,7 +187,7 @@
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">npm</span> <span class="n">i</span> <span class="n">eslint</span> <span class="n">prettier</span> <span class="n">eslint</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">prettier</span> <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">prettier</span> <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">jsx</span><span class="o">-</span><span class="n">a11y</span> <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">react</span><span class="o">-</span><span class="n">hooks</span> <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">node</span> <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">import</span>  <span class="n">eslint</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">react</span> <span class="n">eslint</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">airbnb</span> <span class="c1">--save-dev</span>
 </code></pre></div></div>
 
-<p>In the repo you can check the <code class="highlighter-rouge">.eslintrc.json</code> and <code class="highlighter-rouge">.prettierrc</code> file configurations used.</p>
+<p>In the repo you can check the <code class="language-plaintext highlighter-rouge">.eslintrc.json</code> and <code class="language-plaintext highlighter-rouge">.prettierrc</code> file configurations used.</p>
 
 <p>So although we took some baby steps on this exploration, I think they were enough to prepare us to fly with express in no time 🧙🏾‍♂️💫.</p>
 

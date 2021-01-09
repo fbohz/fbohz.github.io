@@ -1,10 +1,10 @@
-I"�L<blockquote>
-  <p>We must remember that programs can be defined pretty much as <code class="highlighter-rouge">data structures + algorithms</code>. As we conclude this exploration we’ll be discussing Searching algorithms and Dynamic Programming.</p>
+I"�M<blockquote>
+  <p>We must remember that programs can be defined pretty much as <code class="language-plaintext highlighter-rouge">data structures + algorithms</code>. As we conclude this exploration we’ll be discussing Searching algorithms and Dynamic Programming.</p>
 </blockquote>
 
 <h1 id="on-cs-algorithms-chapter-ii">On CS Algorithms: Chapter II</h1>
 
-<p>We must remember that programs can be defined pretty much as <code class="highlighter-rouge">data structures + algorithms</code>. As we conclude this exploration we’ll be discussing Searching algorithms and Dynamic Programming.</p>
+<p>We must remember that programs can be defined pretty much as <code class="language-plaintext highlighter-rouge">data structures + algorithms</code>. As we conclude this exploration we’ll be discussing Searching algorithms and Dynamic Programming.</p>
 
 <h1 id="searching--traversal-bfs-dfs">Searching + Traversal, BFS, DFS</h1>
 <p>We’ll talk about:</p>
@@ -35,7 +35,7 @@
       <li>Check one-by-one.</li>
     </ul>
   </li>
-  <li>Best case <code class="highlighter-rouge">O(1)</code> and worst case check every single item <code class="highlighter-rouge">O(n)</code></li>
+  <li>Best case <code class="language-plaintext highlighter-rouge">O(1)</code> and worst case check every single item <code class="language-plaintext highlighter-rouge">O(n)</code></li>
   <li>Some JS strategies using linear:</li>
 </ul>
 
@@ -75,7 +75,7 @@
   <li>If it’s sorted we can do better than O(n), creating a <strong>binary search tree</strong>. Data complexity since its a tree then it gives great storage too.</li>
   <li>Divide and conquer too.</li>
   <li>Binary search has lookup method by <strong>implementing trees as we saw on tree DS</strong>.</li>
-  <li>This has <code class="highlighter-rouge">O(log n)</code>.</li>
+  <li>This has <code class="language-plaintext highlighter-rouge">O(log n)</code>.</li>
   <li>But sometimes we need to traverse all nodes, there are other strategies for that.</li>
 </ul>
 
@@ -86,7 +86,7 @@
   <li>How can we traverse a Tree / Graph?
     <ul>
       <li>With Breadth-first search (BFS), Depth-first search (DFS).</li>
-      <li>Both have <code class="highlighter-rouge">O(n)</code>.</li>
+      <li>Both have <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
     </ul>
   </li>
   <li>Main benefit we don’t put them on Arrays or Hash Tables is order and good O(log n) instead of O(n).</li>
@@ -136,7 +136,7 @@
 <h3 id="bfs-vs-dfs">BFS vs DFS</h3>
 <p>BFS is like water from top to down. DFS is like lines.</p>
 
-<p>When to use BFS or DFS? Time complexity is <strong>same for both</strong> <code class="highlighter-rouge">O(n)</code></p>
+<p>When to use BFS or DFS? Time complexity is <strong>same for both</strong> <code class="language-plaintext highlighter-rouge">O(n)</code></p>
 
 <ul>
   <li>BFS:
@@ -154,7 +154,7 @@
       <li>Bad:** it can get slow if tree is very deep not very good finding shortest path**</li>
     </ul>
   </li>
-  <li>Resource: https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr</li>
+  <li><a href="https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr">Good Resource</a>.</li>
 </ul>
 
 <h2 id="common-interview-questions-bfs-vs-dfs">Common Interview Questions BFS vs DFS</h2>
@@ -198,20 +198,20 @@
 
 <h3 id="breadth-first-search---exercises">Breadth-first Search - Exercises</h3>
 <ul>
-  <li>Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs</li>
+  <li><a href="https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs">Code Here</a>.</li>
   <li>Uses a queue array</li>
   <li>Usually is done with iteration.</li>
 </ul>
 
 <h3 id="breadth-first-search-recursive---exercises">Breadth-first search (Recursive) - Exercises</h3>
 <ul>
-  <li>Code Here: https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs-recursive</li>
+  <li><a href="https://repl.it/@fbohz/Data-Structures-Trees-traversals-bfs-recursive">Code Here</a>.</li>
   <li>Just for fun.</li>
 </ul>
 
 <h3 id="depth-first-search---exercises">Depth-first search - Exercises</h3>
 <ul>
-  <li>Code here: https://repl.it/@fbohz/DFS-InOrder-PostOrder-PreOrder-Trees-Traversals</li>
+  <li><a href="https://repl.it/@fbohz/DFS-InOrder-PostOrder-PreOrder-Trees-Traversals">Code here</a>.</li>
   <li><strong>stack</strong> DS used here as it is Recursion. Height of tree will tell how much memory, memory consumption will depend on that.</li>
   <li>preOrder: from parent</li>
   <li>inOrder: order of nodes</li>
@@ -225,14 +225,14 @@
 <h3 id="validate-a-bst---interview-qs">Validate a BST - Interview Qs</h3>
 <ul>
   <li>A very common question you will get asked in an interview is <strong>how to validate a binary search tree</strong>! Hint, you want to use <strong>BFS</strong> for this.</li>
-  <li>Try it here: https://leetcode.com/problems/validate-binary-search-tree/</li>
+  <li>Try it <a href="https://leetcode.com/problems/validate-binary-search-tree/">here</a>.</li>
 </ul>
 
 <h3 id="graph-traversals">Graph Traversals</h3>
 <ul>
   <li>Tree traversal will be the same as Graph traversal. <strong>Trees are a type of graphs</strong>.</li>
   <li>Graphs model real life, like recommendation engine (items related) using like BFS. Facebook what type of friend request or LinkedIn connection with DFS.</li>
-  <li>See it in action: https://visualgo.net/en/dfsbfs?slide=1</li>
+  <li><a href="https://visualgo.net/en/dfsbfs?slide=1">See it in action</a></li>
 </ul>
 
 <p><strong>Remember</strong></p>
@@ -255,8 +255,6 @@
 </ul>
 
 <h2 id="dijkstra--bellman-ford-algorithms">Dijkstra + Bellman-Ford Algorithms</h2>
-
-<p>Resource: https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e</p>
 
 <ul>
   <li><strong>In interview you’ll probably don’t implement them</strong></li>
@@ -282,16 +280,14 @@
   </li>
 </ul>
 
+<p><a href="https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e">Read more</a>.</p>
 <h2 id="searching--traversal-review">Searching + Traversal Review</h2>
 <ul>
   <li>Searching and Traversal are one of the most popular algorithms.</li>
   <li>Learned about how to traverse tree/graph.</li>
   <li>Now we’re better to equipped to answer questions.</li>
-  <li>Review the <strong>Technical Interview Mind Map</strong>
-    <ul>
-      <li>https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link</li>
-    </ul>
-  </li>
+  <li>Review the <strong>Technical Interview Mind Map</strong>.</li>
+  <li><a href="https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link">More here</a>.</li>
 </ul>
 
 <h2 id="dynamic-programming-dp">Dynamic Programming (DP)</h2>
@@ -356,7 +352,7 @@
 
 <p>Patterns in DP:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ```javascript
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ```javascript
 </code></pre></div></div>
 
 <p>function memoAdd80() {
@@ -379,7 +375,7 @@ console.log(1, memoized(6))
 // console.log(‘———–’)
 console.log(2, memoized(6))</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Closures **return a fn inside a fn**
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Closures **return a fn inside a fn**
 - Because of closure we can **avoid global scope** and access cache.
 
 ### Fibonacci and DP (caching)
@@ -444,9 +440,9 @@ fib(6)
 <p>Here are some popular Dynamic Programming Questions (see if you can notice the pattern):</p>
 
 <ol>
-  <li>House Robber: https://leetcode.com/problems/house-robber</li>
-  <li>Best Time to Buy and Sell Stock: https://leetcode.com/problems/best-time-to-buy-and-sell-stock</li>
-  <li>Climbing Stairs: https://leetcode.com/problems/climbing-stairs</li>
+  <li><a href="https://leetcode.com/problems/house-robber">House Robber</a></li>
+  <li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock">Best Time to Buy and Sell Stock</a></li>
+  <li><a href="https://leetcode.com/problems/climbing-stairs">Climbing Stairs</a></li>
 </ol>
 
 <h2 id="review-of-dp">Review of DP</h2>

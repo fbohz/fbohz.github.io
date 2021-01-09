@@ -1,4 +1,4 @@
-I"<blockquote>
+I"�<blockquote>
   <p>React patterns are useful to promote code reuse while maintaining component simplicity and flexibility.</p>
 </blockquote>
 
@@ -6,13 +6,13 @@
 
 <h2 id="typical-component-development">Typical Component Development</h2>
 
-<p>Lets imagine a custom component that has an accordion UI. So we’ll build this <code class="highlighter-rouge">Accordion</code> component.</p>
+<p>Lets imagine a custom component that has an accordion UI. So we’ll build this <code class="language-plaintext highlighter-rouge">Accordion</code> component.</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png" alt="accordion1" /></p>
 
-<p>Imagine another developer wants you to allow more flexibility to your accordion so that the order of the accordion items can be customized. Here you might think passing out a <code class="highlighter-rouge">props</code> like <code class="highlighter-rouge">top</code> so if true then the accordion item becomes the first.</p>
+<p>Imagine another developer wants you to allow more flexibility to your accordion so that the order of the accordion items can be customized. Here you might think passing out a <code class="language-plaintext highlighter-rouge">props</code> like <code class="language-plaintext highlighter-rouge">top</code> so if true then the accordion item becomes the first.</p>
 
-<p>Now, another developer wants you to have the text on the side rather than at the bottom. Then after working on it you change the CSS so it can have it on the side with <code class="highlighter-rouge">props</code> as <code class="highlighter-rouge">right</code>, then if true it moves to the right.</p>
+<p>Now, another developer wants you to have the text on the side rather than at the bottom. Then after working on it you change the CSS so it can have it on the side with <code class="language-plaintext highlighter-rouge">props</code> as <code class="language-plaintext highlighter-rouge">right</code>, then if true it moves to the right.</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/80917657-25c28480-8d26-11ea-804f-993e9ecc2401.png" alt="accordion2" /></p>
 
@@ -44,7 +44,7 @@
 
 <p><img src="https://user-images.githubusercontent.com/15071636/80918255-9fa83d00-8d29-11ea-8dd4-4e4c12394d71.png" alt="patt2" /></p>
 
-<p>And then we can pass items to render the accordion in the default way like <code class="highlighter-rouge">&lt;Accordion items={accordionItems}&gt;</code></p>
+<p>And then we can pass items to render the accordion in the default way like <code class="language-plaintext highlighter-rouge">&lt;Accordion items={accordionItems}&gt;</code></p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/80917534-37eff300-8d25-11ea-95a5-cc4853fafd34.png" alt="accordion1" /></p>
 
@@ -54,7 +54,7 @@
 
 <p><strong>What is important</strong> is that this pattern doesn’t add any complexity to the logic behind the component. You can add features to it and have total control of render and no you’re no longer responsible of use cases you don’t want to support.</p>
 
-<p>As all the logic is stored in <code class="highlighter-rouge">useAccordion</code> custom hook, it gives flexibility and control as to how a particular user of the component wants the UI to be rendered.</p>
+<p>As all the logic is stored in <code class="language-plaintext highlighter-rouge">useAccordion</code> custom hook, it gives flexibility and control as to how a particular user of the component wants the UI to be rendered.</p>
 
 <p>Remember we are <strong>inverting control</strong>, as it can receive its own custom reducer, props so it can adapt to it. This is a <strong>benefit of React Hooks</strong>.</p>
 

@@ -1,4 +1,4 @@
-I"'<blockquote>
+I"s<blockquote>
   <p>Handling payments is very complex, not talking the security risks one can take if handling payment information. Stripe API, make things easier, secure and faster to deploy</p>
 </blockquote>
 
@@ -22,7 +22,7 @@
 
 <p>Lets add it to our package.json</p>
 
-<p><code class="highlighter-rouge">yarn add react-stripe-checkout</code></p>
+<p><code class="language-plaintext highlighter-rouge">yarn add react-stripe-checkout</code></p>
 
 <p>With this installed we can now add our Stripe element to render it frontend. Lets begin by creating a boilerplate element such as this one.</p>
 
@@ -59,13 +59,13 @@
 <span class="k">export</span> <span class="k">default</span> <span class="nx">StripeBtn</span>
 </code></pre></div></div>
 
-<p>Not here it is worth mentioning that stripe handles values as cents, that is why we create the const. The <code class="highlighter-rouge">publishableKey</code> is your own API key. To get the key, just access your new account and click on developer tab then API keys.</p>
+<p>Not here it is worth mentioning that stripe handles values as cents, that is why we create the const. The <code class="language-plaintext highlighter-rouge">publishableKey</code> is your own API key. To get the key, just access your new account and click on developer tab then API keys.</p>
 
 <p><img src="https://i.udemycdn.com/redactor/raw/2019-07-01_06-21-56-2d4f24984f3ec9b4c75abae102479511.png" alt="img" /></p>
 
-<p>Now, the imported <code class="highlighter-rouge">stripeCheckout</code> has a bunch of features and you can read more <a href="https://github.com/azmenak/react-stripe-checkout">here</a>.</p>
+<p>Now, the imported <code class="language-plaintext highlighter-rouge">stripeCheckout</code> has a bunch of features and you can read more <a href="https://github.com/azmenak/react-stripe-checkout">here</a>.</p>
 
-<p><code class="highlighter-rouge">token</code> is where you process your payment on your backend. For now we will just log it to the console and have the fake alert.</p>
+<p><code class="language-plaintext highlighter-rouge">token</code> is where you process your payment on your backend. For now we will just log it to the console and have the fake alert.</p>
 
 <p>With this you can go ahead and test adding this button to your appropriate component and see the button has been added accordingly. Here’s how it shows on mine:</p>
 

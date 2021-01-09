@@ -1,4 +1,4 @@
-I"^6<blockquote>
+I"7<blockquote>
   <p>What is GraphQL? It is a query language that wraps around an existing database to make requests to APIs differently. I implemented GraphQL on the latest iteration of the <a href="https://yijingballz.herokuapp.com/">Yijing-Ball-Z</a> app.</p>
 </blockquote>
 
@@ -76,7 +76,7 @@
 
 </code></pre></div></div>
 
-<p>For mutations we’ll start with the <code class="highlighter-rouge">mutation</code> keyword. Back to our Person example consider this:</p>
+<p>For mutations we’ll start with the <code class="language-plaintext highlighter-rouge">mutation</code> keyword. Back to our Person example consider this:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mutation</span> <span class="p">{</span>
   <span class="nx">createPerson</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">36</span><span class="p">)</span> <span class="p">{</span>
@@ -110,11 +110,11 @@
 
 <p>Ensure you install it as well as GraphQL:</p>
 
-<p><code class="highlighter-rouge">yarn add apollo-boost react-apollo graphql</code></p>
+<p><code class="language-plaintext highlighter-rouge">yarn add apollo-boost react-apollo graphql</code></p>
 
 <p>Apollo client lets us use the GraphQL API toolkit. Apollo also caches the data so we don’t double request it.</p>
 
-<p>Take a look at the <code class="highlighter-rouge">index.js</code> on the following <a href="https://github.com/fbohz/graphql-practice-example">GraphQL example repository</a>. We could test making a query using <code class="highlighter-rouge">gql</code> function as this:</p>
+<p>Take a look at the <code class="language-plaintext highlighter-rouge">index.js</code> on the following <a href="https://github.com/fbohz/graphql-practice-example">GraphQL example repository</a>. We could test making a query using <code class="language-plaintext highlighter-rouge">gql</code> function as this:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>client.query({
   query: gql`
@@ -134,7 +134,7 @@
 
 </code></pre></div></div>
 
-<p>Note how here the <code class="highlighter-rouge">client.query</code> returns a promise.</p>
+<p>Note how here the <code class="language-plaintext highlighter-rouge">client.query</code> returns a promise.</p>
 
 <p><strong>Apollo Container</strong></p>
 
@@ -158,11 +158,11 @@
 
 <p>Mutations are a bit different and you can check the example Repo and specifically the <a href="https://github.com/fbohz/graphql-practice-example/tree/master/src/graphql">graphql folder</a>. Basically you create a resolvers.js file that handles the mutations inside a graphql folder in src.</p>
 
-<p><code class="highlighter-rouge">extend</code> keyword in GraphQL behaves a little bit different than JS, read more <a href="https://www.apollographql.com/docs/react/development-testing/client-schema-mocking/#1-extend-your-server-schema-with-a-client-only-field">here</a>. Another key concept are resolvers methods, the <a href="https://www.apollographql.com/docs/react/data/local-state/#local-resolvers">GraphQL documentation</a> can explain them in detail. Here the cache object you can <a href="https://www.apollographql.com/docs/react/caching/cache-configuration/">read more</a> about it.</p>
+<p><code class="language-plaintext highlighter-rouge">extend</code> keyword in GraphQL behaves a little bit different than JS, read more <a href="https://www.apollographql.com/docs/react/development-testing/client-schema-mocking/#1-extend-your-server-schema-with-a-client-only-field">here</a>. Another key concept are resolvers methods, the <a href="https://www.apollographql.com/docs/react/data/local-state/#local-resolvers">GraphQL documentation</a> can explain them in detail. Here the cache object you can <a href="https://www.apollographql.com/docs/react/caching/cache-configuration/">read more</a> about it.</p>
 
-<p>Notice also how we import and pass to our client in index.js the resolvers and typeDefs defined on resolver.js. Here for example the <code class="highlighter-rouge">toggleCartHidden</code> mutation is used on header-container that is in charge of dealing with the graphql querying using the Query element and then renders the header-component.</p>
+<p>Notice also how we import and pass to our client in index.js the resolvers and typeDefs defined on resolver.js. Here for example the <code class="language-plaintext highlighter-rouge">toggleCartHidden</code> mutation is used on header-container that is in charge of dealing with the graphql querying using the Query element and then renders the header-component.</p>
 
-<p>You might also notice in resolvers.js the <code class="highlighter-rouge">@client</code> this tells Apollo to look on the local cache not the server. Finally on the cart-icon container you might see that it uses <code class="highlighter-rouge">compose</code> and <code class="highlighter-rouge">graphql</code> functions, that look kind of like Redux, you can access the <a href="https://www.apollographql.com/docs/react/api/react-apollo/#graphqlquery-configcomponent">documentation</a> to see how to implement in detail.</p>
+<p>You might also notice in resolvers.js the <code class="language-plaintext highlighter-rouge">@client</code> this tells Apollo to look on the local cache not the server. Finally on the cart-icon container you might see that it uses <code class="language-plaintext highlighter-rouge">compose</code> and <code class="language-plaintext highlighter-rouge">graphql</code> functions, that look kind of like Redux, you can access the <a href="https://www.apollographql.com/docs/react/api/react-apollo/#graphqlquery-configcomponent">documentation</a> to see how to implement in detail.</p>
 
 <p>Mutations can be a complex topic, so read on the resources and make your own tests. Complete Apollo documentation in the link <a href="https://www.apollographql.com/docs/react/essentials/mutations/">here</a>. However do have in mind that if you would like to implement it consider having a container that deals with the graphql logic then the actual presentational component so the latter can be reused as it is not solely related to graphql.</p>
 

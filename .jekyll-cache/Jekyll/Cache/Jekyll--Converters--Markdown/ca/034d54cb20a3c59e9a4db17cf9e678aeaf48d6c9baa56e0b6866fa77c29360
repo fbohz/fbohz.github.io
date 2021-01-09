@@ -1,5 +1,5 @@
-I"�A<blockquote>
-  <p>Async/Await was introduced recently. In order to use async/await we need to use mark functions as <code class="highlighter-rouge">async</code> functions. Async functions return a promise and we can use one or more await functions.</p>
+I"�B<blockquote>
+  <p>Async/Await was introduced recently. In order to use async/await we need to use mark functions as <code class="language-plaintext highlighter-rouge">async</code> functions. Async functions return a promise and we can use one or more await functions.</p>
 </blockquote>
 
 <h1 id="solving-callback-hell---js-promises-and-async-await-in-nodejs">Solving Callback Hell😈 - JS Promises and Async-Await in Node.js</h1>
@@ -30,7 +30,7 @@
 
 <p><strong>Saving Callback Hell with Promises</strong></p>
 
-<p>We can implement and consume promises easily. It implements a future value we are expected to receive in the future. Above <code class="highlighter-rouge">.get()</code> returns a promise so we can use it. To do that we use the <code class="highlighter-rouge">.then()</code> method:</p>
+<p>We can implement and consume promises easily. It implements a future value we are expected to receive in the future. Above <code class="language-plaintext highlighter-rouge">.get()</code> returns a promise so we can use it. To do that we use the <code class="language-plaintext highlighter-rouge">.then()</code> method:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">__dirname</span><span class="p">}</span><span class="s2">/dog.txt`</span><span class="p">)</span>
@@ -52,7 +52,7 @@
 
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">.then</code> only handles fulfilled promises, <code class="highlighter-rouge">.catch</code> handles when error. Here we can see it looks much better and we’re not nesting callbacks! However we still have callbacks function so we can make it event better 😏.</p>
+<p><code class="language-plaintext highlighter-rouge">.then</code> only handles fulfilled promises, <code class="language-plaintext highlighter-rouge">.catch</code> handles when error. Here we can see it looks much better and we’re not nesting callbacks! However we still have callbacks function so we can make it event better 😏.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">const</span> <span class="nx">readFilePromise</span> <span class="o">=</span> <span class="nx">file</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -75,13 +75,13 @@
 
 </code></pre></div></div>
 
-<p>The Promise constructor takes an executer function with resolve and reject as arguments. Then here just modify the <code class="highlighter-rouge">fs.readFile</code>, <code class="highlighter-rouge">fs.writeFile</code> to be <code class="highlighter-rouge">readFilePromise()</code>, <code class="highlighter-rouge">writeFilePromise()</code> with the file name and looks much better. So with that we solve and have less callbacks inside of callbacks.</p>
+<p>The Promise constructor takes an executer function with resolve and reject as arguments. Then here just modify the <code class="language-plaintext highlighter-rouge">fs.readFile</code>, <code class="language-plaintext highlighter-rouge">fs.writeFile</code> to be <code class="language-plaintext highlighter-rouge">readFilePromise()</code>, <code class="language-plaintext highlighter-rouge">writeFilePromise()</code> with the file name and looks much better. So with that we solve and have less callbacks inside of callbacks.</p>
 
-<p>Remember in order to use <code class="highlighter-rouge">.then()</code> we need to make sure code returns a promise!</p>
+<p>Remember in order to use <code class="language-plaintext highlighter-rouge">.then()</code> we need to make sure code returns a promise!</p>
 
 <p><strong>Using Promises with Async / Await</strong></p>
 
-<p>Async/Await was introduced recently. In order to use async/await we need to use mark functions as <code class="highlighter-rouge">async</code> functions. Async functions return a promise and we can use one or more await functions.</p>
+<p>Async/Await was introduced recently. In order to use async/await we need to use mark functions as <code class="language-plaintext highlighter-rouge">async</code> functions. Async functions return a promise and we can use one or more await functions.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getDogPic</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
@@ -109,9 +109,9 @@
 
 <p>So this is called synthetic sugar for promises, it is still the same on the back but looks better on the front 😊.</p>
 
-<p><strong>Bonus - <code class="highlighter-rouge">Promise.all</code></strong></p>
+<p><strong>Bonus - <code class="language-plaintext highlighter-rouge">Promise.all</code></strong></p>
 
-<p>We can wait for multiple promises using <code class="highlighter-rouge">Promise.all</code> by passing as an array of some saved promises. Example:</p>
+<p>We can wait for multiple promises using <code class="language-plaintext highlighter-rouge">Promise.all</code> by passing as an array of some saved promises. Example:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">res1Pro</span> <span class="o">=</span> <span class="nx">superagent</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
     <span class="s2">`https://dog.ceo/api/breed/</span><span class="p">${</span><span class="nx">data</span><span class="p">}</span><span class="s2">/images/random`</span>

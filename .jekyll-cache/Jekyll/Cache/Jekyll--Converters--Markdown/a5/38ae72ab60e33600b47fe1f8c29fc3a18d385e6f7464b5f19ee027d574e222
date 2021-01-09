@@ -1,4 +1,4 @@
-I"ï<blockquote>
+I"<blockquote>
   <p>Digging Deeper into SD</p>
 </blockquote>
 
@@ -16,7 +16,7 @@
 
 <p>After this is done you can come up with your systems <strong>API endpoints</strong>. It is recommended using a REST API. Hereâ€™s an example of a twitter API:</p>
 
-<p><code class="highlighter-rouge">tweet(api_dev_key, tweet_data, tweet_location, user_location)</code></p>
+<p><code class="language-plaintext highlighter-rouge">tweet(api_dev_key, tweet_data, tweet_location, user_location)</code></p>
 
 <p><em>Sample API Parameters</em>:</p>
 <ul>
@@ -28,7 +28,7 @@
 
 <p><em>Sample API Returns</em>: (string)</p>
 
-<p>Here think about any <strong>appropriate HTTP error(s)</strong> returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if <code class="highlighter-rouge">api_dev_key</code> is invalid?</p>
+<p>Here think about any <strong>appropriate HTTP error(s)</strong> returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if <code class="language-plaintext highlighter-rouge">api_dev_key</code> is invalid?</p>
 
 <h2 id="component-design">Component Design</h2>
 

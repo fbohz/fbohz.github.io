@@ -1,4 +1,4 @@
-I"�5<blockquote>
+I"@6<blockquote>
   <p>It might be common to think that software engineers don’t have to deal or worry about UI, since it is delegated to UX designers. However learning about CSS patterns such as Flexbox is crucial to becoming a more thorough developer and problem solve with a design/layout mindset.</p>
 </blockquote>
 
@@ -10,7 +10,7 @@
 
 <p>You can apply Flexbox to setup the initial layout of a website, app, and mobile application (with React Native). The first thing we need to do to start using Flexbox is to apply the following to the parent container:</p>
 
-<p><code class="highlighter-rouge">display: flex</code></p>
+<p><code class="language-plaintext highlighter-rouge">display: flex</code></p>
 
 <h2 id="flex-parent-container-properties">Flex Parent (Container) Properties</h2>
 
@@ -36,7 +36,7 @@
 
 <p><strong>Flex Direction</strong></p>
 
-<p>Lets say we’ll apply <code class="highlighter-rouge">flex-direction: column</code> what do we get?</p>
+<p>Lets say we’ll apply <code class="language-plaintext highlighter-rouge">flex-direction: column</code> what do we get?</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/85189215-6775a300-b272-11ea-8de6-02d230574e0a.png" alt="Screen Shot 2020-06-19 at 9 17 54 PM" /></p>
 
@@ -65,7 +65,7 @@
 
 <p><strong>Flex Flow</strong></p>
 
-<p>With flex flow we combine flex-wrap and flex-direction into one property for example <code class="highlighter-rouge">flex-flow: column wrap;</code>.</p>
+<p>With flex flow we combine flex-wrap and flex-direction into one property for example <code class="language-plaintext highlighter-rouge">flex-flow: column wrap;</code>.</p>
 
 <p><strong>Justify Content</strong></p>
 
@@ -79,7 +79,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>For example we can display our items in the center with <code class="highlighter-rouge">justify-content: center;</code>:</p>
+<p>For example we can display our items in the center with <code class="language-plaintext highlighter-rouge">justify-content: center;</code>:</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/85189316-97717600-b273-11ea-8cd9-150395753be7.png" alt="Screen Shot 2020-06-19 at 9 26 40 PM" /></p>
 
@@ -146,7 +146,7 @@
 
 <p><strong>Flex</strong></p>
 
-<p>With flex you can apply <code class="highlighter-rouge">flex-grow, flex-shrink, and flex-basis</code> at the same time. The second and third parameters are optional. It is <em>recommended</em> to use <code class="highlighter-rouge">flex</code> instead of the individual properties.</p>
+<p>With flex you can apply <code class="language-plaintext highlighter-rouge">flex-grow, flex-shrink, and flex-basis</code> at the same time. The second and third parameters are optional. It is <em>recommended</em> to use <code class="language-plaintext highlighter-rouge">flex</code> instead of the individual properties.</p>
 
 <p><strong>Align Self</strong></p>
 
@@ -175,8 +175,8 @@
 <p><strong>Flex Tips</strong></p>
 
 <ul>
-  <li>For centering try <code class="highlighter-rouge">justify-content: center; align-items: center;</code>.</li>
-  <li><code class="highlighter-rouge">float, clear, vertical-align</code> have no effect on a flex item.</li>
+  <li>For centering try <code class="language-plaintext highlighter-rouge">justify-content: center; align-items: center;</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">float, clear, vertical-align</code> have no effect on a flex item.</li>
 </ul>
 
 <h2 id="resources">Resources</h2>

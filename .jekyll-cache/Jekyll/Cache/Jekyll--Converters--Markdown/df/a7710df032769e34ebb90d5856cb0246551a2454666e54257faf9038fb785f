@@ -1,4 +1,4 @@
-I"FN<blockquote>
+I"�O<blockquote>
   <p>Today we’ll discuss regarding the last piece of the puzzle on good problem solving in software engineering, namely algorithms. On this first chapter we’ll talk about Recursion and Sorting Algorithms.</p>
 </blockquote>
 
@@ -8,7 +8,7 @@
 
 <h2 id="intro-to-algorithms-and-recursion-pattern">Intro To Algorithms and Recursion Pattern</h2>
 
-<p>Remember: <code class="highlighter-rouge">DS + ALG = programs</code>:</p>
+<p>Remember: <code class="language-plaintext highlighter-rouge">DS + ALG = programs</code>:</p>
 <ul>
   <li>A two line function is technically an algorithm.</li>
   <li>There are thousands of well established algorithm.</li>
@@ -21,7 +21,7 @@
 <ul>
   <li>It’s more of a concept, than an algorithm</li>
   <li>Common topic in an interview.</li>
-  <li>E.g. type <code class="highlighter-rouge">ls -R</code> on terminal in a folder: it will give you all files and folders.</li>
+  <li>E.g. type <code class="language-plaintext highlighter-rouge">ls -R</code> on terminal in a folder: it will give you all files and folders.</li>
   <li><strong>Recursion is a function that refers to itself inside of the function</strong>. Sounds too philosophical? 🤯</li>
 </ul>
 
@@ -67,9 +67,9 @@
 <h3 id="recursion-exercise---factorial">Recursion Exercise - Factorial</h3>
 
 <p>A factorial multiplies itself depending on number for example:
-<code class="highlighter-rouge">5! = 5 * 4 * 3 * 2 * 1</code></p>
+<code class="language-plaintext highlighter-rouge">5! = 5 * 4 * 3 * 2 * 1</code></p>
 
-<p>You can solve this through looping or recursion. See below or click <a href="https://repl.it/@fbohz/BlogRecursionEg1#index.js">here</a>. Note both are <code class="highlighter-rouge">O(n)</code>.</p>
+<p>You can solve this through looping or recursion. See below or click <a href="https://repl.it/@fbohz/BlogRecursionEg1#index.js">here</a>. Note both are <code class="language-plaintext highlighter-rouge">O(n)</code>.</p>
 
 <iframe height="400px" width="100%" src="https://repl.it/@fbohz/BlogRecursionEg1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -99,12 +99,10 @@
 
 <ul>
   <li>Every time <strong>using a tree or converting to a tree consider recursion</strong></li>
-  <li>You see a lot of divide and conquer in recursive solutions like a phonebook. These divide and conquer usually have recursive solutions.</li>
+  <li>You see a lot of divide and conquer in recursive solutions like a phone-book. These divide and conquer usually have recursive solutions.</li>
   <li>Tail call optimization</li>
-  <li>allows recursion without increasing the call stack.</li>
-  <li>REF: https://2ality.com/2015/06/tail-call-optimization.html</li>
-  <li>Great real world application example of when to use recursion:</li>
-  <li>https://stackoverflow.com/questions/105838/real-world-examples-of-recursion</li>
+  <li>Allows recursion without increasing the call stack. Read <a href="https://2ality.com/2015/06/tail-call-optimization.html">here</a>.</li>
+  <li>Great <a href="https://stackoverflow.com/questions/105838/real-world-examples-of-recursion">real world application example</a> of when to use recursion:</li>
 </ul>
 
 <p>Interview triggers:</p>
@@ -123,7 +121,7 @@
 
 <h1 id="sorting">Sorting</h1>
 
-<p>Sorting is very important for interviews. But, why you care about sorting if you have <code class="highlighter-rouge">sort()</code> in JS?</p>
+<p>Sorting is very important for interviews. But, why you care about sorting if you have <code class="language-plaintext highlighter-rouge">sort()</code> in JS?</p>
 
 <p><strong>Sorting is not a big deal with small input data</strong>. But as it grows it gets more complicated.</p>
 
@@ -153,7 +151,7 @@
   </li>
 </ul>
 
-<h2 id="built-in-sort">Built-in <code class="highlighter-rouge">sort()</code></h2>
+<h2 id="built-in-sort">Built-in <code class="language-plaintext highlighter-rouge">sort()</code></h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">basket</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 <span class="kd">const</span> <span class="nx">sp</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">único</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">árbol</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cosas</span><span class="dl">'</span><span class="p">]</span>
@@ -169,7 +167,7 @@
 
 <p>Try running line sort(). You might have surprise because JS converts to string. With JS each browser will use their own ECMAScript implementation so differences might come as well.</p>
 
-<p>Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</p>
+<p>Read more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">here</a>.</p>
 
 <h3 id="sorting-algorithms">Sorting Algorithms</h3>
 
@@ -178,7 +176,7 @@
   <li>Most of the time talk about it, and implement it with frameworks.</li>
   <li><strong>Interviews, will ask you for sure.</strong></li>
   <li>There are Big O tradeoffs when using sorting algorithms.</li>
-  <li>Great learning resource: https://www.toptal.com/developers/sorting-algorithms</li>
+  <li><a href="https://www.toptal.com/developers/sorting-algorithms">Great learning resource</a>.</li>
 </ul>
 
 <h2 id="bubble-sort---do-not-use">Bubble Sort - DO NOT USE</h2>
@@ -189,7 +187,7 @@
       <li>Compare each one and swap them out. <strong>Bubble up the highest number</strong></li>
     </ul>
   </li>
-  <li>A lot of comparison, and slow. Space complexity O(1) but time complexity is <code class="highlighter-rouge">O(n^2)</code> so slow.</li>
+  <li>A lot of comparison, and slow. Space complexity O(1) but time complexity is <code class="language-plaintext highlighter-rouge">O(n^2)</code> so slow.</li>
   <li>Probably <strong>not the best algorithm</strong></li>
 </ul>
 
@@ -202,7 +200,7 @@
       <li>It also means a lot of passes to find the smallest item through the list.</li>
     </ul>
   </li>
-  <li>Time complexity is <code class="highlighter-rouge">O(n^2)</code> and O(1) as space. So also <strong>not very efficient</strong>.</li>
+  <li>Time complexity is <code class="language-plaintext highlighter-rouge">O(n^2)</code> and O(1) as space. So also <strong>not very efficient</strong>.</li>
 </ul>
 
 <p>Example Selection Sort: Scroll until the end of this article.</p>
@@ -218,7 +216,7 @@
 
 <p>Best case scenario is O(n) <strong>very fast</strong>. If your set is <strong>mostly sorted use insertion sort</strong>.</p>
 
-<h2 id="merge-sort-and-on-log-n">Merge Sort and <code class="highlighter-rouge">O(n log n)</code></h2>
+<h2 id="merge-sort-and-on-log-n">Merge Sort and <code class="language-plaintext highlighter-rouge">O(n log n)</code></h2>
 
 <ul>
   <li>This performs better than others.</li>
@@ -231,17 +229,17 @@
       <li>These groups are compared until sorting is done.</li>
     </ul>
   </li>
-  <li>Very efficient than most, but <em>*more space complexity</em> with <code class="highlighter-rouge">O(n)</code>.</li>
+  <li>Very efficient than most, but <em>*more space complexity</em> with <code class="language-plaintext highlighter-rouge">O(n)</code>.</li>
   <li>You probably won’t be asked to do merge sort by yourself.</li>
 </ul>
 
-<p>Merge sort is stable but very hard to implement for yourself. More about stable algorithm: https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important</p>
+<p>Merge sort is stable but very hard to implement for yourself. <a href="https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important">More about stability in sorting algorithms</a>.</p>
 
 <p>Merge Sort example: Scroll until the end of this article.</p>
 
 <h2 id="quick-sort">Quick Sort</h2>
 
-<p>Also divide and conquer <code class="highlighter-rouge">O(n log n)</code>.</p>
+<p>Also divide and conquer <code class="language-plaintext highlighter-rouge">O(n log n)</code>.</p>
 
 <p>Uses pivoting technique. <strong>Pretty complex to understand.</strong></p>
 <ul>
@@ -258,7 +256,7 @@
   <li>Quick sort is fastest on average, but can have bad consequences if you don’t know how to use it. You can rely on merge or others if unsure.</li>
 </ul>
 
-<p><strong>Quick sort example</strong>: https://repl.it/@fbohz/quickSort</p>
+<p><strong><a href="https://repl.it/@fbohz/quickSort">Quick sort example</a></strong>.</p>
 
 <h2 id="which-sort-is-best">Which Sort is Best?</h2>
 
@@ -271,7 +269,7 @@
   </li>
   <li>Merge Sort (<strong>often used</strong>)
     <ul>
-      <li>O(n log n) fast b/c of divide and conquer. Best fast and worst case is consistend.</li>
+      <li>O(n log n) fast b/c of divide and conquer. Best fast and worst case is consistent.</li>
       <li>If you’re worried about worst case scenarios use this one.</li>
       <li>If space is an issue, it can be very expensive as O(n)</li>
     </ul>
@@ -294,12 +292,12 @@
 
 <h2 id="other-sorts">Other Sorts:</h2>
 
-<p>Can we beat <code class="highlighter-rouge">O(n log n)</code>? Mathematically, is impossible. Means we have to sort by comparison.</p>
+<p>Can we beat <code class="language-plaintext highlighter-rouge">O(n log n)</code>? Mathematically, is impossible. Means we have to sort by comparison.</p>
 
 <p>Tell me more about the other sorts:</p>
 <ul>
-  <li>Heap sort: https://brilliant.org/wiki/heap-sort/</li>
-  <li>Quick vs Heap sort comparison: https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort</li>
+  <li><a href="https://brilliant.org/wiki/heap-sort/">Heap sort</a>.</li>
+  <li><a href="https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort">Quick vs Heap sort comparison</a>.</li>
 </ul>
 
 <p><strong>Non Comparison Sorts</strong>:</p>
@@ -313,10 +311,10 @@
 
 <p><strong>Resources</strong>:</p>
 <ul>
-  <li>Radix Sort: https://brilliant.org/wiki/radix-sort/</li>
-  <li>Radix Sort Animation: https://www.cs.usfca.edu/~galles/visualization/RadixSort.html</li>
-  <li>Counting Sort: https://brilliant.org/wiki/counting-sort/</li>
-  <li>Counting Sort Animation: https://www.cs.usfca.edu/~galles/visualization/CountingSort.html</li>
+  <li><a href="https://brilliant.org/wiki/radix-sort/">Radix Sort</a>.</li>
+  <li><a href="https://www.cs.usfca.edu/~galles/visualization/RadixSort.html">Radix Sort Animation</a>.</li>
+  <li><a href="https://brilliant.org/wiki/counting-sort/">Counting Sort</a>.</li>
+  <li><a href="https://www.cs.usfca.edu/~galles/visualization/CountingSort.html">Counting Sort Animation</a></li>
 </ul>
 
 <h2 id="common-sorting-interview-questions">Common Sorting Interview Questions</h2>
@@ -368,7 +366,7 @@
 <h2 id="sorting-review">Sorting Review</h2>
 
 <ul>
-  <li>JS included <code class="highlighter-rouge">.sort()</code>, depending on its engine might use merge / quick or insertion sort for smaller arrays. So depends on engine used by browser.</li>
+  <li>JS included <code class="language-plaintext highlighter-rouge">.sort()</code>, depending on its engine might use merge / quick or insertion sort for smaller arrays. So depends on engine used by browser.</li>
   <li>Quick Sort: average space performance concern.</li>
   <li>Merge sort: more stable always gives same results in order if two items are same.</li>
   <li>In real life you won’t use others unless small (insertion).</li>

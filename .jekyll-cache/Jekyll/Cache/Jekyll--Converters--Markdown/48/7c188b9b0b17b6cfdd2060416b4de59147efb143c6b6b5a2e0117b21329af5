@@ -1,4 +1,4 @@
-I"K�<blockquote>
+I"��<blockquote>
   <p>In Building <a href="https://studio-ghibli-fanhub.herokuapp.com/">Studio Ghibli’s Fan Hub</a>, a project made with React, I decided to implement Firebase for its backend.</p>
 </blockquote>
 
@@ -22,7 +22,7 @@
 
 <h2 id="getting-started-with-firebase">Getting Started with Firebase</h2>
 
-<p>Once you access the Firebase website make sure you login with your Google account then click on ‘Create/Add Project’. Add the project name usually as <code class="highlighter-rouge">projectName-db</code> or <code class="highlighter-rouge">projectName-backend</code> . Then leave all the defaults and let your project finish up spinning up and completing setting up.</p>
+<p>Once you access the Firebase website make sure you login with your Google account then click on ‘Create/Add Project’. Add the project name usually as <code class="language-plaintext highlighter-rouge">projectName-db</code> or <code class="language-plaintext highlighter-rouge">projectName-backend</code> . Then leave all the defaults and let your project finish up spinning up and completing setting up.</p>
 
 <p>Now make sure you are in the <em>Spark - Free Plan</em>. You’ll wanna upgrade as you feel more comfortable with Firebase. At the beginning is very rare you exceed the limits.</p>
 
@@ -39,9 +39,9 @@
 <ol>
   <li>Click on ‘Project Overview’ on top.</li>
   <li>Click on Web Icon (the last)</li>
-  <li>Register firebase by adding a name (internal name) like the convention above. I named mine also as <code class="highlighter-rouge">studio-ghibli-fan-hub-db</code>.</li>
-  <li>You’ll get a code snippet. Make sure you <em>copy</em> the <code class="highlighter-rouge">var firebaseConfig</code> contents which includes your API configuration.</li>
-  <li>Go back to terminal and do <code class="highlighter-rouge">yarn add firebase</code> or <code class="highlighter-rouge">npm i firebase</code>.</li>
+  <li>Register firebase by adding a name (internal name) like the convention above. I named mine also as <code class="language-plaintext highlighter-rouge">studio-ghibli-fan-hub-db</code>.</li>
+  <li>You’ll get a code snippet. Make sure you <em>copy</em> the <code class="language-plaintext highlighter-rouge">var firebaseConfig</code> contents which includes your API configuration.</li>
+  <li>Go back to terminal and do <code class="language-plaintext highlighter-rouge">yarn add firebase</code> or <code class="language-plaintext highlighter-rouge">npm i firebase</code>.</li>
 </ol>
 
 <p>Now we’re ready for the next step ✨</p>
@@ -49,7 +49,7 @@
 <h2 id="adding-firebase-to-our-react-app">Adding Firebase to our React App</h2>
 
 <ul>
-  <li>Create a folder named ‘Firebase’ inside your ‘src’ folder. Then make a new file called <code class="highlighter-rouge">firebase.utils.js</code>. Make sure you have that config object info ready.</li>
+  <li>Create a folder named ‘Firebase’ inside your ‘src’ folder. Then make a new file called <code class="language-plaintext highlighter-rouge">firebase.utils.js</code>. Make sure you have that config object info ready.</li>
   <li>Then do the following to import your firebase utilities.</li>
 </ul>
 
@@ -75,7 +75,7 @@
 
 <p>Here we are only importing what we need then the second imports are attached to the firebase keyword. After we initialize our app there’s some setup code that is in the documentation. We export auth() and firestore().</p>
 
-<p>Then the rest of the code is to setup Google Login. The <code class="highlighter-rouge">prompt: 'select_account'</code> is the popup that will show up and then we can Login users.</p>
+<p>Then the rest of the code is to setup Google Login. The <code class="language-plaintext highlighter-rouge">prompt: 'select_account'</code> is the popup that will show up and then we can Login users.</p>
 
 <p>Note: You might be worried to expose your key publicly. But it is generally save to expose Firebase apiKey. Read more <a href="https://twitter.com/search?q=firebase%20api%20key%20gitguardian&amp;src=typd">here</a>.</p>
 
@@ -90,7 +90,7 @@
 <p><strong>Adding Google Sign in to your Login Component</strong></p>
 
 <ul>
-  <li>Import as <code class="highlighter-rouge">import { signInWithGoogle } from '../../firebase/firebase.utils'</code> in your Login/Sign in Component.</li>
+  <li>Import as <code class="language-plaintext highlighter-rouge">import { signInWithGoogle } from '../../firebase/firebase.utils'</code> in your Login/Sign in Component.</li>
   <li>Add another button and do the onClick to take the imported function. My button looks like this.</li>
 </ul>
 
@@ -112,8 +112,8 @@
 <p>In order to add Firebase data into our application we do the following.</p>
 
 <ul>
-  <li>Import into our <code class="highlighter-rouge">App.js</code> our firebase utils file. As <code class="highlighter-rouge">import { auth } from './firebase/firebase.utils'</code>.</li>
-  <li>First lets add <code class="highlighter-rouge">currentUser</code> to state and add a componentDidMount() function that will call our imported auth as this.</li>
+  <li>Import into our <code class="language-plaintext highlighter-rouge">App.js</code> our firebase utils file. As <code class="language-plaintext highlighter-rouge">import { auth } from './firebase/firebase.utils'</code>.</li>
+  <li>First lets add <code class="language-plaintext highlighter-rouge">currentUser</code> to state and add a componentDidMount() function that will call our imported auth as this.</li>
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
@@ -128,9 +128,9 @@
 </code></pre></div></div>
 
 <ul>
-  <li>Note that the <code class="highlighter-rouge">onAuthStateChanged()</code> connection is always open as long as App.js is mounted so you don’t have to re-call it again.</li>
+  <li>Note that the <code class="language-plaintext highlighter-rouge">onAuthStateChanged()</code> connection is always open as long as App.js is mounted so you don’t have to re-call it again.</li>
   <li>One of the key things of Firebase is that it has user auth persistance. So if you do a console.log on ‘user’ you’ll see that your previous user persisted on your React app. So we don’t need to have the user re-sign when the page refreshes. Even on Dev mode.</li>
-  <li>Because <code class="highlighter-rouge">onAuthStateChanged</code> we need to unsuscribe so we modify our code as:</li>
+  <li>Because <code class="language-plaintext highlighter-rouge">onAuthStateChanged</code> we need to unsuscribe so we modify our code as:</li>
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="kc">null</span>
@@ -155,7 +155,7 @@
 
 <p>This depends on your component implementation but usually implemented on a Header or Nav component pass out the user state.</p>
 
-<p>First you import the auth library as you did in App.js. Then pass the ‘user’ props to your Nav/Header component. Then you might want to render another header item that will conditionally render either Login or Logout and if clicked you’ll pass the <code class="highlighter-rouge">signOut()</code> function from our auth that we imported to firebase. This is how I did it on Studio Ghibli’s app:</p>
+<p>First you import the auth library as you did in App.js. Then pass the ‘user’ props to your Nav/Header component. Then you might want to render another header item that will conditionally render either Login or Logout and if clicked you’ll pass the <code class="language-plaintext highlighter-rouge">signOut()</code> function from our auth that we imported to firebase. This is how I did it on Studio Ghibli’s app:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// props.currentUser was passed from App.js. Link is a react-router-dom element.</span>
 
@@ -173,7 +173,7 @@
 
 <p>Firestore is a <em>noSQL</em> database, kind of pretty much a database made up of a big JSON object. With that in mind let’s create our database</p>
 
-<p>On Firebase console, click on Database then create database. You’ll have two options to start in production (locked) or test mode. Select <code class="highlighter-rouge">test-mode</code>, you’ll wanna write some access rules as you go. Now you can follow up the prompts and click Done.</p>
+<p>On Firebase console, click on Database then create database. You’ll have two options to start in production (locked) or test mode. Select <code class="language-plaintext highlighter-rouge">test-mode</code>, you’ll wanna write some access rules as you go. Now you can follow up the prompts and click Done.</p>
 
 <p><strong>Types of Firestore Data</strong></p>
 
@@ -193,7 +193,7 @@
 
 <p><strong>Storing to our database - First Steps</strong></p>
 
-<p>The following function will take that user we get from Authentication and then store the information we need in our database. To do so we’ll head to the <code class="highlighter-rouge">firebase.utils.js</code> and <code class="highlighter-rouge">App.js</code>.</p>
+<p>The following function will take that user we get from Authentication and then store the information we need in our database. To do so we’ll head to the <code class="language-plaintext highlighter-rouge">firebase.utils.js</code> and <code class="language-plaintext highlighter-rouge">App.js</code>.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1">// firebase.utils.js</span>
@@ -243,8 +243,8 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 
 <p><em>QueryReference</em> is that object that represents the current place in the db we are querying. This one doesn’t have the actual data. Just properties that tell us details about it and the method to get the <em>QuerySnapshot</em> with the actual data. We could call them as:</p>
 
-<p><code class="highlighter-rouge">frestore.doc('/users/userId')</code>
-<code class="highlighter-rouge">frestore.collections('/users')</code></p>
+<p><code class="language-plaintext highlighter-rouge">frestore.doc('/users/userId')</code>
+<code class="language-plaintext highlighter-rouge">frestore.collections('/users')</code></p>
 
 <p>Regarding QueryReference, there are <em>DocumentReference</em> vs <em>CollectionReference</em>. There are some differences as follows:</p>
 
@@ -254,15 +254,15 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 
 <p><img src="https://user-images.githubusercontent.com/15071636/83358454-50a9f380-a339-11ea-9070-29740f351a90.png" alt="Screen Shot 2020-05-31 at 12 21 45 PM" /></p>
 
-<p>Here the ‘exists’ property tells if there’s any data. Here in our code we are checking if the user already exists. If snapShot doesn’t exists then we use CRUD on documentRef (not snapShot ). We get the data we need (in this case displayName and email) and make the request to the firebase to create with the Firebase method of <code class="highlighter-rouge">.set()</code></p>
+<p>Here the ‘exists’ property tells if there’s any data. Here in our code we are checking if the user already exists. If snapShot doesn’t exists then we use CRUD on documentRef (not snapShot ). We get the data we need (in this case displayName and email) and make the request to the firebase to create with the Firebase method of <code class="language-plaintext highlighter-rouge">.set()</code></p>
 
 <p>The function above will always return the userRef if we need to use that userRef object. So now head to your Firebase console and login and check on your Database to see if the user is created. Refresh the user persisted and still one user. Great right!</p>
 
 <p><strong>Storing User Data in our App</strong></p>
 
-<p>Did you notice your app Login button is not being changed to Logout. This is because we are not setting state. We need to modify our App.js to use that userRef object.  We need use the <code class="highlighter-rouge">onSnapshot()</code> method we get from this object to get a <em>DocumentSnapshot</em>.</p>
+<p>Did you notice your app Login button is not being changed to Logout. This is because we are not setting state. We need to modify our App.js to use that userRef object.  We need use the <code class="language-plaintext highlighter-rouge">onSnapshot()</code> method we get from this object to get a <em>DocumentSnapshot</em>.</p>
 
-<p>A documentSnapshot allows us to check if a document exists using the <code class="highlighter-rouge">.exists</code> property which returns a boolean and we can actually get the actual data using the <code class="highlighter-rouge">data()</code> method which returns a JSON of the document. If you do on the code a console.log of snapShot.data() inside onSnapshot() call you can see the same data you saw on the Firebase console. The id we just get by snapShot.id</p>
+<p>A documentSnapshot allows us to check if a document exists using the <code class="language-plaintext highlighter-rouge">.exists</code> property which returns a boolean and we can actually get the actual data using the <code class="language-plaintext highlighter-rouge">data()</code> method which returns a JSON of the document. If you do on the code a console.log of snapShot.data() inside onSnapshot() call you can see the same data you saw on the Firebase console. The id we just get by snapShot.id</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">unsubscribeFromAuth</span> <span class="o">=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">onAuthStateChanged</span><span class="p">(</span><span class="k">async</span> <span class="nx">userAuth</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -297,8 +297,8 @@ Query is a request to Firestore to get something from the db. Firestore returns 
   <li><em>QueryReference</em>: It represents the current place in the database we are querying. It doesn’t have the actual data.</li>
   <li><em>Snapshot Object</em>: Also either as document type or collection type. Note a collection snapshot object is called specifically a “QuerySnapshot”.
     <ul>
-      <li>DocumentReference we can use CRUD methods.  Remember we can check if the snapshot document object exists in db with the <code class="highlighter-rouge">.exists</code> property. If you need the data you call <code class="highlighter-rouge">.data()</code> on object.</li>
-      <li>QuerySnapshot. With the collectionRef we can add documents to collections. The important methods here are <code class="highlighter-rouge">docs()</code>, <code class="highlighter-rouge">empty()</code> and <code class="highlighter-rouge">size</code>.</li>
+      <li>DocumentReference we can use CRUD methods.  Remember we can check if the snapshot document object exists in db with the <code class="language-plaintext highlighter-rouge">.exists</code> property. If you need the data you call <code class="language-plaintext highlighter-rouge">.data()</code> on object.</li>
+      <li>QuerySnapshot. With the collectionRef we can add documents to collections. The important methods here are <code class="language-plaintext highlighter-rouge">docs()</code>, <code class="language-plaintext highlighter-rouge">empty()</code> and <code class="language-plaintext highlighter-rouge">size</code>.</li>
     </ul>
   </li>
 </ul>
@@ -346,7 +346,7 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 
 <p>As you check your Firebase is almost the same, it has keys that point to names that hold values. This is because Firebase is NoSQL so it can have as many properties as possible (properties can be different among documents of same collections) as it is not stored as tables like SQL.</p>
 
-<p>Firestore supports many types of data. So we need to think about what data we will store as. With that in mind, lets export our <code class="highlighter-rouge">shop.data.js</code> by adding this on our Firebase <code class="highlighter-rouge">firebase.utils.js</code> file.</p>
+<p>Firestore supports many types of data. So we need to think about what data we will store as. With that in mind, lets export our <code class="language-plaintext highlighter-rouge">shop.data.js</code> by adding this on our Firebase <code class="language-plaintext highlighter-rouge">firebase.utils.js</code> file.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// firebase.utils.js</span>
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">addCollectionAndDocuments</span> <span class="o">=</span> 
@@ -363,9 +363,9 @@ Query is a request to Firestore to get something from the db. Firestore returns 
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Here we can see it implements a batch write that if any document fails then everything fails so ensure all collection is saved. Now that this is setup, then we can modify our <code class="highlighter-rouge">App.js</code>, please refer to <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/commit/f16ab99ffb42448ed44352c0424c9c7c7988914e">source code</a> to see what we added.</p>
+<p>Here we can see it implements a batch write that if any document fails then everything fails so ensure all collection is saved. Now that this is setup, then we can modify our <code class="language-plaintext highlighter-rouge">App.js</code>, please refer to <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/commit/f16ab99ffb42448ed44352c0424c9c7c7988914e">source code</a> to see what we added.</p>
 
-<p>Now that we have dynamically populated our db. We need to <em>remove the code we wrote on the App.js</em> because this only runs once so we did it to avoid the manual write of it! We’ll keep the firebase.utils <code class="highlighter-rouge">addCollectionAndDocuments</code> code for future reference if we need it.</p>
+<p>Now that we have dynamically populated our db. We need to <em>remove the code we wrote on the App.js</em> because this only runs once so we did it to avoid the manual write of it! We’ll keep the firebase.utils <code class="language-plaintext highlighter-rouge">addCollectionAndDocuments</code> code for future reference if we need it.</p>
 
 <p>Now in order to access our Firebase shop data in the frontend, there are a couple roads we could take. We need to access the most up level component and create and subscribe to listen to firebase changes then unsubscribe when component unmount. While I won’t go into a lot of detail, feel free to take a look at the <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo">repo</a> to see how I implemented on the app.</p>
 

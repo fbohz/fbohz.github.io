@@ -1,16 +1,16 @@
-I"�><blockquote>
+I"�?<blockquote>
   <p>Hooks are fairly new, and there’s still a lot of hype around them. However, a lot of companies have built scalable apps without hooks. So for some companies, it’ll take time to migrate to Hooks.</p>
 </blockquote>
 
-<h1 id="react-hooks-going-beyond-usestate">React Hooks: Going Beyond <code class="highlighter-rouge">useState</code></h1>
+<h1 id="react-hooks-going-beyond-usestate">React Hooks: Going Beyond <code class="language-plaintext highlighter-rouge">useState</code></h1>
 
 <p>Hooks were implemented in 2019. They have very interesting features and bring some changes to building components. Hooks can only be used in React 16 or higher and on functional components. Read about the motivation to add React Hooks <a href="https://reactjs.org/docs/hooks-intro.html#motivation">here</a>.</p>
 
-<p>Now probably by know, everyone with some React knowledge should know about the <code class="highlighter-rouge">useState</code> Hook. It lets us use state in functional components. You can use as many as use state hooks as needed. This is an alternative to setting state with deeply nested objects. On this article we’ll go beyond useState and explore other hooks.</p>
+<p>Now probably by know, everyone with some React knowledge should know about the <code class="language-plaintext highlighter-rouge">useState</code> Hook. It lets us use state in functional components. You can use as many as use state hooks as needed. This is an alternative to setting state with deeply nested objects. On this article we’ll go beyond useState and explore other hooks.</p>
 
 <p><strong>useEffect</strong></p>
 
-<p><code class="highlighter-rouge">useEffect</code> lets us employ lifecycle kind of methods to functional components. This has to do with dealing with side-effects including API calls.</p>
+<p><code class="language-plaintext highlighter-rouge">useEffect</code> lets us employ lifecycle kind of methods to functional components. This has to do with dealing with side-effects including API calls.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// mimics as a render lifecycle method</span>
 
@@ -131,7 +131,7 @@
 
 <p>It is like writing utility functions. Then you can make those custom hooks to share functionality.</p>
 
-<p>Note also the example there’s no second argument with the <code class="highlighter-rouge">[]</code> passed so it gets called whenever the <code class="highlighter-rouge">useFetch</code> custom hook gets called. We could also pass the ‘url’ as the second argument. Since our user might change and there are no dependencies here we don’t pass the second argument in this use case. So in this case the component that use it, will fire the useFetch whenever it re-renders.</p>
+<p>Note also the example there’s no second argument with the <code class="language-plaintext highlighter-rouge">[]</code> passed so it gets called whenever the <code class="language-plaintext highlighter-rouge">useFetch</code> custom hook gets called. We could also pass the ‘url’ as the second argument. Since our user might change and there are no dependencies here we don’t pass the second argument in this use case. So in this case the component that use it, will fire the useFetch whenever it re-renders.</p>
 
 <p><strong>useReducer</strong></p>
 
@@ -143,9 +143,9 @@
 
 <p>As you can see is similar to Redux. We also destruct different values. In the useReducer, we pass the reducer and the initial state value.</p>
 
-<p>The initial state we created accordingly and the reducer is just like in Redux. Then you can see the action creators setUser and setQuery with types and payload, again like Redux. Now how we pull the values we destruct them from our state variable and we dispatch them with our dispatch, e.g. <code class="highlighter-rouge">dispatch(setUser(resJson[0]))</code>. So React seems to be moving in which we might or not want to use Redux in our case or the other.</p>
+<p>The initial state we created accordingly and the reducer is just like in Redux. Then you can see the action creators setUser and setQuery with types and payload, again like Redux. Now how we pull the values we destruct them from our state variable and we dispatch them with our dispatch, e.g. <code class="language-plaintext highlighter-rouge">dispatch(setUser(resJson[0]))</code>. So React seems to be moving in which we might or not want to use Redux in our case or the other.</p>
 
-<p><strong>Implementing Context API with <code class="highlighter-rouge">createContext</code> and <code class="highlighter-rouge">useContext</code></strong></p>
+<p><strong>Implementing Context API with <code class="language-plaintext highlighter-rouge">createContext</code> and <code class="language-plaintext highlighter-rouge">useContext</code></strong></p>
 
 <p>Context API was recently updated by the React team. Context API is also used by Redux but now is more powerful. Context API tries to solve props drilling, and is a way to store different states in separate components and add them as Hooks. This is done like Redux.</p>
 
@@ -153,14 +153,14 @@
 
 <ul>
   <li>Create the context using createContext</li>
-  <li>Import the context you created and also the useContext library. Pass in the context created to useContext as your context. E.g. <code class="highlighter-rouge">const myContext = useContext(sampleContext)</code>.</li>
+  <li>Import the context you created and also the useContext library. Pass in the context created to useContext as your context. E.g. <code class="language-plaintext highlighter-rouge">const myContext = useContext(sampleContext)</code>.</li>
 </ul>
 
 <p>In Studio Ghibli Fan App we implemented this in the <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/blob/1.4.0.5_ContextAPI/src/pages/collection/Collection.js">Collection page</a>. The context created can be found <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/tree/1.4.0.5_ContextAPI/src/contexts/collections">here</a>.</p>
 
 <p><strong>Dynamically Set Values with Context API</strong></p>
 
-<p>Here we take advantage of Context.Provider. We implemented it on <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/blob/1.4.0.5_ContextAPI/src/App.js">App.js</a> wrapping the header to pass the currentUser context. We use the <code class="highlighter-rouge">value</code> attribute to pass the state we need on on to the Context Consumer in this case Header. So if currentUser changes then Header, as the consumer re-renders. Take a look at how Header consumes the context created <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/blob/1.4.0.5_ContextAPI/src/components/Header.js">here</a>.</p>
+<p>Here we take advantage of Context.Provider. We implemented it on <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/blob/1.4.0.5_ContextAPI/src/App.js">App.js</a> wrapping the header to pass the currentUser context. We use the <code class="language-plaintext highlighter-rouge">value</code> attribute to pass the state we need on on to the Context Consumer in this case Header. So if currentUser changes then Header, as the consumer re-renders. Take a look at how Header consumes the context created <a href="https://github.com/fbohz/studio-ghibli-fan-app-demo/blob/1.4.0.5_ContextAPI/src/components/Header.js">here</a>.</p>
 
 <p>We can even create whole providers with Context API that we pass into our own index.js just like Redux.</p>
 

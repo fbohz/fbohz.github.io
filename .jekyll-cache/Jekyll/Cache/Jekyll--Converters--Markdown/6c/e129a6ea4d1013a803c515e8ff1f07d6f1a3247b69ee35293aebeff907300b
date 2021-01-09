@@ -1,4 +1,4 @@
-I"M(<blockquote>
+I"�(<blockquote>
   <p>We’ll go back to the basics in JavaScript and discuss about the JS Engine and JS Runtime</p>
 </blockquote>
 
@@ -111,7 +111,7 @@
       <li>So add event listeners and you never remove them when you don’t need them.</li>
     </ul>
   </li>
-  <li>Using <code class="highlighter-rouge">setInterval</code>
+  <li>Using <code class="language-plaintext highlighter-rouge">setInterval</code>
     <ul>
       <li>unless we clear it and stop it it will run and run.</li>
     </ul>
@@ -126,7 +126,7 @@
 
 <p>Because of this JS is synchronous, doing one thing at a time.</p>
 <ul>
-  <li>This could make difficult with long running tasks. An example is <code class="highlighter-rouge">alert</code> that when it is executed only alert runs.</li>
+  <li>This could make difficult with long running tasks. An example is <code class="language-plaintext highlighter-rouge">alert</code> that when it is executed only alert runs.</li>
 </ul>
 
 <p>However most of the time we <em>don’t use JS Engine</em> but use the <em>JS Runtime</em> to make things asynchronous.</p>
@@ -137,12 +137,12 @@
 
 <p><em>Web API</em></p>
 
-<p>The Web API communicates with JS engine and comes with browser. These web API can do variety of things. The web API is usually the <code class="highlighter-rouge">window</code> and you can check what it has available such as <code class="highlighter-rouge">fetch</code>, <code class="highlighter-rouge">setTimeout</code>.</p>
+<p>The Web API communicates with JS engine and comes with browser. These web API can do variety of things. The web API is usually the <code class="language-plaintext highlighter-rouge">window</code> and you can check what it has available such as <code class="language-plaintext highlighter-rouge">fetch</code>, <code class="language-plaintext highlighter-rouge">setTimeout</code>.</p>
 
 <p>Browser provides help so that users don’t keep waiting for things to finish. So browser uses low level languages such as C++ to do other stuff.</p>
 
 <p><em>Event Loop</em>
-Items come to call stack, lets say <code class="highlighter-rouge">fetch</code> comes, the call stack identifies it and gives it to the Web API and it doesn’t it in the background. Web API returns data received to the appropiate part.</p>
+Items come to call stack, lets say <code class="language-plaintext highlighter-rouge">fetch</code> comes, the call stack identifies it and gives it to the Web API and it doesn’t it in the background. Web API returns data received to the appropiate part.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span>
@@ -163,7 +163,7 @@ Items come to call stack, lets say <code class="highlighter-rouge">fetch</code> 
 
 <p>There are many Runtimes, so what is <em>Node.js</em>?</p>
 
-<p><strong>Node.js</strong> is a <em>runtime</em>. So it runs outside the browser. It is a C++ program, like a Node.exe. With Node you can access the file system and other things. There are differences such as in Node there’s not window but it is replaced with <code class="highlighter-rouge">global</code>. It creates a runtime outside of the browser. It also uses the asynchronous runtime.</p>
+<p><strong>Node.js</strong> is a <em>runtime</em>. So it runs outside the browser. It is a C++ program, like a Node.exe. With Node you can access the file system and other things. There are differences such as in Node there’s not window but it is replaced with <code class="language-plaintext highlighter-rouge">global</code>. It creates a runtime outside of the browser. It also uses the asynchronous runtime.</p>
 
 <p><strong>Stay tuned for next week’s article</strong>, as we’ll talk about more basic JavaScript concepts. ‘Till then!</p>
 :ET

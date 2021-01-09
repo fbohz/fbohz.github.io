@@ -1,4 +1,4 @@
-I"<blockquote>
+I"<blockquote>
   <p>Serverless allows you to run and deploy apps without having to worry about managing server infrastructure</p>
 </blockquote>
 
@@ -55,7 +55,7 @@
 
 <p>Depending on the provider, you might have access to an SDK that you can easily include on your React app.</p>
 
-<p>In the example below with MongoDB Stitch you pass <code class="highlighter-rouge">MongoDB Stitch ID</code> on where is in the cloud and kind of works like Redux where you pass as props to get data from server components.</p>
+<p>In the example below with MongoDB Stitch you pass <code class="language-plaintext highlighter-rouge">MongoDB Stitch ID</code> on where is in the cloud and kind of works like Redux where you pass as props to get data from server components.</p>
 
 <p><img src="https://user-images.githubusercontent.com/15071636/80838027-a5810f80-8bbd-11ea-8064-5743d907638a.png" alt="demo1" /></p>
 
