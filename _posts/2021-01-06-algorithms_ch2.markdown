@@ -98,14 +98,14 @@ Sometimes we want to add color property to all nodes. **Traversals is like visit
 //  4     20
 //1  6  15  170
 
-/*
-    BFS: Visits all levels and outputs a list as it finds what it needs
-    [9,4,20,1,6,15,17]
 
-    DFS: List is different
-    [9,4,1,6,20, 15,17]
+// BFS: Visits all levels and outputs a list as it finds what it needs 
+// [9,4,20,1,6,15,17]
 
-*/
+
+// DFS: List is different
+// [9,4,1,6,20, 15,17]
+
 ```
 
 ### BFS vs DFS
@@ -175,7 +175,7 @@ Study to see how you explain to interviewer
 ### Graph Traversals
  - Tree traversal will be the same as Graph traversal. **Trees are a type of graphs**.
  - Graphs model real life, like recommendation engine (items related) using like BFS. Facebook what type of friend request or LinkedIn connection with DFS. 
- - [See it in action](https://visualgo.net/en/dfsbfs?slide=1) 
+ - [**See it in action**](https://visualgo.net/en/dfsbfs?slide=1) 
  
  **Remember** 
  - DFS is for shortest path. Closest to our node. Related items on Amazon, closest connections.
@@ -267,7 +267,7 @@ What is then memoization?
 
 Patterns in DP:
 
-        ```javascript
+```javascript
 
 function memoAdd80() {
     let cache = {}
