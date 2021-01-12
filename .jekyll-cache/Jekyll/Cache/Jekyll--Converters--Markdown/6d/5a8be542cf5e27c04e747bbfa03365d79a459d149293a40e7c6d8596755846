@@ -1,4 +1,4 @@
-I"�,<blockquote>
+I"$/<blockquote>
   <p>In the last couple of months I’ve had the opportunity to interview with many companies…Today I’ll talk about some interviewing tips when tackling with such technical questions!</p>
 </blockquote>
 
@@ -175,7 +175,7 @@
     </ul>
   </li>
   <li><strong>Don’t jump straight into coding!</strong> ask questions about parameters, how large are the parameters received, anything as needed. If not very large then you don’t have to worry about time vs space complexity and Big-O.</li>
-  <li>Stop and question as much as you can, but don’t be annoying.</li>
+  <li>Stop and question as much as you can (but don’t be annoying).</li>
   <li>Start with brute force approach:
     <ul>
       <li>Tell interviewer about it. Don’t necessarily have to code this part.</li>
@@ -202,6 +202,7 @@
 <h2 id="one-last-thing">One Last Thing…</h2>
 
 <ul>
+  <li><strong>Be nice and be a team player</strong>: A lot of times your interviewer wants to see how you perform as a team. This part is hugely underestimated but how your interviewer perceives how you <strong>listen</strong> to them and how you take feedback can have a tremendous effect on whether you’ll get or not the job. At the end of the day you will be working with other people, so they want to see not only your coding chops but also that you are a team player and a nice person to be around. If you come off as a jerk they probably would not want to work with you. Don’t just pretend to be nice: BE nice and you might be in for a big surprise 😁.</li>
   <li>Practice solving problems <strong>without a text editor</strong> and with a <strong>time limit</strong>.</li>
   <li>Mock interview with a friend.</li>
   <li>Brush up on things you don’t know.</li>
