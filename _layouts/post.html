@@ -36,12 +36,12 @@ layout: default
 
                 {{ content }}
                 <hr>
-                <!-- last-modified span using last_modified plugin -->
-                <span class="w3-right">
+                <!-- attempt using last-modified span using last_modified plugin -->
+                <!-- <span class="w3-right">
                     {% capture last_mod %}{% last_modified {{ page.path }} %}{% endcapture %}
                     {% assign lastModificationDate = last_mod | split: " " %}
                     <i>Last Modified: {{lastModificationDate[0]}}</i>
-                </span></br>
+                </span></br> -->
 
                 <ul class="pager">
                     {% if page.previous.url %}
