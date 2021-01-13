@@ -36,6 +36,11 @@ layout: default
 
                 {{ content }}
                 <hr>
+                <!-- attempt using last-modified span using last_modified plugin -->
+                <span class="w3-right">
+                    <i>Last Modified: {{page.last_modified_at | date: '%B %d, %Y:'}}</i>
+                </span></br>
+
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">

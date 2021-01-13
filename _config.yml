@@ -18,4 +18,11 @@ permalink: pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%d-%b-%y'
+    
+plugins:
+  - jekyll-last-modified-at
+
 gems: [jekyll-paginate, jekyll-feed]
