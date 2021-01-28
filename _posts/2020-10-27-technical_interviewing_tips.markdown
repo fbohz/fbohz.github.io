@@ -124,7 +124,7 @@ As you follow the flow below, refer to [this video](https://www.youtube.com/watc
   - Data Structures: E.g. arrays, stacks, queues, linked lists, trees, tries graphs, hash tables
   - Algorithms: E.g. sorting, dynamic programming, BFS + DFS (searching), recursion
 - **Don't jump straight into coding!** ask questions about parameters, how large are the parameters received, anything as needed. If not very large then you don't have to worry about time vs space complexity and Big-O.
-- Stop and question as much as you can, but don't be annoying.
+- Stop and question as much as you can (but don't be annoying).
 - Start with brute force approach:
   - Tell interviewer about it. Don't necessarily have to code this part.
 - Avoid nested loops such as O(n^2) or O(a\*b).
@@ -140,6 +140,7 @@ As you follow the flow below, refer to [this video](https://www.youtube.com/watc
 
 ## One Last Thing...
 
+- **Be nice and be a team player**: A lot of times your interviewer wants to see how you perform as a team. This part is hugely underestimated but how your interviewer perceives how you **listen** to them and how you take feedback can have a tremendous effect on whether you'll get or not the job. At the end of the day you will be working with other people, so they want to see not only your coding chops but also that you are a team player and a nice person to be around. If you come off as a jerk they probably would not want to work with you. Don't just pretend to be nice: BE nice and you might be in for a big surprise 😁.
 - Practice solving problems **without a text editor** and with a **time limit**.
 - Mock interview with a friend.
 - Brush up on things you don't know.

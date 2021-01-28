@@ -1,4 +1,0 @@
-I"<blockquote>
-  <p>Async/Await was introduced recently. In order to use async/await we need to use mark functions as <code class="language-plaintext highlighter-rouge">async</code> functions. Async functions return a promise and we can use one or more await functions.</p>
-</blockquote>
-:ET
