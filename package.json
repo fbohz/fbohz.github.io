@@ -4,6 +4,10 @@
     "version": "1.0.0",
     "homepage": "http://startbootstrap.com",
     "author": "Start Bootstrap",
+    "scripts": {
+        "start": "jekyll serve",
+        "start:drafts": "jekyll serve --drafts"
+    },
     "license": {
         "type": "Apache 2.0",
         "url": "https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE"
