@@ -9,7 +9,7 @@ permalink:  planning_for_a_pandemic_year
 
 I probably would never guessed a year ago how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b).
 
-Since it does seem like very different times are coming, let's take a deep breath and do some planning for the pandemic times that lie.
+Since it does seem like very different times are coming, let's take a deep breath and do some planning for the pandemic times that lie ahead.
 
 ## Planning for a pandemic year: What's next?
 
