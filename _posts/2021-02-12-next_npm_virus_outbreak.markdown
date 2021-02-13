@@ -16,7 +16,7 @@ Doing `npm install` seems like second nature these days for developers. But did 
 
 We know that most of the npm packages we use are maintained by third party actors. This can be a single developer, a team of developers or a super large corporation. 
 
-NPM in itself is very reliable. But does NPM guarantee you that any package that you install will be virus free? So these days, it is not uncommon to see [some developers](https://youtu.be/24tQRwIRP_w?t=935) foreseeing a day in which a successful virus attack will spread through millions of machines through NPM. 
+NPM in itself is very reliable. But does NPM guarantee you that any package that you install will be virus free? So these days, it is not uncommon to hear [some developers](https://youtu.be/24tQRwIRP_w?t=935) foreseeing a day in which a successful virus attack will spread through millions of machines through NPM. 
 
 Sorry if I'm the first person to tell you: **NPM it's not virus free** 🤦🏼‍♂️. 
 
