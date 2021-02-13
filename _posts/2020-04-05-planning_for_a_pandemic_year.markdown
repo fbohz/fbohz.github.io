@@ -17,7 +17,7 @@ Since it does seem like very different times are coming, let's take a deep breat
    - Terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in in coding interview questions all the time. 
    - This will also prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
 2. **Advanced JavaScript and Improving on TypeScript**
-    - I'll want to expand on advanced concepts to lay on top of my JS foundation. I'll also want to improve my skills on TypeScript which seems to be growing in popularity.
+    - I'll want to expand on advanced concepts to lay on top of my JS foundation. I'll also want to improve my skills with TypeScript which seems to be growing in popularity.
     - Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. 
     - Learning about the inner workings of JavaScript also seems appealing. 
 3. **Advanced React**
