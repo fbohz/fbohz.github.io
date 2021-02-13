@@ -45,4 +45,4 @@ So when is the next doomsday NPM package virus that will affect millions of comp
 
 We are always eager to get to coding and wanna get setup as fast as possible. But the next time you are about to npm install, ask yourself: *Are there any security checks I should be performing before installing?* There are always things we can do to audit our NPM packages. 
 
-By applying NPM security recommendations to our coding arsenal our code becomes secure and we can greatly decrease the risk of getting infected when the next outbreak happens ☣
+By applying these NPM security recommendations our code becomes more secure and we can greatly decrease the risk of getting infected when the next outbreak happens ☣
