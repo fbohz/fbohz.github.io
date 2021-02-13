@@ -16,13 +16,15 @@ Doing `npm install` seems like second nature these days for developers. But did 
 
 We know that most of the npm packages we use are maintained by third party actors. This can be a single developer, a team of developers or a super large corporation. 
 
-NPM in itself is very reliable. But does NPM guarantee you that any package that you install will be virus free? So these days, it is not uncommon to hear [some developers](https://youtu.be/24tQRwIRP_w?t=935) foreseeing a day in which a successful virus attack will spread through millions of machines through NPM. 
+NPM in itself is very reliable. But does NPM guarantee you that any package that you install will be virus free? Unfortunately not.
+
+So these days, it is not uncommon to hear [some developers](https://youtu.be/24tQRwIRP_w?t=935) foreseeing a day in which a successful virus attack will spread through millions of machines through NPM. 
 
 Sorry if I'm the first person to tell you: **NPM it's not virus free** 🤦🏼‍♂️. 
 
 I won't go into all technical details of how exploits are possible in NPM. Just know that NPM has [disclosed publicly](https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability) that it is possible for an apparently 'normal' npm package (or its dependencies) to execute malicious code in your machine and wreak havoc. 
 
-For *any* package can be compromised. You probably have ESLint installed right? Well, guess what? One of its dependencies was (not long ago) compromised and installed malicious code on users machines. The ESLint team and NPM acted quickly to solve the issue that time and their incident report can be seen [here](https://status.npmjs.org/incidents/dn7c1fgrr7ng). But this is not the last time a virus incident happened. Now the NPM security team is publishing [weekly reports](https://www.npmjs.com/advisories) of such incidents.
+For *any* package can be compromised. You probably have ESLint installed right? Well, guess what? One of its dependencies was (not long ago) compromised and installed malicious code on users machines. The ESLint team and NPM acted quickly to solve the issue and their incident report can be seen [here](https://status.npmjs.org/incidents/dn7c1fgrr7ng). But this is not the last time a virus incident happened. Now the NPM security team is publishing [weekly reports](https://www.npmjs.com/advisories) of such incidents.
 
 ## Preventing Exposure To Future NPM Virus Outbreaks
 
