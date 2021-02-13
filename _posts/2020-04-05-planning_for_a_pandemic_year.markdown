@@ -16,10 +16,10 @@ Since it does seem like very different times are coming, let's take a deep breat
 1. **Continue Learning Algorithms and Data Structures**
    - Terms like **Big O**, **Recursion**, or **Dynamic Programming** pop-in in coding interview questions all the time. 
    - This will also prepare me to deal with issues in terms of scale, patterns and methodically apply them to day-to-day coding problems.
-2. **Advanced JavaScript**
-    - I'll want to expand on advanced concepts to lay on top of my JS foundation
+2. **Advanced JavaScript and Improving on TypeScript**
+    - I'll want to expand on advanced concepts to lay on top of my JS foundation. I'll also want to improve my skills on TypeScript which seems to be growing in popularity.
     - Here I'm thinking digging deeper into **closures**, **OOP**, **FP**, **error handling** and ES6+ features. 
-    - Learning about the inner workings of JavaScript also seems appealing.
+    - Learning about the inner workings of JavaScript also seems appealing. 
 3. **Advanced React**
     - Building [**Catoro**](https://catoro.now.sh/) was an amazing experience that brought a deep interest in React.
     - I'm thinking about implementing a React app without Create React App to practice using Webpack.
