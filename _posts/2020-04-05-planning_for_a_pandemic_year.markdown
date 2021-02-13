@@ -26,7 +26,7 @@ Since it does seem like very different times are coming, let's take a deep breat
     - Gain knowledge and implement React Hooks as well as testing.
     - Dig into other server implementations, Firebase and GraphQL. Probably for this I'll re-iterate on [**Yijing Ball Z**](https://yijingballz.herokuapp.com/) to see how it plays with a different backend. Let's see how many Yijing Ball Z's can live on Github at the same time. 
 4. **Other**
-   - React Native, Node.js, Smart Contracts and Blockchain development (in no particular order).
+   - React Native, Node.js, Angular, Smart Contracts and Blockchain development (in no particular order).
 
 ### What *could be* next?
 
