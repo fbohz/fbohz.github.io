@@ -41,8 +41,8 @@ NPM Security Recommendations:
 
 ## Conclusion
 
-So when is the next doomsday NPM package virus that will affect millions of computers happening? Who knows. While we might not be able to prevent the next outbreak, we as developers need to guard ourselves. 
+So when is the next doomsday NPM package virus that will affect millions of computers happening? Who knows. So while we might not be able to prevent the next outbreak, we as developers need to guard ourselves. 
 
-We are always eager to get to coding, but the next time we are about to npm install, ask yourself: *Are there any security checks I should be performing before installing?* There are always things we can do to audit our NPM packages. 
+We are always eager to get to coding and wanna get setup as fast as possible. But the next time you are about to npm install, ask yourself: *Are there any security checks I should be performing before installing?* There are always things we can do to audit our NPM packages. 
 
 By applying NPM security recommendations to our coding arsenal our code becomes secure and we can greatly decrease the risk of getting infected when the next outbreak happens ☣
