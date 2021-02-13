@@ -22,7 +22,7 @@ Sorry if I'm the first person to tell you: **NPM it's not virus free** 🤦🏼�
 
 I won't go into all technical details of how exploits are possible in NPM. Just know that NPM has [disclosed publicly](https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability) that it is possible for an apparently 'normal' npm package (or its dependencies) to execute malicious code in your machine and wreak havoc. 
 
-For *any* package can be compromised. You probably have ESLint installed right? Well, guess what? One of its dependencies was (not long ago) compromised and installed malicious code on users machines. The ESLint team and NPM team acted quickly to solve the issue that time and their incident report can be seen [here](https://status.npmjs.org/incidents/dn7c1fgrr7ng). But this is not the last time a virus incident happened. Now the NPM security team is publishing [weekly reports](https://www.npmjs.com/advisories) of security incidents.
+For *any* package can be compromised. You probably have ESLint installed right? Well, guess what? One of its dependencies was (not long ago) compromised and installed malicious code on users machines. The ESLint team and NPM acted quickly to solve the issue that time and their incident report can be seen [here](https://status.npmjs.org/incidents/dn7c1fgrr7ng). But this is not the last time a virus incident happened. Now the NPM security team is publishing [weekly reports](https://www.npmjs.com/advisories) of such incidents.
 
 ## Preventing Exposure To Future NPM Virus Outbreaks
 
@@ -41,7 +41,7 @@ NPM Security Recommendations:
 
 ## Conclusion
 
-So when is the next doomsday NPM package virus that will affect millions of computers happening? Who knows. So while we might not be able to prevent the next outbreak, we as developers need to guard ourselves. 
+So when is the next doomsday NPM package virus that will affect millions of computers coming? Who knows. So while we might not be able to prevent the next outbreak, we as developers need to guard ourselves. 
 
 We are always eager to get to coding and wanna get setup as fast as possible. But the next time you are about to npm install, ask yourself: *Are there any security checks I should be performing before installing?* There are always things we can do to audit our NPM packages. 
 
