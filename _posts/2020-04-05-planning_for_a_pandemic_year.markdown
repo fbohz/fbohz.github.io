@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Planning for a pandemic year"
+title:      "Planning for a Pandemic Year"
 date:       2020-04-05 19:31:03 -0400
 permalink:  planning_for_a_pandemic_year
 ---
