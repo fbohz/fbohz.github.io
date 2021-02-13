@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Draft Posts Instructions"
+# date:       2020-06-15 09:31:03 -0400
+# permalink:  copy_from_file_name
+# filename: 2020-06-15-three_tier_architecture
 ---
 
 > Follow these instructions for your draft posts!
