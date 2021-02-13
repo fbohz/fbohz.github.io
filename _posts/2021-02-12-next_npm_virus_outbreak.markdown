@@ -28,6 +28,8 @@ For *any* package can be compromised. You probably have ESLint installed right? 
 
 Exploits can be defined as scripts that take advantage of vulnerabilities in code to cause unintended or malicious behaviors to occur. An exploit was possibly the culprit of the ESLint incident. There are some actions we can take to safeguard our code to avoid become infected with any future malicious script incidents.
 
+NPM Security Recommendations:
+
 1. **Think twice before installing a new NPM package**. Are you sure you really need it? Is it well maintained? Can you just code it yourself? Ask yourself this questions before adding a new dependency. The best way to safeguard yourself is simply having *less* packages. If you are part of a team you could also **consult with your team** before installing a new package. Even if you are just trying it. You might not wanna be one of those using a seemingly harmless package that is then reported to contain an exploit, such as it happened in a [**recent report**](https://www.zdnet.com/article/malicious-npm-packages-caught-installing-remote-access-trojans/).
 2. **Run `npm audit` periodically**. This command was released by NPM as a response to its vulnerability. By running `npm audit` you can actually scan your packages for vulnerabilities. You can even automatically fix them as well by just doing `npm audit fix`. This command might not be bullet-proof but it must be part of your coding arsenal, use it today. You can learn more about it on the [**documentation**](https://docs.npmjs.com/cli/v6/commands/npm-audit).
 3. **Github Alerts**: If you use Github then just take advantage of Github through its Dependantbot alerts which comes with any repository for free. If you been ignoring those alerts, don't. Read more about it on [**Github documentation**](https://docs.github.com/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies).
@@ -39,4 +41,6 @@ Exploits can be defined as scripts that take advantage of vulnerabilities in cod
 
 ## Conclusion
 
-So when is the next doomsday NPM package virus that will affect millions of computers happen? Who knows. We might not be able to prevent the next outbreak. But we as developers need to guard ourselves and there are certain things we can do to audit our NPM packages. But by applying these NPM security recommendations to our coding arsenal we can greatly decrease the risk of getting infected when the next outbreak happens ☣. 
+So when is the next doomsday NPM package virus that will affect millions of computers happen? Who knows. While we might not be able to prevent the next outbreak, we as developers need to guard ourselves. 
+
+There are certain things we can do to audit our NPM packages. By applying these NPM security recommendations to our coding arsenal we can greatly decrease the risk of getting infected when the next outbreak happens ☣. 
