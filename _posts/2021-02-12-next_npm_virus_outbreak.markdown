@@ -20,7 +20,7 @@ NPM in itself is very reliable. But does NPM guarantee you that any package that
 
 Sorry if I'm the first person to tell you: **NPM it's not virus free** 🤦🏼‍♂️. 
 
-I won't go into all technical details of how exploits are possible in NPM. Just know that NPM has [disclosed publicly](https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability) that it is possible for an apparently 'normal' npm package (or its dependencies) to execute malicious code in your machine and cause havoc. 
+I won't go into all technical details of how exploits are possible in NPM. Just know that NPM has [disclosed publicly](https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability) that it is possible for an apparently 'normal' npm package (or its dependencies) to execute malicious code in your machine and wreak havoc. 
 
 For *any* package can be compromised. You probably have ESLint installed right? Well, guess what? One of its dependencies was (not long ago) compromised and installed malicious code on users machines. The ESLint team and NPM team acted quickly to solve the issue that time and their incident report can be seen [here](https://status.npmjs.org/incidents/dn7c1fgrr7ng). But this is not the last time a virus incident happened. Now the NPM security team is publishing [weekly reports](https://www.npmjs.com/advisories) of security incidents.
 
