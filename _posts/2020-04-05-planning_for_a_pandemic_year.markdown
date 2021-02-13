@@ -5,11 +5,11 @@ date:       2020-04-05 19:31:03 -0400
 permalink:  planning_for_a_pandemic_year
 ---
 
-> Since it does seem like very different times are coming ahead of us, let's take a deep breath and do some planning for the pandemic times that lie ahead of us.
+> Since it does seem like very different times are coming, let's take a deep breath and do some planning for the pandemic times that lie ahead of us.
 
 I probably would never guessed a year ago how these days I was going to be writing about social distancing and promoting [online and virtual networking](https://medium.com/@fbohorqu/stuck-at-home-join-these-tech-business-conferences-events-online-and-free-9e5a5843d80b).
 
-Since it does seem like very different times are coming ahead of us, let's take a deep breath and do some planning for the pandemic times that lie ahead of us.
+Since it does seem like very different times are coming, let's take a deep breath and do some planning for the pandemic times that lie.
 
 ## Planning for a pandemic year: What's next?
 
