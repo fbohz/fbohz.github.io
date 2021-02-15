@@ -1,9 +1,9 @@
 ---
 layout: post
 title:      "Preventing the Next NPM Virus Outbreak☣"
-date:       2021-02-12 09:31:03 -0400
+date:       2021-02-11 09:31:03 -0400
 permalink:  next_npm_virus_outbreak
-filename: 2021-02-12-next_npm_virus_outbreak
+filename: 2021-02-11-next_npm_virus_outbreak
 ---
 
 > Doing `npm install` seems like second nature these days for developers. But did you know that without proper attention and auditing of npm packages, the next time we unknowingly do `npm i` you could also be installing malicious scripts?
