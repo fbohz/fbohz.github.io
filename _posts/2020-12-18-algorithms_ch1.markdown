@@ -48,15 +48,15 @@ Base case will help it stop. An example could be:
 
 ```javascript
 let counter = 0
-function(inception) {
+function inception(counter) {
     if (counter > 3) {
-        return 'done'
+        return counter;
     }
     counter++
-// will ensure 'done' returned    
-    return inception()
+
+    return inception(counter)
 }
-inception()
+inception(counter) 
 ```
 
 Three rules to build recursion:
