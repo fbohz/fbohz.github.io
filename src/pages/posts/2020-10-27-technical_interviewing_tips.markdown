@@ -133,7 +133,6 @@ As you follow the flow below, refer to [this video](https://www.youtube.com/watc
   - Can solve it naively and brute by thinking it out loud.
   - Make logical steps towards the solution.
     - Modularize code (pieces of code that do one thing).
-    - Make i
   - When you have a solution. Talk with interviewer as ways in which it can be broken down.
   - **AFTER YOU SOLVE IT** you can talk about your thinking and research you might do to make it better. Like ES6+ functions, other data structures that could make it more readable or work better.
 - Interviewer if satisfied, or out of time, will end the interview accordingly.
