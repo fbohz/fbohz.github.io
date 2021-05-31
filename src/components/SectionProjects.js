@@ -47,8 +47,13 @@ export default class SectionProjects extends React.Component {
                                         </div>
                                       </div>
                                       <div color="background" className="Project__MainTag"> {_.get(action, 'tags', null)} </div>
-                                      <div className="Project__Year">
+                                      {/* <div className="Project__Year">
                                         <div color="primary" className="Project__YearLabel"> {_.get(action, 'year', null)} </div>
+                                      </div> */}
+                                      <div className="Project__Icon">
+                                        <div color="primary" className="Project__YearLabel"> {_.get(action, 'icon', null)} 
+                                          <Icon {...this.props} icon={_.get(action, 'icon_class', null)} />
+                                        </div>
                                       </div>
                                   </div>
                                 </div>

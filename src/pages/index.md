@@ -57,7 +57,7 @@ seo:
       value: Felipe Bohórquez
       keyName: property
     - name: 'og:description'
-      value: The preview of the Fresh theme
+      value: Coding, Technology and Entrepreneurship
       keyName: property
     - name: 'og:image'
       value: images/4.jpg
@@ -68,7 +68,7 @@ seo:
     - name: 'twitter:title'
       value: Felipe Bohórquez
     - name: 'twitter:description'
-      value: The preview of the Fresh theme
+      value: Coding, Technology and Entrepreneurship
     - name: 'twitter:image'
       value: images/4.jpg
       relativeUrl: true

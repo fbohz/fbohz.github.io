@@ -505,6 +505,11 @@ models:
           - twitter
           - vimeo
           - youtube
+          - angular
+          - javascript
+          - react
+          - typescript
+          - node
         default: dev
       - type: boolean
         name: new_window

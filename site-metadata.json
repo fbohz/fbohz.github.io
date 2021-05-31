@@ -63,6 +63,7 @@
             "image_url": "/images/catoro.png",
             "repo_url": "https://github.com/fbohz",
             "year": "2021",
+            "icon_class": "react",
             "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+ JavaScript, React Hook-Form, and Chart.js.",
             "tags": "React, Redux"
         },
@@ -71,7 +72,7 @@
             "deploy_url": "https://yijingballz.herokuapp.com/index.html",
             "image_url": "/images/yijing.png",
             "repo_url": "https://github.com/fbohz",
-            "year": "2020",
+            "icon_class": "javascript",
             "excerpt": "I-Ching Oracle Inspired by Dragon Ball Z. JavaScript frontend and implemented Node.js/Express API server.",
             "tags": "Express, MongoDB"
         },
@@ -80,7 +81,7 @@
             "deploy_url": "https://studio-ghibli-fanhub.herokuapp.com/",
             "image_url": "/images/ghibli.png",
             "repo_url": "https://github.com/fbohz",
-            "year": "2019",
+            "icon_class": "react",
             "excerpt": "React app with eCommerce built-in using Stripe API for payment gateway.",
             "tags": "React"
         }
