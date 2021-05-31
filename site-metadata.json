@@ -65,7 +65,7 @@
             "year": "2021",
             "icon_class": "react",
             "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+ JavaScript, React Hook-Form, and Chart.js.",
-            "tags": "React, Redux"
+            "tags": "React, Rails"
         },
         {
             "label": "Yijing Ball Z",
@@ -74,7 +74,7 @@
             "repo_url": "https://github.com/fbohz",
             "icon_class": "javascript",
             "excerpt": "I-Ching Oracle Inspired by Dragon Ball Z. JavaScript frontend and implemented Node.js/Express API server.",
-            "tags": "Express, MongoDB"
+            "tags": "Vanilla JS, Express, MongoDB"
         },
         {
             "label": "Studio Ghibli's Fan Hub",
@@ -83,7 +83,7 @@
             "repo_url": "https://github.com/fbohz",
             "icon_class": "react",
             "excerpt": "React app with eCommerce built-in using Stripe API for payment gateway.",
-            "tags": "React"
+            "tags": "React, Redux, Firebase"
         }
     ],
     "footer": {

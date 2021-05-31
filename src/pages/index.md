@@ -31,7 +31,7 @@ sections:
         style: button
   - section_id: projects
     type: section_projects
-    title: Recent Projects 💻
+    title: Highlighted Projects 💻
     posts_number: 4
     content: >-
       This is the "about" excerpt. It can be used to provide a paragraph about
