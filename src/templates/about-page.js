@@ -37,7 +37,7 @@ export default class Page extends React.Component {
 
     render() {
         return (
-            <Layout {...this.props}>
+          <Layout {...this.props}>
               <article className="post page post-full" id="main">
                 <header className="post-header inner-sm">
                   <h1 className="post-title underline">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
@@ -67,8 +67,8 @@ export default class Page extends React.Component {
                       // style={modalSyles()}
                       ariaHideApp={false}
                     >
-                      <h2>Felipe's Technical Portfolio</h2>
-                      <AboutModalContent />
+                      <h2>Felipe's Technical Portfolio 💻</h2>
+                      <AboutModalContent {...this.props}/><br/>
                       <button onClick={this.handleModalClose}>Close</button>
                     </ReactModal>
                 <br/>

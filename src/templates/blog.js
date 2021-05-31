@@ -60,7 +60,7 @@ export default class Blog extends React.Component {
   render() {
     return (
       <Layout {...this.props}>
-        <small className="muted-center">Other Publications: </small>
+        <small className="muted-center">Other Publications</small>
         {_.get(this.props, 'pageContext.site.siteMetadata.header.has_social', null) && (
                   <div className="social-links">
                     {_.map(_.get(this.props, 'pageContext.site.siteMetadata.body.blog_icon', null), (action, action_idx) => (

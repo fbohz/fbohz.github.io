@@ -65,7 +65,7 @@
             "repo_url": "https://github.com/fbohz",
             "year": "2021",
             "icon_class": "react",
-            "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+ JavaScript, React Hook-Form, and Chart.js.",
+            "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+, React Hook-Form, and Chart.js.",
             "tags": "React, Rails"
         },
         {
@@ -85,6 +85,94 @@
             "icon_class": "react",
             "excerpt": "React app with eCommerce built-in using Stripe API for payment gateway.",
             "tags": "React, Redux, Firebase"
+        }
+    ],
+    "all_projects": [
+        {
+            "label": "Catoro",
+            "deploy_url": "https://catoro.vercel.app/",
+            "image_url": "/images/catoro.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2021",
+            "icon_class": "react",
+            "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+, React Hook-Form, and Chart.js.",
+            "tags": "React, Rails"
+        },
+        {
+            "label": "Yijing Ball Z",
+            "deploy_url": "https://yijingballz.herokuapp.com/index.html",
+            "image_url": "/images/yijing.png",
+            "repo_url": "https://github.com/fbohz",
+            "icon_class": "javascript",
+            "excerpt": "I-Ching Oracle Inspired by Dragon Ball Z. JavaScript frontend and implemented Node.js/Express API server.",
+            "tags": "Vanilla JS, Express, MongoDB"
+        },
+        {
+            "label": "Studio Ghibli's Fan Hub",
+            "deploy_url": "https://studio-ghibli-fanhub.herokuapp.com/",
+            "image_url": "/images/ghibli.png",
+            "repo_url": "https://github.com/fbohz",
+            "icon_class": "react",
+            "excerpt": "React app with eCommerce built-in using Stripe API for payment gateway.",
+            "tags": "React, Redux, Firebase"
+        },
+        {
+            "label": "Cook-n-Shop",
+            "deploy_url": "https://angular-test-e364e.web.app/",
+            "image_url": "/images/projects/groceries.jpg",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2021",
+            "icon_class": "angular",
+            "excerpt": "Angular cooking app + Firebase. Angular patterns including dynamic components, directives and module patterns",
+            "tags": "Angular, Firebase"
+        },
+        {
+            "label": "Magic Realism Library",
+            "deploy_url": "https://gabophiles.netlify.app/",
+            "image_url": "/images/projects/gabo.png",
+            "repo_url": "https://github.com/fbohz",
+            "icon_class": "gatsby",
+            "excerpt": "Magic Realism book site built with Gatsby plus Firebase backend for dynamic rendering.",
+            "tags": "Gatsby, Firebase"
+        },
+        {
+            "label": "Uff! - Street Art Finder",
+            "deploy_url": "https://uff-app.herokuapp.com/",
+            "image_url": "/images/projects/uff.png",
+            "repo_url": "https://github.com/fbohz",
+            "icon_class": "rails",
+            "excerpt": "REST Rails app. Devise + Omniauth. Bcrypt for password encryption. Google Cloud Storage and MiniMagick.",
+            "tags": "Rails, PostgreSQL, ActiveRecord"
+        },
+        {
+            "label": "Retro Snake",
+            "deploy_url": "http://fbohz.com/html5_games/retro_snake.html",
+            "image_url": "/images/projects/snake.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2021",
+            "icon_class": "javascript",
+            "excerpt": "Clone of the classic game with HTML5 and JavaScript. Node/Express API + MongoDB backend. Groove with the retro music.",
+            "tags": "JS, Node, MongoDB"
+        },
+        {
+            "label": "Coingecko (Ruby Gem)",
+            "deploy_url": "https://rubygems.org/gems/coingecko",
+            "image_url": "/images/projects/gem.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2021",
+            "icon_class": "ruby",
+            "excerpt": "Ruby API Gem for Coingecko Blockchain Market Watch. More than 3K downloads to date.",
+            "tags": "Ruby"
+        },
+        {
+            "label": "Museo",
+            "deploy_url": "http://fbohz.com/css-learning/museo-demo/index.html",
+            "image_url": "/images/projects/museo.png",
+            "repo_url": "http://fbohz.com/css-learning/museo-demo/index.html",
+            "year": "2021",
+            "icon_class": "css",
+            "excerpt": "Single page landing demo of tour company site. Used SASS + 7-1 architecture pattern with BEM methodology.",
+            "tags": "CSS, SASS"
         }
     ],
     "body": {
