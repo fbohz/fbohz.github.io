@@ -23,10 +23,11 @@
                 "label": "About",
                 "url": "/about/",
                 "style": "link"
-            },
+            }
+            ,
             {
-                "label": "Contact",
-                "url": "/contact/",
+                "label": "Resume",
+                "url": "https://fbohz.com/assets/Resume.pdf",
                 "style": "link"
             }
         ],

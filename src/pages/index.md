@@ -26,8 +26,8 @@ sections:
       I've also contributed as a technical writer for [CareerKarma](https://careerkarma.com/blog/author/felipe-bohorquez/) and have been featured on various tech journals on [Medium](https://fbohorqu.medium.com/).
 
     actions:
-      - label: Contact Me
-        url: /contact
+      - label: Connect With Me
+        url: https://www.linkedin.com/in/fbohz/
         style: button
   - section_id: projects
     type: section_projects
