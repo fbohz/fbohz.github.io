@@ -56,7 +56,7 @@ export default class Post extends React.Component {
             </div>
           ) : (
             <div className="post-image">
-              <img src="/images/default.jpg" alt="Default image" />
+              <img src="/images/binarycoding.jpg" alt="Default image" />
             </div>
           )}
           <div className="post-content inner-sm">

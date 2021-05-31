@@ -1,7 +1,7 @@
 ---
 title: Blog
 seo:
-  title: All entries
+  title: All Entries
   description: This is the blog page
   extra:
     - name: 'og:type'

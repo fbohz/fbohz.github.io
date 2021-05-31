@@ -48,7 +48,7 @@ export default class Blog extends React.Component {
                       className="post-thumbnail"
                       to={withPrefix(_.get(post, "url", null))}
                     >
-                      <img src="/images/default.jpg" alt="Default image" />
+                      <img src="/images/rsz_trex.jpg" alt="Default image" />
                     </Link>
                   )}
                   <header className="post-header">

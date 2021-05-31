@@ -48,7 +48,7 @@ sections:
         style: button
 seo:
   title: Felipe Bohórquez
-  description: The preview of the Fresh theme
+  description: Felipe's Professional Portfolio and Writing
   extra:
     - name: 'og:type'
       value: website
