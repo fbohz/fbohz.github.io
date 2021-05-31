@@ -1,0 +1,194 @@
+.Card__CardContainer {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-items: center;
+}
+
+.Card__Wrapper {
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+    animation-delay: 0ms;
+    animation-name: animation-t55t87;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+.Card {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+    transition: all 0.25s ease 0s;
+    top: 0px;
+    height: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:hover {
+        top: -10px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 16px;
+    }
+}
+
+.Post__EllipsisHeading {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    box-sizing: border-box;
+    min-width: 0px;
+    font-size: 24px;
+    font-family: inherit;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 16px;
+    color: rgb(51, 51, 51);
+}
+
+.Post__CoverImage {
+    width: 100%;
+    object-fit: cover;
+}
+
+.Post__CoverExcerpt {
+    box-sizing: border-box;
+    min-width: 0px;
+    margin: 16px;
+    color: rgb(51, 51, 51);
+}
+
+.Post__CoverTime {
+    position: absolute;
+    display: inline;
+    padding: 10px 10px 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 0px;
+    bottom: 0px;
+    clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%);
+    border-radius: 0px 0px 8px;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    background-color: rgb(124, 55, 173);
+    color: rgb(255, 255, 255);
+}
+
+.Card_Item {
+    display: flex;
+    height: 200px;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+}
+
+.Project__TextContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: calc(100% - 200px);
+}
+
+.Project__Title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: table;
+    border-bottom: 5px solid rgb(124, 55, 173);
+    box-sizing: border-box;
+    margin: 8px 0px;
+    min-width: 0px;
+    padding-bottom: 4px;
+    color: rgb(51, 51, 51);
+}
+
+.Project__Content {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    width: 100%;
+    color: rgb(51, 51, 51);
+    line-height: 1.2em;
+}
+
+.Project__ImageContainer {
+    margin: auto;
+    width: 200px;
+    img {
+        width: 200px;
+        height: 200px;
+        padding: 40px 27px;
+        margin-top: 0px;
+        box-sizing: border-box;
+        margin: 0px;
+        min-width: 0px;
+        max-width: 100%;
+    }
+}
+
+.Project__ProjectTag {
+    position: relative;
+    height: 200px;
+    top: calc(-199.5px);
+}
+
+.Project__ProjectFeed {
+    float: right;
+    display: flex;
+    box-sizing: border-box;
+    min-width: 0px;
+    margin: 4px;
+    a {
+        text-decoration: none;
+        border: none;
+        svg {
+            color: #7c37ad;
+            font-size: 22px;
+            padding-right: 7px;
+        }
+    }
+}
+
+.Project__YearLabel {
+    position: absolute;
+    display: inline;
+    padding: 10px 18px 5px 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    left: 0px;
+    top: 0px;
+    clip-path: polygon(0px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    background-color: rgb(240, 230, 246);
+    color: rgb(124, 55, 173);
+}
+
+.Project__MainTag {
+    position: absolute;
+    display: inline;
+    padding: 10px 10px 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 0px;
+    bottom: 0px;
+    clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%);
+    border-radius: 0px 0px 8px;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    background-color: rgb(124, 55, 173);
+    color: rgb(255, 255, 255);
+}

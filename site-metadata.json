@@ -1,0 +1,105 @@
+{
+    "layout_style": "overflow",
+    "palette": "fbohz",
+    "header": {
+        "title": "Felipe Bohórquez",
+        "tagline": "",
+        "profile_img": "images/avatar.png",
+        "profile_img_alt": "Author avatar",
+        "background": "",
+        "has_nav": true,
+        "nav_links": [
+            {
+                "label": "Home",
+                "url": "/",
+                "style": "link"
+            },
+            {
+                "label": "Blog",
+                "url": "/blog/",
+                "style": "link"
+            },
+            {
+                "label": "About",
+                "url": "/about/",
+                "style": "link"
+            },
+            {
+                "label": "Contact",
+                "url": "/contact/",
+                "style": "link"
+            }
+        ],
+        "has_social": true,
+        "social_links": [
+            {
+                "label": "Medium",
+                "url": "https://fbohorqu.medium.com/",
+                "style": "icon",
+                "icon_class": "medium",
+                "new_window": true
+            },
+            {
+                "label": "Instagram",
+                "url": "https://www.instagram.com/",
+                "style": "icon",
+                "icon_class": "instagram",
+                "new_window": true
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/fbohz",
+                "style": "icon",
+                "icon_class": "github",
+                "new_window": true
+            },
+            {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/fbohz/",
+                "style": "icon",
+                "icon_class": "linkedin",
+                "new_window": true
+            },
+            {
+                "label": "DEV",
+                "url": "https://dev.to/",
+                "style": "icon",
+                "icon_class": "dev",
+                "new_window": true
+            }
+        ]
+    },
+    "projects": [
+        {
+            "label": "Catoro",
+            "url": "https://catoro.vercel.app/",
+            "image_url": "/images/catoro.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2021",
+            "excerpt": "Implemented UI employing React and Redux with React-Boostrap for styling. ES6+ JavaScript, React Hook-Form, and Chart.js.",
+            "tags": "React, Redux"
+        },
+        {
+            "label": "Yijing Ball Z",
+            "url": "https://yijingballz.herokuapp.com/index.html",
+            "image_url": "/images/yijing.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2020",
+            "excerpt": "I-Ching Oracle Inspired by Dragon Ball Z. JavaScript frontend and implemented Node.js/Express API server.",
+            "tags": "Express, MongoDB"
+        },
+        {
+            "label": "Studio Ghibli's Fan Hub",
+            "url": "https://studio-ghibli-fanhub.herokuapp.com/",
+            "image_url": "/images/ghibli.png",
+            "repo_url": "https://github.com/fbohz",
+            "year": "2019",
+            "excerpt": "React app with eCommerce built-in using Stripe API for payment gateway.",
+            "tags": "React"
+        }
+    ],
+    "footer": {
+        "content": "Copyright  &copy; Felipe Bohorquez 2021"
+    },
+    "title": "Felipe Bohórquez Portfolio"
+}

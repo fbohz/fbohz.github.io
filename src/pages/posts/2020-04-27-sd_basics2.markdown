@@ -1,0 +1,100 @@
+---
+template: post
+title:      "Systems Design Part 2: Digging Deeper"
+date:       2020-04-27 19:31:03 -0400
+permalink:  sd_basics2
+---
+
+> Digging Deeper into SD 
+
+**Note**: This article is somewhat of a continuation of the [**last blog**](http://fbohz.com/sd_basics1) the basics of Systems Design (SD). The main difference is that on this article I'll use **examples of other SDs** to explain the concepts better.
+
+
+## Digging Deeper: High Level System Design and REST API
+
+After we got some capacity estimates, now it is worth coming up with a basic high level design of the system and a Entity Relationship Diagram (ERD).
+
+While I won't go into detail, here you can find an ERD and high level SD design examples: 
+
+![ERD](https://user-images.githubusercontent.com/15071636/80003020-073ace80-8486-11ea-8223-b1a4f67ce7ce.png) 
+
+
+![high level SD design](https://user-images.githubusercontent.com/15071636/80003150-34877c80-8486-11ea-9d3f-6b5b37041589.png) 
+
+After this is done you can come up with your systems **API endpoints**. It is recommended using a REST API. Here's an example of a twitter API:
+
+`tweet(api_dev_key, tweet_data, tweet_location, user_location)`
+
+*Sample API Parameters*:
+- api_dev_key (string)
+- tweet_data (string)
+- tweet_location (string)
+- user_location (string)
+
+*Sample API Returns*: (string)
+
+Here think about any **appropriate HTTP error(s)** returned when accessing the API. Maybe a NotFound 404 or 403 (forbidden) if `api_dev_key` is invalid?
+
+## Component Design
+
+The component design part can be the most complex part and is the one that talks about the scalability of our system.
+
+There's a concept called **CAP Theorem** that states that you cannot balance all this these characteristics (*Consistency, Availability, and Partition*) and you'll have to include tradeoffs in your design. 
+
+Example: Shortening URL. Long URL hard to remember and short URL chances of collision.
+
+So in what part would you focus your design? Consistency, availability, portioning, and/or performance? What part(s) are important, why? 
+
+Lets now drill down into our **component design**:
+  - Come up with a *workflow* of the system. Think about **services** in charge of making workflow efficient.
+  - Database schema:
+    - Atomicity, Consistency, Isolation and Durability (ACID) if Relational Database Systems (RDBS).
+    - Think object / file system storage for images (e.g. Hadoop HDFS, AWS S3 ) and RDBS (MySQL) for metadata / info.
+  - Expand your SD and include Algorithms / Services:
+    - *Horizontal vs. Vertical Scaling*: Horizontal scaling means that you scale by adding more servers into your pool of resources whereas vertical scaling means that you scale by adding more power (CPU, RAM, Storage, etc.) to an existing server. Vertical scaling might imply downtime and comes with limit.
+      - Good examples of horizontal scaling are Cassandra and MongoDB. Vertical is MySQL.
+    - Talk about how the application layer (logic) communicates storage layer (store / retrieve data).
+    - Assess data size per DB table.
+    - *Data Partitioning/Distribution* (e.g data sharding) and replication. Think about horizontal vs vertical partitioning
+      - Horizontal: put different rows in different tables. E.g. zip codes less than 10000 stored in x.
+      - Vertical: store features/resources with each other. Can be good if resource (e.g. photos) heavy.
+    - Think about Reliability vs Redundancy.
+    - Answer this: **How your system handles success and failure cases?**
+      - E.g. have standby DB as replica avoid single point of failure. So have secondary backup servers. On read traffic? write, both?
+     - Divide read and write storage in different servers?
+
+### Load Balancers (LB), Cache and Telemetry
+
+**Load Balancers**
+
+With Load balancers you can effectively distribute incoming network traffic across a group of  servers. When a new server is added to the group, the load balancer automatically starts to send requests to it.
+
+LB reduces individual server load and **prevents single point of failure**, thus improves application availability and responsiveness. If failure LB can redirect to next available healthy server.
+
+*E.g. messaging app*: LB in front of chat servers. The LB can map each userId to a server that holds the connection for each user and then direct such request to that server.
+
+Some LB strategies:
+  - *Round Robin*: distribute evenly across all servers, but this won't take server load.
+  - *More intelligent LB*: can query servers about their load and adjust traffic based upon how they are doing.
+  - You can also have **passive and active** LBs to prevent single point of failure in LB as well. 
+
+**Cache**
+
+Cache is short term for memory. Takes advantage that recently requested data might be asked again so stored locally. Cache is good for quick access to data. CDNs use cache since as they serve content if locally available.
+
+Some cache strategies: 
+  - *80/20 rule*: E.g try caching 20% of daily read volume of photos and metadata.
+  - *Least recently used method LRU*: Or latest data. So it discards the least viewed first. This is a cache eviction policy.
+  - Read up on *Memcaching* and *Redis* as strategies for managing your caching system.
+
+ *Note:* If the data is modified in the database, then it should be **invalidated** in the cache as this could cause inconsistent app behavior.
+
+**Telemetry**
+
+How will you monitor for *peaks*, *Daily Active Users (DAU)* and *average latency*. Thinking about this will further prepare your app to scale even further and reduce failure chances.
+
+## Conclusion
+
+Designing distributed systems it indeed includes a lot of factors and there are many tradeoffs to consider. However it could also be a fun and creative exercise to do.
+
+Hopefully you found this SD exploration useful!

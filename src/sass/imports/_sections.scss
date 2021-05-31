@@ -1,0 +1,247 @@
+/**
+ * Sections
+ */
+.block {
+  margin-bottom: 5em;
+}
+
+.block-title {
+  &.underline {
+    box-sizing: border-box;
+    margin: 0px 0px 32px;
+    min-width: 0px;
+    font-size: 24px;
+    font-family: inherit;
+    line-height: 1.25;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+    a {
+      text-decoration: none;
+      position: relative;
+      margin-bottom: 0px;
+      padding-bottom: 5px;
+      color: inherit;
+      font-weight: 600;
+      border-bottom: 5px solid rgb(124, 55, 173);
+      transition: all 0.4s ease 0s;
+      cursor: default;
+    }
+  }
+}
+
+.block-image {
+  margin-bottom: 1.66667em;
+
+  img {
+    width: 100%;
+  }
+}
+
+.Section{
+  &__SectionContainer {
+    min-width: 320px;
+    min-height: 100vh;
+    max-width: 1366px;
+    display: flex;
+    margin: auto;
+    flex: 0 1 auto;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0em 1em;
+    scroll-behavior: smooth;
+  }
+}
+
+.block-buttons {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  @media only screen and ( max-width: _screen(wvga) ) {
+    margin: 1rem 0;
+    justify-content: center;
+  }
+  a {
+    margin-bottom: 1em;
+    margin-right: 15px;
+  }
+}
+
+/* Hero section */
+.block-hero {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  min-width: 320px;
+  display: flex;
+  margin: auto;
+  flex: 0 1 auto;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 5em 1em;
+  scroll-behavior: smooth;
+  h1 a {
+    border-color: transparent;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: 0em;
+  }
+
+  .block-title {
+    font-size: 2.66667em;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .block-content {
+    font-size: 1.33333em;
+    line-height: 1.5;
+  }
+}
+
+.block-content {
+  &-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media only screen and ( max-width: _screen(wvga) ) {
+      grid-template-columns: 2fr;
+    }
+  } 
+  .section_text {
+    grid-column: 1 / 3;
+    ul li {
+      margin-bottom: 1em;
+    }
+    a {
+      position: relative;
+      border:none;
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: rgb(255, 64, 129);
+        transition: all 250ms ease 0s;
+      }
+      &:hover {
+        color: #fff;
+        &::after {
+          height: 110%;
+          width: 110%;
+        }
+      }
+    }
+  }
+  .section_image {
+    align-self: center;
+    justify-self: center;
+    img {
+      transition: all 0.4s ease-out 0s;
+      border-radius: 50%;
+      max-width: 300px;
+      border: 3px solid #fff;
+      &:hover {
+        border-radius: 20%;
+      }
+    }
+  }
+}
+
+.block-about {
+    position: relative;
+    min-height: 100vh;
+    min-width: 320px;
+    display: flex;
+    margin: auto;
+    flex: 0 1 auto;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 5em 1em;
+    scroll-behavior: smooth;
+}
+
+.block-projects {
+  position: relative;
+  margin: 0;
+  .Card__CardContainer {
+    @media only screen and ( max-width: _screen(wvga) ) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.block-posts {
+  position: relative;
+  min-height: 100vh;
+  min-width: 320px;
+  display: flex;
+  margin: auto;
+  flex: 0 1 auto;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 5em 1em;
+  scroll-behavior: smooth;
+  .Card__CardContainer {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+  }
+}
+
+.ScrollIcon__ScrollLink {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: opacity 0.4s ease 0s;
+  border: none;
+  svg {
+    max-width: 2.5rem;
+    width: 100%;
+    height: auto;
+    rect {
+      transition: stroke 0.4s ease 0s;
+      stroke: rgb(124, 55, 173);
+      stroke-width: 3;
+    }
+    circle {
+      transition: fill 0.4s ease 0s;
+      animation-name: eCxOuT;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+      animation-iteration-count: infinite;
+      transform-origin: 50% 20.5px;
+      will-change: transform;
+      fill: rgb(124, 55, 173);
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .block-hero {
+
+    .block-title {
+      font-size: 2.22222em;
+    }
+
+    .block-content {
+      font-size: 1.22222em;
+    }
+  }
+}
