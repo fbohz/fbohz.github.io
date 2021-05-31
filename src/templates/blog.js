@@ -4,8 +4,10 @@ import moment from "moment-strftime";
 import { graphql } from "gatsby";
 
 import { Layout } from "../components/index";
-import { getPages, Link, withPrefix } from "../utils";
+import { getPages, Link, withPrefix, classNames } from "../utils";
 import {randomImage, getPostsYears} from '../utils/helpers'
+import Icon from '../components/Icon';
+
 
 export const query = graphql`
   query($url: String) {
@@ -58,6 +60,26 @@ export default class Blog extends React.Component {
   render() {
     return (
       <Layout {...this.props}>
+        <small className="muted-center">Other Publications: </small>
+        {_.get(this.props, 'pageContext.site.siteMetadata.header.has_social', null) && (
+                  <div className="social-links">
+                    {_.map(_.get(this.props, 'pageContext.site.siteMetadata.body.blog_icon', null), (action, action_idx) => (
+                    action && (
+                    <Link key={action_idx} to={withPrefix(_.get(action, 'url', null))}
+                      {...(_.get(action, 'new_window', null) ? ({target: '_blank'}) : null)}
+                      {...((_.get(action, 'new_window', null) || _.get(action, 'no_follow', null)) ? ({rel: (_.get(action, 'new_window', null) ? ('noopener ') : '') + (_.get(action, 'no_follow', null) ? ('nofollow') : '')}) : null)}
+                      className={classNames({'button button-icon': _.get(action, 'style', null) === 'icon'})}>
+                      {((_.get(action, 'style', null) === 'icon') && _.get(action, 'icon_class', null)) ? (<React.Fragment>
+                        <Icon {...this.props} icon={_.get(action, 'icon_class', null)} />
+                        <span className="screen-reader-text">{_.get(action, 'label', null)}</span>
+                      </React.Fragment>) : 
+                      _.get(action, 'label', null)
+                      }
+                    </Link>
+                    )
+                    ))}
+                  </div>
+              )}
 
         <select 
           name="years" 

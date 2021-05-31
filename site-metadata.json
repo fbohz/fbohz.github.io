@@ -87,6 +87,17 @@
             "tags": "React, Redux, Firebase"
         }
     ],
+    "body": {
+        "blog_icon": [
+            {            
+            "label": "Medium",
+            "url": "https://fbohorqu.medium.com/",
+            "style": "icon",
+            "icon_class": "medium",
+            "new_window": true
+            }
+        ]
+    },
     "footer": {
         "content": "Copyright  &copy; Felipe Bohorquez"
     },
