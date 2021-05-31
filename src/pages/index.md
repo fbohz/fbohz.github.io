@@ -23,7 +23,7 @@ sections:
       As a social entrepreneur I have co-launched different projects in areas such as health (MomBox), sustainability (PowerToThePeople), specialty food through art ([ArtesanoSpirit](https://artesanospirit.com/)) and performing arts. Many of such ventures have been awarded in business competitions.
 
 
-      I've also contributed as a technical writer for [CareerKarma](https://careerkarma.com/blog/author/felipe-bohorquez/) and have been featured on various tech journals on [Medium](https://fbohorqu.medium.com/).
+      As a passionate writer, I've been an author for [CareerKarma](https://careerkarma.com/blog/author/felipe-bohorquez/) and I've done weekly articles on a variety topics on top [Medium Publications](https://fbohorqu.medium.com/).
 
     actions:
       - label: Connect With Me
@@ -38,6 +38,10 @@ sections:
       yourself that people can read on the homepage to get a sense of who you
       are. There also exists a dedicated about page where you can write more
       about yourself for those who are interested.
+    actions:
+      - label: Learn More
+        url: about
+        style: link
   - section_id: recent-posts
     type: section_posts
     title: Recent Posts ✍️
