@@ -4,7 +4,7 @@ import moment from "moment-strftime";
 
 import { getPages, Link, withPrefix } from "../utils";
 import CtaButtons from "./CtaButtons";
-
+import {randomImage} from '../utils/helpers'
 export default class SectionPosts extends React.Component {
   render() {
     let section = _.get(this.props, "section", null);
@@ -62,7 +62,7 @@ export default class SectionPosts extends React.Component {
                         alt={_.get(post, "frontmatter.thumb_img_alt", null)}
                       />
                     ) : (
-                      <img src="/images/default.jpg" alt="Default image" />
+                      <img src={`/images/${randomImage()}.jpg`} alt="Default image" />
                     )}
                     {_.get(post, "frontmatter.excerpt", null) && (
                       <div className="Post__CoverExcerpt">

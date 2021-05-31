@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 
 import { Layout } from "../components/index";
 import { getPages, Link, withPrefix } from "../utils";
+import {randomImage} from '../utils/helpers'
 
 export const query = graphql`
   query($url: String) {
@@ -48,7 +49,7 @@ export default class Blog extends React.Component {
                       className="post-thumbnail"
                       to={withPrefix(_.get(post, "url", null))}
                     >
-                      <img src="/images/rsz_trex.jpg" alt="Default image" />
+                      <img src={`/images/${randomImage(5)}.jpg`} alt="Default image" />
                     </Link>
                   )}
                   <header className="post-header">

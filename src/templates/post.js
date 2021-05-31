@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 
 import { Layout } from "../components/index";
 import { htmlToReact, withPrefix } from "../utils";
+import {randomImage} from '../utils/helpers'
 
 // this minimal GraphQL query ensures that when 'gatsby develop' is running,
 // any changes to content files are reflected in browser
@@ -56,7 +57,7 @@ export default class Post extends React.Component {
             </div>
           ) : (
             <div className="post-image">
-              <img src="/images/binarycoding.jpg" alt="Default image" />
+              <img src={`/images/${randomImage(5)}.jpg`} alt="Default image" />
             </div>
           )}
           <div className="post-content inner-sm">
