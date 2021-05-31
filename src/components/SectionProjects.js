@@ -35,9 +35,14 @@ export default class SectionProjects extends React.Component {
                                   <img alt="Facebook logo" src={withPrefix(_.get(action, 'image_url', null))} className="Project__ProjectImage" />
                                   <div className="Project__ProjectTag">
                                       <div className="Project__ProjectFeed">
-                                        <div className="SocialLink">
+                                        {/* <div className="SocialLink">
                                             <a href={withPrefix(_.get(action, 'repo_url', null))} target="_blank" rel="noreferrer" aria-label="Repository" className="SocialLink__IconLink">
                                               <Icon icon='github' />
+                                            </a>
+                                        </div> */}
+                                        <div className="SocialLink">
+                                            <a href={withPrefix(_.get(action, 'deploy_url', null))} target="_blank" rel="noreferrer" aria-label="Repository" className="SocialLink__IconLink">
+                                              🚀
                                             </a>
                                         </div>
                                       </div>

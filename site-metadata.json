@@ -59,7 +59,7 @@
     "projects": [
         {
             "label": "Catoro",
-            "url": "https://catoro.vercel.app/",
+            "deploy_url": "https://catoro.vercel.app/",
             "image_url": "/images/catoro.png",
             "repo_url": "https://github.com/fbohz",
             "year": "2021",
@@ -68,7 +68,7 @@
         },
         {
             "label": "Yijing Ball Z",
-            "url": "https://yijingballz.herokuapp.com/index.html",
+            "deploy_url": "https://yijingballz.herokuapp.com/index.html",
             "image_url": "/images/yijing.png",
             "repo_url": "https://github.com/fbohz",
             "year": "2020",
@@ -77,7 +77,7 @@
         },
         {
             "label": "Studio Ghibli's Fan Hub",
-            "url": "https://studio-ghibli-fanhub.herokuapp.com/",
+            "deploy_url": "https://studio-ghibli-fanhub.herokuapp.com/",
             "image_url": "/images/ghibli.png",
             "repo_url": "https://github.com/fbohz",
             "year": "2019",
