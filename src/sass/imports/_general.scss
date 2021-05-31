@@ -439,6 +439,25 @@ img {
   }
 }
 
+.custom-select{
+  /* wrapper style */
+  position: relative;
+  display:block;
+  max-width: 400px;
+  min-width: 180px;
+  margin:0 auto;
+  outline:none;
+  background: transparent;
+}
+
+.muted-center {
+  color: _palette(meta);
+  position: relative;
+  display:block;
+  text-align: center;
+  outline:none;
+}
+
 @media only screen and (max-width: 600px) {
   html {
     font-size: 100%;
