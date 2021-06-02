@@ -1,6 +1,7 @@
 ---
 title: About Me
 img_alt: Felipe Image
+about-img: images/headshot.jpg
 seo:
   title: About Me
   description: This is the about me page
@@ -27,12 +28,8 @@ seo:
     - name: 'twitter:image'
       value: images/about.jpg
       relativeUrl: true
-template: page
+template: about-page
 ---
-
-![Felipe](/images/headshot.jpg)  
-
-**TBD BTN <SHOW-FULL-PORTFOLIO>**
 
 Before becoming a software engineer I worked with nationally recognized organizations including the American Bankers Association and the Congressional Hispanic Caucus Institute. After working over 4 years at Capitol Hill in human development and then 3 years in eLearning for the banking industry, I felt I was ready for the next challenge. As an entrepreneur and creative individual, I was moved by technology and its potential to bring positive change in our world🌎.
 

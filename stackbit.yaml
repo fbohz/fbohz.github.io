@@ -317,6 +317,37 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+  about-page:
+    type: page
+    label: Page
+    layout: page
+    exclude: posts/**
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The text shown just below the page title.
+      - type: image
+        name: img_path
+        label: Image
+        description: The image shown below the page title and subtitle.
+      - type: image
+        name: about-img
+        label: Image
+        description: The image shown below the page title and subtitle.
+      - type: string
+        name: img_alt
+        label: Image Alt Text
+        description: The alt text of the image.
+      - type: model
+        name: seo
+        models:
+          - stackbit_page_meta
   post:
     type: page
     urlPath: '/posts/{slug}'
