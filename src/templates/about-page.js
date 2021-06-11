@@ -6,6 +6,7 @@ import {Layout} from '../components/index';
 import {htmlToReact, withPrefix} from '../utils';
 import ReactModal from 'react-modal'
 import { Link } from 'gatsby'
+import AboutModalContent from './about-modal-content'
 
 
 // this minimal GraphQL query ensures that when 'gatsby develop' is running,
@@ -55,20 +56,20 @@ export default class Page extends React.Component {
                   <p>
                     <img src={withPrefix(_.get(this.props, 'pageContext.frontmatter.about-img', null))} alt={_.get(this.props, 'pageContext.frontmatter.img_alt', null)} />
                   </p>
-                    <Link to="#" onClick={this.handleModalOpen} className="button">
-                      Technical Portfolio
+                    <Link to="" onClick={this.handleModalOpen} className="button">
+                      Technical Portfolio✨
                     </Link>
                 </div>
                     <ReactModal
                       isOpen={this.state.isModalOpen}
                       onRequestClose={this.handleModalClose}
                       contentLabel="Felipe's Full Tech Portfolio"
-                      style={modalSyles()}
+                      // style={modalSyles()}
                       ariaHideApp={false}
                     >
-                      <h2>Full Technical Portfolio</h2>
-                      {temp()}
-                      <button onClick={this.handleModalClose}>Close Modal</button>
+                      <h2>Felipe's Technical Portfolio</h2>
+                      <AboutModalContent />
+                      <button onClick={this.handleModalClose}>Close</button>
                     </ReactModal>
                 <br/>
                 <div className="post-content inner-sm">
@@ -82,32 +83,35 @@ export default class Page extends React.Component {
 
 
 
-const modalSyles = () => {
-  const customContent = {
-    content: {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-    }
-  }
-  const innerWidth = window.innerWidth
-  if ( innerWidth >= 600) {
-    customContent.content.transform = 'translate(-50%, 0%)'
-  } 
-  else {
-    customContent.content.transform = 'translate(-50%, -90%)'
-  }
-  return customContent;
-};
+// const modalSyles = () => {
+//   const customContent = {
+//     content: {
+//       top                   : '50%',
+//       left                  : '50%',
+//       right                 : 'auto',
+//       bottom                : 'auto',
+//       marginRight           : '-50%',
+//       overlay: {
+//         zIndex: 100
+//       }
+//     }
+//   }
+//   const innerWidth = window.innerWidth
+//   if ( innerWidth >= 600) {
+//     customContent.content.transform = 'translate(-50%, 0%)'
+//   } 
+//   else {
+//     customContent.content.transform = 'translate(-50%, -90%)'
+//   }
+//   return customContent;
+// };
 
-const temp =  () => {
-  return (
-    <React.Fragment>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-        A minima, deserunt soluta officiis commodi aspernatur beatae sunt qui rerum fugiat ratione tempore. 
-        Quas odit quae ipsa voluptates velit earum veritatis.</p>
-    </React.Fragment>
-  )
-}
+// const temp =  () => {
+//   return (
+//     <React.Fragment>
+//         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+//         A minima, deserunt soluta officiis commodi aspernatur beatae sunt qui rerum fugiat ratione tempore. 
+//         Quas odit quae ipsa voluptates velit earum veritatis.</p>
+//     </React.Fragment>
+//   )
+// }

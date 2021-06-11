@@ -46,5 +46,5 @@ Currently I'm working as a full stack developer for a large scale application th
 I do not forget my commitment to give back and bring positive change🤝🏼. So these days you can also see me volunteering for Bridge of Kindness non-profit, assisting their MERN donation platform or even being featured as a technical writer on [CareerKarma](https://careerkarma.com/blog/author/felipe-bohorquez/), a famous tech website for non-traditional students, to help them break into tech! 👩🏼‍💻
 
 
-I'm always open to lend a hand, don't hesitate to say hi 👋🏼!
+I'm always open to lend a hand, don't hesitate to connect and say hi 👋🏼!
 

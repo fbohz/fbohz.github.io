@@ -39,7 +39,7 @@ sections:
       are. There also exists a dedicated about page where you can write more
       about yourself for those who are interested.
     actions:
-      - label: Learn More
+      - label: See More
         url: about
         style: link
   - section_id: recent-posts
