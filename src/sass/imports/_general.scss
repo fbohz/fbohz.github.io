@@ -518,4 +518,8 @@ img {
   blockquote {
     font-size: 1.55556em;
   }
+
+  .ReactModal__Content.ReactModal__Content--after-open {
+      transform: translate(-3rem);
+  }
 }
