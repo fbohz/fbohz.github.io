@@ -8,7 +8,7 @@
     "start": "npm run develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b main"
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
     "@stackbit/gatsby-plugin-menus": "0.0.4",
