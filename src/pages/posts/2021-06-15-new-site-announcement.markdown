@@ -1,6 +1,6 @@
 ---
 template: post
-title:      "🚨 New Site Alert! + and other updates 🚨"
+title:      "🚨 New Site Alert! + Updates 🚨"
 date:       2021-06-15 19:31:03 -0400
 permalink:  new-site-announcement
 filename: 2021-01-06-algorithms_ch2
@@ -11,11 +11,13 @@ filename: 2021-01-06-algorithms_ch2
 
 # 🚨 New Site Alert! 🚨
 
-After using Jekyll for such a long time, I wanted to give a much needed facelift. So today I'm happy to announce the launch of my new site:
+After using [**Jekyll**](https://jekyllrb.com/) for such a long time, I've been wanting to give this site a much needed facelift. 
 
-✅  Modern JS Framework (Gatsby)
+Today I'm happy to announce the official launch of my new JAMSTACK site:
 
-✅  Markup used for generating posts
+✅  Modern JS Framework ([**Gatsby**](https://www.gatsbyjs.com/))
+
+✅  Markup Files for Post Generation
 
 ✅  Fast Deployment Through Github Pages
 
