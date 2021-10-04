@@ -1,6 +1,16 @@
 # RoastedRobots - A Blog by Felipe Bohorquez
 Copyright© Felipe Bohorquez
 
+## Deploying Changes to Github Pages
+
+When latest changes pushed to `gh-pages` branch in order to deploy first build:
+
+`npm run build`
+
+Then deploy:
+
+`npm run deploy`
+
 
 ## Tips
 
