@@ -3,7 +3,7 @@ Copyright© Felipe Bohorquez
 
 ## Deploying Changes to Github Pages
 
-When latest changes pushed to `gh-pages` branch in order to deploy first build:
+When latest changes pushed to `gh-pages` branch, then you need to build:
 
 `npm run build`
 
