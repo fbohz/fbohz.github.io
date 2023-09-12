@@ -48,3 +48,6 @@ I do not forget my commitment to give back and bring positive change🤝🏼. So
 
 I'm always open to lend a hand, don't hesitate to connect and say hi 👋🏼!
 
+### Reference
+I use PDF Snake to prepare blog documents for professional printing. [Try it now too!](https://www.pdfsnake.com/?_gl=1*1gue3ke*_ga*MTI5NjkyNzg3Mi4xNjk0NDk4ODc3*_ga_X69TS6D1SW*MTY5NDU0MTczNC4yLjEuMTY5NDU0MjYwMS4wLjAuMA..*_gcl_aw*R0NMLjE2OTQ0OTM0NTcuQ2owS0NRanc5ZnFuQmhEU0FSSXNBSGxjUVlSWUd2U2UxU0tJOWdYTzloVll2Y2pqVG10RlBiWTB3ejM3b0k5ZkRZcHRFNmhvQzloYndRWWFBakFaRUFMd193Y0I.*_gcl_au*MTA3MDczNDc5Ny4xNjk0NDk4ODc1)
+
